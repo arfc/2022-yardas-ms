@@ -1,0 +1,142 @@
+%% Package and Class "uiucthesis2014" for use with LaTeX2e.
+\documentclass[edeposit,fullpage]{uiucthesis2018}
+
+
+\usepackage[acronym,toc]{glossaries}
+\include{acros}
+
+\usepackage{xspace}
+\usepackage{graphics}
+\newcommand{\Cycamore}{\textsc{Cycamore}\xspace}
+\newcommand{\Cyclus}{\textsc{Cyclus}\xspace}
+
+
+\usepackage{placeins}
+\usepackage{booktabs} % nice rules (thick lines) for tables
+\usepackage{microtype} % improves typography for PDF
+
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{subfig}
+\usepackage{hhline}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{siunitx}
+\sisetup{
+    input-decimal-markers = .,input-ignore = {,},table-number-alignment = right,
+    group-separator={,}, group-four-digits = true
+}
+\usepackage{fourier}
+\usepackage{booktabs}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\usepackage{threeparttable, tablefootnote}
+
+%tikzpicture fit to page width
+\usepackage{environ}
+\makeatletter
+\newsavebox{\measure@tikzpicture}
+\NewEnviron{scaletikzpicturetowidth}[1]{%
+  \def\tikz@width{#1}%
+  \def\tikzscale{1}\begin{lrbox}{\measure@tikzpicture}%
+  \BODY
+  \end{lrbox}
+  \pgfmathparse{#1/\wd\measure@tikzpicture}%
+  \edef\tikzscale{\pgfmathresult}%
+  \BODY
+}
+
+\usepackage{tabularx}
+\newcolumntype{b}{>{\hsize=1.0\hsize}X}
+\newcolumntype{q}{>{\hsize=0.5\hsize}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash\hsize=0.5\hsize}X}
+\newcolumntype{z}{>{\hsize=0.75\hsize}X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+\newcolumntype{m}{>{\hsize=.75\hsize}X}
+
+\usepackage{cleveref}
+\usepackage{datatool}
+\usepackage[numbers]{natbib}
+\usepackage{notoccite}
+
+
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations, shapes}
+
+\usetikzlibrary{shapes.geometric,arrows}
+\tikzstyle{process} = [rectangle, rounded corners, minimum width=2.5cm, minimum height=1cm,text centered, draw=black, fill=blue!30]
+
+\tikzstyle{object} = [ellipse, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=green!30]
+\tikzstyle{objectr} = [ellipse, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+
+\tikzstyle{empty} =  [rectangle, rounded corners, minimum width=2.5cm, minimum height=0.7cm,text centered, draw=black, fill=white!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+\title{Example Template}
+\author{Charles Bae}
+\department{Nuclear, Plasma, Radiological Engineering}
+\schools{B.S., University of Illinois - Urbana Champaign, 2017}
+\msthesis
+\advisor{Kathryn D. Huff}
+\degreeyear{2018}
+\committee{Assistant Professor Kathryn D. Huff, Adviser \\ Professor Segundo Lector }
+
+
+\begin{document}
+\maketitle
+
+\frontmatter
+%% Create an abstract that can also be used for the ProQuest abstract.
+%% Note that ProQuest truncates their abstracts at 350 words.
+\begin{abstract}
+
+Abstract.
+
+\end{abstract}
+
+\chapter*{Acknowledgments}
+
+Acks.
+
+%% The thesis format requires the Table of Contents to come
+%% before any other major sections, all of these sections after
+%% the Table of Contents must be listed therein (i.e., use \chapter,
+%% not \chapter*).  Common sections to have between the Table of
+%% Contents and the main text are:
+%%
+%% List of Tables
+%% List of Figures
+%% List Symbols and/or Abbreviations
+%% etc.
+
+\tableofcontents
+\listoftables
+\listoffigures
+
+%% Create a List of Abbreviations. The left column
+%% is 1 inch wide and left-justified
+%\chapter{List of Abbreviations}
+%\printglossaries
+%% Create a List of Symbols. The left column
+%% is 0.7 inch wide and centered
+
+\pagebreak
+\mainmatter
+
+\chapter{Introduction}
+\input{introduction}
+
+\chapter*{Appendix}
+\input{appendix}
+
+\backmatter
+
+\bibliographystyle{apalike}
+\bibliography{bibliography}
+
+\end{document}
+\endinput
+%%
+%% End of file `thesis-ex.tex'.
