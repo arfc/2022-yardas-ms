@@ -1,1 +1,30 @@
-Introduction \cite{huff_extensions_2014}.
+\chapter{Introduction}%
+\label{cha:introduction}
+
+\section{Motivation}%
+\label{sec:motivation}
+
+(if this isn't helping, delete it all and then try to rewrite it)
+ - global warming is a result of anthropocentric climate change
+ -> increase in industrial activity, heavy reliance on electricity
+ -> assert: nuclear power can do one of two things
+    1. Current tech -> replace large nat-gas power stations 
+    2. "new" nuclear -> relpace smaller power stations + expand scope
+        of nuclear power to more specialized use cases (space, remote communities, etc)
+-> six gen4 reactors -> molten salt reactor one of these
+-> NRC liscening approach for advacned reactors will be based on current R&D, specifcially M&S
+-> M&S tools that answer all relevant licesning questions for msr specifically do not exist
+-> SaltProc aims to be a tool that can answer some of these questions, as well as a general purpose
+    research tool for simulating MSRs
+
+\section{Objectives}%
+\label{sec:objectives}
+
+ free and open source software provides lowest barrier of entry
+ - saltproc built for use with serpent which defeats the purpose of being
+    FOSS
+ - Code needs to be restructured to enable easier development of interfaces to 
+ open source MC transport codes
+ - We then need to implement the necessary machinery to interface with a specific
+    open source MC transport code (OpenMC)
+ - Once implemented, we need to validate with a serpent-based case
