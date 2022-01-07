@@ -1,7 +1,13 @@
-\chapter{Software Development}%
+\chapter{Software Overview and Development}%
 \label{cha:software_development}
 
 A major component of this work was restructuring of the SaltProc code and implementation of OpenMC.
+\section{SaltProc}%
+\label{sec:saltproc}
+
+SaltProc\cite{rykhlevskii_saltproc_2018} is an open source Python package that simulates on-line reprocessing via a batch-wise approach\footnote{Material is moved to or from the core at specific time intervals} in liquid-fueled \Gls{msr}s. More precisely, SaltProc manages material flows and separation processes on nuclides in the fuel. SaltProc relies on external codes to simulate fuel depletion.
+
+The first version of SaltProc (v0.1) was a simple Python 2.7 package that used SERPENT 2 for the fuel depletion simulations. A single Python file contained all functions; separation processes applie dto  used an implicit 100\% efficiency. The structure of SaltProc v0.1...   
 
 \section{OpenMC}%
 \label{sec:openmc}
