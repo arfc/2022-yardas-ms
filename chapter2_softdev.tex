@@ -7,7 +7,10 @@ A major component of this work was restructuring of the SaltProc code and implem
 
 SaltProc\cite{rykhlevskii_saltproc_2018} is an open source Python package that simulates on-line reprocessing via a batch-wise approach\footnote{Material is moved to or from the core at specific time intervals} in liquid-fueled \Gls{msr}s. More precisely, SaltProc manages material flows and separation processes on nuclides in the fuel. SaltProc relies on external codes to simulate fuel depletion.
 
-The first version of SaltProc (v0.1) was a simple Python 2.7 package that used SERPENT 2 for the fuel depletion simulations. A single Python file contained all functions; separation processes applie dto  used an implicit 100\% efficiency. The structure of SaltProc v0.1...   
+The first version of SaltProc (v0.1) was a simple Python 2.7 package that used SERPENT 2 for the fuel depletion simulations. A single Python file contained all functions; separation processes applie dto  used an implicit 100\% efficiency \cite{rykhlevskii_advanced_2018}. The structure of SaltProc v0.1 did not lend itsef easily to development of more sophisticated treatments of reprocessing. This led to the release of Saltproc v0.2, in which the entire codebase was refactored into an object oriented
+context in Python 3. The addition of new functionality in the \verb.Separator. and \verb.Process. classes enabled more sophisticated treatment of online reprocessing \cite{rykhlevskii_fuel_2020} 
+
+SaltProc v0.3 saw the addition of gas sparging and ...
 
 \section{OpenMC}%
 \label{sec:openmc}
