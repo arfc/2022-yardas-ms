@@ -8,14 +8,16 @@ Increasing \Gls{ghg} emissions due to human activity since the Industrial Revolu
 The long term impacts of global warming...
 Rapid decrease in global \Gls{ghg} emissions can dampen the impact of global warming. Transitioning from fossil-fuel-based electrictity production methods to zero-emission \footnote{zero-emissions during operation; there are lifecycle carbon costs associated with any form of power production} electrcity production methods (\textbf{decarbonization}) would contribute significantly to a global \Gls{ghg} emission reduction, and in turn dampen the effects of global
 warming. Our three main options for decarbonization are renewables (solar, wind, geothermal), hydropower, and nuclear power. We will need all of these technologies working together if we want to sucessfully decarboinze, however each technology has a specifc use case where it works best; solar and wind are useful in responding to rapid fluctuations in electicity usage, wheras nuclear, hydropower, and geothermal are better suited to
-providing a baseload level of electricity (cite). Geothermal and hydropower are limited by geographical features (geothermal acticivity and elevated water sources), making nuclear the most flexibile option for a future carbon-free baseload. Therefore, we should maintian and develop nuclear power technologies to fight against global warming.
+providing a baseload level of electricity (cite). Geothermal and hydropower are limited by geographical features (geothermal acticivity and elevated water sources), making nuclear the most flexibile option for a future carbon-free baseload. Unfortunatley, nuclear power is a divisive technology(cite), with both legitimate technological and policy concerns.%consider expanding on this?
+Luckily, many of these concerns have technological solutions. Therefore, we should maintian and develop nuclear power technologies so that they can contribute to decarbonization efforts.
 
 \section{Current and future trajectories of nuclear power}%
 \label{sec:current_and_future_trajectories_of_nuclear_power}
 Nuclear power currently constitutes a fifth of US domestic electricty production, and half of US zero-carbon electricity production (cite EIA). Unfortunatley, our current nuclear fleet faces several threats to its long-term survival. The most relevant of these is the state of the electricity market: record-low natural gas prices, increases in subsidies for renewables, and general lack of similar compensation for
 nuclear power plants make operating nuclear power plants financially unsustainable in the long term given the current market conditions\footnote{This is a generalization as this issue is incredibly complex and requires more space that I can give to it in this thesis to fully appreciate} \cite{szilard_economic_2016}. %perhaps mention all plants that have been shut down recently?
 
-Assuming that we resolve the economic threats to our current nuclear fleet, they are -- like all things -- subject to aging and deterioration; at some point in the future, we will need to shut down and decommission them. As explained in the previous section, nuclear power will be a key player in any decarbonization strategy. We will need to replace the old plants with new ones that are more sustainable, economically competitive, safe, and reliable than
+Assuming that we resolve the economic threats to our current nuclear fleet, they are -- like all things -- subject to aging and deterioration; at some point in the future, we will need to shut down and decommission them. As explained in the previous section, nuclear power will be a key player in any decarbonization strategy even though it is controversial. To both address this controversy and maintain nuclear power's postion in our decarbonization technology stack, we will need to develop and
+implement new kinds of nuclear reactors that are more sustainable, economically competitive, safe, and reliable than
 their predecessors.
 %% I want to make this point differently... the conclusion should be that we need new nuclear power tech to ensure we can decarbonize, but I don't feel like the preceding statements smoothly come to that conclusion in the way I have preseneted them here
  
@@ -26,10 +28,34 @@ The first generation of nuclear power reactors includes the first prototpyes and
 in mind. The fourth generation of nuclear power
 reactors will need to rapidly respond to increasing electricity consumption and the need for decarbonzation. This means the fourth generation of nuclear reactors need to be able to be built quickly, have widespread use, all while maintaining or increasing fuel efficiency, economic competitivness, and saftey and proliferation resistance.
 
-This is essentially the conclusion that the \Gls{gif} -- a "co-operative international endeavour seeking to develop the feasability and performance of routh generation nuclear systems" \cite{gif_homepage} -- came to in their 2002 roadmap \cite roadmap. This efford selected six reactor technologies in total. One of these technologies, the \Gls{msr}, is the central technology of this thesis.
+This is essentially the conclusion that the \Gls{gif} -- a "co-operative international endeavour seeking to develop the feasability and performance of routh generation nuclear systems" \cite{gif_homepage} -- came to in their 2002 roadmap \cite roadmap. This effort selected six reactor technologies in total. One of these technologies, the \Gls{msr}\footnote{for this thesis {\it Molten Salt Reactor} refers specifically to the reactor type where the fissile material is dissolved in in the salt
+coolant}, is the central technology of this thesis.
 %% why the msr??
 
-The technological complexities of the Molte
+The \Gls{msr} is so named as it is a nuclear reactor that uses a mixture of liquid-phase salts as a coolant. This has several benefits over solid fueled reactors, including increased fuel utilization \cite{}, potential in-core \Gls{snf} recylcing, and very strong passive saftey features (cite) \ldots \Gls{msr}s could also provide heat for industrial applications (typically a carbon intensive process) (cite). \Gls{}
+
+In preparation for \Gls{msr}s and other GenIV reactor applications, regulators like the NRC have \ldots (non-lwr approach) 
+  
+\section{Objectives}%
+\label{sec:objectives}
+
+Currently available software tools are insufficient for creating a licensing application due to the greater physical complexities of \Gls{msr}s (cite).
+The \Gls{doe-ne} has created a list of functional needs for modeling and simulation software prioritized by their importance to a licesing application for \Gls{msr}s.
+Notably, fuel depletion is one of the most important functional needs. Several software projects exist that meet this functional need specifically in the context
+of \Gls{msr}s:
+\begin{itemize}
+    \item ChemTriton (cite chem triton paper)
+    \item Serpent2 (cite auferio)
+    \item SaltProc (cite Rykhlevskii)
+\end{itemize}
+
+Among these tools, only one of them (SaltProc) is open source. Open source nuclear software is\ldots (benfits of open source) 
+Now, while SaltProc itself is open source, previously relied exclusivley on Serpent2 to perform depletion calculations.
+This Master's thesis has two primary objectvies
+\begin{enumerate}
+    \item Add support for the open source monte carlo particle transport code OpenMC
+    \item Test the new feature on a well studied MSR system.
+\end{enumerate}
 
 
 - several things threatening current fleet
