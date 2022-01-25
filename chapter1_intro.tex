@@ -32,18 +32,17 @@ This is essentially the conclusion that the \Gls{gif} -- a "co-operative interna
 coolant}, is of particular interest due to the unique challenges and opportunities is presents.
 %% why the msr??
 
-The \Gls{msr} is so named as it is a nuclear reactor that uses a mixture of liquid-phase salts as a coolant. This has several benefits over solid fueled reactors, including increased fuel utilization \cite{}, potential in-core \Gls{snf} recylcing, and very strong passive saftey features (cite) \ldots \Gls{msr}s could also provide heat for industrial applications (typically a carbon intensive process) (cite). \Gls{}
+The \Gls{msr} is so named as it is a nuclear reactor that uses a mixture of liquid-phase salts as a coolant. This has several benefits over solid fueled reactors, including increased fuel utilization \cite{}, potential in-core \Gls{snf} recylcing, and very strong passive saftey features (cite) \ldots \Gls{msr}s could also provide heat for industrial applications (typically a carbon intensive process) (cite). 
 
-Gls{m&s} codes will play a critical role in lisencing GenIV reactors. In preparation for \Gls{msr}s, both the \gls{doene} and the \Gls{nrc} have identified several technical gaps in current \Gls{m&s} tools that are necessary for efficient and effective license application reviews \cite{betlzer_modeling_2019} \cite{usnrc_nonlwr_2020-1}.
+Gls{mns} codes will play a critical role in lisencing GenIV reactors. In preparation for \Gls{msr}s, both the \Gls{doene} and the \Gls{nrc} have identified several technical gaps in current \Gls{mns} tools that are necessary for efficient and effective license application reviews \cite{betzler_modeling_2019} \cite{usnrc_nonlwr_2020-1}. In particular, both the \Gls{doe} and the \Gls{nrc} have identified the fuel composistion and its evolution in a \Gls{msr} to be a key code feature
+necessary for accident analysis.
 
-Currently available software tools are do not have the capabilities to simulate \Gls{msr} specific proceses such as system inventory analysis, \ldots Sofware tools need these features in order to allow efficient and effecive reviews of a licensing application 
-\
-  
-\section{Objectives}%
-\label{sec:objectives}
+\section{MSR Codes}%
+\label{sec:msr_codes}
+
 due to the greater physical complexities of \Gls{msr}s (cite).
 Currently available software tools are insufficient for creating a licensing application due to the greater physical complexities of \Gls{msr}s (cite).
-The \Gls{doe-ne} has created a list of functional needs for modeling and simulation software prioritized by their importance to a licesing application for \Gls{msr}s.
+The \Gls{doene} has created a list of functional needs for modeling and simulation software prioritized by their importance to a licesing application for \Gls{msr}s.
 Notably, fuel depletion is one of the most important functional needs. Several software projects exist that meet this functional need specifically in the context
 of \Gls{msr}s:
 %you'll need to read these papers to refresh your memory a bit
@@ -55,10 +54,28 @@ of \Gls{msr}s:
 
 Among these tools, only one of them (SaltProc) is open source. Open source nuclear software is\ldots (benfits of open source) 
 Now, while SaltProc itself is open source, previously relied exclusivley on Serpent2 to perform depletion calculations.
+
+%
+%
+%
+
+There are several software tools in active development that have the capability to simulate the fuel composition and evolutions in an \Gls{msr}.
+% list in the table below?
+
+%andrei talks about these codes in his thesis. Do I need to repeat that here? Obviously I need to put my own spin on it...
+
+SaltProc is similar to ChemTriton. SaltProc is unique among its peers as it has an open source codebase and development process. This is significant as open source software lowers the barriers to distribution, development, and usage that \Gls{cc}s present \cite{fiorina_initiative_2021}. Historically, software used in licensing, \Gls{rnd}, and \Gls{ent} efforts in the nuclear field have been closed source and proprietary (cite). The number of open source projects in this industry (cite a bunch of open source nuclear software:
+ONIX, OpenMC, NJOY21, cyclus, \ldots) is growing in recognition of the need for distributable, high-quality, and transparent software tools. This is perhaps best seen in a \Gls{iaea} facilitated \Gls{oncore} initiative to "[promote] development and application of open-source multi-physics simulation tools to support research, education, and training for analysis of advanced nuclear power reactors" \cite{iaea_open-source}. It is an exciting time to be a software developer in the nuclear field!
+
+\section{Objectives}%
+\label{sec:objectives}
+
+While SaltProc itself is open source, Serpent is not. SaltProc being open source does lower the barrier of entry for simulating depletion in a \Gls{msr}, however this point is almost moot when the main dependency to do depletion calulations is not. It is in this spirit that I have added support for OpenMC \cite{romano_openmc_2015}, an open source monte-carlo particle transport code.
+
 This Master's thesis has two primary objectvies
 \begin{enumerate}
-    \item Add support for the open source monte carlo particle transport code OpenMC
-    \item Test the new feature on a well studied MSR system.
+    \item Refactor SaltProc for to enable OpenMC support, as well as enable easier implementation of support for other monte carlo codes in the future. 
+    \item Verify the implementation on a well studied MSR system.
 \end{enumerate}
 
 
@@ -80,8 +97,6 @@ This Master's thesis has two primary objectvies
 -> SaltProc aims to be a tool that can answer some of these questions, as well as a general purpose
     research tool for simulating MSRs
 
-\section{Objectives}%
-\label{sec:objectives}
 
  free and open source software provides lowest barrier of entry
  - saltproc built for use with serpent which defeats the purpose of being
