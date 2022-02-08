@@ -28,22 +28,32 @@ The first generation of nuclear power reactors includes the first prototpyes and
 in mind. The fourth generation of nuclear power
 reactors will need to rapidly respond to increasing electricity consumption and the need for decarbonzation. This means the fourth generation of nuclear reactors need to be able to be built quickly, have widespread use, all while maintaining or increasing fuel efficiency, economic competitivness, and saftey and proliferation resistance.
 
-This is essentially the conclusion that the \Gls{gif} -- a "co-operative international endeavour seeking to develop the feasability and performance of routh generation nuclear systems" \cite{gif_homepage} -- came to in their 2002 roadmap \cite roadmap. This effort selected six reactor technologies in total. One of these technologies, the \Gls{msr}\footnote{for this thesis {\it Molten Salt Reactor} refers specifically to the reactor type where the fissile material is dissolved in in the salt
+This is essentially the conclusion that the \Gls{gif} -- a "co-operative international endeavour seeking to develop the feasability and performance of routh generation nuclear systems" \cite{gif_homepage} -- came to in their 2002 roadmap \cite{doe-ne_technology_2002}. This effort selected six reactor technologies in total. One of these technologies, the \Gls{msr}\footnote{for this thesis {\it Molten Salt Reactor} refers specifically to the reactor type where the fissile material is dissolved in in the salt
 coolant}, is of particular interest due to the unique challenges and opportunities is presents.
 %% why the msr??
 
-The \Gls{msr} is so named as it is a nuclear reactor that uses a mixture of liquid-phase salts as a coolant. This has several benefits over solid fueled reactors, including increased fuel utilization \cite{}, potential in-core \Gls{snf} recylcing, and very strong passive saftey features (cite) \ldots \Gls{msr}s could also provide heat for industrial applications (typically a carbon intensive process) (cite). 
+The \Gls{msr} is so named as it is a nuclear reactor that uses a mixture of liquid-phase salts as a coolant. The use of a liquid fuel enables adoption of {\it on-line reprocessing} by pumping used fuel out of the reactor and pumping fresh or reprocessed fuel back into the reactor\footnote{this concept is shown as {\it separations and feeds}. This enables removal of undesirable neutron absorbers created in the fission reacton from the fissile material. In contrast, while solid-fueled reactors will shuffle
+    the fuel within the assembly, fission products remain trapped in the fuel, and can reduce the thermal performance of the fuel via thermal cracking as well as absorb neutrons that would otherwise contribute to the fission reaction. 
 
-Gls{mns} codes will play a critical role in lisencing GenIV reactors. In preparation for \Gls{msr}s, both the \Gls{doene} and the \Gls{nrc} have identified several technical gaps in current \Gls{mns} tools that are necessary for efficient and effective license application reviews \cite{betzler_modeling_2019} \cite{usnrc_nonlwr_2020-1}. In particular, both the \Gls{doe} and the \Gls{nrc} have identified the fuel composistion and its evolution in a \Gls{msr} to be a key code feature
-necessary for accident analysis.
+    \Gls{msr}s face several techical and logistical challenges before they could be deployed for civillian power generation. High temperature liquid-phase salt will steadily corrode metals over time, so  the reactor vessel of a \Gls{msr} must use special corrosion-resistant materials. High temperature salt itself is extremley hazardous and reacts explosively with moisture, so special procedures and PPE must be used when handling fuel salt, or fuel salt must be handled entirely
+    remoteley. Even with these challenges, I believe the potential benefits of \Gls{msr} technology merit its development.
 
-\section{MSR Codes}%
+\Gls{mns} codes will play a critical role in lisencing GenIV reactors. In preparation for \Gls{msr}s, both the \Gls{doene} and the \Gls{nrc} have identified several technical gaps in current \Gls{mns} tools that are necessary for efficient and effective license application reviews \cite{betzler_modeling_2019} \cite{usnrc_nonlwr_2020-1}. In particular, both the \Gls{doe} and the \Gls{nrc} have identified the fuel composistion and its evolution in a \Gls{msr} to be a key code feature
+necessary for accident analysis. 
+
+\section{MSR Depletion Codes}%
 \label{sec:msr_codes}
 
-due to the greater physical complexities of \Gls{msr}s (cite).
-Currently available software tools are insufficient for creating a licensing application due to the greater physical complexities of \Gls{msr}s (cite).
-The \Gls{doene} has created a list of functional needs for modeling and simulation software prioritized by their importance to a licesing application for \Gls{msr}s.
-Notably, fuel depletion is one of the most important functional needs. Several software projects exist that meet this functional need specifically in the context
+To model the changing fuel composition of the fuel in a \Gls{msr}, there are at least two processes we must consider:
+\begin{enumerate}
+    \item Fuel {\it depletion}
+    \item Removal and feed processes
+\end{enumerate}
+
+more realistic simulations may incorporate computational fluid dynamics to model the dynamical behavior of the fluid itself.
+
+Several efforts modeling fuel composition evolution in \Gls{msr}s currently exist (see Table \ref{tab:msr_codes})
+
 of \Gls{msr}s:
 %you'll need to read these papers to refresh your memory a bit
 \begin{itemize}
