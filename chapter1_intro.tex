@@ -8,7 +8,7 @@ Increasing \Gls{ghg} emissions due to human activity since the Industrial Revolu
 The long term impacts of global warming...
 Rapid decrease in global \Gls{ghg} emissions can dampen the impact of global warming. Transitioning from fossil-fuel-based electrictity production methods to zero-emission \footnote{zero-emissions during operation; there are lifecycle carbon costs associated with any form of power production} electrcity production methods (\textbf{decarbonization}) would contribute significantly to a global \Gls{ghg} emission reduction, and in turn dampen the effects of global
 warming. Our three main options for decarbonization are renewables (solar, wind, geothermal), hydropower, and nuclear power. We will need all of these technologies working together if we want to sucessfully decarboinze, however each technology has a specifc use case where it works best; solar and wind are useful in responding to rapid fluctuations in electicity usage, wheras nuclear, hydropower, and geothermal are better suited to
-providing a baseload level of electricity (cite). Geothermal and hydropower are limited by geographical features (geothermal acticivity and elevated water sources), making nuclear the most flexibile option for a future carbon-free baseload. Unfortunatley, nuclear power is a divisive technology(cite), with both legitimate technological and policy concerns.%consider expanding on this?
+providing a baseload level of electricity (cite). Geothermal and hydropower are limited by geographical features (geothermal activity and elevated water sources), making nuclear the most flexibile option for a future carbon-free baseload. Unfortunatley, nuclear power is a divisive technology(cite), with both legitimate technological and policy concerns.%consider expanding on this?
 Luckily, many of these concerns have technological solutions. Therefore, we should maintian and develop nuclear power technologies so that they can contribute to decarbonization efforts.
 
 \section{Current and future trajectories of nuclear power}%
@@ -33,7 +33,7 @@ coolant}, is of particular interest due to the unique challenges and opportuniti
 %% why the msr??
 
 The \Gls{msr} is so named as it is a nuclear reactor that uses a mixture of liquid-phase salts as a coolant. The use of a liquid fuel enables adoption of {\it on-line reprocessing} by pumping used fuel out of the reactor and pumping fresh or reprocessed fuel back into the reactor\footnote{this concept is shown as {\it separations and feeds}}. This enables removal of undesirable neutron absorbers created in the fission reacton from the fissile material. In contrast, while solid-fueled reactors will shuffle
-    the fuel within the assembly, fission products remain trapped in the fuel, and can reduce the thermal performance of the fuel via thermal cracking as well as absorb neutrons that would otherwise contribute to the fission reaction. 
+    the fuel within the assembly, fission products remain trapped in the fuel which can reduce the thermal performance of the fuel via thermal cracking as well as absorb neutrons that would otherwise contribute to the fission reaction. 
 
     \Gls{msr}s face several techical and logistical challenges before they could be deployed for civillian power generation. High temperature liquid-phase salt will steadily corrode metals over time, so  the reactor vessel of a \Gls{msr} must use special corrosion-resistant materials. High temperature salt itself is extremley hazardous and reacts explosively with moisture, so special procedures and PPE must be used when handling fuel salt, or fuel salt must be handled entirely
     remoteley. Even with these challenges, I believe the potential benefits of \Gls{msr} technology merit its development.
@@ -46,9 +46,21 @@ necessary for accident analysis.
 
 To model the changing fuel composition of the fuel in a \Gls{msr}, there are at least two processes we must consider:
 \begin{enumerate}
-    \item Fuel {\it depletion}
+    \item Fuel {\it depletion}\footnote{the consumption of fissile material in the fuel and production of fission producte via the fission chain reaction}
     \item Removal and feed processes
 \end{enumerate}
+
+The Bateman equation describes the rate of change of the number of nuclides in a nuclear reaction mathematically:
+
+\begin{equation}
+    \label{eq:bateman-1}
+    \frac{dN_{i}}{dt} = \ldots
+
+\end{equation}
+
+This equation sufficiently describes the process of depletion for all nuclides $i$. Incorporating removals and feeds into this equation involves the addition of a factor
+
+Since depletion and removal/feed processes both remove nuclides from the fuel, we can
 
 more realistic simulations may incorporate computational fluid dynamics to model the dynamical behavior of the fluid itself.
 
