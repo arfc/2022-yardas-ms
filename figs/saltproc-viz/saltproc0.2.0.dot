@@ -1,0 +1,50 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        saltproc__saltproc [label="saltproc.saltproc", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        subgraph cluster_saltproc__saltproc {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="saltproc.saltproc"];
+            saltproc__saltproc__saltproc [label="saltproc", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_saltproc__saltproc__saltproc {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="saltproc.saltproc.saltproc"];
+            saltproc__saltproc__saltproc____init__ [label="__init__", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__saltproc__saltproc__init_db [label="init_db", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__saltproc__saltproc__init_indices [label="init_indices", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__saltproc__saltproc__main [label="main", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__saltproc__saltproc__maintain_const [label="maintain_const", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__saltproc__saltproc__process_fuel [label="process_fuel", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__saltproc__saltproc__read_bumat [label="read_bumat", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__saltproc__saltproc__read_res [label="read_res", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__saltproc__saltproc__record_db [label="record_db", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__saltproc__saltproc__refill [label="refill", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__saltproc__saltproc__remove_iso [label="remove_iso", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__saltproc__saltproc__reopen_db [label="reopen_db", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__saltproc__saltproc__run_serpent [label="run_serpent", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__saltproc__saltproc__write_mat_file [label="write_mat_file", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+        }
+    }
+        saltproc__saltproc__saltproc____init__ -> saltproc__saltproc__saltproc__init_indices [style="solid",  color="#000000"];
+        saltproc__saltproc__saltproc__init_db -> saltproc__saltproc__saltproc__read_bumat [style="solid",  color="#000000"];
+        saltproc__saltproc__saltproc__write_mat_file -> saltproc__saltproc__saltproc__read_res [style="solid",  color="#000000"];
+        saltproc__saltproc__saltproc__write_mat_file -> saltproc__saltproc__saltproc__read_bumat [style="solid",  color="#000000"];
+        saltproc__saltproc__saltproc__process_fuel -> saltproc__saltproc__saltproc__remove_iso [style="solid",  color="#000000"];
+        saltproc__saltproc__saltproc__process_fuel -> saltproc__saltproc__saltproc__refill [style="solid",  color="#000000"];
+        saltproc__saltproc__saltproc__process_fuel -> saltproc__saltproc__saltproc__maintain_const [style="solid",  color="#000000"];
+        saltproc__saltproc__saltproc__process_fuel -> saltproc__saltproc__saltproc__write_mat_file [style="solid",  color="#000000"];
+        saltproc__saltproc__saltproc__process_fuel -> saltproc__saltproc__saltproc__read_bumat [style="solid",  color="#000000"];
+        saltproc__saltproc__saltproc__record_db -> saltproc__saltproc__saltproc__read_res [style="solid",  color="#000000"];
+        saltproc__saltproc__saltproc__record_db -> saltproc__saltproc__saltproc__read_bumat [style="solid",  color="#000000"];
+        saltproc__saltproc__saltproc__remove_iso -> saltproc__saltproc__saltproc__read_bumat [style="solid",  color="#000000"];
+        saltproc__saltproc__saltproc__refill -> saltproc__saltproc__saltproc__read_bumat [style="solid",  color="#000000"];
+        saltproc__saltproc__saltproc__maintain_const -> saltproc__saltproc__saltproc__read_bumat [style="solid",  color="#000000"];
+        saltproc__saltproc__saltproc__main -> saltproc__saltproc__saltproc__run_serpent [style="solid",  color="#000000"];
+        saltproc__saltproc__saltproc__main -> saltproc__saltproc__saltproc__init_db [style="solid",  color="#000000"];
+        saltproc__saltproc__saltproc__main -> saltproc__saltproc__saltproc__reopen_db [style="solid",  color="#000000"];
+        saltproc__saltproc__saltproc__main -> saltproc__saltproc__saltproc__process_fuel [style="solid",  color="#000000"];
+        saltproc__saltproc__saltproc__main -> saltproc__saltproc__saltproc__record_db [style="solid",  color="#000000"];
+    }

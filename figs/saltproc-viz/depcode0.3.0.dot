@@ -1,0 +1,52 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        saltproc__depcode [label="saltproc.depcode", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        subgraph cluster_saltproc__depcode {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="saltproc.depcode"];
+            saltproc__depcode__Depcode [label="Depcode", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__DepcodeSerpent [label="DepcodeSerpent", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_saltproc__depcode__Depcode {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="saltproc.depcode.Depcode"];
+            saltproc__depcode__Depcode____init__ [label="__init__", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__Depcode__read_dep_comp [label="read_dep_comp", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__Depcode__run_depcode [label="run_depcode", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__Depcode__write_depcode_input [label="write_depcode_input", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__Depcode__write_mat_file [label="write_mat_file", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_saltproc__depcode__DepcodeSerpent {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="saltproc.depcode.DepcodeSerpent"];
+            saltproc__depcode__DepcodeSerpent____init__ [label="__init__", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__DepcodeSerpent__change_sim_par [label="change_sim_par", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__DepcodeSerpent__create_iter_matfile [label="create_iter_matfile", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__DepcodeSerpent__get_nuc_name [label="get_nuc_name", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__DepcodeSerpent__get_tra_or_dec [label="get_tra_or_dec", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__DepcodeSerpent__insert_path_to_geometry [label="insert_path_to_geometry", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__DepcodeSerpent__read_dep_comp [label="read_dep_comp", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__DepcodeSerpent__read_depcode_info [label="read_depcode_info", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__DepcodeSerpent__read_depcode_step_param [label="read_depcode_step_param", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__DepcodeSerpent__read_depcode_template [label="read_depcode_template", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__DepcodeSerpent__replace_burnup_parameters [label="replace_burnup_parameters", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__DepcodeSerpent__run_depcode [label="run_depcode", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__DepcodeSerpent__sss_meta_zzz [label="sss_meta_zzz", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__DepcodeSerpent__write_depcode_input [label="write_depcode_input", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+            saltproc__depcode__DepcodeSerpent__write_mat_file [label="write_mat_file", style="filled", fillcolor="#ff6565b2", fontcolor="#000000", group="0"];
+        }
+    }
+        saltproc__depcode__DepcodeSerpent -> saltproc__depcode__Depcode [style="solid",  color="#000000"];
+        saltproc__depcode__DepcodeSerpent____init__ -> saltproc__depcode__Depcode____init__ [style="solid",  color="#000000"];
+        saltproc__depcode__DepcodeSerpent__get_nuc_name -> saltproc__depcode__DepcodeSerpent__sss_meta_zzz [style="solid",  color="#000000"];
+        saltproc__depcode__DepcodeSerpent__get_tra_or_dec -> saltproc__depcode__DepcodeSerpent__get_nuc_name [style="solid",  color="#000000"];
+        saltproc__depcode__DepcodeSerpent__read_dep_comp -> saltproc__depcode__DepcodeSerpent__get_tra_or_dec [style="solid",  color="#000000"];
+        saltproc__depcode__DepcodeSerpent__write_depcode_input -> saltproc__depcode__DepcodeSerpent__replace_burnup_parameters [style="solid",  color="#000000"];
+        saltproc__depcode__DepcodeSerpent__write_depcode_input -> saltproc__depcode__DepcodeSerpent__read_depcode_template [style="solid",  color="#000000"];
+        saltproc__depcode__DepcodeSerpent__write_depcode_input -> saltproc__depcode__DepcodeSerpent__create_iter_matfile [style="solid",  color="#000000"];
+        saltproc__depcode__DepcodeSerpent__write_depcode_input -> saltproc__depcode__DepcodeSerpent__change_sim_par [style="solid",  color="#000000"];
+        saltproc__depcode__DepcodeSerpent__write_depcode_input -> saltproc__depcode__DepcodeSerpent__insert_path_to_geometry [style="solid",  color="#000000"];
+    }

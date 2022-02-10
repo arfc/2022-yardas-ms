@@ -1,0 +1,29 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        saltproc__app [label="saltproc.app", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        subgraph cluster_saltproc__app {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="saltproc.app"];
+            saltproc__app__check_restart [label="check_restart", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            saltproc__app__parse_arguments [label="parse_arguments", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            saltproc__app__read_dot [label="read_dot", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            saltproc__app__read_feeds_from_input [label="read_feeds_from_input", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            saltproc__app__read_main_input [label="read_main_input", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            saltproc__app__read_processes_from_input [label="read_processes_from_input", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            saltproc__app__refill [label="refill", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            saltproc__app__reprocessing [label="reprocessing", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            saltproc__app__run [label="run", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+        }
+    }
+        saltproc__app__reprocessing -> saltproc__app__read_processes_from_input [style="solid",  color="#000000"];
+        saltproc__app__reprocessing -> saltproc__app__read_dot [style="solid",  color="#000000"];
+        saltproc__app__refill -> saltproc__app__read_feeds_from_input [style="solid",  color="#000000"];
+        saltproc__app__run -> saltproc__app__parse_arguments [style="solid",  color="#000000"];
+        saltproc__app__run -> saltproc__app__read_main_input [style="solid",  color="#000000"];
+        saltproc__app__run -> saltproc__app__reprocessing [style="solid",  color="#000000"];
+        saltproc__app__run -> saltproc__app__check_restart [style="solid",  color="#000000"];
+        saltproc__app__run -> saltproc__app__refill [style="solid",  color="#000000"];
+    }
