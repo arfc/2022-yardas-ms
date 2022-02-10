@@ -50,49 +50,39 @@ To model the changing fuel composition of the fuel in a \Gls{msr}, there are at 
     \item Removal and feed processes
 \end{enumerate}
 
-The Bateman equation describes the rate of change of the number of nuclides in a nuclear reaction mathematically:
+The Bateman equation describes the rate of change of the number density of a nuclide in a nuclear reaction mathematically:
 
-\begin{equation}
+\begin{align}
     \label{eq:bateman-1}
-    \frac{dN_{i}}{dt} = \ldots
+    \frac{dN_{i}}{dt} =& \sum_{j} l_{j\to i}\lambda_{j} N_{j} + \gamma_{i} \Sigma^{f}\phi + \phi N_{i-1} \sigma^{a}_{i-1} - \lambda_{i}N_{i} - N_{i}\sigma{a}_{i}\phi\\
+    N_{\*} =& \text{number density for nuclide $\*$ $[cm^{-3}]$}\nonumber\\
+    l_{j\to i} =& \text{branching ratio for decay mode of nuclide $j$ that produces nuclide $i$}\nonumber\\
+    \lambda_{\*} =& \text{decay constant of nuclide $\*$ $[s^{-1}]$}\nonumber\\
+    \gamma_{i} =& \text{fission yield fraction for nuclide $i$}\nonumber \\
+    \Sigma^{f} =& \text{average macroscopic fission cross section $[cm^{-1}]$}\nonumber\\
+    \phi =& \text{neutron flux $[cm^{-2}s^{-1}]$}\nonumber\\
+    \sigma^{a}_{i-1} =& \text{neutron absorption cross-section for nuclide $i-1$ $[cm^{-2}]$}\nonumber\\
+\end{align}
+    
+This equation sufficiently describes the process of depletion for any nuclide $i$. When solving for $n$ nuclides, we solve the matrix problem $\frac{d}{dt}N = \mathbf{A}N$, where $N$ is a $n$-vector and $\mathbf{A}$ contains all the coefficient terms in equation \ref{eq:bateman-1}. Incorporating removals and feeds into this equation involves the addition of a time dependent removal factor $r_{i}(t)$ and feed factor $f_{i}(t)$ to equation \ref{eq:bateman-1}. The resulting equation describes {\it continuous reprocessing}.
+For $n$ nuclides, the matrix problem is then $\frac{d}{dt}N = \mathbf{A}N + S(t)$, where $S$ is a $n$-vector containing the sums of the removal and feed terms for each nuclide $i$. The additonal term in the Bateman equation from continuous reprocessing increases computational cost and implementation difficulty, and may require a completley different set of precondtioners for numberical stability and convergence.
 
-\end{equation}
+Alternatively, one could run a depletion simulation, perform the removals and feeds in an external appplication on the resulting material composition, then rerun on the reprocessed composition. This procedure models {\it batchwise reprocessing}, where material from the core is reprocessed at regular intervals rather than continuously. This requires coupling to an external piece of software, which comes with its own challenges, but benefit of this approach is that the external softare could
+support {\it any} software capable of doing depletion calculations.
 
-This equation sufficiently describes the process of depletion for all nuclides $i$. Incorporating removals and feeds into this equation involves the addition of a factor
-
-Since depletion and removal/feed processes both remove nuclides from the fuel, we can
-
-more realistic simulations may incorporate computational fluid dynamics to model the dynamical behavior of the fluid itself.
-
-Several efforts modeling fuel composition evolution in \Gls{msr}s currently exist (see Table \ref{tab:msr_codes})
-
-of \Gls{msr}s:
-%you'll need to read these papers to refresh your memory a bit
-\begin{itemize}
-    \item ChemTriton (cite chem triton paper)
-    \item Serpent2 (cite auferio)
-    \item SaltProc (cite Rykhlevskii)
-\end{itemize}
-
-Among these tools, only one of them (SaltProc) is open source. Open source nuclear software is\ldots (benfits of open source) 
-Now, while SaltProc itself is open source, previously relied exclusivley on Serpent2 to perform depletion calculations.
-
-%
-%
-%
-
-There are several software tools in active development that have the capability to simulate the fuel composition and evolutions in an \Gls{msr}.
-% list in the table below?
-
-%andrei talks about these codes in his thesis. Do I need to repeat that here? Obviously I need to put my own spin on it...
-
-SaltProc is similar to ChemTriton. SaltProc is unique among its peers as it has an open source codebase and development process. This is significant as open source software lowers the barriers to distribution, development, and usage that \Gls{cc}s present \cite{fiorina_initiative_2021}. Historically, software used in licensing, \Gls{rnd}, and \Gls{ent} efforts in the nuclear field have been closed source and proprietary (cite). The number of open source projects in this industry (cite a bunch of open source nuclear software:
-ONIX, OpenMC, NJOY21, cyclus, \ldots) is growing in recognition of the need for distributable, high-quality, and transparent software tools. This is perhaps best seen in a \Gls{iaea} facilitated \Gls{oncore} initiative to "[promote] development and application of open-source multi-physics simulation tools to support research, education, and training for analysis of advanced nuclear power reactors" \cite{iaea_open-source}. It is an exciting time to be a software developer in the nuclear field!
+SaltProc\cite{rykhlevskii_saltproc_2018}, the focus of the current work, uses batchwise reprocessing to model the fuel composition in an \Gls{msr} and uses Serpent2\cite{leppanen_serpent_2014} to run depletion simulations. SaltProc is unique among its peers as it has an open source codebase and development process \footnote{There are other software projects that model fuel composition in \Gls{msr}s. Notably, ChemTriton\cite{betzler_molten_2017} -- a python script for SCALE/TRITON -- is
+functionally similar to SaltProc. Section 1.2 in \cite{rykhlevskii_fuel_2020} ynd section 4.2 in \cite{rykhlevskii_advanced_2018} provide a high-level summary of other recent efforts}. 
+Historically, software used in licensing, \Gls{rnd}, and \Gls{ent} efforts in the nuclear field has been closed source and proprietary. For \Gls{rnd} and \Gls{ent} efforts in particular, this can bring collaborative efforts to a grinding halt until regulatory bodies grant software licences. Using \Gls{cc}s in scientific publications and research presents barriers to reproducibility and the ability of external verification of results.
+    
+    Regulatory bodies will require new software features (and in some cases entirely new software tools) in order to effectively and efficiently perform licensing activities for the next generation of advanced reactor designs \cite{usnrc_nonlwr_2020-1}, and many of the open source tools emerging in the past decade (e.g. OpenMC\cite{romano_openmc_2015}) have the advantage over their legacy closed code ancestors (e.g. Serpent \cite{leppanen_serpent_2014}) of using best-practices for software development. It follows that these features and tools are more readily implementable in these new open source projects than in the legacy closed codes.
+    
+    We are entering the era of \Gls{oss} purpose-built for applications in nuclear science and engineering. The number of open source projects in this industry (cite a bunch of open source nuclear software:
+ONIX, OpenMC, NJOY21, cyclus, \ldots) is growing in recognition of the need for distributable, high-quality, and transparent software tools. This is perhaps best seen in the \Gls{iaea} facilitated \Gls{oncore} initiative \cite{fiorina_initiative_2021} to "[promote] development and application of open- source multi-physics simulation tools to support research, education, and training for analysis of advanced nuclear power reactors"  \cite{iaea_open-source_2022}.
 
 \section{Objectives}%
 \label{sec:objectives}
 
-While SaltProc itself is open source, Serpent is not. SaltProc being open source does lower the barrier of entry for simulating depletion in a \Gls{msr}, however this point is almost moot when the main dependency to do depletion calulations is not. It is in this spirit that I have added support for OpenMC \cite{romano_openmc_2015}, an open source monte-carlo particle transport code.
+While SaltProc itself is open source, Serpent2 is not. It is in this spirit that I have added support for OpenMC \cite{romano_openmc_2015}, an open source monte-carlo particle transport code.
 
 This Master's thesis has two primary objectvies
 \begin{enumerate}
