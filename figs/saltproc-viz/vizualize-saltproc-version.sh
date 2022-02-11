@@ -5,7 +5,7 @@ PREFIX="$HOME/Downloads/saltproc-$V/saltproc/"
 if [[ $V == 0.2.0 ]]
 then
     MODULES=("saltproc")
-elif [[ $V == 0.3.0 ]]
+elif [[ $V == 0.3.0 || $V == "master" ]]
 then
     MODULES=("depcode" "simulation" "app")
 else
