@@ -71,31 +71,25 @@ Alternatively, one could run a depletion simulation, perform the removals and fe
 support {\it any} software capable of doing depletion calculations.
 
 SaltProc\cite{rykhlevskii_saltproc_2018}, the focus of the current work, uses a batchwise reprocessing approach to model the fuel composition in an \Gls{msr} and uses Serpent2\cite{leppanen_serpent_2014} to run depletion simulations. SaltProc is unique among its peers as it has an open source codebase and development process \footnote{There are other software projects that model fuel composition in \Gls{msr}s. Notably, ChemTriton\cite{betzler_molten_2017} -- a python script for SCALE/TRITON -- is
-functionally similar to SaltProc. Section 1.2 in \cite{rykhlevskii_fuel_2020} and section 4.2 in \cite{rykhlevskii_advanced_2018} provide a high-level summary of other recent efforts}. 
+functionally similar to SaltProc. Section 1.2 in \cite{rykhlevskii_fuel_2020} and section 4.2 in \cite{rykhlevskii_advanced_2018} provide a high-level summary of other recent efforts}. It is my hope that SaltProc can be used both as a general purpose research tool as well as answer some of the important questions regarding fuel composition evolution in an \Gls{msr} for liscening purposes. 
+
 Historically, software used in licensing, \Gls{rnd}, and \Gls{ent} efforts in the nuclear field has been closed source and proprietary. For \Gls{rnd} and \Gls{ent} efforts in particular, this can bring collaborative efforts to a grinding halt until regulatory bodies grant software licences. Using \Gls{cc}s in scientific publications and research presents barriers to reproducibility and the ability of external verification of results.
     
     Regulatory bodies will require new software features (and in some cases entirely new software tools) in order to effectively and efficiently perform licensing activities for the next generation of advanced reactor designs \cite{usnrc_nonlwr_2020-1}, and many of the open source tools emerging in the past decade (e.g. OpenMC\cite{romano_openmc_2015}) have the advantage over their legacy closed code ancestors (e.g. Serpent \cite{leppanen_serpent_2014}) of using best-practices for software development. It follows that these features and tools are more readily implementable in these new open source projects than in the legacy closed codes.
     
-    We are entering the era of \Gls{oss} purpose-built for applications in nuclear science and engineering. The number of open source projects in this industry (cite a bunch of open source nuclear software:
-ONIX, OpenMC, NJOY21, cyclus, \ldots) is growing in recognition of the need for distributable, high-quality, and transparent software tools. This is perhaps best seen in the \Gls{iaea} facilitated \Gls{oncore} initiative \cite{fiorina_initiative_2021} to "[promote] development and application of open- source multi-physics simulation tools to support research, education, and training for analysis of advanced nuclear power reactors"  \cite{iaea_open-source_2022}.
+    We are entering the era of \Gls{oss} purpose-built for applications in nuclear science and engineering. The number of open source projects in this industry (ONIX\cite{de_troullioud_de_lanversin_onix_2021}, OpenMC, NJOY21\cite{noauthor_njoy21_2022}, Cyclus\cite{noauthor_cyclus_2022}, to name a few\footnote{the awesome-nuclear repository on GitHub \cite{romano_awesome_2022} has good list of nuclear-related open source software projects.}) is growing in recognition of the need for distributable, high-quality, and transparent software tools. This is perhaps best seen in the \Gls{iaea} facilitated \Gls{oncore} initiative \cite{fiorina_initiative_2021} to "[promote] development and application of open- source multi-physics simulation tools to support research, education, and training for analysis of advanced nuclear power reactors"  \cite{iaea_open-source_2022}. 
+
 
 \section{Objectives}%
 \label{sec:objectives}
 
-While SaltProc itself is open source, Serpent2 is not. It is in this spirit that I have added support for OpenMC \cite{romano_openmc_2015}, an open source monte-carlo particle transport code.
+While SaltProc itself is open source, Serpent2 is not. OpenMC recently added a \verb.deplete. module for fuel depletion simulations, meanding it is now possible to have a fully open-source stack of dependencies for SaltProc.  It is in this spirit that I have added support for OpenMC to SaltProc. This improves the accessibility and usability of SaltProc, and I hope that researchers in this field will begin using and contributing to the tool.
 
 This Master's thesis has two primary objectvies
 \begin{enumerate}
-    \item Refactor SaltProc for to enable OpenMC support, as well as enable easier implementation of support for other monte carlo codes in the future. 
+    \item Refactor SaltProc for to enable OpenMC support, as well as enable easier implementation for other monte carlo depletion codes in the future. 
     \item Verify the implementation on a well studied MSR system.
 \end{enumerate}
-
-
-- several things threatening current fleet
-  - age
-  - low ng prices
-  - public opinion
-  - loss of building experience
 
 - need for 
 - current nuclear fleet is very old, nat gas prices
@@ -108,13 +102,3 @@ This Master's thesis has two primary objectvies
 -> M\&S tools that answer all relevant licesning questions for msr specifically do not exist
 -> SaltProc aims to be a tool that can answer some of these questions, as well as a general purpose
     research tool for simulating MSRs
-
-
- free and open source software provides lowest barrier of entry
- - saltproc built for use with serpent which defeats the purpose of being
-    FOSS
- - Code needs to be restructured to enable easier development of interfaces to 
- open source MC transport codes
- - We then need to implement the necessary machinery to interface with a specific
-    open source MC transport code (OpenMC)
- - Once implemented, we need to validate with a serpent-based case
