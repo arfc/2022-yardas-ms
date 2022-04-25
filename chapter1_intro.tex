@@ -42,7 +42,7 @@ The \Gls{msr} is so named as it is a nuclear reactor that uses a mixture of liqu
 \Gls{mns} codes will play a critical role in licensing GenIV reactors. In preparation for \Gls{msr}s, both the \Gls{doene} and the \Gls{nrc} have identified several technical gaps in current \Gls{mns} tools that are necessary for efficient and effective license application reviews \cite{betzler_modeling_2019} \cite{usnrc_nonlwr_2020-1}. In particular, both the \Gls{doene} and the \Gls{nrc} have identified the fuel composition and its evolution in a \Gls{msr} to be a key
 software feature necessary for accident analysis. 
 
-\section{MSR Depletion Codes}%
+\section{\Gls{msr} Depletion Codes}%
 \label{sec:msr_codes}
 
 To model the changing fuel composition in a \Gls{msr}, there are at least two processes we must consider:
@@ -91,14 +91,14 @@ While \SaltProc itself is open source, \SerpentTWO is not. \OpenMC recently adde
 This Master's thesis has two primary objectives
 \begin{enumerate}
     \item Refactor \SaltProc for to enable \OpenMC support, as well as enable easier implementation for other monte-carlo depletion codes in the future. 
-    \item Verify the implementation on a well studied MSR system.
+    \item Verify the implementation on a well studied \Gls{msr} system.
 \end{enumerate}
 
 It is my hope that with this advancement, \SaltProc can have a lower barrier-of-entry for researchers and students. 
 
 The structure of this thesis is as follows:
 \begin{itemize}
-    \item Chapter 2 describes the structure of \SaltProc and process of implementing support for \OpenMC in the context of past and current \Gls{MSR} modeling efforts.
+    \item Chapter 2 describes the structure of \SaltProc and process of implementing support for \OpenMC in the context of past and current \Gls{msr} modeling efforts.
     \item Chapter 3 describes the reactor design for verification purposes and specifies the inputs and settings.
     \item Chapter 4 presents the results of the verification study and discusses their implications.
     \item Chapter 5 summarizes the results, their implications, and suggests avenues for future work.
