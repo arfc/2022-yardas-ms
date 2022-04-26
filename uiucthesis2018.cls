@@ -1,5 +1,5 @@
 %%
-%% This is file `uiucthesis2014.cls',
+%% This is file `uiucthesis2018.cls',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
@@ -21,9 +21,9 @@
 %% same distribution. (The sources need not necessarily be
 %% in the same archive or directory.)
 \def\fileversion{v2.25b} \def\filedate{2014/05/02}
-%% Package and Class "uiucthesis2014" for use with LaTeX2e.
+%% Package and Class "uiucthesis2018" for use with LaTeX2e.
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{uiucthesis2014}
+\ProvidesClass{uiucthesis2018}
          [\filedate\ \fileversion\ UIUC Thesis (PJC)]
 \RequirePackage{setspace}
 \expandafter\ifx\csname @ifundefined\endcsname\relax
@@ -107,7 +107,7 @@
 \newcommand*{\thesis@volume}{}
 \if@edeposit
   \gdef\@committee{%
-    \ClassError{uiucthesis2014}{A committee must be specified for e-deposit dissertations.}%
+    \ClassError{uiucthesis2018}{A committee must be specified for e-deposit dissertations.}%
     {Use \protect\committee\space with members separated by \protect\\'s.}}
 \fi
 \def\copyrightnotice{\copyright~\@degreeyear~by \@author. All rights reserved.}
@@ -244,7 +244,7 @@
 \if@proquest
  \def\maketitle{}
  \def\@advisor{%
-    \ClassError{uiucthesis2014}{An advisor must be specified for the ProQuest abstract}%
+    \ClassError{uiucthesis2018}{An advisor must be specified for the ProQuest abstract}%
     {Use \protect\advisor\space to specify a name}}
  \newenvironment{abstract}{%
     \newpage
@@ -457,7 +457,7 @@
     \newcommand{\note}[1]{}
     \let\thesis@marginpar\marginpar
     \def\marginpar{%
-        \ClassWarning{uiucthesis2014}{Margin paragraphs fall outside the allowed margins\MessageBreak
+        \ClassWarning{uiucthesis2018}{Margin paragraphs fall outside the allowed margins\MessageBreak
             for UIUC Theses, use \protect\note\space instead of \protect\marginpar.}%
         \thesis@marginpar}
 \fi
@@ -564,4 +564,4 @@
 \let\endthesis=\relax
 \endinput
 %%
-%% End of file `uiucthesis2014.cls'.
+%% End of file `uiucthesis2018.cls'.
