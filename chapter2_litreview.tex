@@ -1,6 +1,17 @@
 \chapter{Molten Salt Reactor Modeling}%
 \label{cha:msr_modeling}
-%% lit review hhoes here
+%% lit review goes here
+Much of our knowledge about \Gls{MSR}s come from the \Gls{MSRE} at \Gls{ORNL} in the 1960s %% cite a bunch of MSRE ORNL work.
+As of writing this thesis, there are no \Gls{MSR}s currently in operation. Therefore, we must entirely rely on computational and/or surrogate models to study \Gls{MSR}s physics. The \Gls{MSBR} is a popular choice for computational models due to the availability of experimental data to compare results against %cite some MSRE studies
+The \Gls{MSFR}(cite) and \Gls{MSDR}(cite), while conceptual, are well developed and have many associated studies. See Table () for a summary. These efforts illustrate that \Gls{MSR} modeling encompasses a wide range of physics domains.
+
+Recall in Sections
+\ref{sec:molten_salt_reactors} and \ref{sec:msr_codes} we introduced the concepts of fuel depletion and removal and feed processes.
+
+%% Discuss briefly results from depletion papers
+
+The to accurate \Gls{MSR} models.
+A survey of some recent \Gls{MSR}s modeling efforts are summarized in Table (table?). 
 
 \section{Sotware Overview and Development}
 \label{sec:soft_dev}
@@ -26,7 +37,7 @@ While v0.2 and v0.3 saw most of SaltProc refactored for OOP, before I could impl
 I implemented these changes as part of the 0.4.0 release. The changes in that release changed the API, making 0.4.0 incompatible with previous verions of SaltProc.
 % consider talking about automation?
 
-\subsection{OpenMC}%
+\section{OpenMC}%
 \label{sub:openmc}
 
 OpenMC \cite{romano_openmc_2015} is an open source Monte Carlo particle transport code. The \Gls{crpg} at \Gls{mit} started developing OpenMC back in 2011 with a focus on scalability for exascale computing. Since that time, developers new and old contributed features (cite?) and fixes to the tool expanding its scope and use cases. Notable features of OpenMC (as of version 0.12.1) are as follows \cite{homepage_openmc_2022}:
@@ -43,5 +54,3 @@ Recently, depletion and photon transport were added by (who?)... The new depleti
 
 \subsection{Adding OpenMC to SaltProc}%
 \label{sub:adding_openmc_to_saltproc}
-
-
