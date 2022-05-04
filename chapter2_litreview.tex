@@ -11,13 +11,26 @@ The \Gls{MSFR}(cite) and \Gls{MSDR}(cite), while conceptual, are well developed 
 
 \section{Modeling depletion in \Gls{MSR}s}
 Recall in Sections
-\ref{sec:molten_salt_reactors} and \ref{sec:msr_codes} we introduced the concepts of fuel depletion and removal and feed processes, and established the importance of modeling fuel depletion to \Gls{MSR} lisencing. Depletion codes in the past have shown good behavior when compared with experiment, although most of these models are . In M Table (table) summarizes some available software tools that can model depletion in \Gls{MSR}s.
+\ref{sec:molten_salt_reactors} and \ref{sec:msr_codes} we introduced the concepts of fuel depletion and removal and feed processes, and established the importance of modeling fuel depletion to \Gls{MSR} lisencing. Degletion codes in the past have shown good behavior when compared with experiment, although most of these models are . In M Table (table) summarizes some available software tools that can model depletion in \Gls{MSR}s.
 
 %% Discuss briefly results from depletion papers
 
 The to accurate \Gls{MSR} models.
 A survey of some recent \Gls{MSR}s modeling efforts are summarized in Table (table?). 
 
+%% talk about internal tools that natively support dpeletion (serpent, openmc, mention shift)
+
+%% then talk about external tools (SaltProc, ChemTrition)
+
+We are focused on OpenMC and Serpent because\ldots
+%% talk about saltproc in it's current state, the gaps that exist
+%% lead into discussion about why it's important to add openmc 
+%% capabilities to SaltProc. Also mention the differnces in 
+%% Serpent2 and OpenMC cross section handling and how this
+%% adds capability to the SaltProc tool
+
+
+%% Move this to the next chapter
 \section{Sotware Overview and Development}
 \label{sec:soft_dev}
 A major component of this work was restructuring of the SaltProc code and implementation of OpenMC. In this section, I will provide a high level overview of my development process and go into detail where necessary. The release notes contain more details for those interested.
