@@ -1,16 +1,19 @@
 \chapter{Molten Salt Reactor Modeling}%
 \label{cha:msr_modeling}
 %% lit review goes here
-Much of our knowledge about \Gls{MSR}s come from the \Gls{MSRE} conducted at \Gls{ORNL} in the 1960s, which demonstrated the viability of the \Gls{MSR} concept for use in civillian power programs \cite{haubenreich_experience_1970} \cite{rosenthal_molten-salt_1970}. 
+Much of our knowledge about \Gls{MSR}s come from experiements on a test reactor called the \Gls{MSRE} conducted at \Gls{ORNL} in the 1960s, which demonstrated the viability of the \Gls{MSR} concept for use in civillian power programs \cite{haubenreich_experience_1970} \cite{rosenthal_molten-salt_1970}.
 %% Give brief description of the MSRE
 %% cite a bunch of MSRE ORNL work.
 
-The reactor built and operated during the \Gls{MSRE}, the \Gls{MSBR}, to this day remains one of the few \Gls{MSR}s to operate.
+The \Gls{MSRE} reactor to this day remains one of the few \Gls{MSR}s to operate.
 %% Maybe briefly mention other historical MSRs?
 
-As of writing this thesis, there are no \Gls{MSR}s currently in operation. Therefore, we must entirely rely on computational and/or surrogate models to further study \Gls{MSR} physics. The \Gls{MSBR} is a popular choice for computational models due to the availability of experimental data to compare results against %cite some MSRE studies
-The \Gls{MSFR}(cite) and \Gls{MSDR}(cite), while conceptual, are well developed and have many associated studies. See Table () for a summary. These efforts illustrate that \Gls{MSR} modeling encompasses a wide range of physics domains.
+As of writing this thesis, there are no \Gls{MSR}s currently in operation. Therefore, we must entirely rely on computational and/or surrogate models to further study \Gls{MSR} physics. The \Gls{MSRE} is a popular choice for computational models due to the availability of experimental data to compare results against. For example, Roelofs et al used the system thermal hydraulics code SPECTRA to model steady state parameters of the fuel-salt, \Gls{DNP} drift, and various fission product behaviors
+in comparison with actual MSRE data \cite{roelofs_molten_2021}.  Podila et al performed a \Gls{CFD} simulation of the \Gls{MSBR} core to investigate the ability of \Gls{CFD} to predict 3D effects in this kind of reactor\cite{podila_cfd_2019}. 
+%cite some MSRE studies
+In addtion to the \Gls{MSREBR}, the \Gls{MSFR}(cite) and \Gls{MSBR}(cite), while conceptual, are well developed and have many associated studies. See Table () for a summary. These efforts illustrate that \Gls{MSR} modeling encompasses a wide range of physics domains.
 
+Park et al perfomred a whole core analysis of the \Gls{MSBR} using MCNP6 with additional depletion and reprocessing using CINDER90 and a custom Python script \cite{park_whole_2015}.
 
 \section{Modeling depletion in \Gls{MSR}s}
 Recall in Sections
