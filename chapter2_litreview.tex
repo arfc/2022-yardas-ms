@@ -8,21 +8,26 @@ Much of our knowledge about \Gls{MSR}s come from experiements on a test reactor 
 The \Gls{MSRE} reactor to this day remains one of the few \Gls{MSR}s to operate.
 %% Maybe briefly mention other historical MSRs?
 
-As of writing this thesis, there are no \Gls{MSR}s currently in operation. Therefore, we must entirely rely on computational and/or surrogate models to further study \Gls{MSR} physics. The \Gls{MSRE} is a popular choice for computational models due to the availability of experimental data to compare results against. For example, Roelofs et al used the system thermal hydraulics code SPECTRA to model steady state parameters of the fuel-salt, \Gls{DNP} drift, and various fission product behaviors
-in comparison with actual MSRE data \cite{roelofs_molten_2021}.  Podila et al performed a \Gls{CFD} simulation of the \Gls{MSBR} core to investigate the ability of \Gls{CFD} to predict 3D effects in this kind of reactor\cite{podila_cfd_2019}. 
+As of writing this thesis, there are no \Gls{MSR}s currently in operation; we must rely on computational and/or surrogate models to further study \Gls{MSR} physics. The \Gls{MSRE} is a popular choice for computational models due to the availability of experimental data to compare results against. For example, Roelofs et al used the system thermal hydraulics code SPECTRA to model steady state parameters of the fuel-salt, \Gls{DNP} drift, and various fission product behaviors
+in comparison with actual MSRE data \cite{roelofs_molten_2021}.  Podila et al performed a \Gls{CFD} simulation of the \Gls{MSRE} core to investigate the ability of \Gls{CFD} to predict 3D effects in this kind of reactor\cite{podila_cfd_2019}. 
 %cite some MSRE studies
-In addtion to the \Gls{MSREBR}, the \Gls{MSFR}(cite) and \Gls{MSBR}(cite), while conceptual, are well developed and have many associated studies. See Table () for a summary. These efforts illustrate that \Gls{MSR} modeling encompasses a wide range of physics domains.
+In addtion to the \Gls{MSRE}, the \Gls{MSFR}(cite) and \Gls{MSBR}(cite) conceptual reactors are well developed and have many associated studies. See Table () for a summary.
 
-Park et al perfomred a whole core analysis of the \Gls{MSBR} using MCNP6 with additional depletion and reprocessing using CINDER90 and a custom Python script \cite{park_whole_2015}.
+
+Park et al performed a whole core analysis of the \Gls{MSBR} using MCNP6 with additional depletion and reprocessing using CINDER90 and a custom Python script \cite{park_whole_2015}.
+
+These efforts illustrate that \Gls{MSR} modeling encompasses a wide range of physics domains.
 
 \section{Modeling depletion in \Gls{MSR}s}
 Recall in Sections
-\ref{sec:molten_salt_reactors} and \ref{sec:msr_codes} we introduced the concepts of fuel depletion and removal and feed processes, and established the importance of modeling fuel depletion to \Gls{MSR} lisencing. Degletion codes in the past have shown good behavior when compared with experiment, although most of these models are . In M Table (table) summarizes some available software tools that can model depletion in \Gls{MSR}s.
+\ref{sec:molten_salt_reactors} and \ref{sec:msr_codes} we introduced the concepts of fuel depletion and removal and feed processes, and established the importance of modeling fuel depletion to \Gls{MSR} licensing. Depletion codes in the past have shown good behavior when compared with depletion measurements from commercial and research reactors; the TRITON module in the SCALE reactor physics suite couples SCALE's neutron transport solver and bateman equation
+solver to get
+accurate depletion for various reactor core geometries \cite{dehart_reactor_2011};
+The Serpent 2 monte carlo particle transport code also has fuel depletion capabilities \cite{leppanen_burnup_2009}. More recently, OpenMC version 0.11 added support for fuel depletion and shows good agreement with Serpent 2\cite{romano_depletion_2021}.
+
+Depletion simulations on \Gls{MSR}s are difficult to verify through direct measurement due to the lack of a physically operating reactor. Even so, simulations will give us a good idea of what kinds of nuclides we can expect to show up. Table X summarizes some available software tools that can model depletion in \Gls{MSR}s.
 
 %% Discuss briefly results from depletion papers
-
-The to accurate \Gls{MSR} models.
-A survey of some recent \Gls{MSR}s modeling efforts are summarized in Table (table?). 
 
 %% talk about internal tools that natively support dpeletion (serpent, openmc, mention shift)
 
