@@ -5,14 +5,13 @@
 	copyright = {Copyright 2018 Andrei Rykhlevskii},
 	shorttitle = {Advanced online fuel reprocessing simulation for thorium-fueled molten salt breeder reactor},
 	url = {https://www.ideals.illinois.edu/handle/2142/101052},
-	abstract = {Current interest in advanced nuclear energy and MSR concepts has enhanced demand in building the tools to analyze these systems. This thesis introduces a Python script, SaltProc, which simulates MSR online reprocessing by modeling the changing isotopic composition of an irradiated fuel salt. SaltProc couples with the Monte Carlo code, SERPENT 2, for neutron transport and depletion calculations. SaltProc capabilities include a generic geometry capable of modeling multi-region and multi-flow systems, time-dependent feeds and removals, and specific separation efficiency for each element or isotope removal flow. Generally applicable capabilities are illuminated in this thesis in three applied problems: (1) simulating the startup of a thorium-fueled MSBR fuel cycle to find equilibrium fuel composition (when multiplication factor of the full-core model and the U-233 concentration in the fuel salt are invariant in time); (2) determining the effect of the fuel salt irradiation with online reprocessing on MSBR operations; and (3) estimating MSBR fuel cycle performance by computing the Th-232 feed rate over 20 years of operation and comparing with available data. In the first application, full-core depletion in the MSBR demonstrated that (1) equilibrium fuel composition could be achieved after 16 years and (2) the multiplication factor stabilizes after 6 years of operation. In the second application, fuel salt irradiation with simulated fission product removal and fissile/fertile feed causes considerable neutron energy spectrum hardening; this spectral shift has a problematic impact on safety parameters (e.g., temperature reactivity feedback, reactivity control system worth). In the third application, the average Th-232 feed rate throughout 20 years of operation is 2.39 kg/day or 100 g/GWh(e) which is a good agreement with other recent research. Problematic effects of neutron energy spectrum hardening during MSBR operation should be taken into account for neutronics, multi-physics, and fuel cycle performance analysis.},
 	language = {English},
 	urldate = {2018-09-27},
 	school = {University of Illinois at Urbana-Champaign},
 	author = {Rykhlevskii, Andrei},
 	collaborator = {Kozlowski, Tomas and Huff, Kathryn},
 	month = apr,
-	year = {2018},
+	year = {2018}
 }
 
 @article{romano_openmc_2015,
@@ -23,7 +22,6 @@
 	shorttitle = {{OpenMC}},
 	url = {http://www.sciencedirect.com/science/article/pii/S030645491400379X},
 	doi = {10.1016/j.anucene.2014.07.048},
-	abstract = {This paper gives an overview of OpenMC, an open source Monte Carlo particle transport code recently developed at the Massachusetts Institute of Technology. OpenMC uses continuous-energy cross sections and a constructive solid geometry representation, enabling high-fidelity modeling of nuclear reactors and other systems. Modern, portable input/output file formats are used in OpenMC: XML for input, and HDF5 for output. High performance parallel algorithms in OpenMC have demonstrated near-linear scaling to over 100,000 processors on modern supercomputers. Other topics discussed in this paper include plotting, CMFD acceleration, variance reduction, eigenvalue calculations, and software development processes.},
 	number = {Supplement C},
 	urldate = {2017-11-22},
 	journal = {Annals of Nuclear Energy},
@@ -31,7 +29,7 @@
 	month = aug,
 	year = {2015},
 	keywords = {Monte Carlo, OpenMC, Parallel, Neutron transport, HDF5, XML},
-	pages = {90--97},
+	pages = {90--97}
 }
 
 @article{leppanen_serpent_2014,
@@ -47,7 +45,7 @@
 	month = aug,
 	year = {2014},
 	keywords = {Monte Carlo, Reactor physics, Burnup calculation, Homogenization},
-	pages = {142--150},
+	pages = {142--150}
 }
 
 @techreport{doe-ne_technology_2002,
@@ -60,7 +58,7 @@
 	month = dec,
 	year = {2002},
 	doi = {10.2172/859029},
-	pages = {GIF--002--00, 859029},
+	pages = {GIF--002--00, 859029}
 }
 
 @phdthesis{rykhlevskii_fuel_2020,
@@ -73,29 +71,27 @@
 	school = {University of Illinois at Urbana-Champaign},
 	author = {Rykhlevskii, Andrei},
 	month = jul,
-	year = {2020},
+	year = {2020}
 }
 
 @article{rykhlevskii_saltproc_2018,
 	title = {arfc/saltproc: {Code} for online reprocessing simulation of molten salt reactor with external depletion solver {SERPENT}},
 	doi = {10.5281/zenodo.1306628},
-	abstract = {The script is re-run SERPENT 2 burnup simulation, and after each step removes target isotopes with specific efficiency, keep number density of target isotopes constant and keep track of Pa-233 --{\textgreater} U-233 decaying in the separate tank.},
 	urldate = {2018-03-15},
 	journal = {Zenodo},
 	author = {Rykhlevskii, Andrei and Bae, Jin Whan and Huff, Kathryn},
 	month = jul,
 	year = {2018},
-	keywords = {MSR, Fuel cycle, MSBR, online refueling, online reprocessing, salt separations, salt treatment, thorium cycle},
+	keywords = {MSR, Fuel cycle, MSBR, online refueling, online reprocessing, salt separations, salt treatment, thorium cycle}
 }
 
 @article{romano_depletion_2021,
 	title = {Depletion capabilities in the {OpenMC} {Monte} {Carlo} particle transport code},
-	abstract = {A depletion solver has been implemented in OpenMC and is described herein. The depletion solver is implemented in Python and interfaces with OpenMC’s transport solver through a C++ application programming interface, which enables an in-memory transport-depletion coupling. Multiple integration methods for advancing in time have been implemented and exhibit tradeoffs in cost, accuracy, and memory use. For all time integration methods, evaluation of the matrix exponential is performed by using the incomplete partial fraction form of the Chebyshev rational approximation method.},
 	language = {en},
 	journal = {Annals of Nuclear Energy},
 	author = {Romano, Paul K},
 	year = {2021},
-	pages = {15},
+	pages = {15}
 }
 
 @article{betzler_molten_2017,
@@ -104,14 +100,13 @@
 	issn = {03064549},
 	url = {https://linkinghub.elsevier.com/retrieve/pii/S0306454916309185},
 	doi = {10.1016/j.anucene.2016.11.040},
-	abstract = {Current interest in advanced nuclear energy and molten salt reactor (MSR) concepts has enhanced interest in building the tools necessary to analyze these systems. A Python script known as ChemTriton has been developed to simulate equilibrium MSR fuel cycle performance by modeling the changing isotopic composition of an irradiated fuel salt using SCALE for neutron transport and depletion calculations. Improved capabilities in ChemTriton include a generic geometry capable of modeling multi-zone and multi-fluid systems, enhanced time-dependent feed and separations, and a critical concentration search. Although more generally applicable, the capabilities developed to date are illustrated in this paper in three applied problems: (1) simulating the startup of a thorium-based MSR fuel cycle (a likely scenario requires the first of these MSRs to be started without available 233U); (2) determining the effect of the removal of different fission products on MSR operations; and (3) obtaining the equilibrium concentration of a mixed-oxide light-water reactor fuel in a two-stage fuel cycle with a sodium fast reactor. The third problem is chosen to demonstrate versatility in an application to analyze the fuel cycle of a non-MSR system. In the first application, the initial fuel salt compositions fueled with different sources of fissile material are made feasible after (1) removing the associated nonfissile actinides after much of the This manuscript has been authored by UT-Battelle, LLC under Contract No. DE-AC05-00OR22725 with the U.S. Department of Energy. The United States Government retains and the publisher, by accepting the article for publication, acknowledges that the United States Government retains a non-exclusive, paid-up, irrevocable, world-wide license to publish or reproduce the published form of this manuscript, or allow others to do so, for United States Government purposes. The Department of Energy will provide public access to these results of federally sponsored research in accordance with the DOE Public Access Plan (http://energy.gov/downloads/doe-public-access-plan ).},
 	language = {en},
 	urldate = {2022-01-17},
 	journal = {Annals of Nuclear Energy},
 	author = {Betzler, Benjamin R. and Powers, Jeffrey J. and Worrall, Andrew},
 	month = mar,
 	year = {2017},
-	pages = {489--503},
+	pages = {489--503}
 }
 
 @misc{gif_homepage,
@@ -119,13 +114,12 @@
 	url = {https://www.gen-4.org/gif/},
 	urldate = {2022-01-17},
 	note = {url accessed {2022-01-17}: \url{https://www.gen-4.org/gif/}},
-    year = {2022},
+    year = {2022}
 }
 
 @techreport{szilard_economic_2016,
 	title = {Economic and {Market} {Challenges} {Facing} the {U}.{S}. {Nuclear} {Commercial} {Fleet}},
 	url = {https://www.osti.gov/biblio/1364498},
-	abstract = {This report identifies underlying economic and electricity market factors that have led to early retirements of U.S. operating nuclear power plants, assesses the Gap between operating revenues and operating costs for selected nuclear power plants, and discusses a range of actions that might be taken to stop early retirement of operating nuclear power plants. The Kewaunee and Vermont Yankee nuclear power plants were retired early for economic and financial reasons. Early retirement has been announced or proposed for Clinton and Quad Cities in Illinois, Fitzpatrick and Ginna in New York, Fort Calhoun in Nebraska. Other nuclear power plants, including Palisades, Davis-Besse, Prairie Island, and Three Mile Island Unit 1, have been identified as facing financial stress that might lead to early retirement. The early retirement of operating nuclear power plants will mean the loss of a large amount of zero-emission electricity, inconsistent with the goal of reducing carbon emissions in the electricity sector. This report provides a high-level view of the major factors driving early retirement: • The U.S. market and private ownership approach to the electricity sector; • Low electricity market prices resulting from low natural gas prices, low demand growth, increased penetration of renewable generation, and negative electricity market prices; and • No compensation to nuclear power plants for public benefits including zero-emission electricity.},
 	language = {English},
 	number = {INL/EXT-16-39951},
 	urldate = {2022-01-12},
@@ -133,7 +127,7 @@
 	author = {Szilard, Ronaldo and Sharpe, Phil and Kee, Edward and Davis, Edward and Grecheck, Eugene},
 	month = sep,
 	year = {2016},
-	doi = {10.2172/1364498},
+	doi = {10.2172/1364498}
 }
 
 @article{mitchell_greenhouse_1989,
@@ -142,7 +136,6 @@
 	issn = {1944-9208},
 	url = {https://onlinelibrary.wiley.com/doi/abs/10.1029/RG027i001p00115},
 	doi = {10.1029/RG027i001p00115},
-	abstract = {The presence of radiatively active gases in the Earth's atmosphere (water vapor, carbon dioxide, and ozone) raises its global mean surface temperature by 30 K, making our planet habitable by life as we know it. There has been an increase in carbon dioxide and other trace gases since the Industrial Revolution, largely as a result of man's activities, increasing the radiative heating of the troposphere and surface by about 2 W m−2. This heating is likely to be enhanced by resulting changes in water vapor, snow and sea ice, and cloud. The associated equilibrium temperature rise is estimated to be between 1 and 2 K, there being uncertainties in the strength of climate feedbacks, particularly those due to cloud. The large thermal inertia of the oceans will slow the rate of warming, so that the expected temperature rise will be smaller than the equilibrium rise. This increases the uncertainty in the expected warming to date, with estimates ranging from less than 0.5 K to over 1 K. The observed increase of 0.5 K since 1900 is consistent with the lower range of these estimates, but the variability in the observed record is such that one cannot necessarily conclude that the observed temperature change is due to increases in trace gases. The prediction of changes in temperature over the next 50 years depends on assumptions concerning future changes in trace gas concentrations, the sensitivity of climate, and the effective thermal inertia of the oceans. On the basis of our current understanding a further warming of at least 1 K seems likely. Numerical models of climate indicate that the changes will not be uniform, nor will they be confined to temperature. The simulated warming is largest in high latitudes in winter and smallest over sea ice in summer, with little seasonal variation in the tropics. Annual mean precipitation and runoff increase in high latitudes, and most simulations indicate a drier land surface in northern mid-latitudes in summer. The agreement between different models is much better for temperature than for changes in the hydrological cycle. Priorities for future research include developing an improved representation of cloud in numerical models, obtaining a better understanding of vertical mixing in the deep ocean, and determining the inherent variability of the ocean-atmosphere system. Progress in these areas should enable detection of a man-made “greenhouse” warming within the next two decades.},
 	language = {en},
 	number = {1},
 	urldate = {2022-01-06},
@@ -150,7 +143,7 @@
 	author = {Mitchell, John F. B.},
 	year = {1989},
 	note = {\_eprint: \url{https://onlinelibrary.wiley.com/doi/pdf/10.1029/RG027i001p00115}},
-	pages = {115--139},
+	pages = {115--139}
 }
 
 @techreport{paola_a_arias_2021_ts,
@@ -161,7 +154,7 @@
 	institution = {Cambridge University Press},
 	author = {{Paola A. Arias} and {Nicolas Bellouin} and {Erika Coppola} and {Richard Jones} and {Gerhard Krinner} and {Jochem Marotzke} and {Vaishali Naik} and {Matthew D. Palmer} and {Gian-Kasper Plattner} and {Joeri Rogelj} and {Maisa Rojas} and {Jana Sillmann} and {Trude Storelvmo} and {Peter W. Thorne} and {Blair Trewin} and {Krishna Achuta Rao} and {Bhupesh Adhikary} and {Richard P. Allan} and {Kyle Armour} and {Govindasamy Bala} and {Rondrotiana Barimalala} and {Sophie Berger} and {Josep G. Canadell} and {Christophe Cassou} and {Annalisa Cherchi} and {William Collins} and {William D. Collins} and {Sarah L. Connors} and {Susanna Corti} and {Faye Cruz} and {Frank J. Dentener} and {Claudine Dereczynski} and {Alejandro Di Luca} and {Aida Diongue Niang} and {Francisco J. Doblas-Reyes} and {Alessandro Dosio} and {Hervé Douville} and {François Engelbrecht} and {Veronika Eyring} and {Erich Fischer} and {Piers Forster} and {Baylor Fox-Kemper} and {Jan S. Fuglestvedt} and {John C. Fyfe} and {Nathan P. Gillett} and {Leah Goldfarb} and {Irina Gorodetskaya} and {Jose Manuel Gutierrez} and {Rafiq Hamdi} and {Ed Hawkins} and {Helene T. Hewitt} and {Pandora Hope} and {Akm Saiful Islam} and {Christopher Jones} and {Darrell S. Kaufman} and {Robert E. Kopp} and {Yu Kosaka} and {James Kossin} and {Svitlana Krakovska} and {June-Yi Lee} and {Jian Li} and {Thorsten Mauritsen} and {Thomas K. Maycock} and {Malte Meinshausen} and {Seung-Ki Min} and {Pedro M.S. Monteiro} and {Thanh Ngo-Duc} and {Friederike Otto} and {Izidine Pinto} and {Anna Pirani} and {Krishnan Raghavan} and {Roshanka Ranasinghe} and {Alex C. Ruane} and {Lucas Ruiz} and {Jean-Baptiste Sallée} and {Bjørn H. Samset} and {Shubha Sathyendranath} and {Sonia I. Seneviratne} and {Anna A. Sörensson} and {Sophie Szopa} and {Izuru Takayabu} and {Anne-Marie Treguier} and {Bart van den Hurk} and {Robert Vautard} and {Karina von Schuckmann} and {Sönke Zaehle} and {Xuebin Zhang} and {Kirsten Zickfeld}},
 	month = aug,
-	year = {2021},
+	year = {2021}
 }
 
 @misc{homepage_openmc_2022,
@@ -169,7 +162,7 @@
 	url = {https://docs.openmc.org/en/stable/index.html},
 	urldate = {2022-01-04},
 	year = {2022},
-	note = {url accessed {2022-01-04}: \url{https://docs.openmc.org/en/stable/index.html}},
+	note = {url accessed {2022-01-04}: \url{https://docs.openmc.org/en/stable/index.html}}
 }
 
 @article{fiorina_initiative_2021,
@@ -179,14 +172,12 @@
 	issn = {2100-014X},
 	url = {https://www.epj-conferences.org/articles/epjconf/abs/2021/01/epjconf_physor2020_02040/epjconf_physor2020_02040.html},
 	doi = {10.1051/epjconf/202124702040},
-	abstract = {Modelling and simulation (M\&S) have gradually become irreplaceable tools in the field of Nuclear Science and Technology (NS\&T), including nuclear energy systems. This is partly due to growing computational resources and advances in computational science and partly to the difficulties to finance, build and license new experimental facilities. However, the utilization of M\&S for research and development (R\&D) and education and training (E\&T) applications is somewhat hampered by limited accessibility to controlled and sensitive nuclear M\&S tools as well as by the desires of the developers of these tools to retain their intellectual property (IP). Open-source software and open-access data are growingly perceived as means to accelerate innovation by promoting synergistic collaborative developments while lowering the barriers associated to code distribution, modification, and sharing. Open-source software development is ideal for R\&D and E\&T purposes because it permits the enhancement of understanding, the use of advanced computational methods and it promotes the cooperation among researchers and scientists, without rigorous constraints on quality assurance or reliance on proprietary data for technology-specific validation. As a fundamental research tool, this helps to mitigate constraints related to dual use of such technology. It is in this context that an initiative is being launched under the aegis of the International Atomic Energy Agency (IAEA) to promote the development and application of open-source multi-physics simulation in support of R\&D and E\&T in NS\&T. This paper presents scope and objectives of this initiative.},
 	language = {en},
 	urldate = {2022-01-03},
 	journal = {EPJ Web of Conferences},
 	author = {Fiorina, C. and Shriwise, P. and Dufresne, A. and Ragusa, J. and Ivanov, K. and Valentine, T. and Lindley, B. and Kelm, S. and Shwageraus, E. and Monti, S. and Batra, C. and Pautz, A. and Lorenzi, S. and Rubiolo, P. and Clifford, I. and Dechenaux, B.},
 	year = {2021},
 	note = {Publisher: EDP Sciences},
-	pages = {02040},
 }
 
 @article{betzler_modeling_2019,
@@ -202,7 +193,7 @@
 	month = dec,
 	year = {2019},
 	keywords = {22 GENERAL STUDIES OF NUCLEAR REACTORS, advanced reactors, Advanced reactors, licensing, Licensing, molten salt reactors, Molten salt reactors, reactor safety, Reactor safety},
-	pages = {110308},
+	pages = {110308}
 }
 
 @techreport{usnrc_nonlwr_2020-1,
@@ -212,7 +203,7 @@
 	urldate = {2022-01-24},
 	author = {{U.S. Nuclear Regulatory Comission}},
 	month = jan,
-	year = {2020},
+	year = {2020}
 }
 
 
@@ -222,7 +213,7 @@
 	urldate = {2022-01-25},
 	author = {{IAEA}},
 	year = {2022},
-	note = {url accessed {2022-01-25}: \url{https://nucleus.iaea.org/sites/oncore/SitePages/Home.aspx}},
+	note = {url accessed {2022-01-25}: \url{https://nucleus.iaea.org/sites/oncore/SitePages/Home.aspx}}
 }
 
 
@@ -233,7 +224,6 @@
 	shorttitle = {{ONIX}},
 	url = {https://www.sciencedirect.com/science/article/pii/S0306454920306009},
 	doi = {10.1016/j.anucene.2020.107903},
-	abstract = {Open Source software enables innovative, community-based software development. ONIX brings this concept to the field of depletion calculations. It is an open-source depletion software to be used for nuclear reactor simulations, for fissile material production analysis as well as for nuclear arms control applications. ONIX provides a module to solve the depletion equation using a Chebyshev Rational Approximation Method. For the generation of one-group cross sections, it includes a coupling interface for the open-source neutron transport code, OpenMC, as well as a module to read pre-computed values in a stand-alone mode. ONIX has special features to optimize nuclear data libraries, to update isomeric branching ratio during burnup, and to support automation of simulations for nuclear archaeology. ONIX has been validated against results from numerical and experimental benchmarks, and its results agree with other methods within expected error ranges.},
 	language = {en},
 	urldate = {2022-02-14},
 	journal = {Annals of Nuclear Energy},
@@ -241,7 +231,7 @@
 	month = feb,
 	year = {2021},
 	keywords = {Burnup, Depletion, ONIX, Open source, OpenMC, Validation},
-	pages = {107903},
+	pages = {107903}
 }
 
 @misc{noauthor_njoy21_2022,
@@ -253,7 +243,7 @@
 	month = feb,
 	year = {2022},
 	keywords = {njoy, nuclear-data},
-	note = {url accessed {2022-02-14}: \url{https://github.com/njoy/NJOY21}},
+	note = {url accessed {2022-02-14}: \url{https://github.com/njoy/NJOY21}}
 }
 
 @misc{noauthor_cyclus_2022,
@@ -264,7 +254,7 @@
 	publisher = {Cyclus},
 	note = {url accessed {2022-02-14}: \url{https://github.com/cyclus/cyclus}},
 	month = jan,
-	year = {2022},
+	year = {2022}
 }
 
 @misc{romano_awesome_2022,
@@ -276,7 +266,7 @@
 	note = {url accessed {2022-02-14}: \url{https://github.com/paulromano/awesome-nuclear}},
 	month = feb,
 	year = {2022},
-	note = {original-date: 2019-10-01T14:18:44Z},
+	note = {original-date: 2019-10-01T14:18:44Z}
 }
 
 @misc{eia_faq_2021,
@@ -287,7 +277,7 @@
 	journal = {U.S. Energy Information Administration (EIA)},
     note = {url accessed {2022-02-15}: \url{https://www.eia.gov/tools/faqs/faq.php}},
 	month = nov,
-	year = {2021},
+	year = {2021}
 }
 
 @misc{doene_facts_2021,
@@ -299,7 +289,7 @@
 	journal = {Energy.gov},
     note = {url accessed {2022-02-15}: \url{https://www.energy.gov/ne/articles/5-fast-facts-about-nuclear-energy}},
 	month = mar,
-	year = {2021},
+	year = {2021}
 }
 
 @misc{eia_electricity_2021,
@@ -309,7 +299,7 @@
 	journal = {U.S. Energy Information Administration (EIA)},
     note = {url accessed {2022-02-15}: \url{https://www.eia.gov/energyexplained/electricity/electricity-in-the-us-generation-capacity-and-sales.php}},
 	month = mar,
-	year = {2021},
+	year = {2021}
 }
 
 
@@ -451,4 +441,87 @@
 	author = {Merle-Lucotte, E. and Heuer, D. and Allibert, M. and Brovchenko, M. and Capellan, N. and Ghetta, V.},
 	year = {2011},
 	pages = {2--5}
+}
+
+
+@inproceedings{betzler_molten_2019,
+	address = {Seattle, WA, United States},
+	title = {Molten {Salt} {Reactor} {Fuel} {Depletion} {Tools} in {SCALE}},
+	url = {https://www.osti.gov/servlets/purl/1566988},
+	booktitle = {Proc. of {GLOBAL} {International} {Fuel} {Cycle} {Conference}},
+	publisher = {American Nuclear Society},
+	author = {Betzler, Benjamin R. and Bekar, Kursat B. and Wieselquist, William and Hart, Shane W. and Stimpson, Shane G.},
+	month = sep,
+	year = {2019}
+}
+
+@inproceedings{nelson_molten_2021,
+	address = {Raleigh, North Carolina},
+	title = {{MOLTEN} {SALT} {REACTOR} {DEPLETION} {TECHNIQUES} {IN} {THE} {ADDER} {REACTOR} {DEPLETION} {AND} {FUEL} {MANAGEMENT} {ANALYSIS} {CODE}},
+	language = {en},
+	booktitle = {Framework {Development} for {Reactor} {Analysis}},
+	author = {Nelson, A G and Chee, G J Y and Jarrett, M G},
+	year = {2021},
+	pages = {10}
+}
+
+@article{rykhlevskii_modeling_2019,
+	title = {Modeling and simulation of online reprocessing in the thorium-fueled molten salt breeder reactor},
+	volume = {128},
+	issn = {03064549},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S0306454919300350},
+	doi = {10.1016/j.anucene.2019.01.030},
+	language = {en},
+	urldate = {2022-01-17},
+	journal = {Annals of Nuclear Energy},
+	author = {Rykhlevskii, Andrei and Bae, Jin Whan and Huff, Kathryn D.},
+	month = jun,
+	year = {2019},
+	pages = {366--379}
+}
+
+@techreport{betzler_assessment_2017,
+	title = {Assessment of the {Neutronic} and {Fuel} {Cycle} {Performance} of the {Transatomic} {Power} {Molten} {Salt} {Reactor} {Design}},
+	url = {http://www.osti.gov/servlets/purl/1410921/},
+	language = {en},
+	number = {ORNL/TM-2017/475 CRADA/NFE-16-06345},
+	institution = {Oak Ridge National Lab.(ORNL), Oak Ridge, TN (United States)},
+	author = {Betzler, Benjamin R. and Robertson, Sean and Davidson, Eva E. and Powers, Jeffrey J. and Worrall, Andrew and Dewan, Leslie and Massie, Mark},
+	month = sep,
+	year = {2017},
+	doi = {10.2172/1410921}
+}
+
+
+@article{davidson_nuclide_2018,
+	title = {Nuclide depletion capabilities in the {Shift} {Monte} {Carlo} code},
+	volume = {114},
+	issn = {0306-4549},
+	url = {https://www.sciencedirect.com/science/article/pii/S0306454917304322},
+	doi = {10.1016/j.anucene.2017.11.042},
+	language = {en},
+	urldate = {2022-08-20},
+	journal = {Annals of Nuclear Energy},
+	author = {Davidson, Gregory G. and Pandya, Tara M. and Johnson, Seth R. and Evans, Thomas M. and Isotalo, Aarno E. and Gentry, Cole A. and Wieselquist, William A.},
+	month = apr,
+	year = {2018},
+	keywords = {Burnup, Monte Carlo, Parallel scaling, Transport-depletion coupling},
+	pages = {259--276}
+}
+
+@article{viitanen_explicit_2012,
+	title = {Explicit {Treatment} of {Thermal} {Motion} in {Continuous}-{Energy} {Monte} {Carlo} {Tracking} {Routines}},
+	volume = {171},
+	issn = {0029-5639},
+	url = {https://doi.org/10.13182/NSE11-36},
+	doi = {10.13182/NSE11-36},
+	number = {2},
+	urldate = {2022-08-20},
+	journal = {Nuclear Science and Engineering},
+	author = {Viitanen, Tuomas and Leppänen, Jaakko},
+	month = jun,
+	year = {2012},
+	note = {Publisher: Taylor \& Francis
+\_eprint: https://doi.org/10.13182/NSE11-36},
+	pages = {165--173}
 }
