@@ -1,41 +1,41 @@
 \chapter{Molten Salt Reactor Modeling}% \label{cha:msr_modeling}
 %% lit review goes here
-Much of our knowledge about \Gls{MSR}s come from experiements on a test reactor
-called the \Gls{MSRE} conducted at \Gls{ORNL} in the 1960s, which demonstrated
-the viability of the \Gls{MSR} concept for use in civillian power programs
+Much of our knowledge about \Gls{msr}s come from experiements on a test reactor
+called the \Gls{msre} conducted at \Gls{ornl} in the 1960s, which demonstrated
+the viability of the \Gls{msr} concept for use in civillian power programs
 \cite{haubenreich_experience_1970} \cite{rosenthal_molten-salt_1970}.
 %% Give brief description of the MSRE
 %% cite a bunch of MSRE ORNL work.
 
-The \Gls{MSRE} reactor to this day remains one of the few \Gls{MSR}s to operate.
+The \Gls{msre} reactor to this day remains one of the few \Gls{msr}s to operate.
 %% Maybe briefly mention other historical MSRs?
 
-As of writing this thesis, there are no \Gls{MSR}s currently in operation; we
-must rely on computational and/or surrogate models to further study \Gls{MSR}
-physics. The \Gls{MSRE} is a popular choice for computational models due to the
+As of writing this thesis, there are no \Gls{msr}s currently in operation; we
+must rely on computational and/or surrogate models to further study \Gls{msr}
+physics. The \Gls{msre} is a popular choice for computational models due to the
 availability of experimental data to compare results against. For example,
 Roelofs et al used the system thermal hydraulics code SPECTRA to model steady
-state parameters of the fuel-salt, \Gls{DNP} drift, and various fission product
+state parameters of the fuel-salt, \Gls{dnp} drift, and various fission product
 behaviors in comparison with actual MSRE data \cite{roelofs_molten_2021}.
-Podila et al performed a \Gls{CFD} simulation of the \Gls{MSRE} core to
-investigate the ability of \Gls{CFD} to predict 3D effects in this kind of
+Podila et al performed a \Gls{cfd} simulation of the \Gls{msre} core to
+investigate the ability of \Gls{cfd} to predict 3D effects in this kind of
 reactor\cite{podila_cfd_2019}. 
 %cite some MSRE studies
-In addtion to the \Gls{MSRE}, the \Gls{MSFR}\cite{merle-lucotte_launching_2011}
-and \Gls{MSBR}\cite{robertson_conceptual_1971} conceptual reactors are well
+In addtion to the \Gls{msre}, the \Gls{msfr}\cite{merle-lucotte_launching_2011}
+and \Gls{msbr}\cite{robertson_conceptual_1971} conceptual reactors are well
 developed and are actively used in research. Park et al performed a whole core
-analysis of the \Gls{MSBR} using \MCNPSIX with additional depletion and
+analysis of the \Gls{msbr} using \MCNPSIX with additional depletion and
 reprocessing using \CINDERNINETY and a custom Python script \cite{park_whole_2015}.
-Auferio et al extended \SerpentTWO with online fuel reprocessing capabilities to
-study depletion in the \Gls{MSFR} \cite{auferio_extended_2013}.
+Aufiero et al extended \SerpentTWO with online fuel reprocessing capabilities to
+study depletion in the \Gls{msfr} \cite{aufiero_extended_2013}.
 
-These efforts illustrate that \Gls{MSR} modeling encompasses a wide range of
+These efforts illustrate that \Gls{msr} modeling encompasses a wide range of
 physics domains.
 
-\section{Modeling depletion in \Gls{MSR}s} Recall in Sections
+\section{Modeling depletion in MSRs} Recall in Sections
 \ref{sec:molten_salt_reactors} and \ref{sec:msr_codes} we introduced the
 concepts of fuel depletion and removal and feed processes, and established the
-importance of modeling fuel depletion to \Gls{MSR} licensing. Depletion codes in
+importance of modeling fuel depletion to \Gls{msr} licensing. Depletion codes in
 the past have shown good behavior when compared with depletion measurements from
 commercial and research reactors; the \TRITON module in the \SCALE reactor physics
 suite couples \SCALE's neutron transport solver (\Shift) and bateman equation
@@ -45,11 +45,11 @@ also has fuel depletion capabilities \cite{leppanen_burnup_2009}. More recently,
 OpenMC version 0.11 added support for fuel depletion and shows good agreement
 with Serpent 2\cite{romano_depletion_2021}. 
 
-Depletion simulations on \Gls{MSR}s are difficult to verify through direct
+Depletion simulations on \Gls{msr}s are difficult to verify through direct
 measurement due to the lack of a physically operating reactor. Even so,
 simulations will give us a good idea of what kinds of nuclides we can expect to
 show up. Table \ref{tab:msr_depletion_tools} summarizes some currently available
-software tools that can model depletion in \Gls{MSR}s\footnote{additional works
+software tools that can model depletion in \Gls{msr}s\footnote{additional works
 like Aufiero et al \cite{aufiero_extended_2013}, while notable and relevant,
 are bespoke modifications to currently existing software, and so cannot
 truly be considered ``available'' until the modifications become part of the
@@ -57,10 +57,11 @@ software}.
 
 \begin{table}[htpb] 
     \centering 
-    \caption{Software tools that can model \Gls{MSR} depletion with fuel reprocessing} 
+    \caption{Software tools that can model \Gls{msr} depletion with fuel reprocessing} 
     \label{tab:msr_depletion_tools}
-    \begin{tabular}{|c|c|c|} 
-        \hline Software tool & Description & Reprocessing scheme & Citation\\ 
+    \begin{tabulary}{\linewidth}{|C|C|C|C|} 
+        \hline
+        Software tool & Description & Reprocessing scheme & Citation\\
         \hline 
         \ADDER & Interface code with internal depletion capabilities & Component-based continuous & \cite{nelson_molten_2021}\\
         \hline
@@ -68,17 +69,17 @@ software}.
         \hline 
         \SaltProc & Interface code & Component-based batch-wise & \cite{rykhlevskii_saltproc_2018}\\
         \hline 
-    \end{tabular}
+    \end{tabulary}
 \end{table}
 
-\SaltProc has been used to perform lifetime depletion analysis on full-core models of the \Gls{MSBR}\cite{rykhlevskii_modeling_2019}
+\SaltProc has been used to perform lifetime depletion analysis on full-core models of the \Gls{msbr}\cite{rykhlevskii_modeling_2019}
 and the Transatomic Power MSR\cite{rykhlevskii_fuel_2020}. The BOL and EOL neutron spectra
 for the MSBR results qualitatively matches those reported Park et. al \ref{park_whole_2015}\footnote{it should be noted that Rykhlevskii claims the results for the neuton spectra ``are in good agreement'' with those reported by Park et. al. However, Park et. al. use different units for reporting the neutron spectra than Rykhlevskii, so a quantitative comparison is not possible unless the raw data were converted to the same units and compared. Rykhlevskii also claims that the spetra
 results show good agreement with the original MSBR report \cite{robertson_conceptual_1971}, however I was unable to find any concrete reporting on the MSBR neutron spectra in that report.}
 % in andrei's paper he makes several claims about good agreement with the MSBR results in the Robertson report, but I have been unable to find said results in that report
 
-Rykhlevskii compared the TAP MSR results against an \Gls{ORNL} technical report on neutronic performance of the same reactor\cite{betzler_assessment_2017} using identical cross section libraries and model parameters wherever possible. Betzler et. al. used the ChemTriton\cite{betzler_molten_2017} interface code that perfoms batch-wise reprocessing using
-the \SCALE suite for coupled transport-depletion. ChemTriton was extended to use the Shift\cite{davidson_nuclide_2017} monte carlo particle transport tool for 3D neutron transport and depletion \footnote{at the time of publication, Shift had not yet been incorporated into SCALE}. The results of the SaltProc and ChemTriton simulations showed decent agreement.
+Rykhlevskii compared the TAP MSR results against an \Gls{ornl} technical report on neutronic performance of the same reactor\cite{betzler_assessment_2017} using identical cross section libraries and model parameters wherever possible. Betzler et. al. used the ChemTriton\cite{betzler_molten_2017} interface code that perfoms batch-wise reprocessing using
+the \SCALE suite for coupled transport-depletion. ChemTriton was extended to use the Shift\cite{davidson_nuclide_2018} monte carlo particle transport tool for 3D neutron transport and depletion \footnote{at the time of publication, Shift had not yet been incorporated into SCALE}. The results of the SaltProc and ChemTriton simulations showed decent agreement.
 
 
 \subsection{Practical differences in continuous and batch-wise reprocessing}
@@ -87,7 +88,7 @@ theoretical differences in in Section \ref{sec:msr_codes}. There are also some
 practical implications on problem setup and results between these two methods.
 Betzler, et. al. (2019) \cite{betzler_molten_2019} perfomed a code-to-code
 comparsion between new functionality added to the \ORIGEN and \SCALE/\TRITON codes
-for simulating depletion in \Gls{MSR}s with continuous reprocessing, and the
+for simulating depletion in \Gls{msr}s with continuous reprocessing, and the
 older \ChemTriton(cite) interface code that perfoms batch-wise reprocessing using
 the \SCALE suite for coupled transport-depletion. They found that the two
 reprocessing schemes generally produced similar results with the following
@@ -106,8 +107,9 @@ I would like to discuss some of the differences between \OpenMC and \SerpentTWO.
     \centering 
     \caption{Differences between OpenMC and Serpent} 
     \label{tab:mc_code_diffs}
-    \begin{tabular}{|c|c|c|} 
-        \hline Metric & OpenMC & Serpent \\ 
+    \begin{tabulary}{\linewidth}{|C|C|C|} 
+        \hline
+        Metric & OpenMC & Serpent \\ 
         \hline 
         Access & Open source, hosted on GitHub & Export controlled, code distributed by RSICC (USA), OECD/NEA\\
         \hline
@@ -119,9 +121,9 @@ I would like to discuss some of the differences between \OpenMC and \SerpentTWO.
         \hline
         Cross section file formate & HDF5 & ACE \\
         \hline
-        S$(\alpha, \beta)$ representation & continuous & tabulated//
+        S$(\alpha, \beta)$ representation & continuous & tabulated \\
         \hline
-    \end{tabular}
+    \end{tabulary}
 \end{table}
 As mentioned earlier, Romano found good agreement between OpenMC depletion results and Serpent depletion results, but notes that one must take careful consideration of the data and internal settings to get good results between codes. Of note are the default energy release per fission of \ce{^{235}U}\ldots
 %% talk about saltproc in it's current state, the gaps that exist

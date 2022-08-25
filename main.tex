@@ -3,7 +3,6 @@
 
 
 \usepackage[acronym,toc]{glossaries}
-\include{acros}
 
 \usepackage{xspace}
 \usepackage{graphics}
@@ -21,7 +20,7 @@
 \newcommand{\TRITON}{\textsc{TRITON}\xspace}
 \newcommand{\ORIGEN}{\textsc{ORIGEN}\xspace}
 \newcommand{\MCNPSIX}{\textsc{MCNP6}\xspace}
-\newcommand{\CINTERNINETY}{\textsc{CINDER90}\xspace}
+\newcommand{\CINDERNINETY}{\textsc{CINDER90}\xspace}
 \newcommand{\ADDER}{\textsc{ADDER}\xspace}
 
 \usepackage{placeins}
@@ -36,7 +35,8 @@
 \usepackage{color}
 \usepackage{multirow}
 \usepackage{siunitx} % typesetting for units
-\usepackage{mhchem}
+\usepackage{tabulary}
+\usepackage[version=4]{mhchem}
 \sisetup{
     input-decimal-markers = .,input-ignore = {,},table-number-alignment = right,
     group-separator={,}, group-four-digits = true
@@ -98,6 +98,7 @@
 
 
 \begin{document}
+\include{acros}
 \maketitle
 
 \frontmatter
@@ -139,7 +140,7 @@ Acks.
 \mainmatter
 
 \input{chapter1_intro}
-%\input{chapter2_litreview}
+\input{chapter2_litreview}
 %\input{chapter3_reactor}
 %\input{chapter4_results}
 %\input{chatper5_conclusions}
