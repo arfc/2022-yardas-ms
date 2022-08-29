@@ -74,7 +74,7 @@ software}.
 
 \SaltProc has been used to perform lifetime depletion analysis on full-core models of the \Gls{msbr}\cite{rykhlevskii_modeling_2019}
 and the Transatomic Power MSR\cite{rykhlevskii_fuel_2020}. The BOL and EOL neutron spectra
-for the MSBR results qualitatively matches those reported Park et. al \ref{park_whole_2015}\footnote{it should be noted that Rykhlevskii claims the results for the neuton spectra ``are in good agreement'' with those reported by Park et. al. However, Park et. al. use different units for reporting the neutron spectra than Rykhlevskii, so a quantitative comparison is not possible unless the raw data were converted to the same units and compared. Rykhlevskii also claims that the spetra
+for the MSBR results qualitatively matches those reported Park et. al \cite{park_whole_2015}\footnote{it should be noted that Rykhlevskii claims the results for the neuton spectra ``are in good agreement'' with those reported by Park et. al. However, Park et. al. use different units for reporting the neutron spectra than Rykhlevskii, so a quantitative comparison is not possible unless the raw data were converted to the same units and compared. Rykhlevskii also claims that the spetra
 results show good agreement with the original MSBR report \cite{robertson_conceptual_1971}, however I was unable to find any concrete reporting on the MSBR neutron spectra in that report.}
 % in andrei's paper he makes several claims about good agreement with the MSBR results in the Robertson report, but I have been unable to find said results in that report
 
@@ -100,9 +100,9 @@ caveats:
 
 
 \section{Differences between Serpent and OpenMC}
-As mentioned in Section \ref{objectives}, a major objective of this thesis
+As mentioned in Section \ref{sec:objectives}, a major objective of this thesis
 is to implement support for \OpenMC's \verb.deplete. module. In this context,
-I would like to discuss some of the differences between \OpenMC and \SerpentTWO. The most in-depth discission of these differences that I have found are in \ref{romano_depletion_2021}. I have tabulated the differences discussed in that paper below.
+I would like to discuss some of the differences between \OpenMC and \SerpentTWO. The most in-depth discission of these differences that I have found are in \cite{romano_depletion_2021}. I have tabulated the differences discussed in that paper below.
 \begin{table}[htpb] 
     \centering 
     \caption{Differences between OpenMC and Serpent} 
