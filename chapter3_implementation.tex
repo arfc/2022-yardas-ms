@@ -1,0 +1,41 @@
+\section{Sotware Overview and Development}
+\label{sec:soft_dev}
+A major component of this work was restructuring of the SaltProc code and implementation of OpenMC. In this section, I will provide a high level overview of my development process and go into detail where necessary. The release notes contain more details for those interested.
+\subsection{SaltProc}%
+\label{sub:saltproc}
+
+SaltProc\cite{rykhlevskii_saltproc_2018} is an open source Python package that simulates on-line reprocessing via a batch-wise approach\footnote{Material is moved to or from the core at specific time intervals} in liquid-fueled \Gls{msr}s. More precisely, SaltProc manages material flows and separation processes on nuclides in the fuel. SaltProc relies on external codes to simulate fuel depletion.
+
+The first version of SaltProc (v0.1) was a simple Python 2.7 package that used SERPENT 2 for the fuel depletion simulations. A single Python file contained all functions; separation processes applie dto  used an implicit 100\% efficiency \cite{rykhlevskii_advanced_2018}. The structure of SaltProc v0.1 did not lend itsef easily to development of more sophisticated treatments of reprocessing. This led to the release of Saltproc v0.2, in which the entire codebase was refactored into an object oriented
+context in Python 3. The addition of new functionality in the \verb.Process. classes enabled more sophisticated treatment of online reprocessing \cite{rykhlevskii_fuel_2020} 
+
+SaltProc v0.3 saw the implementation of processes for gas sparging and separation to more accurately simulate the MSBR, as well as additional refactoring to better follow OOP concepts.
+
+\subsubsection{Preparing for OpenMC support}%
+While v0.2 and v0.3 saw most of SaltProc refactored for OOP, before I could implement OpenMC support, I needed to resolve the following issues:
+\begin{enumerate}
+    \item Relocate several functions to have better separation of concerns
+    \item Overhaul the SaltProc input file format giving users more control over their simulations
+    \item Generalize docstrings\footnote{Since SaltProc was initally written as a script wrapped around Serpent2, many of the docstrings explicitly referenced Serpent2.}
+    \item Improve function and variable names
+\end{enumerate}
+I implemented these changes as part of the 0.4.0 release. The changes in that release changed the API, making 0.4.0 incompatible with previous verions of SaltProc.
+% consider talking about automation?
+
+\section{OpenMC}%
+\label{sub:openmc}
+
+OpenMC \cite{romano_openmc_2015} is an open source Monte Carlo particle transport code. The \Gls{crpg} at \Gls{mit} started developing OpenMC back in 2011 with a focus on scalability for exascale computing. Since that time, developers new and old contributed features (cite?) and fixes to the tool expanding its scope and use cases. Notable features of OpenMC (as of version 0.12.1) are as follows \cite{homepage_openmc_2022}:
+\begin{itemize}
+    \item Support for fixed source, $k$-eigenvalue, and subcritical neutron multiplication cacluclations.
+    \item Support for \Gls{csg} and \Gls{cad} geometry.
+    \item Support for both continuous and multigroup transport calculations.
+    \item Support for parallel execution via MPI and OpenMP.
+    \item Geometry visualization through the Python API.
+\end{itemize}
+The tool is now quite mature and feature-rich, and is a legitmate alternative to it's closed-source counterparts in many cases.
+
+Recently, depletion and photon transport were added by (who?)... The new depletion feature enables us to couple OpenMC to SaltProc and a fully open-source stack.
+
+\subsection{Adding OpenMC to SaltProc}%
+\label{sub:adding_openmc_to_saltproc}
