@@ -72,16 +72,64 @@ software}.
     \end{tabulary}
 \end{table}
 
-\SaltProc has been used to perform lifetime depletion analysis on full-core models of the \Gls{msbr}\cite{rykhlevskii_modeling_2019}
-and the Transatomic Power MSR\cite{rykhlevskii_fuel_2020}. The BOL and EOL neutron spectra
-for the MSBR results qualitatively matches those reported Park et. al \cite{park_whole_2015}\footnote{it should be noted that Rykhlevskii claims the results for the neuton spectra ``are in good agreement'' with those reported by Park et. al. However, Park et. al. use different units for reporting the neutron spectra than Rykhlevskii, so a quantitative comparison is not possible unless the raw data were converted to the same units and compared. Rykhlevskii also claims that the spetra
-results show good agreement with the original MSBR report \cite{robertson_conceptual_1971}, however I was unable to find any concrete reporting on the MSBR neutron spectra in that report.}
+\SaltProc has been used to perform lifetime depletion analysis on full-core models
+of the \Gls{msbr}\cite{rykhlevskii_modeling_2019} and the Transatomic Power
+MSR\cite{rykhlevskii_fuel_2020}. As seen in Figure \ref{fig:msbr_spectrum_comp},
+the BOL and EOL neutron flux spectra for the MSBR results qualitatively matches those
+reported Park et. al \cite{park_whole_2015}.\footnote{it shold be noted that Rykhlevskii
+claims the results for the neuton flux spectra ``are in good agreement'' with those
+reported by the original MSBR report \cite{robertson_conceptual_1971}, however the
+neutron flux spectra reported in Robertson et al is unnormalized and tabulated, and
+much the lower energy groups range}
+
+\begin{figure}[htpb]
+    \centering
+    \subfloat[][]{
+        \includegraphics[width=0.5\linewidth]{figs/ch2/msbr_spectrum-rykhlevskii.png}
+        \label{fig:msbr_spectrum_sub1}
+                 }
+    \subfloat[][]{
+        \includegraphics[width=0.5\linewidth]{figs/ch2/msbr_spectrum-park.png}
+        \label{fig:msbr_spectrum_sub2}
+                 }
+    \caption[Side-by-side results of MSBR spectra between Ryhklevskii et al (2019) and Park et al (2015)]{
+    \subref{fig:msbr_spectrum_sub1} Neutron flux energy spectrum at
+    initial and equilibrium states normalized by unit lethargy. Reproduced
+    from \cite{rykhlevskii_modeling_2019}; \subref{fig:msbr_spectrum_sub2}
+    Neutron spectrum at initial and equilibirum states. Reproduced from
+    \cite{park_whole_2015}}
+    \label{fig:msbr_spectrum_comp}
+\end{figure}
 % in andrei's paper he makes several claims about good agreement with the MSBR results in the Robertson report, but I have been unable to find said results in that report
 
 %TODO: Compare some of the reported numbers for flux magnitude against andrei's figures in his papers/thesis
 
-Rykhlevskii compared the TAP MSR results against an \Gls{ornl} technical report on neutronic performance of the same reactor\cite{betzler_assessment_2017} using identical cross section libraries and model parameters wherever possible. Betzler et. al. used the ChemTriton\cite{betzler_molten_2017} interface code that perfoms batch-wise reprocessing using
-the \SCALE suite for coupled transport-depletion. ChemTriton was extended to use the Shift\cite{davidson_nuclide_2018} monte carlo particle transport tool for 3D neutron transport and depletion \footnote{at the time of publication, Shift had not yet been incorporated into SCALE}. The results of the SaltProc and ChemTriton simulations showed decent agreement.
+Rykhlevskii compared the TAP MSR results against an \Gls{ornl} technical report
+on neutronic performance of the same reactor\cite{betzler_assessment_2017} using
+identical cross section libraries and model parameters wherever possible.
+Betzler et. al. used the ChemTriton\cite{betzler_molten_2017} interface code
+that perfoms batch-wise reprocessing using the \SCALE suite for coupled
+transport-depletion. ChemTriton was extended to use the
+Shift\cite{davidson_nuclide_2018} monte carlo particle transport tool for 3D
+neutron transport and depletion \footnote{at the time of publication, Shift had
+not yet been incorporated into SCALE}. As seen in Figure \ref{fig:tap_spectra}, neutron flux
+spectra results between the SaltProc and ChemTriton simulations showed decent
+agreement.
+
+\begin{figure}[htpb]
+    \centering
+    \subfloat[][]{\includegraphics[width=0.5\linewidth]{figs/ch2/ben_spec_bol.png}
+    \label{fig:tap_spectrum_bol}}
+    \subfloat[][]{\includegraphics[width=0.5\linewidth]{figs/ch2/ben_spec_eol.png}
+    \label{fig:tap_spectrum_eol}}
+    \caption[Comparative results of TAP MSR flux spectra at BOL and EOL]{
+        Comparative results of TAP MSR flux spectra at BOL and EOL:
+        \ref{fig:tap_spectrum_bol} BOL;
+        \ref{fig:tap_spectrum_eol} EOL;
+        Both figures reproduced from \cite{rykhlevskii_fuel_2020}
+    }
+    \label{fig:tap_spectra}
+\end{figure}
 
 
 \subsection{Practical differences in continuous and batch-wise reprocessing}
@@ -96,7 +144,7 @@ the \SCALE suite for coupled transport-depletion. They found that the two
 reprocessing schemes generally produced similar results with the following
 caveats:
 \begin{enumerate}
-    \item $k_{\infty}$ for batch-wise reprocessing trends slightly lower than  continuous reprocessing. The authors claim this is due to \ChemTriton's \it{middlestep depletion method}. 
+    \item $k_{\infty}$ for batch-wise reprocessing trends slightly lower than  continuous reprocessing. The authors claim this is due to \ChemTriton's {\it middlestep depletion method}. 
     \item The batch-wise method generally results in higher concentrations of nuclides. Notably, nuclides with short half lives, like \ce{^{135}Xe}, trends significantly higher in batch-wise reprocessing.
 \end{enumerate}
 
@@ -104,7 +152,10 @@ caveats:
 \section{Differences between Serpent and OpenMC}
 As mentioned in Section \ref{sec:objectives}, a major objective of this thesis
 is to implement support for \OpenMC's \verb.deplete. module. In this context,
-I would like to discuss some of the differences between \OpenMC and \SerpentTWO. The most in-depth discission of these differences that I have found are in \cite{romano_depletion_2021}. I have tabulated the differences discussed in that paper below.
+I would like to discuss some of the differences between \OpenMC and \SerpentTWO.
+The most in-depth discission of these differences that I have found are in
+\cite{romano_depletion_2021}. I have tabulated the differences discussed in that
+paper below.
 \begin{table}[htpb] 
     \centering 
     \caption{Differences between OpenMC and Serpent} 
@@ -127,7 +178,7 @@ I would like to discuss some of the differences between \OpenMC and \SerpentTWO.
         \hline
     \end{tabulary}
 \end{table}
-As mentioned earlier, Romano found good agreement between OpenMC depletion results and Serpent depletion results, but notes that one must take careful consideration of the data and internal settings to get good results between codes. Of note are the default energy release per fission of \ce{^{235}U} used for power normalization and capture branching ratios. We follow Romano's methodology to ensure data consitency in our compartive study.
+As mentioned earlier, Romano found good agreement between OpenMC depletion results and Serpent depletion results, but notes that one must take careful consideration of the data and internal settings to get good results between codes. Of note are the default energy release per fission of \ce{^{235}U} used for power normalization and capture branching ratios. We follow Romano's methodology to ensure data consitency in our comparative study.
 %% talk about saltproc in it's current state, the gaps that exist
 %% lead into discussion about why it's important to add openmc 
 %% capabilities to SaltProc. Also mention the differnces in 
