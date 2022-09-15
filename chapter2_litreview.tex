@@ -74,30 +74,33 @@ software}.
 
 \SaltProc has been used to perform lifetime depletion analysis on full-core models
 of the \Gls{msbr}\cite{rykhlevskii_modeling_2019} and the Transatomic Power
-MSR\cite{rykhlevskii_fuel_2020}. As seen in Figure \ref{fig:msbr_spectrum_comp},
-the BOL and EOL neutron flux spectra for the MSBR results qualitatively matches those
-reported Park et. al \cite{park_whole_2015}.\footnote{it shold be noted that Rykhlevskii
-claims the results for the neuton flux spectra ``are in good agreement'' with those
-reported by the original MSBR report \cite{robertson_conceptual_1971}, however the
-neutron flux spectra reported in Robertson et al is unnormalized and tabulated, and
-much the lower energy groups range}
+\Gls{msr}\cite{rykhlevskii_fuel_2020}. As seen in Figure \ref{fig:msbr_spectrum_comp},
+the BOL and EOL neutron flux spectra for the MSBR results qualitatively matches
+those reported Park et. al \cite{park_whole_2015}, as well as with data from the
+original MSBR report from Robertson et. al \cite{robertson_conceptual_1971}.
 
-\begin{figure}[htpb]
+\begin{figure}[!htpb]
     \centering
     \subfloat[][]{
         \includegraphics[width=0.5\linewidth]{figs/ch2/msbr_spectrum-rykhlevskii.png}
         \label{fig:msbr_spectrum_sub1}
-                 }
+    }
     \subfloat[][]{
         \includegraphics[width=0.5\linewidth]{figs/ch2/msbr_spectrum-park.png}
         \label{fig:msbr_spectrum_sub2}
-                 }
+
+    }\\`
+    \subfloat[][]{
+        \includegraphics[width=0.6\linewidth]{figs/ch2/robertson_data.png}
+        \label{fig:robertson_spectrum}
+    }
     \caption[Side-by-side results of MSBR spectra between Ryhklevskii et al (2019) and Park et al (2015)]{
     \subref{fig:msbr_spectrum_sub1} Neutron flux energy spectrum at
     initial and equilibrium states normalized by unit lethargy. Reproduced
     from \cite{rykhlevskii_modeling_2019}; \subref{fig:msbr_spectrum_sub2}
-    Neutron spectrum at initial and equilibirum states. Reproduced from
-    \cite{park_whole_2015}}
+    Neutron flux spectrum at initial and equilibirum states. Reproduced from
+    \cite{park_whole_2015}; \subref{fig:robertson_spectrum} Neutron flux
+    spectrum at the midplane of the MSBR design normalized by the peak flux. Made using data in Table B.2 in \cite{robertson_conceptual_1971}}
     \label{fig:msbr_spectrum_comp}
 \end{figure}
 % in andrei's paper he makes several claims about good agreement with the MSBR results in the Robertson report, but I have been unable to find said results in that report
@@ -131,6 +134,9 @@ agreement.
     \label{fig:tap_spectra}
 \end{figure}
 
+While \SaltProc has not been compared to \SCALE or \ADDER, these results verify
+that \SaltProc produces results that are comparable to those of similar tools.
+
 
 \subsection{Practical differences in continuous and batch-wise reprocessing}
 We defined continuous and batch-wise reprocessing and discussed their
@@ -139,12 +145,12 @@ practical implications on problem setup and results between these two methods.
 Betzler, et. al. (2019) \cite{betzler_molten_2019} perfomed a code-to-code
 comparsion between new functionality added to the \ORIGEN and \SCALE/\TRITON codes
 for simulating depletion in \Gls{msr}s with continuous reprocessing, and the
-older \ChemTriton(cite) interface code that perfoms batch-wise reprocessing using
+older \ChemTriton\cite{betzler_molten_2017} interface code that perfoms batch-wise reprocessing using
 the \SCALE suite for coupled transport-depletion. They found that the two
 reprocessing schemes generally produced similar results with the following
 caveats:
 \begin{enumerate}
-    \item $k_{\infty}$ for batch-wise reprocessing trends slightly lower than  continuous reprocessing. The authors claim this is due to \ChemTriton's {\it middlestep depletion method}. 
+    \item $k_{\infty}$ for batch-wise reprocessing trends slightly lower than  continuous reprocessing. The authors claim this is due to \SCALE's {\it middlestep depletion method}. 
     \item The batch-wise method generally results in higher concentrations of nuclides. Notably, nuclides with short half lives, like \ce{^{135}Xe}, trends significantly higher in batch-wise reprocessing.
 \end{enumerate}
 
@@ -176,9 +182,22 @@ paper below.
         \hline
         S$(\alpha, \beta)$ representation & continuous & tabulated \\
         \hline
+        Depletion data source & ENDF decay and fission product yield sublibraries & depletion chain XML file\\
+        \hline
     \end{tabulary}
 \end{table}
-As mentioned earlier, Romano found good agreement between OpenMC depletion results and Serpent depletion results, but notes that one must take careful consideration of the data and internal settings to get good results between codes. Of note are the default energy release per fission of \ce{^{235}U} used for power normalization and capture branching ratios. We follow Romano's methodology to ensure data consitency in our comparative study.
+As mentioned earlier, Romano found good agreement between OpenMC depletion
+results and Serpent depletion results, but notes that one must take careful
+consideration of the data and internal settings to get good results between
+codes. Of note are the default energy release per fission of \ce{^{235}U}
+used for power normalization and capture branching ratios. We follow
+Romano's methodology to ensure data consitency in our comparative study. The key
+features to consider:
+\begin{itemize}
+    \item Utilize identical cross-section libraries, depletion data, and capture branching ratios
+    \item Use the same fission heating values.
+\end{itemize}
+We will discuss our procedure for ensuring data consitency in Chapter 4.
 %% talk about saltproc in it's current state, the gaps that exist
 %% lead into discussion about why it's important to add openmc 
 %% capabilities to SaltProc. Also mention the differnces in 
