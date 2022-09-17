@@ -1,8 +1,8 @@
 \chapter{Molten Salt Reactor Modeling}% \label{cha:msr_modeling}
 %% lit review goes here
-Much of our knowledge about \Gls{msr}s come from experiements on a test reactor
+Much of our knowledge about \Gls{msr}s come from experiments on a test reactor
 called the \Gls{msre} conducted at \Gls{ornl} in the 1960s, which demonstrated
-the viability of the \Gls{msr} concept for use in civillian power programs
+the viability of the \Gls{msr} concept for use in civilian power programs
 \cite{haubenreich_experience_1970} \cite{rosenthal_molten-salt_1970}.
 %% Give brief description of the MSRE
 %% cite a bunch of MSRE ORNL work.
@@ -21,7 +21,7 @@ Podila et al performed a \Gls{cfd} simulation of the \Gls{msre} core to
 investigate the ability of \Gls{cfd} to predict 3D effects in this kind of
 reactor\cite{podila_cfd_2019}. 
 %cite some MSRE studies
-In addtion to the \Gls{msre}, the \Gls{msfr}\cite{merle-lucotte_launching_2011}
+In addition to the \Gls{msre}, the \Gls{msfr}\cite{merle-lucotte_launching_2011}
 and \Gls{msbr}\cite{robertson_conceptual_1971} conceptual reactors are well
 developed and are actively used in research. Park et al performed a whole core
 analysis of the \Gls{msbr} using \MCNPSIX with additional depletion and
@@ -98,7 +98,7 @@ original MSBR report from Robertson et. al \cite{robertson_conceptual_1971}.
     \subref{fig:msbr_spectrum_sub1} Neutron flux energy spectrum at
     initial and equilibrium states normalized by unit lethargy. Reproduced
     from \cite{rykhlevskii_modeling_2019}; \subref{fig:msbr_spectrum_sub2}
-    Neutron flux spectrum at initial and equilibirum states. Reproduced from
+    Neutron flux spectrum at initial and equilibrium states. Reproduced from
     \cite{park_whole_2015}; \subref{fig:robertson_spectrum} Neutron flux
     spectrum at the midplane of the MSBR design normalized by the peak flux. Made using data in Table B.2 in \cite{robertson_conceptual_1971}}
     \label{fig:msbr_spectrum_comp}
@@ -109,7 +109,7 @@ original MSBR report from Robertson et. al \cite{robertson_conceptual_1971}.
 
 Rykhlevskii compared the TAP MSR results against an \Gls{ornl} technical report
 on neutronic performance of the same reactor\cite{betzler_assessment_2017} using
-identical cross section libraries and model parameters wherever possible.
+identical cross section libraries and model parameters.
 Betzler et. al. used the ChemTriton\cite{betzler_molten_2017} interface code
 that perfoms batch-wise reprocessing using the \SCALE suite for coupled
 transport-depletion. ChemTriton was extended to use the
@@ -142,13 +142,13 @@ that \SaltProc produces results that are comparable to those of similar tools.
 We defined continuous and batch-wise reprocessing and discussed their
 theoretical differences in in Section \ref{sec:msr_codes}. There are also some
 practical implications on problem setup and results between these two methods.
-Betzler, et. al. (2019) \cite{betzler_molten_2019} perfomed a code-to-code
+Betzler, et. al. (2019) \cite{betzler_molten_2019} performed a code-to-code
 comparsion between new functionality added to the \ORIGEN and \SCALE/\TRITON codes
 for simulating depletion in \Gls{msr}s with continuous reprocessing, and the
-older \ChemTriton\cite{betzler_molten_2017} interface code that perfoms batch-wise reprocessing using
-the \SCALE suite for coupled transport-depletion. They found that the two
-reprocessing schemes generally produced similar results with the following
-caveats:
+older \ChemTriton\cite{betzler_molten_2017} interface code that performs
+batch-wise reprocessing using the \SCALE suite for coupled transport-depletion.
+They found that the two reprocessing schemes generally produced similar results
+with the following caveats:
 \begin{enumerate}
     \item $k_{\infty}$ for batch-wise reprocessing trends slightly lower than  continuous reprocessing. The authors claim this is due to \SCALE's {\it middlestep depletion method}. 
     \item The batch-wise method generally results in higher concentrations of nuclides. Notably, nuclides with short half lives, like \ce{^{135}Xe}, trends significantly higher in batch-wise reprocessing.
@@ -159,7 +159,7 @@ caveats:
 As mentioned in Section \ref{sec:objectives}, a major objective of this thesis
 is to implement support for \OpenMC's \verb.deplete. module. In this context,
 I would like to discuss some of the differences between \OpenMC and \SerpentTWO.
-The most in-depth discission of these differences that I have found are in
+The most in-depth discussion of these differences that I have found are in
 \cite{romano_depletion_2021}. I have tabulated the differences discussed in that
 paper below.
 \begin{table}[htpb] 
@@ -191,15 +191,15 @@ results and Serpent depletion results, but notes that one must take careful
 consideration of the data and internal settings to get good results between
 codes. Of note are the default energy release per fission of \ce{^{235}U}
 used for power normalization and capture branching ratios. We follow
-Romano's methodology to ensure data consitency in our comparative study. The key
+Romano's methodology to ensure data consistency in our comparative study. The key
 features to consider:
 \begin{itemize}
     \item Utilize identical cross-section libraries, depletion data, and capture branching ratios
     \item Use the same fission heating values.
 \end{itemize}
-We will discuss our procedure for ensuring data consitency in Chapter 4.
+We will discuss our procedure for ensuring data consistency in Chapter 4.
 %% talk about saltproc in it's current state, the gaps that exist
 %% lead into discussion about why it's important to add openmc 
-%% capabilities to SaltProc. Also mention the differnces in 
+%% capabilities to SaltProc. Also mention the differences in 
 %% Serpent2 and OpenMC cross section handling and how this
 %% adds capability to the SaltProc tool
