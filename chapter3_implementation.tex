@@ -65,17 +65,94 @@ expanding its scope and use cases. Notable features of OpenMC (as of version
 \section{SaltProc v0.5.0}
 \label{sec:saltproc-detail}
 
+\subsection{Feeds and Separations}
+\SaltProc models feeds and separations using Processes and graphs. Processes themselves are
+defined in a JSON input file, and links between processes are defind in a DOT
+file. The process graph must be directed and acyclic in order to work with
+\SaltProc v0.5.0. At runtime, \SaltProc reads this input file to create
+Process-class instances for each item in the file. Every process file must have
+at lest a \verb.core_outlet. and \verb.core_inlet. Process. Processes have the following characteristics:
+\begin{itemize}
+    \item Capacity: \ldots
+    \item Efficiency: Extraction efficitcy for specific elements as mass fraction
+    \item 
+\end{itemize}a mass flowrate that m
+
 \subsection{Material reprocessing}
 Recall that \SaltProc uses a {\it batchwise} reprocessing scheme.
-\ldots
+
+Let $\mathbf{n}(t)^{j}$ denote the nuclide denisty vector for depletable material
+$j$ as function of time. For each depletable material $j$, the depletion solver numerically
+integrates the equation
 
 \begin{equation}
-    M^{\text{waste}} = \sum_{i} M^{i}_{\text{in}} * \epsilon_{i}
+    \frac{d\mathbf{n}^{j}(t)}{dt} = \mathbf{A}(\mathbf{n}^{j}(t), t)
+\end{equation}
+
+from time $i$ to time $i+1$ to get $\mathbf{n}^{j}(i+1)$, where $A$ is the
+depletion matrix. The specific details of integration are alredy covered in
+numerous other works (cite some here). This is sequence is called a {\bf depletion
+step}.
+
+Now, let the mass, volume, and mass flowrate of depletable material $j$ be
+$m^{j}$, $V^{j}$, and $\dot{m}^{j}$. respectively. At the end of each depletion
+step, SaltProc recursively applies processes $p$ in each path $r$ to the
+relevant materials to obtain thru and waste streams for each material. SaltProc
+tracks the mass and nuclide vector for both thru and waste streams. For thru
+streams, SaltProc also tracks the volume and mass flowrate density vector. For
+every node $p\in[0,l]$ where $0$ represents the core outlet and $l$ represents the core inlet, in the path $r$:
+
+% still need burnup, temp, density, void frac
+\begin{equation}
+    \mathbf{n}^{j}_{\text{thru, }p,r} = \mathbf{n}^{j}_{\text{thru, }p-1,r} (1 - \mathbf{\epsilon}^{j}_{p,r})
 \end{equation}
 \begin{equation}
-    M^{\text{thru}} = \sum_{i} M^{i}_{\text{in}} * (1 - \epsilon_{i})
+    m^{j}_{\text{thru, } p,r} = \alpha_{p} m^{j}_{\text{thru, }p-1,r} - m^{j}_{\text{waste, }p,r}
 \end{equation}
 \begin{equation}
-    M^{i+1}_{q} = 
+    \dot{m}^{j}_{\text{thru, }p,r} = \alpha_{p}\dot{m}^{j}_{\text{thru, }p-1,r}
 \end{equation}
-Let $M_{i}$ be the mass of material $i$, $m_{i}$  be the mass flowrate of material $i$. 
+\begin{equation}
+    V^{j}_{\text{thru, }p,r} = \alpha_{p}V^{j}_{\text{thru, }p-1,r}
+\end{equation}
+where 
+\begin{equation}
+    \alpha_{p,r} = \frac{\dot{m}_{p,r}}{\dot{m}_{\text{outlet}}}
+\end{equation}
+\begin{equation}
+    \mathbf{n}^{j}_{\text{thru, }0,r} = \mathbf{n}^{j}(i+1)
+\end{equation}
+\begin{equation}
+    m^{j}_{\text{thru, }0,r} = \rho^{j}(i+1)V^{j}(i+1)
+\end{equation}
+\begin{equation}
+    \dot{m}^{j}_{\text{thru, }0,r} = 0
+\end{equation}
+\begin{equation}
+    V^{j}_{\text{thru, }0,r} = V^{j}(i+1)
+\end{equation}
+\begin{equation}
+    \rho^{j}_{\text{thru, }0,r} = \rho^{j}(i+1)
+\end{equation}
+\begin{equation}
+    b^{j}_{\text{thru, }0,r} = b^{j}(i+1)
+\end{equation}
+
+waste streams
+\begin{equation}
+    \mathbf{n}^{j}_{\text{waste, }p,r} = \mathbf{n}^{j}_{\text{thru, }p-1,r} \cdot \mathbf{\epsilon}^{j}_{p,r}
+\end{equation}
+\begin{equation}
+    m^{j}_{\text{waste, }p,r} = \alpha_{p,r} \langle\mathbf{1},\mathbf{n}^{j}_{\text{waste, }p,r}\rangle
+\end{equation}
+SaltProc does not currently track the volume and mass flowrate of waste streams.
+
+After the recursive computation, SaltProc sums thru and waste streams over all
+paths to get the total thru stream at the inlet, and the total waste stream at
+the inlet which represents all material removed during reprocessing.
+\begin{equation}
+    \mathbf{n}^{j}_{\text{thru, inlet, net}} = \sum_{r} \mathbf{n}^{j}_{\text{thru, inlet, }r}
+\end{equation}
+\begin{equation}
+    \mathbf{n}^{j}_{\text{waste, inlet, net}} = \sum_{r} \mathbf{n}^{j}_{\text{waste, inlet, }r}
+\end{equation}
