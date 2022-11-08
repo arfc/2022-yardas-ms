@@ -175,6 +175,11 @@ Similarly, for the waste streams, we have
     m^{j}_{\text{waste, }p,r} = \alpha_{p,r} m^{j}_{\text{thru, }p-1,r} \langle\mathbf{1},\mathbf{n}^{j}_{\text{waste, }p,r}\rangle
 \end{equation}
 SaltProc does not currently track the volume and mass flowrate of waste streams.
+In practice, since it is very difficult to separate individual isotopes,
+SaltProc only allows extraction efficiencies to be defined for elements. So for
+any isotope $a$ of xenon,
+$\epsilon_{\ce{^{a}Xe}} = \epsilon_{\ce{^{a^{\prime}}Xe}}$  where
+$a^{\prime} \in \text{isotopes of Xe}$
 
 After the recursive computation, SaltProc sums thru and waste streams over all
 paths to get the total thru stream at the inlet, and the total waste stream at
