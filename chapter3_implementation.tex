@@ -136,7 +136,7 @@ $\dot{m}_{p}$. At the end of each depletion step, \SaltProc constructs process
 paths from the process graph defined in the DOT file, and sequentially applies
 each proceess $p$ in each path $r$ to the relevant materials to obtain thru
 and waste streams for each material. \SaltProc tracks the mass and nuclide vector for both thru and waste streams. For thru
-streams, SaltProc also tracks the volume and mass flowrate. For every node
+streams, \SaltProc also tracks the volume and mass flowrate. For every node
 $p\in[0,l]$ where $0$ represents the core outlet and $l$ represents the core
 inlet, in the path $r$, for the thru streams we have
 
@@ -164,9 +164,6 @@ and the inital conditions are
 \begin{equation}
     V^{j}_{\text{thru, }0,r} = V^{j}(i+1)
 \end{equation}
-\begin{equation}
-    \rho^{j}_{\text{thru, }0,r} = \rho^{j}(i+1)
-\end{equation}
 Similarly, for the waste streams, we have
 \begin{equation}
     \mathbf{n}^{j}_{\text{waste, }p,r} = \mathbf{n}^{j}_{\text{thru, }p-1,r} \cdot \mathbf{\epsilon}^{j}_{p,r}
@@ -174,13 +171,13 @@ Similarly, for the waste streams, we have
 \begin{equation}
     m^{j}_{\text{waste, }p,r} = \alpha_{p,r} m^{j}_{\text{thru, }p-1,r} \langle\mathbf{1},\mathbf{n}^{j}_{\text{waste, }p,r}\rangle
 \end{equation}
-SaltProc does not currently track the volume and mass flowrate of waste streams.
+\SaltProc does not currently track the volume and mass flowrate of waste streams.
 
-After the recursive computation, SaltProc sums thru and waste streams over all
+After the recursive computation, \SaltProc sums thru and waste streams over all
 paths to get the total thru stream at the inlet, and the total waste stream at
 the inlet which represents all material removed during reprocessing.
 \begin{equation}
-    \mathbf{n}^{j}_{\text{thru, inlet, net}} = \frac{\sum_{r} m^{j}_{\text{thru, inlet, }r} * \mathbf{n}^{j}_{\text{thru, inlet, }r}}{\sum_{r} m^{j}_{\text{thru, inlet, }r}}
+    \mathbf{n}^{j}_{\text{thru, inlet, net}} = \frac{\sum_{r} m^{j}_{\text{thru, inlet, }r} \mathbf{n}^{j}_{\text{thru, inlet, }r}}{\sum_{r} m^{j}_{\text{thru, inlet, }r}}
 \end{equation}
 \begin{equation}
     \mathbf{n}^{j}_{\text{waste, inlet, net}} = \frac{\sum_{r} m^{j}_{\text{waste, inlet, }r} \mathbf{n}^{j}_{\text{waste, inlet, }r}}{m^{j}_{\text{waste, inlet, }r}}
@@ -192,13 +189,10 @@ equivalent to the removed mass so that the mass of fuel salt undergoing depletio
 remains constant.
 For feed $j'$ corresponding to material $j$, we have
 \begin{equation}
-    \mathbf{n}^{j}_\text{filled} = \frac{m^{j}_{\text{thru, }l} \mathbf{n}^{j}_{\text{thru, inlet, net}} +  m^{j}_{\text{removed}}\mathbf{n}^{j'}}{m^{j}_{\text{thru,}0}}
+    \mathbf{n}^{j}_\text{filled} = \frac{m^{j}_{\text{thru, }l}\mathbf{n}^{j}_{\text{thru, inlet, net}} +  m^{j}_{\text{removed}}\mathbf{n}^{j'}}{m^{j}_{\text{thru,}0}}
 \end{equation}
 
 where 
 \begin{equation}
     m^{j}_{\text{removed}} = m^{j}_{\text{thru,}0} - m^{j}_{\text{thru, } l}
-\end{equation}
-\begin{equation}
-    \alpha_{\text{filled}} =  \frac{m^{j}_{\text{thru,}0} - m^{j}_{\text{thru, } l}}{m^{j'}}
 \end{equation}
