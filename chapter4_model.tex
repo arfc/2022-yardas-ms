@@ -61,10 +61,10 @@ have been unable to find this composition in Robertson et al.
 \cite{robertson_conceptual_1971}}. The lithium used in the fuel salt is
 enriched to 99.995\% \ce{^{7}Li}. This is because \ce{^{6}Li} is a strong
 neutron absorber and produces tritium in the absorption reaction. The atom-\%
-for each nuclide is given in Table \ref{tab:msbr_fuel_salt}\footnote{Most of the
+for each nuclide is given in Table \ref{tab:msbr_fuel_salt-ref}\footnote{Most of the
 discussion of the fuel salt compositon in Robertson el al
 \cite{robertson_conceptual_1971} specify elemental version of the nuclides in
-Table \ref{tab:msbr_fuel_salt}. I have specific specific nuclides for the
+Table \ref{tab:msbr_fuel_salt-ref}. I have specific specific nuclides for the
 following reasons: (1) both \ce{F} and \ce{Be} have only one stable isotope, (2)
 the fuel salt recieves initial fissile loading from \ce{^{233}U} or
 \ce{^{235}U}, and (3) the fuel salt recieves its fertile loading from
@@ -72,13 +72,15 @@ the fuel salt recieves initial fissile loading from \ce{^{233}U} or
 
 \begin{table}[htpb] 
     \centering 
-    \caption{\Gls{msbr} fuel salt specifications}
-    \label{tab:msbr_fuel_salt}
-    \begin{tabular}{|c|c|c|c|c|c|} 
+    \caption{Reference \Gls{msbr} fuel salt specifications}
+    \label{tab:msbr_fuel_salt-ref}
+    \begin{tabular}{|c|c|c|c|c|c|c|} 
         \hline
-        \ce{^{6}Li} & \ce{^{7}Li} & \ce{^{19}F} & \ce{^{9}Be} & \ce{^{232}Th} & \ce{^{233}U}\\
+        & \ce{^{6}Li} & \ce{^{7}Li} & \ce{^{19}F} & \ce{^{9}Be} & \ce{^{232}Th} & \ce{^{233}U}\\
         \hline 
-        1.4357925 & 34.4142075 & 56.356 & 5.3 & 2.4 & 0.06 \\
+        atom-\% & 1.4357925 & 34.4142075 & 56.35$\overline{6}$ & 5.$\overline{3}$ & 2.4 & 0.06 \\
+        \hline
+        mass-\% & 0.4452449 & 12.4477343 & 55.1982285 & 2.4779439 & 28.7100003 & 0.7208481\\ 
         \hline
     \end{tabular}
 \end{table}
@@ -105,9 +107,26 @@ simplicity, I set the evaluated temperature of all materials to 900
 \SerpentTWO depletion steps. At this temperature, the density of the fuel salt
 is 3.3332642 \unit{\gram\per\centi\metre\cubed}.
 
+\begin{table}[htpb] 
+    \centering 
+    \caption{Model \Gls{msbr} fuel salt specifications}
+    \label{tab:msbr_fuel_salt-model}
+    \begin{tabular}{|c|c|c|c|c|c|} 
+        \hline
+        & \ce{^{7}Li} & \ce{^{19}F} & \ce{^{9}Be} & \ce{^{232}Th} & \ce{^{233}U}\\
+        \hline 
+        atom-\% & 28.386326 & 60.437153 & 6.330058 & 4.747557 & 0.098907 \\
+        \hline
+        mass-\% & 7.87474673879085 & 45.4003012179284 & 2.25566879138321 & 43.5579130482336 & 0.911370203663893\\ 
+        \hline
+    \end{tabular}
+\end{table}
 In the virtual model, the fuel salt material uses the composition specified in
-Table \ref{tab:msbr_fuel_salt} and has a density of 3.3332642
-\unit{\gram\per\centi\metre\cubed}.
+Table \ref{tab:msbr_fuel_salt-model} and has a density of 3.35
+\unit{\gram\per\centi\metre\cubed}. Notice that the lithium has been enriched to
+100\% \ce{^{7}Li}. This is because during inital simulations, even those very
+small amounts of \ce{^{6}Li} were enough to kill the reaction. The inital
+fissile and fertile loading has also been slightly increased.
 
 \subsection{Graphite}
 \label{sub:graphite}
@@ -120,7 +139,7 @@ for graphite that I was able to find in Robertson et al.
 \cite{robertson_conceptual_1971}
 
 In the virtual model, the graphite material uses elemental carbon and has a
-density of 1.843\unit{\gram\per\centi\metre\cubed}.
+density of 1.84\unit{\gram\per\centi\metre\cubed}.
 
 \subsection{Modified Hastelloy N}
 \label{sub:hastelloy}
@@ -137,24 +156,40 @@ components included in the virtual model.
 Modified Hastelloy N has a density of 8671 \unit{\kilo\gram\per\cubic\metre} at
 1300\unit{\degree}F (704.4444\unit{\celsius}, 977.5944 \unit{\kelvin})
 \cite{robertson_conceptual_1971}. The elemental composition of modified
-Hastelloy N and their amounts in mass-\% are in Table \ref{tab:hastelloy-n}.
+Hastelloy N and their amounts in mass-\% are in Table \ref{tab:hastelloy-n-ref}.
 
 \begin{table}[htpb]
     \centering
-    \caption{Mass-\% of elements in modified Hastelloy N used in the \Gls{msbr}. Data from Table 3.1 and S.1 in \cite{robertson_conceptual_1971}. Ranged values are collapsed to their average.}
-    \label{tab:hastelloy-n}
+    \caption{Mass-\% of elements in modified Hastelloy N used in the \Gls{msbr}. Data from Table 3.1 and S.1 in \cite{robertson_conceptual_1971}. Ranged values collapsed to their average are denoted with a $^*$}
+    \label{tab:hastelloy-n-ref}
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
         \hline
-        \ce{Ni} & \ce{Mo} & \ce{Cr} & \ce{Fe} & \ce{C} & \ce{Mn} & \ce{Si} & \ce{W} & \ce{Al} & \ce{Ti} & \ce{Cu} & \ce{Co} & \ce{P} & \ce{S} & \ce{B} & \ce{Hf} & \ce{Nb} \\
+        \ce{Ni} & \ce{Mo}$^*$ & \ce{Cr}$^*$ & \ce{Fe}$^*$ & \ce{C}$^*$ & \ce{Mn}$^*$ & \ce{Si} & \ce{W} & \ce{Al} & \ce{Ti}$^*$ & \ce{Cu} & \ce{Co} & \ce{P} & \ce{S} & \ce{B} & \ce{Hf}$^*$ & \ce{Nb}$^*$ \\
         \hline
-        73.703 & 12 & 7 & 3 & 0.06 & 0.35 & 0.1 & 0.1 & 0.1 & 1.25 & 0.1 & 0.2 & 0.015 & 0.015 & 0.001 & 1 & 1\\
+        73.709 & 12 & 7 & 3 & 0.06 & 0.35 & 0.1 & 0.1 & 0.1 & 1.25 & 0.1 & 0.2 & 0.015 & 0.015 & 0.001 & 1 & 1\\
+        %\hline
+        %atom-\% & 76.72 & 7.64 & 8.224 & 3.282 & 0.305 & 0.389 & 0.218 & 0.033 & 0.226 & 1.595 & 0.096 & 0.207 & 0.03 & 0.029 & 0.006 & 0.342 & 0.658 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[htpb]
+    \centering
+    \caption{Mass-\% of elements in modified Hastelloy N used in the \Gls{msbr} model.}
+    \label{tab:hastelloy-n-model}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \ce{Ni} & \ce{Cr} & \ce{W} & \ce{Al} \\
+        \hline
+        67.7 & 7.0 & 25.0 & 0.3 \\
         \hline
     \end{tabular}
 \end{table}
 
 The Hastelloy N material in the virtual model uses the composition specified in
-Table \ref{tab:hastelloy-n} and has a density of 8.671
-\unit{\gram\per\centi\metre\cubed}.
+Table \ref{tab:hastelloy-n-model} and has a density of 8.671 
+\unit{\gram\per\centi\metre\cubed}. The model material has a different composition
+than the reference material because\ldots
 
 
 \section{Reactor core}
