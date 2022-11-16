@@ -1,6 +1,6 @@
 \chapter{Model Description}
 \label{ch:chapter4}
-As mentioned in Chapter 1, I am using a model of the \Gls{msbr}
+As mentioned in Chapter 1, I am using a \Gls{csg} model of the \Gls{msbr}
 \cite{robertson_conceptual_1971} to verify my \OpenMC implementation in
 \SaltProc.
 
@@ -15,7 +15,6 @@ system can be found in \cite{robertson_conceptual_1971}}: the fuel salt, the
 reactor core, and the salt reprocessing system.
 
 \begin{figure}[htpb] 
-    \label{fig:msbr-overview}
     \centering
     \subfloat[][]{
         \includegraphics[width=0.5\linewidth]{figs/ch4/msbr_full_xy_ref.png}
@@ -34,12 +33,13 @@ reactor core, and the salt reprocessing system.
         \includegraphics[width=0.5\linewidth]{figs/ch4/msbr_full_xz_openmc.png}
         \label{fig:msbr_model_xz}
     }
-    \caption[Full core views of MSBR reference design and virtual model]{
+    \caption[Full views of MSBR]{
         \subref{fig:msbr_ref_xy} Top down view of \Gls{msbr} reference design.
         \subref{fig:msbr_model_xy} Top down view of \Gls{msbr} CSG model.
         \subref{fig:msbr_ref_xz} Top down view of \Gls{msbr} reference design.
         \subref{fig:msbr_model_xz} Top down view of \Gls{msbr} CSG model.
     }
+    \label{fig:msbr-overview}
 \end{figure}
 
 As seen in Figure \ref{fig:msbr-overview} \OpenMC and \SerpentTWO \Gls{msbr}
@@ -121,7 +121,7 @@ is 3.3332642 \unit{\gram\per\centi\metre\cubed}.
         \hline
     \end{tabular}
 \end{table}
-In the virtual model, the fuel salt material uses the composition specified in
+In the CSG model, the fuel salt material uses the composition specified in
 Table \ref{tab:msbr_fuel_salt-model} and has a density of 3.35
 \unit{\gram\per\centi\metre\cubed}. Notice that the lithium has been enriched to
 100\% \ce{^{7}Li}. This is because during inital simulations, even those very
@@ -138,7 +138,7 @@ Section 3.2.3 in \cite{robertson_conceptual_1971}. At 70\unit{\degree}F (294.3
 for graphite that I was able to find in Robertson et al.
 \cite{robertson_conceptual_1971}
 
-In the virtual model, the graphite material uses elemental carbon and has a
+In the CSG model, the graphite material uses elemental carbon and has a
 density of 1.84\unit{\gram\per\centi\metre\cubed}.
 
 \subsection{Modified Hastelloy N}
@@ -151,7 +151,7 @@ being under irradation for a long period of time.
 The \Gls{msbr} used a modified version of Hastelloy N designed to improve
 embrittlement resistance and weldibility \cite{robertson_conceptual_1971}.
 The \Gls{msbr} uses modified Hastelloy N on all nearly all salt-facing
-components included in the virtual model.
+components included in the CSG model.
 
 Modified Hastelloy N has a density of 8671 \unit{\kilo\gram\per\cubic\metre} at
 1300\unit{\degree}F (704.4444\unit{\celsius}, 977.5944 \unit{\kelvin})
@@ -160,7 +160,7 @@ Hastelloy N and their amounts in mass-\% are in Table \ref{tab:hastelloy-n-ref}.
 
 \begin{table}[htpb]
     \centering
-    \caption{Mass-\% of elements in modified Hastelloy N used in the \Gls{msbr}. Data from Table 3.1 and S.1 in \cite{robertson_conceptual_1971}. Ranged values collapsed to their average are denoted with a $^*$}
+    \caption[Mass-\% of elements in modified Hastelloy N used in the \Gls{msbr}]{Mass-\% of elements in modified Hastelloy N used in the \Gls{msbr}. Data from Table 3.1 and S.1 in \cite{robertson_conceptual_1971}. Ranged values collapsed to their average are denoted with a $^*$}
     \label{tab:hastelloy-n-ref}
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
         \hline
@@ -186,7 +186,7 @@ Hastelloy N and their amounts in mass-\% are in Table \ref{tab:hastelloy-n-ref}.
     \end{tabular}
 \end{table}
 
-The Hastelloy N material in the virtual model uses the composition specified in
+The Hastelloy N material in the CSG model uses the composition specified in
 Table \ref{tab:hastelloy-n-model} and has a density of 8.671 
 \unit{\gram\per\centi\metre\cubed}. The model material has a different composition
 than the reference material because\ldots
@@ -195,13 +195,306 @@ than the reference material because\ldots
 \section{Reactor core}
 \label{sec:msbr-core}
 The \Gls{msbr} core is split into three distinct different zones; zone I, zone
-II, and the reflector zone.
+II, and the reflector zone. 
+
+\begin{figure}[htpb]
+    \centering
+    \subfloat[][]{
+        \includegraphics[width=0.45\linewidth]{figs/ch4/msbr_section_ref.png}
+        \label{fig:msbr_sec_ref}
+    }
+    \subfloat[][]{
+        \includegraphics[width=0.35\linewidth]{figs/ch4/msbr_section_openmc.png}
+        \label{fig:msbr_sec_model}
+    }
+    \caption[Detail views of MSBR core region]{
+        \subref{fig:msbr_sec_ref} Detail view of \Gls{msbr} reference design.
+        \subref{fig:msbr_sec_model} Detail view of \Gls{msbr} CSG model.}
+
+    \label{fig:msbr-detail}
+\end{figure}
 
 \subsection{Zone I} Zone I is the central-most region of the core, and is 13\%
 fuel salt by volume. Zone I is divided into three subzones: zone I-A, zone I-B,
-and the control rod zone. (more about these zones)
+and the control rod zone.
+
+Zone I-A and I-B consist of 4-in. $\times$ 4-in. (10.16-cm $\times$ 10.16-cm)
+square graphite elements. Elements in both zones have axial ribs protruding from
+the faces of the square elements near the corners, as well as cylindrical
+channels in the centers of the elements. The only dimensional difference between
+the zone I-A and I-B elements is the diameter of the cylindrical channels.
+
+The purpose of the ribs is to\ldots
+
+The purpose of the fuel holes is to\ldots
+
+The reason zone I is split into two elements is because\ldots
+
+The central part of zone I consists of zone I-A elements, whereas the outer part
+of zone I consists of zone I-B elements \cite{robertson_conceptual_1971}.
+Robertson et al. does not specify exact distribution of zone I-A and I-B
+elements, so in the CSG model we assume that zone I consists entirely of I-B
+elements.
+
+Figures \ref{fig:msbr-ia-xy}, \ref{fig:msbr-ia-lattice} show cross-sectional
+views of the zone I-A elements. Figures \ref{fig:msbr-ib-xz-full},
+\ref{fig:msbr-ib-xy}, and \ref{fig:msbr-ib-lattice} show cross-sectional views
+of the zone I-B elements. Tables \ref{tab:zone-ia-ref-specs} and
+\ref{tab:zone-ib-specs} specify the dimensions of the zone I-A and I-B elements,
+respectively.
+
+\begin{table}[htpb]
+    \centering
+    \caption{Reference Zone I-A dimensions}
+    \label{tab:zone-ia-ref-specs}
+    \begin{tabulary}{\linewidth}{|C|C|C|}
+    \hline
+    Quantity & Dimension [in] & Dimension [\unit{\centi\metre}]\\
+    \hline
+    Section A inner diameter & 0.6 & 1.524 \\
+    \hline
+    Section A Outer diameter & 3.698 & 9.39292 \\
+    \hline
+    Rib tip radius of curvature & 0.25 & 0.635 \\
+    \hline
+    Rib tip to element spacing & 0.302 & 0.7608 \\
+    \hline
+    Rib tip to element center & 1.315 & 3.3401 \\
+    \hline
+    Zone A height (bottom) & 9 & 22.86\\
+    \hline
+    Zone B height & 156 & 396.24 \\
+    \hline
+    Zone A height (top) & 7.5 & 19.05 \\
+    \hline
+    Conical part height & 2.75 & 6.985 \\
+    \hline
+    Hastelloy plug height & 2.875 & 7.3025 \\
+    \hline
+    Hastelloy plug diameter\footnote{the hastelloy N plug has the same diameter as the fuel hole in the I-A elements} & 0.6 & 1.524 \\
+    \hline
+    Top part height & 1.75 & 4.445 \\
+    \hline
+    Top part outer diameter & 1.75 & 4.445 \\
+    \hline
+    \end{tabulary}
+\end{table}
+
+
+\begin{table}[htpb]
+    \centering
+    \caption{Zone I-B dimensions}
+    \label{tab:zone-ib-specs}
+    \begin{tabulary}{\linewidth}{|C|CC|CC|}
+    \hline
+    Quantity & Reference Dimension [in] & Reference Dimension [\unit{\centi\metre}] & Model Dimension [in] & Model Dimension [\unit{\centi\metre}]\\
+    \hline
+    Section A inner diameter & 1.340 (Fig. \ref{fig:msbr_ib_bottom_ref}) or 1.347 (Fig. \ref{fig:msbr_ib_lattice_ref}) & 3.4036 or 3.42138 & 1.347 & 3.42138 \\
+    \hline
+    Section A Outer diameter & 3.900 & 9.9062 & 3.900 & 9.9062 \\
+    \hline
+    Rib tip radius of curvature & 0.25 & 0.635 & 0.263 & 0.66802\\
+    \hline
+    Rib tip to element spacing & 0.1 & 0.254 & 0.1 & 0.254\\
+    \hline
+    Rib tip to element center & 1.687 & 4.28498 & 1.687 & 4.28498\\
+    \hline
+    Zone A height (bottom) & 9 & 22.86 & 9 & 22.86\\
+    \hline
+    Zone B height & 156 & 396.24 & 156 & 396.24\\
+    \hline
+    Zone A height (top) & 7.5 & 19.05 & 7.5 & 19.05\\
+    \hline
+    Conical part height & 2.75 & 6.985 & 2.75 & 6.985\\
+    \hline
+    Hastelloy plug height & 2.875 & 7.3025 & 1.75 & 4.445 \\
+    \hline
+    Hastelloy plug diameter\footnote{the hastelloy N plug has the same diameter as the fuel holdein the I-B elements} & 1.340 (Fig. \ref{fig:msbr_ib_bottom_ref}) or 1.347 (Fig. \ref{fig:msbr_ib_lattice_ref}) & 3.4036 or 3.42138 & 1.347 & 3.42138 \\
+    \hline
+    Top part height & 1.75 & 4.445 & 1.75 & 4.445 \\
+    \hline
+    Top part outer diameter & 1.75 & 4.445 & 1.75 & 4.445\\
+    \hline
+    \end{tabulary}
+\end{table}
+
+
+\begin{figure}[htpb]
+    \centering
+    \subfloat[][]{
+        \includegraphics[width=0.25\linewidth]{figs/ch4/zone_i_full_ref.png}
+        \label{fig:msbr_i_full_ref}
+    }
+    \subfloat[][]{
+        \includegraphics[width=0.17\linewidth]{figs/ch4/zone_ib_full_openmc.png}
+        \label{fig:msbr_ib_full_model}
+    }
+    %\end{tabular}
+    \caption[$xz$ cross sections of Zone I-B elements]{
+        \subref{fig:msbr_i_full_ref} Reference Zone I element
+        \subref{fig:msbr_ib_full_model} Model Zone I-B element
+    }
+    \label{fig:msbr-ib-xz-full}
+\end{figure}
+
+\begin{figure}[htpb]
+    \centering
+    \subfloat[][]{
+        \includegraphics[width=0.3\linewidth]{figs/ch4/zone_ib_main_ref.png}
+        \label{fig:msbr_ib_main_ref}
+    }
+    \subfloat[][]{
+        \includegraphics[width=0.2\linewidth]{figs/ch4/zone_ib_main_openmc.png}
+        \label{fig:msbr_ib_main_model}
+    }
+    \\
+    \subfloat[][]{
+        \includegraphics[width=0.3\linewidth]{figs/ch4/zone_ib_bottom_ref.png}
+        \label{fig:msbr_ib_bottom_ref}
+    }
+    \subfloat[][]{
+        \includegraphics[width=0.2\linewidth]{figs/ch4/zone_ib_bottom_openmc.png}
+        \label{fig:msbr_ib_bottom_model}
+    }
+    \caption[$xy$ cross sections of Zone I-B elements]{
+        \subref{fig:msbr_ib_main_ref} Reference Zone I-B element; Section B.
+        \subref{fig:msbr_ib_main_model} Model Zone I-B element; Section B.
+        \subref{fig:msbr_ib_bottom_ref} Reference Zone I-B element; Section A.
+        \subref{fig:msbr_ib_bottom_model} Model Zone I-B element; Section A.
+    }
+    \label{fig:msbr-ib-xy}
+\end{figure}
+
+\begin{figure}[htpb]
+    \centering
+    \subfloat[][]{
+        \includegraphics[width=0.25\linewidth]{figs/ch4/zone_ib_lattice_ref.png}
+        \label{fig:msbr_ib_lattice_ref}
+    }
+    \subfloat[][]{
+        \includegraphics[width=0.17\linewidth]{figs/ch4/zone_ib_lattice_openmc.png}
+        \label{fig:msbr_ib_lattice_model}
+    }
+    %\end{tabular}
+    \caption[Lattice view of Zone I-B elements]{
+        \subref{fig:msbr_ib_lattice_ref} Reference Zone I-B lattice
+        \subref{fig:msbr_ib_lattice_model} Model Zone I-B lattice 
+    }
+    \label{fig:msbr-ib-lattice}
+\end{figure}
+
+
+\begin{figure}[htpb]
+    \centering
+    \subfloat[][]{
+        \includegraphics[width=0.3\linewidth]{figs/ch4/zone_ia_main_ref.png}
+        \label{fig:msbr_ia_main_ref}
+    }
+    \subfloat[][]{
+        \includegraphics[width=0.3\linewidth]{figs/ch4/zone_ia_bottom_ref.png}
+        \label{fig:msbr_ia_bottom_ref}
+    }
+    \caption[$xy$ cross sections of Zone I-A elements]{
+        \subref{fig:msbr_ia_main_ref} Reference Zone I-A element; Section B.
+        \subref{fig:msbr_ia_bottom_ref} Reference Zone I-A element; Section A.
+    }
+    \label{fig:msbr-ia-xy}
+\end{figure}
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.25\linewidth]{figs/ch4/zone_ia_lattice_ref.png}
+    \caption{Lattice view of Zone I-A elements}
+    \label{fig:msbr-ia-lattice}
+\end{figure}
+
+
+
+The control rod elements\ldots
+
 
 \subsection{Zone II}
+
+\begin{table}[htpb]
+    \centering
+    \caption{Zone II-A dimensions}
+    \label{tab:zone-iia-specs}
+    \begin{tabulary}{\linewidth}{|C|CC|CC|}
+    \hline
+    Quantity & Reference Dimension [in] & Reference Dimension [\unit{\centi\metre}] & Model Dimension [in] & Model Dimension [\unit{\centi\metre}]\\
+    \hline
+    Section A inner diameter & 0.5 & 1.27 & 0.5 & 1.27 \\
+    \hline
+    Section A Outer diameter & 2.875 & 7.3025 & 2.875 & 7.3025 \\
+    \hline
+    Section B inner diameter & 2.6 & 6.604 & 2.6 & 6.604 \\
+    \hline
+    Rib tip radius of curvature & 0.25 & 0.635 & 0.263 & 0.66802\\
+    \hline
+    Rib tip to element spacing & 0.1 & 0.254 & 0.1 & 0.254\\
+    \hline
+    Rib tip to element center & 1.687 & 4.28498 & 1.687 & 4.28498\\
+    \hline
+    Section B height & 172 & 436.88 & 172 & 436.88\\
+    \hline
+    Section A height & 2 & 5.08 & 2 & 5.08 \\
+    \hline
+    Cone height & 1 & 2.54 & 1 & 2.54 \\
+    \hline
+    Top part height & 3 & 7.62 & 3 & 7.62 \\
+    \hline
+    Top part outer radius & 1.75 & 4.445 & 1.75 & 4.445 \\
+    \hline
+    \end{tabulary}
+\end{table}
+
+\begin{figure}[htpb]
+    \centering
+    \subfloat[][]{
+        \includegraphics[width=0.25\linewidth]{figs/ch4/zone_iia_full_ref.png}
+        \label{fig:msbr_iia_full_ref}
+    }
+    \subfloat[][]{
+        \includegraphics[width=0.17\linewidth]{figs/ch4/zone_iia_full_openmc.png}
+        \label{fig:msbr_iia_full_model}
+    }
+    %\end{tabular}
+    \caption[$xz$ cross sections of Zone II-A elements]{
+        \subref{fig:msbr_iia_full_ref} Reference Zone II-A element
+        \subref{fig:msbr_iia_full_model} Model Zone II-A element
+    }
+    \label{fig:msbr-iia-xz-full}
+\end{figure}
+
+\begin{figure}[htpb]
+    \centering
+    %\begin{tabular}{cc}
+    \subfloat[][]{
+        \includegraphics[width=0.3\linewidth]{figs/ch4/zone_iia_top_xy_ref.png}
+        \label{fig:msbr_iia_top_ref}
+    } 
+    \subfloat[][]{
+        \includegraphics[width=0.2\linewidth]{figs/ch4/zone_iia_top_xy2_openmc.png}
+        \label{fig:msbr_iia_top_model}
+    }
+    \\
+    \subfloat[][]{
+        \includegraphics[width=0.35\linewidth]{figs/ch4/zone_iia_main_ref.png}
+        \label{fig:msbr_iia_main_ref}
+    } 
+    \subfloat[][]{
+        \includegraphics[width=0.15\linewidth]{figs/ch4/zone_iia_main_openmc.png}
+        \label{fig:msbr_iia_main_model}
+    }
+    %\end{tabular}
+    \caption[$xy$ cross sections of Zone II-A elements]{
+        \subref{fig:msbr_iia_top_ref} Reference Zone II-A element; Section A.
+        \subref{fig:msbr_iia_top_model} Model Zone II-A element; Section A.
+        \subref{fig:msbr_iia_main_ref} Reference Zone II-A element; Section B.
+        \subref{fig:msbr_iia_main_model} Model Zone II-A element; Section B.
+    }
+    \label{fig:msbr-iia-xy}
+\end{figure}
 
 
 \subsection{Reflectors}
