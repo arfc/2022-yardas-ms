@@ -30,9 +30,16 @@ def myplot(univ,
                   pixels=pixels)
     return p
 
+zone_iia_full = myplot(root,
+                       origin=(22*10.16, 0.0, 429),
+                       width=(10.16,40),
+                       pixels=(1000,3937))
+matplotlib.image.imsave('zone_iia_full_openmc.png',
+                        zone_iia_full.get_array())
+
 zone_iia_top = myplot(root,
-                      origin=(223.512735673, 0.0, 440.332978843),
-                      width=(10.142528040, 18.541354985))
+                      origin=(22*10.16, 0.0, 440.332978843),
+                      width=(10.16, 18.541354985))
 matplotlib.image.imsave('zone_iia_top_xz_openmc.png',
                         zone_iia_top.get_array())
 
@@ -67,14 +74,21 @@ zone_iia_lattice_detail = myplot(root,
 matplotlib.image.imsave('zone_iia_lattice_openmc.png',
                         zone_iia_lattice_detail.get_array())
 
+zone_ia_full = myplot(root,
+                      origin=(21*10.16, 0.0, 426.5),
+                      width=(10.16,45),
+                      pixels=(1000,4429))
+matplotlib.image.imsave('zone_ia_full_openmc.png',
+                        zone_ia_full.get_array())
+
 zone_ia_top = myplot(root,
-                     origin=(20.301840479, 0.0, 442.347506341),
-                     width=(10.278881411, 14.5))
+                     origin=(21*10.16, 0.0, 442.347506341),
+                     width=(10.16, 14.5))
 matplotlib.image.imsave('zone_ia_top_openmc.png',
                         zone_ia_top.get_array())
 
 zone_ia_main = myplot(root,
-                      origin=(22*10.16, 0.0, 300),
+                      origin=(21*10.16, 0.0, 300),
                       width=(10.16, 10.16),
                       pixels=(1000,1000),
                       basis='xy')
@@ -89,7 +103,7 @@ matplotlib.image.imsave('zone_ia_lattice_openmc.png',
                         zone_ia_lattice_detail.get_array())
 
 zone_ia_bottom = myplot(root,
-                      origin=(22*10.16, 0.0, 420),
+                      origin=(21*10.16, 0.0, 5),
                       width=(10.16, 10.16),
                       pixels=(1000,1000),
                       basis='xy')
