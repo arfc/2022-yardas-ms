@@ -70,6 +70,31 @@ the fuel salt recieves initial fissile loading from \ce{^{233}U} or
 \ce{^{235}U}, and (3) the fuel salt recieves its fertile loading from
 \ce{^{232}Th}}.
 
+The original salt volume in the \Gls{csg} \Gls{msbr} model was set to
+$4.871\cdot 10^7$ \unit{\centi\metre\cubed}. This is roughly double the salt
+volume in the reference specification (see Table \ref{tab:salt-volumes}). I
+performed stochastic volume calculations on both the \SerpentTWO and \OpenMC
+versions of the \Gls{csg} model, and found they both calculated volumes around
+$2.6\cdot 10^7$ \unit{\centi\metre\cubed}. I have updated the salt volume to the
+average of the two volumes (see Table \ref{tab:stoch-vol}). This new volume
+gives a rougly 8\% error in the salt volume compared to the reference
+specification.
+
+\begin{table}[htpb]
+    \centering
+    \caption[MSBR fuel stochastic volume calculations]{MSBR fuel stochastic volume calculations, using $1\cdot 10^9$ particles.}
+    \label{tab:stoch-vol}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Quantity & \SerpentTWO & \OpenMC & Average\\
+        \hline
+        Volume [\unit{\centi\metre\cubed}] & $2.60961 \cdot 10^7$ & $2.6085 \cdot 10^7$ & $2.6091 \cdot 10^7$ \\
+        \hline
+        Statistical error & 0.00010 & 0.00010 & 0.00007 \\
+        \hline
+    \end{tabular}
+\end{table}
+
 \begin{table}[htpb] 
     \centering 
     \caption{Reference \Gls{msbr} fuel salt specifications}
@@ -197,6 +222,32 @@ than the reference material because\ldots
 The \Gls{msbr} core is split into three distinct different zones; zone I, zone
 II, and the reflector zone. 
 
+%% Table 3.2 and 3.3 in robertson
+\begin{table}[htpb]
+    \centering
+    \caption[Volume of salt in reference MSBR core regions]{Volume of salt in
+reference MSBR core regions. Reproduced from Table 3.2 in
+\cite{robertson_conceptual_1971}}
+    \label{tab:salt-volumes}
+    \begin{tabular}{|c|cc|}
+        \hline
+        Zone & Salt volume [ft$^3$] & Salt volume [$10^6$\unit{\centi\metre\cubed}] \\
+        \hline
+        Zone I & 288 & 8.155252 \\
+        \hline
+        Zone II & 376.5 & 10.661293 \\
+        \hline
+        Upper plenum & 36.2 & 1.02507 \\ 
+        \hline
+        Lower plenum & 35.4 & 1.002416 \\ 
+        \hline
+        Annulus & 132 & 3.737824\\
+        \hline
+        Core total & 868.1 & 24.581855 \\ 
+        \hline
+    \end{tabular}
+\end{table}
+
 \begin{figure}[htpb]
     \centering
     \subfloat[][]{
@@ -218,7 +269,7 @@ II, and the reflector zone.
 fuel salt by volume. Zone I is divided into three subzones: zone I-A, zone I-B,
 and the control rod zone.
 
-Zone I-A and I-B consist of 4-in. $\times$ 4-in. (10.16-cm $\times$ 10.16-cm)
+Zone I-A and I-B consist of 4-in.$\times$4-in. (10.16-cm$\times$10.16-cm)
 square graphite elements. As seen in Figures \ref{fig:msbr-ia-xy} and
 \ref{fig:msbr-ib-xy} elements in both zones have axial ribs protruding from
 the faces of the square elements near the corners, as well as cylindrical
@@ -435,9 +486,7 @@ specifications of the reference design.
     \label{fig:msbr-ia-lattice}
 \end{figure}
 
-
-
-The control rod elements\ldots
+The very center of the core contains The control rod elements\ldots
 
 
 \subsection{Zone II}
