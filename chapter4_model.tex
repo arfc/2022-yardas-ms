@@ -214,34 +214,61 @@ II, and the reflector zone.
     \label{fig:msbr-detail}
 \end{figure}
 
-\subsection{Zone I} Zone I is the central-most region of the core, and is 13\%
+\subsection{Zone I} Zone I is the central-most region of the core, and is 13.2\%
 fuel salt by volume. Zone I is divided into three subzones: zone I-A, zone I-B,
 and the control rod zone.
 
 Zone I-A and I-B consist of 4-in. $\times$ 4-in. (10.16-cm $\times$ 10.16-cm)
-square graphite elements. Elements in both zones have axial ribs protruding from
+square graphite elements. As seen in Figures \ref{fig:msbr-ia-xy} and
+\ref{fig:msbr-ib-xy} elements in both zones have axial ribs protruding from
 the faces of the square elements near the corners, as well as cylindrical
-channels in the centers of the elements. The only dimensional difference between
-the zone I-A and I-B elements is the diameter of the cylindrical channels.
+channels in the centers of the elements. The purpose of the fuel holes are to
+facilitate salt flow through the core elements. The purpose of the ribs are to
+separate the elements from each other as well as create interstitial salt flow
+channels\cite{robertson_conceptual_1971}. These interstitial flow channels
+are seen in Figures \ref{fig:msbr-ia-lattice} and \ref{fig:msbr-ib-lattice}.
 
-The purpose of the ribs is to\ldots
+The only dimensional differences between the zone I-A and I-B elements are the
+diameter of the cylindrical fuel channels and the size of the axial ribs (see
+Tables \ref{tab:zone-ia-ref-specs} and \ref{tab:zone-ib-specs}). Zone I-A
+elements have a smaller cylindrical channel and larger interstitial channel
+than zone I-B elements. The central part of zone I consists of zone I-A
+elements, whereas the outer part of zone I consists of zone I-B
+elements\cite{robertson_conceptual_1971}. The purpose this configuration is to
+reduce the temperature gradient across the core. The salt velocity through the
+zone I-B elemets is much lower than the salt velocity through the zone I-A
+elements\footnote{Robetson et al states that the salt velociy varies ``from 8
+fps at the cetner [of the core] to about 2 fps near the
+perihpery''\cite{robertson_conceptual_1971}}.
 
-The purpose of the fuel holes is to\ldots
+Additionally the zone I elements are machined to a cylindrical shape at the ends
+to create an undermoderated region of 37\% salt at the top and bottom of the
+reactor\cite{robertson_conceptual_1971}. These machined ends are referred to as
+Section A (see Figures \ref{fig:msbr-ia-xy}, \ref{fig:msbr-ib-xy}, and
+\ref{fig:msbr-i-xz-full}). The top of each element also has an outlet plenum to
+direct salt flow towards the exit nozzlese at the edje of the vessel, however
+these are not included in the \Gls{csg} model.
 
-The reason zone I is split into two elements is because\ldots
-
-The central part of zone I consists of zone I-A elements, whereas the outer part
-of zone I consists of zone I-B elements \cite{robertson_conceptual_1971}.
 Robertson et al. does not specify exact distribution of zone I-A and I-B
-elements, so in the CSG model we assume that zone I consists entirely of I-B
-elements.
+elements. Rather than guess the distribution of I-A and I-B elements, the CSG
+model assumes that zone I consists entirely of I-B elements. This assumption
+greatly simplifies the work needed to create the model. Had we picked zone I-A
+elements, we would have needed to create at least eight different ``versions''
+of both the I-A elements and the II-A elements\footnote{four versions of each
+element for each configuration where a I-A and II-A element are adjacent,
+four versions of I-A elements for each configuration where the element is
+adjacent to two II-A elements, and four versions of II-A elements for each for
+configuration where the II-A element is adjacent to two I-A elements.}
 
 Figures \ref{fig:msbr-ia-xy}, \ref{fig:msbr-ia-lattice} show cross-sectional
-views of the zone I-A elements. Figures \ref{fig:msbr-ib-xz-full},
+views of the zone I-A elements. Figures \ref{fig:msbr-i-xz-full},
 \ref{fig:msbr-ib-xy}, and \ref{fig:msbr-ib-lattice} show cross-sectional views
 of the zone I-B elements. Tables \ref{tab:zone-ia-ref-specs} and
 \ref{tab:zone-ib-specs} specify the dimensions of the zone I-A and I-B elements,
-respectively.
+respectively. Notice that the shape of the model zone I-B elements
+qualitatively matches the reference design in Figure \ref{fig:msbr-ib-xy}, but 
+not in Figure \ref{fig:msbr-ib-lattice}, despite matching nearly all
+specifications of the reference design.
 
 \begin{table}[htpb]
     \centering
@@ -291,7 +318,7 @@ respectively.
     \hline
     Section A inner diameter & 1.340 (Fig. \ref{fig:msbr_ib_bottom_ref}) or 1.347 (Fig. \ref{fig:msbr_ib_lattice_ref}) & 3.4036 or 3.42138 & 1.347 & 3.42138 \\
     \hline
-    Section A Outer diameter & 3.900 & 9.9062 & 3.900 & 9.9062 \\
+    Section A Outer diameter & 3.900 & 9.906 & 3.900 & 9.906 \\
     \hline
     Rib tip radius of curvature & 0.25 & 0.635 & 0.263 & 0.66802\\
     \hline
@@ -330,11 +357,11 @@ respectively.
         \label{fig:msbr_ib_full_model}
     }
     %\end{tabular}
-    \caption[$xz$ cross sections of Zone I-B elements]{
+    \caption[$xz$ cross sections of Zone I elements]{
         \subref{fig:msbr_i_full_ref} Reference Zone I element
         \subref{fig:msbr_ib_full_model} Model Zone I-B element
     }
-    \label{fig:msbr-ib-xz-full}
+    \label{fig:msbr-i-xz-full}
 \end{figure}
 
 \begin{figure}[htpb]
