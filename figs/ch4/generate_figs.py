@@ -29,6 +29,15 @@ def myplot(univ,
                   color_by=color_by,
                   pixels=pixels)
     return p
+cr_xy = myplot(root,
+               origin=(0.0, 0.0, 300),
+               width=(40.64,40.64),
+               pixels=(1000,1000),
+               basis='xy')
+matplotlib.image.imsave('cr_xy_openmc.png',
+                        cr_xy.get_array())
+
+
 
 zone_iia_full = myplot(root,
                        origin=(22*10.16, 0.0, 429),
