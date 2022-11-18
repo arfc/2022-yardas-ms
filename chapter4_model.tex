@@ -335,7 +335,7 @@ specifications of the reference design.
     \hline
     Rib tip radius of curvature & 0.25 & 0.635 \\
     \hline
-    Rib tip to element spacing & 0.302 & 0.7608 \\
+    Rib tip to element spacing & 0.302 & 0.76708 \\
     \hline
     Rib tip to element center & 1.315 & 3.3401 \\
     \hline
@@ -486,7 +486,48 @@ specifications of the reference design.
     \label{fig:msbr-ia-lattice}
 \end{figure}
 
-The very center of the core contains The control rod elements\ldots
+Four 6 in.$\times$6 in.
+(15.24\unit{\centi\metre}$\times$15.24\unit{\centi\metre}) graphite elements
+sit at the center of the core. Two of these elements contain graphite control
+rods, and the other two elements are for neutron-absorbing rods for shutting
+down the reactor, and are left empty during operation
+\cite{robertson_conceptual_1971}. Robertson el al does not specify a design nor
+dimensions for the control rod graphite elements. The \Gls{csg} model assumes
+that theese elements will be similar in shape to the zone I-A element (see Table
+\ref{tab:cr-specification} and Figure \ref{fig:control-rods}). The control rods
+themselves have axial passages through them to faciliatate salt flow, but the
+dimesions of these passages are not given, so the \Gls{csg} model does not
+include them.
+
+\begin{table}[htpb]
+    \centering
+    \caption{Control rod specifications}
+    \label{tab:cr-specification}
+    \begin{tabulary}{\linewidth}{|C|CC|CC|}
+        \hline
+        Quantity & Reference Dimension [in] & Reference Dimension [\unit{\centi\metre}] & Model Dimension [in] & Model Dimension [\unit{\centi\metre}]\\
+        \hline
+        Control rod element side length & 6 & 15.24 & 5.698 & 14.47292 \\
+        \hline
+        Control rod element inner diameter & 4 & 10.16 & 4 & 10.16\\
+        \hline
+        Control rod diameter & 3.75 & 9.525 & 3.75 & 9.525 \\
+        \hline
+        Rib tip radius of curvature & -  & - & 0.3897638 & 0.99\\
+        \hline
+        Rib tip to element spacing & - & - & 0.302 & 0.76708 \\
+        \hline
+        Rib tip to element center & - & - & 3.151 & 8.00354\\
+        \hline
+    \end{tabulary}
+\end{table}
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figs/ch4/cr_xy_openmc.png}
+    \caption{CSG model control rod lattice}
+    \label{fig:control-rods}
+\end{figure}
 
 
 \subsection{Zone II}
