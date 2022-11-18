@@ -229,21 +229,21 @@ II, and the reflector zone.
 reference MSBR core regions. Reproduced from Table 3.2 in
 \cite{robertson_conceptual_1971}}
     \label{tab:salt-volumes}
-    \begin{tabular}{|c|cc|}
+    \begin{tabular}{|c|c|cc|}
         \hline
-        Zone & Salt volume [ft$^3$] & Salt volume [$10^6$\unit{\centi\metre\cubed}] \\
+        Zone & Percent salt & Salt volume [ft$^3$] & Salt volume [$10^6$\unit{\centi\metre\cubed}] \\
         \hline
-        Zone I & 288 & 8.155252 \\
+        Zone I & 13.2 & 288 & 8.155252 \\
         \hline
-        Zone II & 376.5 & 10.661293 \\
+        Zone II & 37 & 376.5 & 10.661293 \\
         \hline
-        Upper plenum & 36.2 & 1.02507 \\ 
+        Upper plenum & 85 & 36.2 & 1.02507 \\ 
         \hline
-        Lower plenum & 35.4 & 1.002416 \\ 
+        Lower plenum & 100 & 35.4 & 1.002416 \\ 
         \hline
-        Annulus & 132 & 3.737824\\
+        Annulus & 100 &  132 & 3.737824\\
         \hline
-        Core total & 868.1 & 24.581855 \\ 
+        Core total & - & 868.1 & 24.581855 \\ 
         \hline
     \end{tabular}
 \end{table}
@@ -277,7 +277,11 @@ channels in the centers of the elements. The purpose of the fuel holes are to
 facilitate salt flow through the core elements. The purpose of the ribs are to
 separate the elements from each other as well as create interstitial salt flow
 channels\cite{robertson_conceptual_1971}. These interstitial flow channels
-are seen in Figures \ref{fig:msbr-ia-lattice} and \ref{fig:msbr-ib-lattice}.
+are seen in Figures \ref{fig:msbr-ia-lattice} and
+\ref{fig:msbr-ib-lattice}\footnote{Notice that the shape of the model zone I-B
+elements qualitatively matches the reference design in Figure
+\ref{fig:msbr-ib-xy}, but  not in Figure \ref{fig:msbr-ib-lattice}, despite
+matching nearly all specifications of the reference design.}.
 
 The only dimensional differences between the zone I-A and I-B elements are the
 diameter of the cylindrical fuel channels and the size of the axial ribs (see
@@ -310,16 +314,6 @@ element for each configuration where a I-A and II-A element are adjacent,
 four versions of I-A elements for each configuration where the element is
 adjacent to two II-A elements, and four versions of II-A elements for each for
 configuration where the II-A element is adjacent to two I-A elements.}
-
-Figures \ref{fig:msbr-ia-xy}, \ref{fig:msbr-ia-lattice} show cross-sectional
-views of the zone I-A elements. Figures \ref{fig:msbr-i-xz-full},
-\ref{fig:msbr-ib-xy}, and \ref{fig:msbr-ib-lattice} show cross-sectional views
-of the zone I-B elements. Tables \ref{tab:zone-ia-ref-specs} and
-\ref{tab:zone-ib-specs} specify the dimensions of the zone I-A and I-B elements,
-respectively. Notice that the shape of the model zone I-B elements
-qualitatively matches the reference design in Figure \ref{fig:msbr-ib-xy}, but 
-not in Figure \ref{fig:msbr-ib-lattice}, despite matching nearly all
-specifications of the reference design.
 
 \begin{table}[htpb]
     \centering
@@ -531,6 +525,19 @@ include them.
 
 
 \subsection{Zone II}
+
+Zone II is the undermoderated zone surrounding zone I, and is 37\% fuel salt by
+volume. Zone II acts as a blanket zone that reduces neutron leakage from the
+core\cite{robertson_conceptual_1971}. Zone II is divided into two subzones: zone
+II-A and zone II-B.
+
+Zone II-A consists of elements that are identical to zone I-B elements except
+that their cylindrical fuel channel is larger, there is no machining on the bottom part of the elements, and the machining on the top part of the elements is different. (see Table \ref{tab:zone-iia-specs} and Figures \ref{fig:msbr-iia-xz-full} and \ref{fig:msbr-iia-xy}). Half-square triangular graphite elements of the same dimension as the zone II-A elements are present at lattice cells where there would be a nothing connecting zone II-A elements (see Figure \ref{fig:msbr-detail}). 
+
+Zone II-B consists of two different types of elements arranged radially around the core: eight 6 in. (15.24 \unit{\centi\metre}) wide 13 ft. (396.24 \unit{\centi\metre}) tall rectangular slats with holes to fit the 2.5 in. diameter core lifting rods\footnote{the diameter of these holes is unknown, so the \Gls{csg} model assumes they are 6.176 cm in diameter} arranged at 45\unit{\degree} intervals, and 200 (25 between each of the previous type of elements) 2 in. (5.08 \unit{\centi\metre}) wide 13 ft. (396.24 \unit{\centi\metre})
+tall rectangular slats of varying length such that the core cross section is changed from octagonal to circular at the outer bound of zone II. These slats have an average length of 10.5 in. (26.67 \unit{\cenit\metre}).
+
+The slats also\ldots
 
 \begin{table}[htpb]
     \centering
