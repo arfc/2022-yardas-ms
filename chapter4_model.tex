@@ -12,8 +12,8 @@ The \Gls{msbr} design is the result of a design study of a single-fluid
 I will only describe the following reactor systems that are relevant to
 my validation study\footnote{A complete description of the entire \Gls{msbr}
 system can be found in Robertson, et al (1971)\cite{robertson_conceptual_1971}.
-Interested readers should pay close attention to Table S.1, Section 3.1, and
-Section 3.4 in Robertson et al. for further details and design considerations.}:
+Interested readers should pay close attention to Table S.1, Sections 3.4, 3.1,
+and 3.5 in Robertson et al. for further details and design considerations.}:
 the fuel salt, the reactor core, and the salt reprocessing system.
 
 \begin{figure}[htpb] 
@@ -683,11 +683,11 @@ The \Gls{msbr} has both axial and radial reflectors as seen in Figures
 \ref{fig:msbr-overview} and \ref{fig:msbr-detail}. Both reflector regions are around 1\% fuel salt by volume. The radial
 reflectors\footnote{I exclucde the following details about the radial reflector
 due to insufficient information in the report to reproduce them in a model:
-Hastelloy N orifice plates, milled radial grooves at the bottom of each
+modified Hastelloy N orifice plates, milled radial grooves at the bottom of each
 reflector block, top layer blocks (see pages 15 and 16 in Robertson et al.)}
 consist of 29 in. (48.26 cm) thick wedge-shaped blocks that are 43 in. tall and 10 in. (25.4 cm) wide at the vessel wall and 9 in. wide at the inner end \cite{robertson_conceptual_1973}.
 Four layers of these blocks comprise the entire radial reflector. Slots cut out
-of the outer edge of the blocks facilitate Hastelloy N axial ribs to create a
+of the outer edge of the blocks facilitate modified Hastelloy N axial ribs to create a
 0.25 in (0.635 cm) standoff space between the blocks and the vessel wall. Axial
 flow from the reactor inlet through this space cools both the outer portion of
 the reflector blocks and the vessel wall. Additionally, Robertson et al. states
@@ -696,7 +696,7 @@ apart'', but does not specify the position or number of these pins. These pins
 create passages\footnote{these passages change dimension from 0.05 in. wide
 while cold to 0.1 in. wide while hot \cite{robertson_conceptual_1971}} for
 radial salt flow through the radial reflector region towards the annulus,
-providing additional cooling. Hastelloy N retaining rings placed in slots
+providing additional cooling. Modified Hastelloy N retaining rings placed in slots
 between the block layers (see Figure \ref{fig:msbr-ref-xz}) ensure that the
 position of the reflector blocks to the vessel wall stays relatively constant as
 the materials expand under the heating of the fuel salt
@@ -723,10 +723,36 @@ reflector as a purple region.
 
 \section{Vessel}
 \label{sec:msbr-vessel}
+The \Gls{msbr} vessel is made of modified Hastelloy N, and has a wall thickness
+of 2 in. unless otherwise specified\cite{robertson_conceptual_1971}. The vessel
+is broken into the following sections:
+\begin{enumerate}
+    \item The main wall: a 13 ft. tall cylindrical section with an outer
+    diameter of 22.5 ft. This section is the main contact surface for the axial
+    reflectors.
+    \item The transition section: A 4 ft. tall conical section. The conical base
+    has a diameter of ~22.5 ft. and the conical ``roof'' has a diameter of ~18
+    ft. This section connects the main wall to the support section and contains
+    the salt outlet nozzles.
+    \item The nested support sections: two ~13.5 ft tall cylindrical sections
+    that nest. Both sections have a 2 in. wall thickness. The outer cylinder has
+    an inner diameter of 18 ft, and the inner cylinder has an outer diameter of
+    slightly less than 18ft to allow for clearance to fit the two pieces
+    together. The assembly is flanged at the top to close the vessel. The
+    flanged support section is also the main point of contact with the
+    reinforced concrete roof structure from which the reactor hangs. also serves
+    as a lip to rest on ato rest on a reinforced concrete structure.
+    \item The dished head sections: both heads have a 3 in. wall thickness. The
+    lower head has a 22.5 ft diameter and the upper head an 18 ft. diameter. No
+    radius of curvature is given for the dished heads, but it may be possible to
+    determine the shape using the given dimensions and other dimensions of the
+    vessel.
+\end{enumerate}
 
 \section{Reprocessing system}
 \label{sec:msbr-reprocessing-system}
 
 \section{Cross Section Data}
+Ryklevskii used the JEFF 3.1.2 cross section library in the inital evaluation of the \Gls{msbr} CSG model. I have not been able to convert the JEFF 3.1.2 library to \OpenMC's HDF5 format, so I am instead using the ENDF/B VII.1 cross section library.
 
 \section{Summary}
