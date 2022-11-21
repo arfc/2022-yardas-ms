@@ -302,7 +302,12 @@ reactor\cite{robertson_conceptual_1971}. These machined ends are referred to as
 Section A (see Figures \ref{fig:msbr-ia-xy}, \ref{fig:msbr-ib-xy}, and
 \ref{fig:msbr-i-xz-full}). The top of each element also has an outlet plenum to
 direct salt flow towards the exit nozzlese at the edje of the vessel, however
-these are not included in the \Gls{csg} model.
+these are not included in the \Gls{csg} model. The outermost layer of zone I
+elements also have grooves in them to fit eliptical graphite sealing rods (see
+Figure \cite{fig:msbr-detail}) that separate the salt flow in zone I from the
+salt flow in zone II\cite{robertson_conceptual_1971}. Robertson et al does not
+specify precise dimensions and positions of these rods, so they are not included
+in the \Gls{csg} model.
 
 Robertson et al. does not specify exact distribution of zone I-A and I-B
 elements. Rather than guess the distribution of I-A and I-B elements, the CSG
@@ -535,9 +540,39 @@ Zone II-A consists of elements that are identical to zone I-B elements except
 that their cylindrical fuel channel is larger, there is no machining on the bottom part of the elements, and the machining on the top part of the elements is different. (see Table \ref{tab:zone-iia-specs} and Figures \ref{fig:msbr-iia-xz-full} and \ref{fig:msbr-iia-xy}). Half-square triangular graphite elements of the same dimension as the zone II-A elements are present at lattice cells where there would be a nothing connecting zone II-A elements (see Figure \ref{fig:msbr-detail}). 
 
 Zone II-B consists of two different types of elements arranged radially around the core: eight 6 in. (15.24 \unit{\centi\metre}) wide 13 ft. (396.24 \unit{\centi\metre}) tall rectangular slats with holes to fit the 2.5 in. diameter core lifting rods\footnote{the diameter of these holes is unknown, so the \Gls{csg} model assumes they are 6.176 cm in diameter} arranged at 45\unit{\degree} intervals, and 200 (25 between each of the previous type of elements) 2 in. (5.08 \unit{\centi\metre}) wide 13 ft. (396.24 \unit{\centi\metre})
-tall rectangular slats of varying length such that the core cross section is changed from octagonal to circular at the outer bound of zone II. These slats have an average length of 10.5 in. (26.67 \unit{\cenit\metre}).
+tall rectangular slats of varying length such that the core cross section is
+changed from octagonal to circular at the outer bound of zone
+II\cite{robertson_conceptual_1971}. These slats have an average length of 10.5
+in. (26.67 \unit{\centi\metre}).
 
-The slats also\ldots
+The slats have two additional features: dowel pins at the inner periphery that
+separate the slabs to create flow passages, and elliptical graphite pins at the
+outer periphery that isolates the salt flowing through the core region from the
+salt flowing through the reflector region. The slats have axial grooves 1.5 in.
+from the outer edge that accomodate the eliptical pins. Robertson et al. does
+not specify the precise dimensions or positions  of these pins, so they are not
+included in the \Gls{csg} model (see Figure \ref{fig:msbr-detail}).
+
+In addition to the aformentioned simplifications, Figure \ref{fig:msbr-detial}
+shows that the \Gls{csg} model makes some notable approximations and
+simplifications to the geometry of the individual zone II-B elements which
+results in a significantly different appearance than the reference design. Table
+\ref{tab:zone-iib-diff} lists these differences.
+
+\begin{table}[htpb]
+    \centering
+    \caption{caption}
+    \label{tab:zone-iib-diff}
+    \begin{tabulary}{\linewidth}{|C|C|C|C|}
+        \hline
+        & 2-in. slats shape & 6-in. slat shape & Pins\\
+        \hline
+        Reference model & Rectangular prisms ending in a half cylinder & Rectangular prism with deep grooves creating a mixed-concavity surface & Eliptical sealing pins and separating dowel pins\\
+        \hline
+        \Gls{csg} model & Cylinder sector approximating a rectangular prism & Cylinder sector approximating a rectangular prism & No pins\\
+        \hline
+    \end{tabulary}
+\end{table}
 
 \begin{table}[htpb]
     \centering
@@ -619,7 +654,6 @@ The slats also\ldots
     }
     \label{fig:msbr-iia-xy}
 \end{figure}
-
 
 \subsection{Reflectors}
 
