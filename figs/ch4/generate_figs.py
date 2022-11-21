@@ -21,14 +21,39 @@ def myplot(univ,
            width=(100,100),
            colors=colormap,
            color_by='material',
-           pixels=(1000,1000)):
+           pixels=(1000,1000),
+           **plot_kwargs=None):
     p = univ.plot(basis=basis,
                   colors=colormap,
                   origin=origin,
                   width=width,
                   color_by=color_by,
-                  pixels=pixels)
+                  pixels=pixels,
+                  kwargs=plot_kwargs)
     return p
+
+msbr_reduced_univ_xy = myplot(root,
+                       origin=(0.0, 2.0, 224.79),
+                       width=(690.25008, 690.25008),
+                       pixels=(1000,1000),
+                       color_by='cells',
+                       colors={},
+                       basis='xy',
+                       plot_kwargs={})
+ matplotlib.image.imsave('msbr_reduced_univ_xy_openmc.png',
+                         msbr_reduced_univ_xy.get_array())
+
+msbr_reduced_univ_xz = myplot(root,
+                       origin=(0.0, 2.0, 224.79),
+                       width=(686.816, 612.14),
+                       pixels=(1000,891),
+                       color_by='cells',
+                       colors={''},
+                       plot_kwargs={})
+matplotlib.image.imsave('msbr_reduced_univ_xz_openmc.png',
+                         msbr_reduced_univ_xz.get_array())
+
+
 cr_xy = myplot(root,
                origin=(0.0, 0.0, 300),
                width=(40.64,40.64),
@@ -36,8 +61,6 @@ cr_xy = myplot(root,
                basis='xy')
 matplotlib.image.imsave('cr_xy_openmc.png',
                         cr_xy.get_array())
-
-
 
 zone_iia_full = myplot(root,
                        origin=(22*10.16, 0.0, 429),

@@ -11,33 +11,35 @@ The \Gls{msbr} design is the result of a design study of a single-fluid
 \cite{haubenreich_experience_1970}\cite{rosenthal_molten-salt_1970}.
 I will only describe the following reactor systems that are relevant to
 my validation study\footnote{A complete description of the entire \Gls{msbr}
-system can be found in \cite{robertson_conceptual_1971}}: the fuel salt, the
-reactor core, and the salt reprocessing system.
+system can be found in Robertson, et al (1971)\cite{robertson_conceptual_1971}.
+Interested readers should pay close attention to Table S.1, Section 3.1, and
+Section 3.4 in Robertson et al. for further details and design considerations.}:
+the fuel salt, the reactor core, and the salt reprocessing system.
 
 \begin{figure}[htpb] 
     \centering
     \subfloat[][]{
         \includegraphics[width=0.5\linewidth]{figs/ch4/msbr_full_xy_ref.png}
-        \label{fig:msbr_ref_xy}
+        \label{fig:msbr-ref-xy}
     }
     \subfloat[][]{
         \includegraphics[width=0.5\linewidth]{figs/ch4/msbr_full_xy_openmc.png}
-        \label{fig:msbr_model_xy}
+        \label{fig:msbr-model-xy}
     }
     \\
     \subfloat[][]{
         \includegraphics[width=0.5\linewidth]{figs/ch4/msbr_full_xz_ref.png}
-        \label{fig:msbr_ref_xz}
+        \label{fig:msbr-ref-xz}
     }
     \subfloat[][]{
         \includegraphics[width=0.5\linewidth]{figs/ch4/msbr_full_xz_openmc.png}
-        \label{fig:msbr_model_xz}
+        \label{fig:msbr-model-xz}
     }
     \caption[Full views of MSBR]{
-        \subref{fig:msbr_ref_xy} Top down view of \Gls{msbr} reference design.
-        \subref{fig:msbr_model_xy} Top down view of \Gls{msbr} CSG model.
-        \subref{fig:msbr_ref_xz} Top down view of \Gls{msbr} reference design.
-        \subref{fig:msbr_model_xz} Top down view of \Gls{msbr} CSG model.
+        \subref{fig:msbr-ref-xy} Top down view of \Gls{msbr} reference design.
+        \subref{fig:msbr-model-xy} Top down view of \Gls{msbr} CSG model.
+        \subref{fig:msbr-ref-xz} Side view of \Gls{msbr} reference design.
+        \subref{fig:msbr-model-xz} Side view of \Gls{msbr} CSG model.
     }
     \label{fig:msbr-overview}
 \end{figure}
@@ -61,10 +63,10 @@ have been unable to find this composition in Robertson et al.
 \cite{robertson_conceptual_1971}}. The lithium used in the fuel salt is
 enriched to 99.995\% \ce{^{7}Li}. This is because \ce{^{6}Li} is a strong
 neutron absorber and produces tritium in the absorption reaction. The atom-\%
-for each nuclide is given in Table \ref{tab:msbr_fuel_salt-ref}\footnote{Most of the
+for each nuclide is given in Table \ref{tab:msbr-fuel-salt-ref}\footnote{Most of the
 discussion of the fuel salt compositon in Robertson el al
 \cite{robertson_conceptual_1971} specify elemental version of the nuclides in
-Table \ref{tab:msbr_fuel_salt-ref}. I have specific specific nuclides for the
+Table \ref{tab:msbr-fuel-salt-ref}. I have specific specific nuclides for the
 following reasons: (1) both \ce{F} and \ce{Be} have only one stable isotope, (2)
 the fuel salt recieves initial fissile loading from \ce{^{233}U} or
 \ce{^{235}U}, and (3) the fuel salt recieves its fertile loading from
@@ -98,7 +100,7 @@ specification.
 \begin{table}[htpb] 
     \centering 
     \caption{Reference \Gls{msbr} fuel salt specifications}
-    \label{tab:msbr_fuel_salt-ref}
+    \label{tab:msbr-fuel-salt-ref}
     \begin{tabular}{|c|c|c|c|c|c|c|} 
         \hline
         & \ce{^{6}Li} & \ce{^{7}Li} & \ce{^{19}F} & \ce{^{9}Be} & \ce{^{232}Th} & \ce{^{233}U}\\
@@ -135,7 +137,7 @@ is 3.3332642 \unit{\gram\per\centi\metre\cubed}.
 \begin{table}[htpb] 
     \centering 
     \caption{Model \Gls{msbr} fuel salt specifications}
-    \label{tab:msbr_fuel_salt-model}
+    \label{tab:msbr-fuel-salt-model}
     \begin{tabular}{|c|c|c|c|c|c|} 
         \hline
         & \ce{^{7}Li} & \ce{^{19}F} & \ce{^{9}Be} & \ce{^{232}Th} & \ce{^{233}U}\\
@@ -147,7 +149,7 @@ is 3.3332642 \unit{\gram\per\centi\metre\cubed}.
     \end{tabular}
 \end{table}
 In the CSG model, the fuel salt material uses the composition specified in
-Table \ref{tab:msbr_fuel_salt-model} and has a density of 3.35
+Table \ref{tab:msbr-fuel-salt-model} and has a density of 3.35
 \unit{\gram\per\centi\metre\cubed}. Notice that the lithium has been enriched to
 100\% \ce{^{7}Li}. This is because during inital simulations, even those very
 small amounts of \ce{^{6}Li} were enough to kill the reaction. The inital
@@ -655,7 +657,69 @@ results in a significantly different appearance than the reference design. Table
     \label{fig:msbr-iia-xy}
 \end{figure}
 
+\subsection{Annulus}
+A 2 in. wide annular space of 100-\% fuel salt separates zone II from the
+graphite reflectors. The annulus serves as a clearance space when inserting or
+removing the reactor core assembly, and provides some additional shielding to
+extend the lifetime of the graphite reflectors\cite{robertson_conceptual_1971}. The annulus region is reproduced in full in the \Gls{csg} model. The annulus region is the dark teal section in between the brown and pink sections in Figure \ref{fig:msbr-cells}
+
 \subsection{Reflectors}
+\begin{figure}[htpb]
+    \centering
+    \subfloat[][]{
+        \includegraphics[width=0.5\linewidth]{figs/ch4/msbr_reduced_univs_xy.png}
+        \label{fig:msbr-cell-xy}
+    }
+    \subfloat[][]{
+        \includegraphics[width=0.5\linewidth]{figs/ch4/msbr_reduced_univs_xz.png}
+        \label{fig:msbr-cell-xz}
+    }
+    \caption[MSBR CSG model cells]{MSBR CSG model cells.
+        \subref{fig:msbr-cell-xy} $xy$ plane; 
+        \subref{fig:msbr-cell-xz} $xz$ plane} 
+    \label{fig:msbr-cells}
+\end{figure}
+The \Gls{msbr} has both axial and radial reflectors as seen in Figures
+\ref{fig:msbr-overview} and \ref{fig:msbr-detail}. Both reflector regions are around 1\% fuel salt by volume. The radial
+reflectors\footnote{I exclucde the following details about the radial reflector
+due to insufficient information in the report to reproduce them in a model:
+Hastelloy N orifice plates, milled radial grooves at the bottom of each
+reflector block, top layer blocks (see pages 15 and 16 in Robertson et al.)}
+consist of 29 in. (48.26 cm) thick wedge-shaped blocks that are 43 in. tall and 10 in. (25.4 cm) wide at the vessel wall and 9 in. wide at the inner end \cite{robertson_conceptual_1973}.
+Four layers of these blocks comprise the entire radial reflector. Slots cut out
+of the outer edge of the blocks facilitate Hastelloy N axial ribs to create a
+0.25 in (0.635 cm) standoff space between the blocks and the vessel wall. Axial
+flow from the reactor inlet through this space cools both the outer portion of
+the reflector blocks and the vessel wall. Additionally, Robertson et al. states
+that 1 in. graphite pins ``are inserted into the reflector pieces to hold them
+apart'', but does not specify the position or number of these pins. These pins
+create passages\footnote{these passages change dimension from 0.05 in. wide
+while cold to 0.1 in. wide while hot \cite{robertson_conceptual_1971}} for
+radial salt flow through the radial reflector region towards the annulus,
+providing additional cooling. Hastelloy N retaining rings placed in slots
+between the block layers (see Figure \ref{fig:msbr-ref-xz}) ensure that the
+position of the reflector blocks to the vessel wall stays relatively constant as
+the materials expand under the heating of the fuel salt
+\cite{robertson_conceptual_1973}.
+
+The axial reflectors consist of wedge shaped graphite pieces (see Figure
+\ref{fig:msbr-ref-xy}) that are 2 in. (5.08 cm) wide at the inner end and 16 in.
+(40.64 cm) wide at the outer end \cite{robertson_conceptual_1971}. The dished
+vessel heads cause the pieces to vary in thickness from 30 in. (76.2 cm) at the
+center to 15 in. (38.1 cm) at the outer end (see Figure
+\ref{fig:msbr-ref-xz})\cite{robertson_conceptual_1971}. Robertson et al does not
+specify a length for the axial reflector pieces. 
+
+The \Gls{csg} model approximates the complicated structure of the radial
+reflector blocks as a hollow cylinder 601.98 cm tall and 77.216 cm thick, and
+the axial reflector pieces as flat disks\footnote{the \Gls{csg} model doesn not
+include the hole out of the top of the core for the control rods, and flattens
+the dish-shape as no dimensions are given to accurately reproduce the curvature
+of the axial reflector pieces} 68.58 (bottom)/76.12 (top) cm thick and a radius
+of 261.112 cm. The \Gls{csg} model also contains no fuel salt in the reflector
+regions. Figure \ref{fig:msbr-cells} shows the radial reflector as a large pink
+region, the top axial reflector as a light blue region, and the bottom axial
+reflector as a purple region.
 
 \section{Vessel}
 \label{sec:msbr-vessel}
