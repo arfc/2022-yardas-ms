@@ -4,17 +4,34 @@ As mentioned in Chapter 1, I am using a \Gls{csg} model of the \Gls{msbr}
 \cite{robertson_conceptual_1971} to verify my \OpenMC implementation in
 \SaltProc.
 
-I picked the \Gls{msbr} because\ldots 
-
 The \Gls{msbr} design is the result of a design study of a single-fluid
 \Gls{msr} following the success of the \Gls{msre}
 \cite{haubenreich_experience_1970}\cite{rosenthal_molten-salt_1970}.
-I will only describe the following reactor systems that are relevant to
-my validation study\footnote{A complete description of the entire \Gls{msbr}
-system can be found in Robertson, et al (1971)\cite{robertson_conceptual_1971}.
-Interested readers should pay close attention to Table S.1, Sections 3.4, 3.1,
-and 3.5 in Robertson et al. for further details and design considerations.}:
+
+I picked the \Gls{msbr} for two reasons:
+\begin{enumerate}
+    \item Several papers studying the \Gls{msbr} exist\footnote{see Chapter
+    \ref{ch:chapter2} for a discussion of these papers} enabling qualitative
+    results comparision.
+    \item Rykhlevskii created a \SerpentTWO \Gls{csg} model and the processing
+    system graph for the \Gls{msbr} based on the specifications in
+    \cite{robertson_conceptual_1971} for use in \SaltProc
+    v0.3.0\cite{rykhlevksii_fuel_2020}. The models used in this work is derived
+    from Rykhlevskii's model.
+\end{enumerate}
+
+Most of the discussion below summarizes and condenses the information in
+Robertson et al., and compares it to the \Gls{csg} model. Unless otherwise
+specified, there are no differences between the model used in this work and in
+\cite{rykhlevskii_fuel_2020}. I will only describe the following reactor systems
+that are relevant to my validation study\footnote{A complete description of the
+entire \Gls{msbr} system can be found in Robertson, et al
+(1971)\cite{robertson_conceptual_1971}. Interested readers should focus on Table
+S.1, Sections 3.4, 3.1, and 3.5 in Robertson et al. for further details and
+design considerations.}:
 the fuel salt, the reactor core, and the salt reprocessing system.
+
+
 
 \begin{figure}[htpb] 
     \centering
@@ -44,8 +61,8 @@ the fuel salt, the reactor core, and the salt reprocessing system.
     \label{fig:msbr-overview}
 \end{figure}
 
-As seen in Figure \ref{fig:msbr-overview} \OpenMC and \SerpentTWO \Gls{msbr}
-models of reproduce these systems with several approixmations. I will
+As seen in Figure \ref{fig:msbr-overview}, the \Gls{csg} Gls{msbr}
+model reproduces these systems with several approixmations. I will
 describe each reactor system, as well as any relavant changes or
 approximations made in the model.
 
@@ -755,4 +772,4 @@ is broken into the following sections:
 \section{Cross Section Data}
 Ryklevskii used the JEFF 3.1.2 cross section library in the inital evaluation of the \Gls{msbr} CSG model. I have not been able to convert the JEFF 3.1.2 library to \OpenMC's HDF5 format, so I am instead using the ENDF/B VII.1 cross section library.
 
-\section{Summary}
+\section{Differences between the \OpenMC and \SerpentTWO models}
