@@ -768,6 +768,14 @@ is broken into the following sections:
 
 \section{Reprocessing system}
 \label{sec:msbr-reprocessing-system}
+The MSBR reference design included the specification of a fuel-salt processing. The purpose of this system is to remove impurities and fission products from the fuel salt. The system also removes \ce{^{233}Pa} from the fuel salt to allow it to decay into \ce{^{233}U} and then get fed back into the salt. The processing system consists of several components: 
+\begin{enumerate}
+    \item A fluorinator to remove 95\% of the uranium in the fuel salt.
+    \item An extraction column where the stream leaving the fluorinator is combined with a stream of bismuth and thorium to separate that removes protactinium and additional uranium from the fuel salt.
+    \item A
+\end{enumerate}
+
+Chapter 2 in 
 
 \section{Cross Section Data}
 Ryklevskii used the JEFF 3.1.2 cross section library in the inital evaluation of the \Gls{msbr} CSG model. I have not been able to convert the JEFF 3.1.2 library to \OpenMC's HDF5 format, so I am instead using the ENDF/B VII.1 cross section library.
