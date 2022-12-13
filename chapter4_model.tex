@@ -31,8 +31,6 @@ S.1, Sections 3.4, 3.1, and 3.5 in Robertson et al. for further details and
 design considerations.}:
 the fuel salt, the reactor core, and the salt reprocessing system.
 
-
-
 \begin{figure}[htpb] 
     \centering
     \subfloat[][]{
@@ -89,30 +87,9 @@ the fuel salt recieves initial fissile loading from \ce{^{233}U} or
 \ce{^{235}U}, and (3) the fuel salt recieves its fertile loading from
 \ce{^{232}Th}}.
 
-The original salt volume in the \Gls{csg} \Gls{msbr} model was set to
-$4.871\cdot 10^7$ \unit{\centi\metre\cubed}. This is roughly double the salt
-volume in the reference specification (see Table \ref{tab:salt-volumes}). I
-performed stochastic volume calculations on both the \SerpentTWO and \OpenMC
-versions of the \Gls{csg} model, and found they both calculated volumes around
-$2.6\cdot 10^7$ \unit{\centi\metre\cubed}. I have updated the salt volume to the
-average of the two volumes (see Table \ref{tab:stoch-vol}). This new volume
-gives a rougly 8\% error in the salt volume compared to the reference
-specification.
-
-\begin{table}[htpb]
-    \centering
-    \caption[MSBR fuel stochastic volume calculations]{MSBR fuel stochastic volume calculations, using $1\cdot 10^9$ particles.}
-    \label{tab:stoch-vol}
-    \begin{tabular}{|c|c|c|c|}
-        \hline
-        Quantity & \SerpentTWO & \OpenMC & Average\\
-        \hline
-        Volume [\unit{\centi\metre\cubed}] & $2.60961 \cdot 10^7$ & $2.6085 \cdot 10^7$ & $2.6091 \cdot 10^7$ \\
-        \hline
-        Statistical error & 0.00010 & 0.00010 & 0.00007 \\
-        \hline
-    \end{tabular}
-\end{table}
+See Section \ref{sec:salt-volume} for additional discussion of the value used
+for the salt volume\footnote{I recommend reading this section after the geometry
+description in Section \ref{sec:msbr-core}}
 
 \begin{table}[htpb] 
     \centering 
@@ -240,32 +217,6 @@ than the reference material because\ldots
 \label{sec:msbr-core}
 The \Gls{msbr} core is split into three distinct different zones; zone I, zone
 II, and the reflector zone. 
-
-%% Table 3.2 and 3.3 in robertson
-\begin{table}[htpb]
-    \centering
-    \caption[Volume of salt in reference MSBR core regions]{Volume of salt in
-reference MSBR core regions. Reproduced from Table 3.2 in
-\cite{robertson_conceptual_1971}}
-    \label{tab:salt-volumes}
-    \begin{tabular}{|c|c|cc|}
-        \hline
-        Zone & Percent salt & Salt volume [ft$^3$] & Salt volume [$10^6$\unit{\centi\metre\cubed}] \\
-        \hline
-        Zone I & 13.2 & 288 & 8.155252 \\
-        \hline
-        Zone II & 37 & 376.5 & 10.661293 \\
-        \hline
-        Upper plenum & 85 & 36.2 & 1.02507 \\ 
-        \hline
-        Lower plenum & 100 & 35.4 & 1.002416 \\ 
-        \hline
-        Annulus & 100 &  132 & 3.737824\\
-        \hline
-        Core total & - & 868.1 & 24.581855 \\ 
-        \hline
-    \end{tabular}
-\end{table}
 
 \begin{figure}[htpb]
     \centering
@@ -766,14 +717,110 @@ is broken into the following sections:
     vessel.
 \end{enumerate}
 
+The CSG model\ldots
+
+\section{An aside on the salt volume}
+The original salt volume in the \Gls{csg} \Gls{msbr} model was set to
+$4.871\cdot 10^7$ \unit{\centi\metre\cubed}. This is roughly double the salt
+volume in the core in the reference specification (see Table
+\ref{tab:salt-volumes}). I performed stochastic volume calculations on both the
+\SerpentTWO and \OpenMC versions of the \Gls{csg} model, and found they both
+calculated volumes around $2.6\cdot 10^7$ \unit{\centi\metre\cubed}. Averaging
+the two volumes gives a rougly 8\% error in the salt volume in the core compared
+to the reference specification (see Table \ref{tab:stoch-vol}).
+
+\begin{table}[htpb]
+    \centering
+    \caption[MSBR fuel stochastic volume calculations]{MSBR fuel stochastic volume calculations, using $1\cdot 10^9$ particles.}
+    \label{tab:stoch-vol}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Quantity & \SerpentTWO & \OpenMC & Average\\
+        \hline
+        Volume [\unit{\centi\metre\cubed}] & $2.60961 \cdot 10^7$ & $2.6085 \cdot 10^7$ & $2.6091 \cdot 10^7$ \\
+        \hline
+        Statistical error & 0.00010 & 0.00010 & 0.00007 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+For depletion without reprocessing this new volume would be correct to
+use for our geometry. When we assume that we are performing online reprocessing,
+we must account for all of the salt in the core {\it and} the salt in the
+primary loop as this salt is routed through the processing components. Table S.1
+in \cite{robertson_conceptual_1971} gives us the total volume of salt in the
+primary system as  1720 ft$^{3}$ ($4.8705\cdot 10^7$ \unit{\centi\metre\cubed}).
+This value is valid assuming that we have reproduced the core geometry exactly
+as specified, however in the \Gls{msbr} reference design, the total volume of
+salt in the reactor vessel is 1074 ft$^{3}$ ($3.0412 \cdot 10^{7}$
+\unit{\centi\metre\cubed}) \cite{robertson_conceptual_1971}, which is approximately
+13\% greater than the geometrical volume of the salt. This discrepency is due to
+the abscense of the core inlets, outlets, and the narrow salt passages in the
+reflector region. These features are important for thermal hydraulic accuracy,
+however they are most likely not particularly neutronically important. Additionally,
+we want to stay consitent with Ryklevskii's previous works 
+\cite{ryhklevskii_advanced_2018}\cite{ryhklevskii_fuel_2020}, so we will use the
+existing value for the salt volume of $4.871\cdot 10^7$
+\unit{\centi\metre\cubed}.
+
+%% Table 3.2 and 3.3 in robertson
+\begin{table}[htpb]
+    \centering
+    \caption[Volume of salt in reference MSBR core regions]{Volume of salt in
+reference MSBR core regions. Reproduced from Table 3.2 in
+\cite{robertson_conceptual_1971}}
+    \label{tab:salt-volumes}
+    \begin{tabular}{|c|c|cc|}
+        \hline
+        Zone & Percent salt & Salt volume [ft$^3$] & Salt volume [$10^6$\unit{\centi\metre\cubed}] \\
+        \hline
+        Zone I & 13.2 & 288 & 8.155252 \\
+        \hline
+        Zone II & 37 & 376.5 & 10.661293 \\
+        \hline
+        Upper plenum & 85 & 36.2 & 1.02507 \\ 
+        \hline
+        Lower plenum & 100 & 35.4 & 1.002416 \\ 
+        \hline
+        Annulus & 100 &  132 & 3.737824\\
+        \hline
+        Core total & - & 868.1 & 24.581855 \\ 
+        \hline
+    \end{tabular}
+\end{table}
+
+
+
 \section{Reprocessing system}
 \label{sec:msbr-reprocessing-system}
-The MSBR reference design included the specification of a fuel-salt processing. The purpose of this system is to remove impurities and fission products from the fuel salt. The system also removes \ce{^{233}Pa} from the fuel salt to allow it to decay into \ce{^{233}U} and then get fed back into the salt. The processing system consists of several components: 
+The MSBR reference design included the specification of a fuel-salt processing. The purpose of this system is two-fold:
+\begin{enumerate}
+    \item To isolate \ce{^{233}Pa} from the high neutron flux zone to allow it to decay into \ce{^{233}U}
+    \item To remove impurities (rare earth metals) and fission products from the fuel salt
+\end{enumerate}
+The reprocessing system is based on reductive extraction\footnote{reductive
+extraction takes advantage of the higher electronegatvity of a particular
+element to drive reduction reactions that remove target elements from covalently
+bonded molecules. See \ldots}. I will provide a brief descrption of the
+reprocessing system, but evaluating its efficacy is beyond the scope of this
+thesis\footnote{I encourage interested readers to look at chapters 7 and 8 in
+\cite{robertson_conceptual_1971}, the entirety of \cite{carter_design_1972} and
+\cite{lindauer_design_1972}, as well as the molten salt reactor program
+semiannual progress reports, all of which you can find at
+\href{energyfromthorium.com/url}{https://energyfromthorium.com/pdf/}}.
+
+\subsection{Protactinium isolation loop}
+In order to remove the protactinium from the fuel salt, all uranium must first be removed. The protactinium isolation loop consists of several components: 
 \begin{enumerate}
     \item A fluorinator to remove 95\% of the uranium in the fuel salt.
-    \item An extraction column where the stream leaving the fluorinator is combined with a stream of bismuth and thorium to separate that removes protactinium and additional uranium from the fuel salt.
-    \item A
+    \item An extraction column where the stream leaving the fluorinator is combined with a stream of bismuth and thorium that removes protactinium and additional uranium from the fuel salt. The salt stream leaving the extrator is routed to the rare metal extraction system. This salt stream has nearly no protactinium or uranium in it.
+    \item A hydrofluorinator where the stream leaving the extraction column removes the thorium, lithium, and uranium from the bismuth. The bismuth is sent to a reductant adder where lithium is added to the bismuth stream, and then is rerouted back to the extraction column.
+    \item A second fluorinator that removes 95\% of the remaining uranium from the stream leaving the extraction column.
+    \item A protactinium decay tank into which the stream leaving the second fluorinator flows. This stream is circulating as it feeds back to the hydrofluorinator for additional uranium removal. Uranium produced by protactinium decay is removed by this circulating stream.
 \end{enumerate}
+
+
+
 
 Chapter 2 in 
 
