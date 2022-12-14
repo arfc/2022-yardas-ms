@@ -760,8 +760,8 @@ reflector region. These features are important for thermal hydraulic accuracy,
 however they are most likely not particularly neutronically important. Additionally,
 we want to stay consitent with Ryklevskii's previous works 
 \cite{ryhklevskii_advanced_2018}\cite{ryhklevskii_fuel_2020}, so we will use the
-existing value for the salt volume of $4.871\cdot 10^7$
-\unit{\centi\metre\cubed}.
+existing value for the salt volume of $4.871\cdot 10^7$.
+\unit{\centi\metre\cubed}. Note that this value is only valid if we are taking depletion step sizes equal to the cycle time of the salt, whcih is\ldots
 
 %% Table 3.2 and 3.3 in robertson
 \begin{table}[htpb]
@@ -789,8 +789,6 @@ reference MSBR core regions. Reproduced from Table 3.2 in
     \end{tabular}
 \end{table}
 
-
-
 \section{Reprocessing system}
 \label{sec:msbr-reprocessing-system}
 The MSBR reference design included the specification of a fuel-salt processing. The purpose of this system is two-fold:
@@ -813,16 +811,69 @@ semiannual progress reports, all of which you can find at
 In order to remove the protactinium from the fuel salt, all uranium must first be removed. The protactinium isolation loop consists of several components: 
 \begin{enumerate}
     \item A fluorinator to remove 95\% of the uranium in the fuel salt.
-    \item An extraction column where the stream leaving the fluorinator is combined with a stream of bismuth and thorium that removes protactinium and additional uranium from the fuel salt. The salt stream leaving the extrator is routed to the rare metal extraction system. This salt stream has nearly no protactinium or uranium in it.
+    \item An extraction column where the stream leaving the fluorinator is combined with a stream of bismuth and thorium that removes protactinium and additional uranium from the fuel salt. The salt stream leaving the extrator is routed to the rare metal removal system. This salt stream has nearly no protactinium or uranium in it.
     \item A hydrofluorinator where the stream leaving the extraction column removes the thorium, lithium, and uranium from the bismuth. The bismuth is sent to a reductant adder where lithium is added to the bismuth stream, and then is rerouted back to the extraction column.
     \item A second fluorinator that removes 95\% of the remaining uranium from the stream leaving the extraction column.
     \item A protactinium decay tank into which the stream leaving the second fluorinator flows. This stream is circulating as it feeds back to the hydrofluorinator for additional uranium removal. Uranium produced by protactinium decay is removed by this circulating stream.
 \end{enumerate}
 
+The uranium exctracted via fluorination is returned to 
+Figure \ref{fig:pa-removal} shows a block diagram of this loop. 
 
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/ch4/pa_removal_loop.png}
+    \caption{\ce{^{233}Pa} removal loop. Reproduced from Figure 8.1 in \cite{robertson_conceptual_1971}}
+    \label{fig:pa-removal}
+\end{figure}
 
+\subsection{Rare-earth removal system}
+The rare-earch removal system utilized the same metal transfer process used to
+isolate protactinium from the fuel salt\cite{robertson_conceptual_1971}. This
+system begins at the output of the extractor column for protactinium isolation.
+It is a multistage extraction system:
+\begin{enumerate}
+    \item In the first extractor, the salt stream from the protactinium loop
+    extractor column is contacted with a bismuth stream containing 0.2 mol-\%
+    lithium and 0.25 mol-\% thorium. The bismuth stream picks up a fraction of
+    the rare earths and routes to the second extractor.
+    \item In the second extractor, the bismuth stream containing rare earths is
+    contacted with a \ce{LiCl} stream.  The \ce{LiCl} stream picks up a fraction
+    of the rare earths (with trace amounts of thorium), and is routed to the
+    fourth extractor. The bismith stream is returned to the first extractor.
+    \item In the fourth extrator, the \ce{LiCl} stream is contacted with a
+    circulating bismuth stream containing 5 mol-\% lithium. This bismuth stream
+    removes trivalent rare earths from the \ce{LiCl} stream. The \ce{LiCl}
+    stream is returned to the second extractor, however 2\% of this \ce{LiCl}
+    stream is routed to the third extractor.
+    \item In the third extractor, the \ce{LiCl} stream is contacted with a
+    circulating bismuth stream containig 50 mol-\% lithium. This bismuth stream
+    removes divalent and alkaline rare earths from the \ce{LiCl} stream. The
+    \ce{LiCl} stream is rerouted back to the second extractor.
+\end{enumerate}
 
-Chapter 2 in 
+Figure \ref{fig:metal-removal} shows a block diagram of this loop. 
+
+\subsection{Nickel-mesh filter}
+Insoluble impurities in the processed salt needs to be removed before the salt stream returns to the reactor. Impurities inlcude bismuth entrained or dissolved in the fuel salt as a side effect from processing, \ce{FeF_2}, and \ce{NiF_2}. A nickel-mesh filter will remove these impurities from the salt. 
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/ch4/metal_removal_loop.png}
+    \caption{Metal removal loop. Reproduced from Figure 8.2 in \cite{robertson_conceptual_1971}}
+    \label{fig:metal-removal}
+\end{figure}
+
+\subsection{Gas removal}
+
+\subsection{Reprocessing system model}
+In SaltProc, we combine the protactinium isolation and metal removal systems into a single process, \verb.liquid_metal.. The elements removed via the protactinium isolation system are\ldots, and the elements removed via the metal removal system are \ldots. Robertson et. al. does not give extraction efficiencies for these elements, but they do give cycle times. Rykhlevskii set his depletion timestep to 3 days because\ldots and we will also use this depletion
+timesetp size. We calculate an approximately correct cycle time using a simple formula \ldots
+
+We model the nickel filter via\ldots
+
+The gas sparging system is more complicated\ldots
+
 
 \section{Cross Section Data}
 Ryklevskii used the JEFF 3.1.2 cross section library in the inital evaluation of the \Gls{msbr} CSG model. I have not been able to convert the JEFF 3.1.2 library to \OpenMC's HDF5 format, so I am instead using the ENDF/B VII.1 cross section library.
