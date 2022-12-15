@@ -6,7 +6,7 @@ As mentioned in Chapter 1, I am using a \Gls{csg} model of the \Gls{msbr}
 
 The \Gls{msbr} design is the result of a design study of a single-fluid
 \Gls{msr} following the success of the \Gls{msre}
-\cite{haubenreich_experience_1970}\cite{rosenthal_molten-salt_1970}.
+\cite{haubenreich_experience_1970}\cite{rosenthal_history_1970}.
 
 I picked the \Gls{msbr} for two reasons:
 \begin{enumerate}
@@ -16,7 +16,7 @@ I picked the \Gls{msbr} for two reasons:
     \item Rykhlevskii created a \SerpentTWO \Gls{csg} model and the processing
     system graph for the \Gls{msbr} based on the specifications in
     \cite{robertson_conceptual_1971} for use in \SaltProc
-    v0.3.0\cite{rykhlevksii_fuel_2020}. The models used in this work is derived
+    v0.3.0\cite{rykhlevskii_fuel_2020}. The models used in this work is derived
     from Rykhlevskii's model.
 \end{enumerate}
 
@@ -108,7 +108,7 @@ description in Section \ref{sec:msbr-core}}
 
 The density of the fuel salt is given by a function\footnote{This function 
 comes from an earlier report on the Molten-Salt Reactor Program
-\cite{rosenthal_molten-salt-ornl_1970}.} of temperature in \unit{\celsius} in Table
+\cite{rosenthal_molten-salt_1969}.} of temperature in \unit{\celsius} in Table
 S.1 in Robertson et al. \cite{robertson_conceptual_1971}:
 \begin{equation}
     \rho = 3.752 - 6.68\cdot 10^{-4} \cdot T \quad \unit{\gram\per\square  \centi\meter}
@@ -231,7 +231,6 @@ II, and the reflector zone.
     \caption[Detail views of MSBR core region]{
         \subref{fig:msbr_sec_ref} Detail view of \Gls{msbr} reference design.
         \subref{fig:msbr_sec_model} Detail view of \Gls{msbr} CSG model.}
-
     \label{fig:msbr-detail}
 \end{figure}
 
@@ -653,7 +652,7 @@ reflectors\footnote{I exclucde the following details about the radial reflector
 due to insufficient information in the report to reproduce them in a model:
 modified Hastelloy N orifice plates, milled radial grooves at the bottom of each
 reflector block, top layer blocks (see pages 15 and 16 in Robertson et al.)}
-consist of 29 in. (48.26 cm) thick wedge-shaped blocks that are 43 in. tall and 10 in. (25.4 cm) wide at the vessel wall and 9 in. wide at the inner end \cite{robertson_conceptual_1973}.
+consist of 29 in. (48.26 cm) thick wedge-shaped blocks that are 43 in. tall and 10 in. (25.4 cm) wide at the vessel wall and 9 in. wide at the inner end \cite{robertson_conceptual_1971}.
 Four layers of these blocks comprise the entire radial reflector. Slots cut out
 of the outer edge of the blocks facilitate modified Hastelloy N axial ribs to create a
 0.25 in (0.635 cm) standoff space between the blocks and the vessel wall. Axial
@@ -668,7 +667,7 @@ providing additional cooling. Modified Hastelloy N retaining rings placed in slo
 between the block layers (see Figure \ref{fig:msbr-ref-xz}) ensure that the
 position of the reflector blocks to the vessel wall stays relatively constant as
 the materials expand under the heating of the fuel salt
-\cite{robertson_conceptual_1973}.
+\cite{robertson_conceptual_1971}.
 
 The axial reflectors consist of wedge shaped graphite pieces (see Figure
 \ref{fig:msbr-ref-xy}) that are 2 in. (5.08 cm) wide at the inner end and 16 in.
@@ -717,9 +716,13 @@ is broken into the following sections:
     vessel.
 \end{enumerate}
 
-The CSG model\ldots
+The CSG model representation of the vessel has a 2 in. (5.08
+\unit{\centi\metre}) thickness, and hugs the radial region in the CSG model,
+giving an outer diameter of r 22.53 ft. (686.816 \unit{\centi\metre}) and a
+height of 20.08 ft (612.14 \unit{\centi\metre}).
 
 \section{An aside on the salt volume}
+\label{sec:salt-volume}
 The original salt volume in the \Gls{csg} \Gls{msbr} model was set to
 $4.871\cdot 10^7$ \unit{\centi\metre\cubed}. This is roughly double the salt
 volume in the core in the reference specification (see Table
@@ -755,13 +758,16 @@ as specified, however in the \Gls{msbr} reference design, the total volume of
 salt in the reactor vessel is 1074 ft$^{3}$ ($3.0412 \cdot 10^{7}$
 \unit{\centi\metre\cubed}) \cite{robertson_conceptual_1971}, which is approximately
 13\% greater than the geometrical volume of the salt. This discrepency is due to
-the abscense of the core inlets, outlets, and the narrow salt passages in the
+the absense of the core inlets, outlets, and the narrow salt passages in the
 reflector region. These features are important for thermal hydraulic accuracy,
-however they are most likely not particularly neutronically important. Additionally,
-we want to stay consitent with Ryklevskii's previous works 
-\cite{ryhklevskii_advanced_2018}\cite{ryhklevskii_fuel_2020}, so we will use the
-existing value for the salt volume of $4.871\cdot 10^7$.
-\unit{\centi\metre\cubed}. Note that this value is only valid if we are taking depletion step sizes equal to the cycle time of the salt, whcih is\ldots
+however they are most likely not particularly neutronically important.
+Additionally, we want to stay as conistent as possible with Rykhlevskii's
+previous works \cite{rykhlevskii_advanced_2018} \cite{rykhlevskii_fuel_2020}, so
+we will use the existing value for the salt volume of $4.871\cdot 10^7$.
+\unit{\centi\metre\cubed}. This choice carries the implicit assumption that we
+are applying the neutronic conditions in the core to $4.871\cdot 10^{7}$ \unit{\centi\metre\cubed} of salt during the entire depletion step. This assumption is valid if our processing rate In the
+reference \Gls{msbr} design, the cycle time of . In this work, we assume that the cycle time of the salt throughout the entire primary loop is exactly equal to the depletion step size.Note that this value is only valid if we are taking
+depletion step sizes equal to the cycle time of the salt, which is\ldots (FINISH THIS SECTION)
 
 %% Table 3.2 and 3.3 in robertson
 \begin{table}[htpb]
@@ -791,23 +797,58 @@ reference MSBR core regions. Reproduced from Table 3.2 in
 
 \section{Reprocessing system}
 \label{sec:msbr-reprocessing-system}
-The MSBR reference design included the specification of a fuel-salt processing. The purpose of this system is two-fold:
+The MSBR reference design included the specification of a fuel-salt processing
+system\footnote{for this thesis, processing refers to both gas removal and
+chemical processing}. The purpose of this reprocessing system is to improve neutronic performance by removing neutron poisons and other containants from recirculating through the core. The reprocessing system is split into two parts: gas removal and chemical extraction. The gas removal system takes advantage of\ldots to remove\ldots from the fuel salt. The reprocessing system is based on reductive extraction\footnote{reductive
+extraction takes advantage of the higher electronegatvity of a particular
+element to drive reduction reactions that remove target elements from covalently
+bonded molecules}. I will provide a brief descrption of the entire reprocessing system,
+but justifying in and evaluating its efficacy are beyond the scope of this thesis\footnote{I
+encourage interested readers to look at chapters 7 and 8 in
+\cite{robertson_conceptual_1971}, the entirety of \cite{carter_design_1972} and
+\cite{lindauer_design_1969}, as well as the molten salt reactor program
+semiannual progress reports, all of which you can find at
+\href{energyfromthorium.com/url}{https://energyfromthorium.com/pdf/}}.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/ch4/msbr_primary_system.png}
+    \caption{Simplified flow diagram of primary drain tank and heat removal system. Reproduced from Figure 2.3 in \cite{robertson_conceptual_1971}. (A) Combiner tank for separated gases and overflow salt, (B) Off-gas line with cooling jacket, (C) Fuel-salt drain line, (D) Drain line continuous bleed flow, (E) Jet pumps fro returning overflow fuel salt to primary system, (F) Ancillary fuel-salt transfer pump, (G) Jet pump for filling primary system and sending salt to chemical processing, (H) Freeze-plug type valve }
+    \label{fig:msbr_primary_system}
+\end{figure}
+
+\subsection{Gas removal system}
+The gas removal system removes short-lived neutron poisions gases (tritium, xenon, and krypton) from returning to the core region. There are three components to this system: the bubble generator, the gas separator, and the off-gas system. The gas separator is where the physical separation of the neutron poisons from the fuel salt occurs.
+
+The bubble generator creates bubbles from helium gas injected into the fuel salt\footnote{the phenomena of pockets of gas trapped in pockets, along with any other material they may pick up, and transported in fluid flow is called {\it entrainment}. The \Gls{msbr} includes a salt entrainment separator downstream from the gas separator that removes entrained salt and metal contaminants from the helium bubbles before the gas is processed. See Section 5.3 in
+\cite{rosenthal_molten-salt_1968}}. These helium bubbles will pick up the fission product gases and carry them on the interface between the helium and the salt. This process is called {\it sparging}.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/ch4/gas_removal_system.png}
+    \caption{Overview of \Gls{msbr} gas removal system. Reproduced from Figure 7.1 in \cite{robertson_conceptual_1971}}
+    \label{fig:gas_removal_system}
+\end{figure}
+
+\subsection{Fuel salt drain tank}
+In addition to providing a emergency salt storage system in the case of electrical system failure, the fuel salt drain tank plays an important role in the fuel-salt reprocessing system \cite{robertson_conceptual_1971}. The fission product gases from the gas removal system are routed to the drain tank to decay away. The drain tank catches overflow from the salt circulation pumps, prodviding it with a small amount of salt during operation. A 0.88 gpm (3331.152
+\unit{\centi\metre\cubed\per\minute}) stream of salt from the drain tank flows through the chemical processing system and back to the draink tank. Jet pumps at the bottom of the drain tank send salt back to the primary loop. Figure \ref{fig:msbr_primary_system} shows this arrangement.
+
+\subsection{Chemical processing system}
+The chemical processing system has two purposes:
 \begin{enumerate}
     \item To isolate \ce{^{233}Pa} from the high neutron flux zone to allow it to decay into \ce{^{233}U}
     \item To remove impurities (rare earth metals) and fission products from the fuel salt
 \end{enumerate}
-The reprocessing system is based on reductive extraction\footnote{reductive
-extraction takes advantage of the higher electronegatvity of a particular
-element to drive reduction reactions that remove target elements from covalently
-bonded molecules. See \ldots}. I will provide a brief descrption of the
-reprocessing system, but evaluating its efficacy is beyond the scope of this
-thesis\footnote{I encourage interested readers to look at chapters 7 and 8 in
-\cite{robertson_conceptual_1971}, the entirety of \cite{carter_design_1972} and
-\cite{lindauer_design_1972}, as well as the molten salt reactor program
-semiannual progress reports, all of which you can find at
-\href{energyfromthorium.com/url}{https://energyfromthorium.com/pdf/}}.
 
-\subsection{Protactinium isolation loop}
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/ch4/chemical_processing_system.png}
+    \caption{Chemical processing system overview. Reproduced from Figure 2.4 in \cite{robertson_conceptual_1971}}
+    \label{fig:}
+\end{figure}
+
+\paragraph{Protactinium isolation loop}
 In order to remove the protactinium from the fuel salt, all uranium must first be removed. The protactinium isolation loop consists of several components: 
 \begin{enumerate}
     \item A fluorinator to remove 95\% of the uranium in the fuel salt.
@@ -827,7 +868,7 @@ Figure \ref{fig:pa-removal} shows a block diagram of this loop.
     \label{fig:pa-removal}
 \end{figure}
 
-\subsection{Rare-earth removal system}
+\paragraph{Rare-earth removal system}
 The rare-earch removal system utilized the same metal transfer process used to
 isolate protactinium from the fuel salt\cite{robertson_conceptual_1971}. This
 system begins at the output of the extractor column for protactinium isolation.
@@ -854,9 +895,6 @@ It is a multistage extraction system:
 
 Figure \ref{fig:metal-removal} shows a block diagram of this loop. 
 
-\subsection{Nickel-mesh filter}
-Insoluble impurities in the processed salt needs to be removed before the salt stream returns to the reactor. Impurities inlcude bismuth entrained or dissolved in the fuel salt as a side effect from processing, \ce{FeF_2}, and \ce{NiF_2}. A nickel-mesh filter will remove these impurities from the salt. 
-
 \begin{figure}[htpb]
     \centering
     \includegraphics[width=0.8\textwidth]{figs/ch4/metal_removal_loop.png}
@@ -864,15 +902,47 @@ Insoluble impurities in the processed salt needs to be removed before the salt s
     \label{fig:metal-removal}
 \end{figure}
 
-\subsection{Gas removal}
+\paragraph{Nickel-mesh filter}
+Insoluble impurities in the processed salt needs to be removed before the salt stream returns to the reactor. Impurities inlcude bismuth entrained or dissolved in the fuel salt as a side effect from processing, \ce{FeF_2}, and \ce{NiF_2}. A nickel-mesh filter will remove these impurities from the salt. (FINISH THIS SECTION)
+
 
 \subsection{Reprocessing system model}
+As described in (reference section on saltproc model on reprocessing), SaltProc relies on extraction efficiencies to model chemical removal of target elements from the fuel salt. Unfortunately, Robertson et. al. \cite{robertson_conceptual_1971} provide no such values, and a literature review to find such values is outside the scope of this thesis. What Robertson does give us are the cycle times for elements in the fuel salt.
+
+\begin{table}[htpb] 
+    \centering 
+    \caption{Reprocessing system cycle times. A combination of tables 3.7B in \cite{robertson_conceptual_1971}, Table 3 in \cite{carter_design_1972}, and Table 25.1 in \cite{rosenthal_molten-salt_1970}}
+    \label{tab:msbr-cycle-times}
+    \begin{tabularx}{400pt}{|X|X|X|X|X|} 
+        \hline
+        Processing group & Target component(s) & Cycle time for processing & Primary mechanism of removal from salt & Secondary mechanism of removal from salt\\
+        \hline
+        Protactinium & \ce{^{233}Pa} & 3 days & Reductive extraction with \ce{Bi-Li} in \ce{Pa} extraction column followed by isolation in \ce{Pa} decay salt & None \\
+        \hline
+        Rare earths & Trivalent: \ce{Y}, \ce{La}, \ce{Ce}, \ce{Pr}, \ce{Nd}, \ce{Pm}, \ce{Gd}, Divalent: \ce{Sm}, \ce{Eu} & 50 days (500 for \ce{Eu}) & Reductive extraction with \ce{Bi-Li} in \ce{Pa} extraction column followed by isolation in \ce{Pa} decay salt & Reduction to metallic particulates by \ce{H_2} in reduction column followed by filtraion\\
+        \hline 
+        Noble metals & \ce{Se}, \ce{Nb}, \ce{Mo}, \ce{Tc}, \ce{Ru}, \ce{Rh}, \ce{Pd}, \ce{Ag}, \ce{Sb}, \ce{Te} & 20 sec & Plating out on surfaces in reactor vessel and heat exchangers & \ce{Nb}, \ce{Mo}, \ce{Tc}, \ce{Ru}, \ce{Rh},\ce{Sb}, and \ce{Te} have volatile fluorides and are removed in fluorinators; \ce{Pd}, \ce{Ag } reduced by \ce{Bi-Li} alloy in reductive extraction.\\
+        \hline
+        Seminoble metals & \ce{Zr}, \ce{Cd}, \ce{In}, \ce{Sn} & 200 days & Plating out on surfaces in ractor vessel and heat exchangers & Reducive extraction with \ce{Bi-Li} in \ce{Pa} extraction column followed by isolation in \ce{Pa} decay salt \\
+        \hline
+        Gases & \ce{Kr}, \ce{Xe} & 20 sec & Sparged from salt with \ce{He} gas in primary loop & Purged in fluorniators due to spargin action of \ce{F_2} and \ce{H_2}\\
+        \hline
+        Halogens & \ce{Br}, \ce{I} & 60 days & Volitalization in primary fluorinator & None \\
+        \hline
+        Carrier salt & \ce{Th}, \ce{Li}, \ce{Be}, \ce{F} & 3435 days & Fuel salt discard to remove excess \ce{Li} added in reductive extraction process. & None \\
+        \hline
+        Alkaline earths; alkali metals & \ce{Sr}, \ce{Ba}; \ce{Rb}, \ce{Cs} & 3435 days & Fuel salt discard & None \\
+        \hline
+    \end{tabularx}
+\end{table}
+
+The process graph is based on the TAP reactor\ldots
+
 In SaltProc, we combine the protactinium isolation and metal removal systems into a single process, \verb.liquid_metal.. The elements removed via the protactinium isolation system are\ldots, and the elements removed via the metal removal system are \ldots. Robertson et. al. does not give extraction efficiencies for these elements, but they do give cycle times. Rykhlevskii set his depletion timestep to 3 days because\ldots and we will also use this depletion
 timesetp size. We calculate an approximately correct cycle time using a simple formula \ldots
 
 We model the nickel filter via\ldots
 
-The gas sparging system is more complicated\ldots
 
 
 \section{Cross Section Data}
