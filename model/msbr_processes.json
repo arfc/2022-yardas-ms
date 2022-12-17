@@ -1,0 +1,84 @@
+{
+  "fuel": {
+    "extraction_processes": {
+      "core_inlet": {
+        "capacity": 9920000,
+        "efficiency": {},
+        "mass_flowrate": 9920000,
+        "volume": 0
+      },
+      "core_outlet": {
+        "capacity": 9920000,
+        "efficiency": {},
+        "mass_flowrate": 9920000,
+        "volume": 0
+      },
+      "gas_separator": {
+        "capacity": 9920000,
+        "efficiency": {
+          "Kr": 1,
+          "Xe": 1,
+          "H": 1
+        },
+        "mass_flowrate": 9920000,
+        "volume": 10000000
+      },
+      "nickel_filter": {
+        "capacity": 9920000,
+        "efficiency": {
+          "Se": 1,
+          "Nb": 1,
+          "Mo": 1,
+          "Tc": 1,
+          "Ru": 1,
+          "Rh": 1,
+          "Pd": 1,
+          "Ag": 1,
+          "Sb": 1,
+          "Te": 1
+        },
+        "mass_flowrate": 9920000,
+        "volume": 11
+      },
+      "reductive_extractor": {
+        "capacity": 9920000,
+        "efficiency": {
+          "Pa": 1,
+          "Y": 0.8904,
+          "La": 0.8904,
+          "Ce": 0.8904,
+          "Pr": 0.8904,
+          "Nd": 0.8904,
+          "Pm": 0.8904,
+          "Sm": 0.8904,
+          "Gd": 0.8904,
+          "Eu": 0.2,
+          "Rb": 0.032,
+          "Sr": 0.032,
+          "Cs": 0.032,
+          "Ba": 0.032,
+          "Zr": 0.425,
+          "Cd": 0.425,
+          "In": 0.425,
+          "Sn": 0.425,
+          "Br": 0.842,
+          "I": 0.842
+
+        },
+        "mass_flowrate": 9920000,
+        "volume": 11
+      }
+    },
+    "feeds": {
+      "leu": {
+        "density": 4.9602,
+        "volume": 100000000,
+        "mass": 496020000,
+        "comp": {
+          "Th-232": 0.55,
+          "U-233": 0.45
+        }
+      }
+    }
+  }
+}

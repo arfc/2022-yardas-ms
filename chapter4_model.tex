@@ -23,13 +23,15 @@ I picked the \Gls{msbr} for two reasons:
 Most of the discussion below summarizes and condenses the information in
 Robertson et al., and compares it to the \Gls{csg} model. Unless otherwise
 specified, there are no differences between the model used in this work and in
-\cite{rykhlevskii_fuel_2020}. I will only describe the following reactor systems
-that are relevant to my validation study\footnote{A complete description of the
-entire \Gls{msbr} system can be found in Robertson, et al
-(1971)\cite{robertson_conceptual_1971}. Interested readers should focus on Table
-S.1, Sections 3.4, 3.1, and 3.5 in Robertson et al. for further details and
-design considerations.}:
-the fuel salt, the reactor core, and the salt reprocessing system.
+\cite{rykhlevskii_fuel_2020}\footnote{The relevant component of Reference
+\cite{rykhlevskii_fuel_2020}, Chapters 2 and 3, are based on Reference
+\cite{rykhlevskii_modeling_2019}. I may use these references interchangeably}. I
+will only describe the following reactor systems that are relevant to my
+validation study\footnote{A complete description of the entire \Gls{msbr} system
+can be found in Robertson, et al (1971)\cite{robertson_conceptual_1971}.
+Interested readers should focus on Table S.1, Sections 3.4, 3.1, and 3.5 in
+Robertson et al. for further details and design considerations.}: the fuel salt,
+the reactor core, and the salt reprocessing system.
 
 \begin{figure}[htpb] 
     \centering
@@ -71,21 +73,22 @@ approximations made in the model.
 \label{sub:msbr-fuel-salt}
 Table S.1 in \cite{robertson_conceptual_1971} specifies the fuel salt
 composition used in the \Gls{msbr}:
-\ce{LiF}-\ce{Be}\ce{F_2}-\ce{Th}\ce{F_4}-\ce{U}\ce{F_4} at a
-concentration of 71.7-16-12-0.3 mole-\%\footnote{In Rykhlevskii's thesis
-\cite{rykhlevskii_fuel_2020}, he stated the mole-\% to be 71.75-16-12-0.25. I
-have been unable to find this composition in Robertson et al.
-\cite{robertson_conceptual_1971}}. The lithium used in the fuel salt is
-enriched to 99.995\% \ce{^{7}Li}. This is because \ce{^{6}Li} is a strong
-neutron absorber and produces tritium in the absorption reaction. The atom-\%
-for each nuclide is given in Table \ref{tab:msbr-fuel-salt-ref}\footnote{Most of the
-discussion of the fuel salt compositon in Robertson el al
-\cite{robertson_conceptual_1971} specify elemental version of the nuclides in
-Table \ref{tab:msbr-fuel-salt-ref}. I have specific specific nuclides for the
-following reasons: (1) both \ce{F} and \ce{Be} have only one stable isotope, (2)
-the fuel salt recieves initial fissile loading from \ce{^{233}U} or
-\ce{^{235}U}, and (3) the fuel salt recieves its fertile loading from
-\ce{^{232}Th}}.
+\ce{LiF}-\ce{Be}\ce{F_2}-\ce{Th}\ce{F_4}-\ce{U}\ce{F_4} at a concentration of
+71.7-16-12-0.3 mole-\%. The lithium used in the fuel salt is enriched to
+99.995\% \ce{^{7}Li}. This is because \ce{^{6}Li} is a strong neutron absorber
+and produces tritium in the absorption reaction. The atom-\% for each nuclide is
+given in Table \ref{tab:msbr-fuel-salt-ref}\footnote{Most of the discussion of
+the fuel salt compositon in Robertson el al \cite{robertson_conceptual_1971}
+specify elemental version of the nuclides in Table \ref{tab:msbr-fuel-salt-ref}.
+I have specific specific nuclides for the following reasons: (1) both \ce{F} and
+\ce{Be} have only one stable isotope, (2) the fuel salt recieves initial fissile
+loading from \ce{^{233}U} or \ce{^{235}U}, and (3) the fuel salt recieves its
+fertile loading from \ce{^{232}Th}}\footnote{I use OpenMC's Python API with the
+ENDF/V VII.0 library along with a custom Python script
+(\href{https://github.com/arfc/2022-yardas-ms/tree/master/model/salt-composition.ipynb})
+to calculate these values. You may obtain slightly different numbers if you use
+a different cross section library or calculation method, but they should  be
+roughly the same.}.
 
 See Section \ref{sec:salt-volume} for additional discussion of the value used
 for the salt volume\footnote{I recommend reading this section after the geometry
@@ -93,15 +96,15 @@ description in Section \ref{sec:msbr-core}}
 
 \begin{table}[htpb] 
     \centering 
-    \caption{Reference \Gls{msbr} fuel salt specifications}
+    \caption{Reference \Gls{msbr} fuel salt specifications rounded to 6 decimals}
     \label{tab:msbr-fuel-salt-ref}
     \begin{tabular}{|c|c|c|c|c|c|c|} 
         \hline
         & \ce{^{6}Li} & \ce{^{7}Li} & \ce{^{19}F} & \ce{^{9}Be} & \ce{^{232}Th} & \ce{^{233}U}\\
         \hline 
-        atom-\% & 1.4357925 & 34.4142075 & 56.35$\overline{6}$ & 5.$\overline{3}$ & 2.4 & 0.06 \\
+        atom-\% & 1.315629 & 27.035498 & 60.458679 & 6.326611 & 4.744958 & 0.118624 \\
         \hline
-        mass-\% & 0.4452449 & 12.4477343 & 55.1982285 & 2.4779439 & 28.7100003 & 0.7208481\\ 
+        mass-\% & 0.312561 & 7.491697 & 45.366139 & 2.251942 & 43.485823 & 1.091838\\ 
         \hline
     \end{tabular}
 \end{table}
@@ -130,24 +133,30 @@ is 3.3332642 \unit{\gram\per\centi\metre\cubed}.
 
 \begin{table}[htpb] 
     \centering 
-    \caption{Model \Gls{msbr} fuel salt specifications}
+    \caption{Model \Gls{msbr} fuel salt specifications rounded to six decimals}
     \label{tab:msbr-fuel-salt-model}
     \begin{tabular}{|c|c|c|c|c|c|} 
         \hline
         & \ce{^{7}Li} & \ce{^{19}F} & \ce{^{9}Be} & \ce{^{232}Th} & \ce{^{233}U}\\
         \hline 
-        atom-\% & 28.386326 & 60.437153 & 6.330058 & 4.747557 & 0.098907 \\
+        atom-\% & 28.387735 & 60.435213 & 6.330366 & 4.747774 & 0.098912 \\
         \hline
-        mass-\% & 7.87474673879085 & 45.4003012179284 & 2.25566879138321 & 43.5579130482336 & 0.911370203663893\\ 
+        mass-\% & 7.875053& 45.398353 & 2.255754 & 43.559435 & 0.911405\\ 
         \hline
     \end{tabular}
 \end{table}
-In the CSG model, the fuel salt material uses the composition specified in
-Table \ref{tab:msbr-fuel-salt-model} and has a density of 3.35
-\unit{\gram\per\centi\metre\cubed}. Notice that the lithium has been enriched to
-100\% \ce{^{7}Li}. This is because during inital simulations, even those very
-small amounts of \ce{^{6}Li} were enough to kill the reaction. The inital
-fissile and fertile loading has also been slightly increased.
+% WILL NEED TO DO TEST SIMULATIONS TO CONFIRM THIS MATCHES PARK ET AL
+In the CSG model, we use a mole-\% composition of 71.75-16-12-0.25. This slight
+difference is due to an unpublished reactivity study investigating decreased
+composition of \ce{UF_4} to obtain a more reasonable 
+$k_\text{eff}$\footnote{According to Rykhlevskii, using 0.3 mole-\% \ce{UF_4} 
+gave $k_\text{eff} > 1.3$}\cite{rykhlevskii_personal_2022}. The fuel salt 
+material uses the composition specified in Table \ref{tab:msbr-fuel-salt-model}
+and has a density of 3.35 \unit{\gram\per\centi\metre\cubed}. Notice that the
+lithium has been enriched to 100\% \ce{^{7}Li}. This is because during inital
+simulations, even those very small amounts of \ce{^{6}Li} were enough to kill
+the reaction. The inital fissile and fertile loading has also been slightly
+increased.
 
 \subsection{Graphite}
 \label{sub:graphite}
@@ -209,8 +218,10 @@ Hastelloy N and their amounts in mass-\% are in Table \ref{tab:hastelloy-n-ref}.
 
 The Hastelloy N material in the CSG model uses the composition specified in
 Table \ref{tab:hastelloy-n-model} and has a density of 8.671 
-\unit{\gram\per\centi\metre\cubed}. The model material has a different composition
-than the reference material because\ldots
+\unit{\gram\per\centi\metre\cubed}. The model material has a different
+composition than the reference material because the additional elements are of
+little neutronic importance  and their omission reduces computation time
+according to Rykhlevskii \cite{rykhlevskii_personal_2022}.
 
 
 \section{Reactor core}
@@ -719,7 +730,11 @@ is broken into the following sections:
 The CSG model representation of the vessel has a 2 in. (5.08
 \unit{\centi\metre}) thickness, and hugs the radial region in the CSG model,
 giving an outer diameter of r 22.53 ft. (686.816 \unit{\centi\metre}) and a
-height of 20.08 ft (612.14 \unit{\centi\metre}).
+height of 20.08 ft (612.14 \unit{\centi\metre}). The CSG model does not include
+the nested support sections as they are of little neutronic importance. Figure
+\ref{fig:msbr-cells} shows the radial vessel as a thin blue region at the outer
+edge of the radial reflector region, and the axial vessel as a thin pink regio
+at the outer edge of the axial reflector regions.n
 
 \section{An aside on the salt volume}
 \label{sec:salt-volume}
@@ -756,18 +771,20 @@ primary system as  1720 ft$^{3}$ ($4.8705\cdot 10^7$ \unit{\centi\metre\cubed}).
 This value is valid assuming that we have reproduced the core geometry exactly
 as specified, however in the \Gls{msbr} reference design, the total volume of
 salt in the reactor vessel is 1074 ft$^{3}$ ($3.0412 \cdot 10^{7}$
-\unit{\centi\metre\cubed}) \cite{robertson_conceptual_1971}, which is approximately
-13\% greater than the geometrical volume of the salt. This discrepency is due to
-the absense of the core inlets, outlets, and the narrow salt passages in the
-reflector region. These features are important for thermal hydraulic accuracy,
-however they are most likely not particularly neutronically important.
-Additionally, we want to stay as conistent as possible with Rykhlevskii's
-previous works \cite{rykhlevskii_advanced_2018} \cite{rykhlevskii_fuel_2020}, so
-we will use the existing value for the salt volume of $4.871\cdot 10^7$.
-\unit{\centi\metre\cubed}. This choice carries the implicit assumption that we
-are applying the neutronic conditions in the core to $4.871\cdot 10^{7}$ \unit{\centi\metre\cubed} of salt during the entire depletion step. This assumption is valid if our processing rate In the
-reference \Gls{msbr} design, the cycle time of . In this work, we assume that the cycle time of the salt throughout the entire primary loop is exactly equal to the depletion step size.Note that this value is only valid if we are taking
-depletion step sizes equal to the cycle time of the salt, which is\ldots (FINISH THIS SECTION)
+\unit{\centi\metre\cubed}) \cite{robertson_conceptual_1971}, which is 
+approximately 13\% greater than the geometrical volume of the salt. This
+discrepency is due to the absense of the core inlets, outlets, and the narrow
+salt passages in the reflector region. These features are important for thermal
+hydraulic accuracy, however they are most likely not particularly neutronically
+important. Additionally, we want to stay as conistent as possible with
+Rykhlevskii's previous works \cite{rykhlevskii_fuel_2020}
+\cite{rykhlevskii_modeling_2019}, so we will use the existing value for the salt
+volume of $4.871\cdot 10^7$. \unit{\centi\metre\cubed}. This choice carries the
+implicit assumption that we are applying the neutronic conditions in the core to
+$4.871\cdot 10^{7}$ \unit{\centi\metre\cubed} of salt during the entire
+depletion step, which does not account for the actual salt processing rate and
+fuel salt mass flowrate. To do so would require development of SaltProc that is
+outside the scope of this thesis.
 
 %% Table 3.2 and 3.3 in robertson
 \begin{table}[htpb]
@@ -818,10 +835,23 @@ semiannual progress reports, all of which you can find at
 \end{figure}
 
 \subsection{Gas removal system}
-The gas removal system removes short-lived neutron poisions gases (tritium, xenon, and krypton) from returning to the core region. There are three components to this system: the bubble generator, the gas separator, and the off-gas system. The gas separator is where the physical separation of the neutron poisons from the fuel salt occurs.
+The gas removal system removes short-lived neutron poisions gases (tritium,
+xenon, and krypton) from returning to the core region. There are three
+components to this system: the bubble generator, the gas separator, and the
+off-gas system. The gas separator is where the physical separation of the
+neutron poisons from the fuel salt occurs.
 
-The bubble generator creates bubbles from helium gas injected into the fuel salt\footnote{the phenomena of pockets of gas trapped in pockets, along with any other material they may pick up, and transported in fluid flow is called {\it entrainment}. The \Gls{msbr} includes a salt entrainment separator downstream from the gas separator that removes entrained salt and metal contaminants from the helium bubbles before the gas is processed. See Section 5.3 in
-\cite{rosenthal_molten-salt_1968}}. These helium bubbles will pick up the fission product gases and carry them on the interface between the helium and the salt. This process is called {\it sparging}.
+The bubble generator creates bubbles from helium gas injected into the fuel
+salt\footnote{the phenomena of pockets of gas trapped in pockets, along with any
+other material they may pick up, and transported in fluid flow is called {\it
+entrainment}. The \Gls{msbr} includes a salt entrainment separator downstream
+from the gas separator that removes entrained salt and metal contaminants from
+the helium bubbles before the gas is processed. See Section 5.3 in
+\cite{rosenthal_molten-salt_1968}}. These helium bubbles will pick up the
+fission product gases and carry them on the interface between the helium and the
+salt. This process is called {\it sparging}. Around 10\% of the total salt flow
+is routed from the primary pumps into this system. Figure
+\ref{fig:gas_removal_system} provides an overview.
 
 \begin{figure}[htpb]
     \centering
@@ -831,8 +861,15 @@ The bubble generator creates bubbles from helium gas injected into the fuel salt
 \end{figure}
 
 \subsection{Fuel salt drain tank}
-In addition to providing a emergency salt storage system in the case of electrical system failure, the fuel salt drain tank plays an important role in the fuel-salt reprocessing system \cite{robertson_conceptual_1971}. The fission product gases from the gas removal system are routed to the drain tank to decay away. The drain tank catches overflow from the salt circulation pumps, prodviding it with a small amount of salt during operation. A 0.88 gpm (3331.152
-\unit{\centi\metre\cubed\per\minute}) stream of salt from the drain tank flows through the chemical processing system and back to the draink tank. Jet pumps at the bottom of the drain tank send salt back to the primary loop. Figure \ref{fig:msbr_primary_system} shows this arrangement.
+In addition to providing a emergency salt storage system in the case of
+electrical system failure, the fuel salt drain tank plays an important role in
+the fuel-salt reprocessing system \cite{robertson_conceptual_1971}. The drain tank catches around 150 gpm (approxmiately 0.9\% of the total salt flow) of
+overflow from the primary salt circulation pumps, prodviding it with a small
+amount of salt during operation\cite{robertson_concetpual_1971}. A 0.88 gpm
+stream of salt from the drain tank flows through the chemical processing system
+and back to the draink tank. Jet pumps at the bottom of the drain tank send salt
+back to the primary loop. Figure \ref{fig:msbr_primary_system} shows this
+arrangement.
 
 \subsection{Chemical processing system}
 The chemical processing system has two purposes:
@@ -903,11 +940,19 @@ Figure \ref{fig:metal-removal} shows a block diagram of this loop.
 \end{figure}
 
 \paragraph{Nickel-mesh filter}
-Insoluble impurities in the processed salt needs to be removed before the salt stream returns to the reactor. Impurities inlcude bismuth entrained or dissolved in the fuel salt as a side effect from processing, \ce{FeF_2}, and \ce{NiF_2}. A nickel-mesh filter will remove these impurities from the salt. (FINISH THIS SECTION)
+Insoluble impurities in the processed salt needs to be removed at two locations:
+before the salt stream is sent to reducitve extraction system\cite{lindauer_design_1969}, and before the processed salt stream coming
+from the reductive extration system returns to the
+reactor\cite{robertson_conceptual_1971}. The first filter removes insoluble
+impurities from transmutation and corrosion in the core, heat exchanger, and
+other systems. The second filter removes  bismuth entrained or dissolved in the
+fuel salt as a side effect from processing, and any additional insoluble
+impurities such as \ce{FeF_2} and \ce{NiF_2}. The filter itself consists of a
+nickel mesh\cite{robertson_conceptual_1971}.
 
 
 \subsection{Reprocessing system model}
-As described in (reference section on saltproc model on reprocessing), SaltProc relies on extraction efficiencies to model chemical removal of target elements from the fuel salt. Unfortunately, Robertson et. al. \cite{robertson_conceptual_1971} provide no such values, and a literature review to find such values is outside the scope of this thesis. What Robertson does give us are the cycle times for elements in the fuel salt.
+As described in Section \ref{sub:feeds-separations}, SaltProc relies on extraction efficiencies to model chemical removal of target elements from the fuel salt.  Unfortunately, Robertson et. al. \cite{robertson_conceptual_1971} provide no such values, and a literature review to find such values is outside the scope of this thesis. What Robertson does give us are the cycle times for elements in the fuel salt.
 
 \begin{table}[htpb] 
     \centering 
@@ -936,16 +981,85 @@ As described in (reference section on saltproc model on reprocessing), SaltProc 
     \end{tabularx}
 \end{table}
 
-The process graph is based on the TAP reactor\ldots
+Rykhlevskii previously used 100\% extraction efficiency with 3-day depletion
+steps\cite{rykhlevskii_modeling_2019} using SaltProc v0.1.0. As mentioned in
+Section \ref{sec:saltproc-history}, this version of SaltProc required the user
+to hardcode in the cycle times. The program would then extract the target
+elements from the fuel once a full cycle time had passed. In SaltProc v0.2.0 and
+onward, this cycle time capability was removed in favor of user-defined
+extraction efficiencies. This means we are unable to completley reproduce the
+results in \cite{rykhlevskii_modeling_2019} as all extractions now happen after
+every depletion step, rather than only after the hardcoded cycle times.
+To get around this, we can construct proxy extraction efficiencies based on the
+cycle times that will remove a large majority of the material after the
+designated amount of time has passed.
 
-In SaltProc, we combine the protactinium isolation and metal removal systems into a single process, \verb.liquid_metal.. The elements removed via the protactinium isolation system are\ldots, and the elements removed via the metal removal system are \ldots. Robertson et. al. does not give extraction efficiencies for these elements, but they do give cycle times. Rykhlevskii set his depletion timestep to 3 days because\ldots and we will also use this depletion
-timesetp size. We calculate an approximately correct cycle time using a simple formula \ldots
+Assuming we are running a simulation with constant-length depletion steps, let
+$l_{d}$ be the length of a depletion step, and let $c_{X}$ be the cycle time for
+element $X$. Ignoring the addition of element $X$ to the material via
+transmutation or feeds, we can define the extraction efficiency $\epsilon_{X}$
+to be:
 
-We model the nickel filter via\ldots
+\begin{equation}
+    \ref{eq:extraction_efficieny}
+    \epsilon_{X} = 1 - \delta^{\frac{l_{d}}{c_{X}}}
+\end{equation}
 
+where $\delta$ is a threshold for the mass fraction remaining of the original
+amount of element X\footnote{See Appendix \ref{appex:extraction-efficiency} for
+the derivation of this equation.}. We will use $\delta = 1\cdot 10^{-16}$. Note
+that our equation does not account for the addition of material.
 
+The process graph is a simplified version of the processing system described 
+above. There are only three components: the gas separator, the nickel filter and
+the reductive extractor. Figure \ref{fig:process-graph} dsiplays the process
+graph. This simple configuration is designed to match results from Rykhlevskii
+and Park et al\cite{park} by processing 100\% of the salt flow. Note that this
+does not match the processing system specification in
+\cite{robertson_conceptual_1971}.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/ch4/process_graph.png}
+    \caption{Process graph for model salt reprocessing system}
+    \label{fig:process-graph}
+\end{figure}
+
+Table \ref{tab:excraction_efficiencies} lists element groups and their
+extraction efficiencies. Note the presence of a LEU feed process. This process\ldots
+%% EXPLAIN THE FEED PROCESS
+
+\begin{table}[htpb] 
+    \centering 
+    \caption{Extraction efficiencies using cycle times in Table \ref{tab:msbr-cycle-times} and Equation \ref{eq:extraction_efficiency}}
+    \label{tab:msbr-cycle-times}
+    \begin{tabularx}{400pt}{|X|X|X|X|X|} 
+        \hline
+        Processing group & Target component(s) & Cycle time for processing & Processing component & Extraction efficiency\\
+        \hline
+        Protactinium & \ce{^{233}Pa} & 3 days & reductive extractor & 1\\
+        \hline
+        Rare earths & Trivalent: \ce{Y}, \ce{La}, \ce{Ce}, \ce{Pr}, \ce{Nd}, \ce{Pm}, \ce{Gd}, Divalent: \ce{Sm}, \ce{Eu} & 50 days (500 for \ce{Eu}) & reductive extractor & 0.8904 (0.2 for \ce{Eu})\\
+        \hline 
+        Noble metals & \ce{Se}, \ce{Nb}, \ce{Mo}, \ce{Tc}, \ce{Ru}, \ce{Rh}, \ce{Pd}, \ce{Ag}, \ce{Sb}, \ce{Te} & 20 sec & nickel filter & 1\\
+        \hline
+        Seminoble metals & \ce{Zr}, \ce{Cd}, \ce{In}, \ce{Sn} & 200 days & reductive extrator & 0.425\\
+        \hline
+        Gases & \ce{Kr}, \ce{Xe} & 20 sec & gas separator & 1\\
+        \hline
+        Halogens & \ce{Br}, \ce{I} & 60 days & reductive extractor & 0.842\\
+        \hline
+        Alkaline earths; alkali metals & \ce{Sr}, \ce{Ba}; \ce{Rb}, \ce{Cs} & 3435 days & reductive extractor & 0.032 \\
+        \hline
+    \end{tabularx}
+\end{table}
 
 \section{Cross Section Data}
+\label{sec:xs-data}
 Ryklevskii used the JEFF 3.1.2 cross section library in the inital evaluation of the \Gls{msbr} CSG model. I have not been able to convert the JEFF 3.1.2 library to \OpenMC's HDF5 format, so I am instead using the ENDF/B VII.1 cross section library.
 
 \section{Differences between the \OpenMC and \SerpentTWO models}
+The only differences between the \OpenMC and \SerpentTWO CSG models are in the
+construction of the geometry. The \OpenMC model is constructed programmatically
+using the OpenMC Python API, whereas the \SerpentTWO model is written entirely
+in an input file. I encourage interested readers to check out the 
