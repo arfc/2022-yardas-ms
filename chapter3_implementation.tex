@@ -36,6 +36,7 @@ implement \OpenMC support, I needed to resolve the following issues:
     \item Overhaul the \SaltProc input file format giving users more control over their simulations
     \item Generalize docstrings\footnote{Since \SaltProc was initally written as a script wrapped around Serpent2, many of the docstrings explicitly referenced Serpent2.}
     \item Improve function and variable names
+    \item Add input file verification via JSON schema
 \end{enumerate}
 I implemented these changes as part of the 0.4.0 release. The changes in that
 release changed the API, making 0.4.0 incompatible with previous verions of \SaltProc.
@@ -182,7 +183,7 @@ After the recursive computation, \SaltProc sums thru and waste streams over all
 paths to get the total thru stream at the inlet, and the total waste stream at
 the inlet which represents all material removed during reprocessing.
 \begin{equation}
-    \mathbf{n}^{j}_{\text{thru, inlet, net}} = \frac{\sum_{r} m^{j}_{\text{thru, inlet, }r} \mathbf{n}^{j}_{\text{thru, inlet, }r}}{\sum_{r} m^{j}_{\text{thru, inlet, }r}}
+    \mathbf{n}^{j}_\text{thru, inlet, net} = \frac{\sum_{r} m^{j}_{\text{thru, inlet, }r} \mathbf{n}^{j}_{\text{thru, inlet, }r}}{\sum_{r} m^{j}_{\text{thru, inlet, }r}}
 \end{equation}
 \begin{equation}
     \mathbf{n}^{j}_{\text{waste, inlet, net}} = \frac{\sum_{r} m^{j}_{\text{waste, inlet, }r} \mathbf{n}^{j}_{\text{waste, inlet, }r}}{m^{j}_{\text{waste, inlet, }r}}
@@ -191,13 +192,23 @@ the inlet which represents all material removed during reprocessing.
 Before running the next depletion step, for any material that has an associated
 feed material defined, \SaltProc will add an amount of the feed material
 equivalent to the removed mass so that the mass of fuel salt undergoing depletion
-remains constant.
-For feed $j'$ corresponding to material $j$, we have
+remains constant. For feed $j'$ corresponding to material $j$, we have
 \begin{equation}
-    \mathbf{n}^{j}_\text{filled} = \frac{m^{j}_{\text{thru, }l}\mathbf{n}^{j}_{\text{thru, inlet, net}} +  m^{j}_{\text{removed}}\mathbf{n}^{j'}}{m^{j}_{\text{thru,}0}}
+    \mathbf{n}^{j}_\text{filled} = \frac{m^{j}_{\text{thru, }l}\mathbf{n}^{j}_\text{thru, inlet, net} +  m^{j}_{\text{removed}}\mathbf{n}^{j'}}{m^{j}_{\text{thru, }0}}
 \end{equation}
 
 where 
 \begin{equation}
-    m^{j}_{\text{removed}} = m^{j}_{\text{thru,}0} - m^{j}_{\text{thru, } l}
+    m^{j}_\text{removed} = m^{j}_{\text{thru, }0} - m^{j}_{\text{thru, }l}
 \end{equation}
+
+\subsection{Saltproc Input File}
+The \SaltProc v0.3.0 input file\ldots
+In \SaltProc v0.4.0, I overhualed the input file to change the variable names to
+correspond to the class initialization variables. In \SaltProc v0.5.0 I added
+default options for certain parameters and removed unecessary variables in favor
+of opinionated program structure. See Appendix \ref{appex:input-files} for
+examples of the input files.
+
+\subsection{OpenMC Support}
+The class-based strucutre of \SaltProc allows reuse of much of the existing code for interfacing with \OpenMC. All we need to write are methods for getting material and tally data from the \OpenMC results files. Full release notes can be found\ldots
