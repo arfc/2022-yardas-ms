@@ -1,5 +1,49 @@
-\appendix
-\chapter*{Appendix B: SaltProc input file structure}
+\chapter{Derivation of extraction efficiency equation}
+\label{appex:extraction-efficiency}
+
+Consider a material containing $m$ grams of element $X$. Suppose we apply
+a process to this material, and let the extraction efficiency for element $X$ be
+$\epsilon_{X}$. The mass of element $X$ remaining in the material after applying
+the process, $m_{1}$ is
+\begin{equation}
+   m_{1} = m(1-\epsilon_{X}) 
+\end{equation}
+
+Suppose now that we apply the same process to the material a second time. The mass of element $X$ remaining in the material, $m_{2}$ is 
+\begin{equation}
+    m_{2} = m_{1}(1-\epsilon_{X}) = m(1-\epsilon_{X})^{2}
+\end{equation}
+
+It follow by induction that the leftover mass of element $X$ after applying this
+process $n$ times is
+\begin{equation}
+    m_{n} = m(1-\epsilon_{X})^{n}
+\end{equation}
+
+Now, let $\delta \equiv \frac{m_{n}}{m}$, the fraction of original mass of
+element $X$ remaining in the material. Suppose we pick a process that represents
+a real chemical process with a cycle time\footnote{the amount of time it takes
+to remove 100\% of the element} of $c_{X}$ for element $X$. Let $t$ be a value
+of time between 0 and $c_{X}$. Then, at time $t$, the fraction of mass
+of element $X$ remaining in the material is given by
+
+\begin{equation}
+    \delta = (1-\epsilon_{X})^{\frac{c_{X}}{t}}
+\end{equation}
+
+Consider the case where $t=c_{X}$. There is no value of $\epsilon_{X} < 1$ that
+gives $\delta = 0$. It is also very difficult to separate 100\% of a substance
+from a material in chemistry, so a natural solution arises in assigning a small,
+nonzero value to $\delta$ as a constraint to obtain a separation efficiency.
+Rearranging our equation, we get
+
+\begin{equation}
+    \epsilon_{X} = 1 - \delta^{\frac{t}{c_{X}}}
+\end{equation}
+
+If $t$ is greater than $c_{X}$, then the above equation no longer applies and we simply assign $\epsilon_{X} = 1$
+
+\chapter{SaltProc input file structure}
 \label{appex:input-files}
 \definecolor{bg}{rgb}{0.95,0.95,0.95}
 
@@ -102,5 +146,3 @@
     \caption{\SaltProc v0.5.0 input file}
     \label{listing:3}
 \end{listing}
-
-
