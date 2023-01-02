@@ -1,8 +1,9 @@
 \chapter{Software Description}
-Development of \SaltProc to enable use with \OpenMC consitutes a major portion
+Development of \SaltProc to enable use with \OpenMC constitutes a major portion
 of this thesis. In this chapter, I will provide a high level overview
-of my development process. The release notes contain more details for those
-interested in speciic API changes. 
+of my development process. The release
+notes\footnote{\href{https://github.com/arfc/saltproc/releases}} contain more
+details for those interested in specific API changes. 
 
 \section{SaltProc development history}%
 \label{sub:saltproc-hisory}
@@ -16,9 +17,9 @@ fuel depletion.
 
 The first version of \SaltProc (v0.1) was a simple Python 2.7 package that used
 \SerpentTWO for the fuel depletion simulations. A single Python file contained
-all functions; separation processes applie dto  used an implicit 100\%
+all functions; separation processes applied to  used an implicit 100\%
 efficiency \cite{rykhlevskii_advanced_2018}. The structure of \SaltProc v0.1 did
-not lend itsef easily to development of more sophisticated treatments of
+not lend itself easily to development of more sophisticated treatments of
 reprocessing. This led to the release of \SaltProc v0.2, in which the entire
 codebase was refactored into an object oriented context in Python 3. The
 addition of new functionality in the \verb.Process. classes enabled more
@@ -33,16 +34,16 @@ implement \OpenMC support, I needed to resolve the following issues:
 \begin{enumerate}
     \item Relocate several functions to have better separation of concerns
     \item Overhaul the \SaltProc input file format giving users more control over their simulations
-    \item Generalize docstrings\footnote{Since \SaltProc was initally written as a script wrapped around Serpent2, many of the docstrings explicitly referenced Serpent2.}
+    \item Generalize docstrings\footnote{Since \SaltProc was initially written as a script wrapped around Serpent2, many of the docstrings explicitly referenced Serpent2.}
     \item Improve function and variable names
     \item Add input file verification via JSON schema
 \end{enumerate}
 I implemented these changes as part of the 0.4.0 release. The changes in that
-release changed the API, making 0.4.0 incompatible with previous verions of
+release changed the API, making 0.4.0 incompatible with previous versions of
 \SaltProc. The benefit is that I was able to improve many systems for this
 release, including:
 \begin{itemize}
-    \item An overhauled input-file structure with new variable names that
+    \item An overhauled input file structure with new variable names that
     correspond to the class initialization variables.
     \item Version-controlled docpages
     \item Refactored main-program flow for clarity in code exploration
@@ -51,14 +52,14 @@ release, including:
 \section{SaltProc v0.5.0}
 \label{sec:saltproc-detail}
 
-\SaltProc v0.5.0, the most recent version of the code, contains a variety of
+\SaltProc v0.5.0, the most recent version of the software, contains a variety of
 improvements and additions:
 \begin{itemize}
     \item Full support for \OpenMC
     \item Revamped and revitalized webhosted docpages, including an
     \OpenMC-style user guide and theory manual, examples, and descriptions of
     the input and output 
-    \item Adjusted input-file strucure to accomodate \OpenMC depletion 
+    \item Adjusted input file structure to accommodate \OpenMC depletion 
     options and default values\footnote{See Appendix \ref{appex:input-files}
     for examples of the input files for versions v0.3.0, v0.4.0, and v0.5.0}
 \end{itemize}
@@ -67,7 +68,7 @@ Implementation of \OpenMC support only required the creation of a child class
 with methods for getting depletion results and neutronics parameters from the
 \OpenMC simulation. The general program flow is unchanged due to the
 class-based structure, which allows reuse of most of the existing code for
-this feature. I encourage readers interested in architecural and design
+this feature. I encourage readers interested in architectural and design
 details to reference Ryklhevskii's dissertation \cite{rykhlevskii_fuel_2020}
 or the web-hosted \SaltProc docpages at \href{arfc.github.io/saltproc}.
 
@@ -79,7 +80,7 @@ mathematical description of batchwise reprocessing based on \SaltProc, and
 compares it to continuous reprocessing, and I encourage readers to
 cross-reference it against my own description. As of writing this, his thesis
 has yet to be submitted and accepted.}, and to properly interpret the math, we
-must first understand the design of the feeds and separtions.
+must first understand the design of the feeds and separations.
 
 \subsection{Feeds and Separations}
 \SaltProc models separations and feeds using three different data structures:
@@ -112,13 +113,13 @@ must first understand the design of the feeds and separtions.
 
 \paragraph{Graphs}
     A graph is a mathematical object that connects {\it nodes}\footnote{the
-    terms verices and points are also used} with {\it edges}. More formally,
+    terms vertices and points are also used} with {\it edges}. More formally,
     a graph is a pair of sets, $(V, E)$, where
     \begin{itemize}
         \item $V$ is a set whose elements are called nodes
         \item $E$ is a set whose elements are pairs of elements in $V$
     \end{itemize}
-    A directed graph is a graph where the elements are ordered pairs of elements
+    A directed graph is a graph in which the elements are ordered pairs of elements
     in $V$. This gives the edges a direction. \SaltProc uses directed graphs to
     model the order and path in which processes operate on materials.
         
@@ -141,14 +142,13 @@ solver numerically integrates the equation
 \end{equation}
 
 from time $i$ to time $i+1$ to get $\mathbf{n}^{j}(i+1)$, where $A$ is the
-depletion matrix. The specific details of integration are alredy covered in
-numerous other works (cite some here). This is sequence is called a {\bf depletion step}.
+depletion matrix. This sequence is called a {\bf depletion step}.
 
 Now, let the mass and volume of depletable material $j$ be
 $m^{j}$ and $V^{j}$ respectively. Let the mass flowrate of process $p$ be
 $\dot{m}_{p}$. At the end of each depletion step, \SaltProc constructs process
 paths from the process graph defined in the DOT file, and sequentially applies
-each proceess $p$ in each path $r$ to the relevant materials to obtain thru
+each process $p$ in each path $r$ to the relevant materials to obtain thru
 and waste streams for each material. \SaltProc tracks the mass and nuclide vector for both thru and waste streams. For thru
 streams, \SaltProc also tracks the volume and mass flowrate. For every node
 $p\in[0,l]$ where $0$ represents the core outlet and $l$ represents the core
@@ -168,7 +168,7 @@ where
 \begin{equation}
     \alpha_{p,r} = \frac{\dot{m}_{p,r}}{\dot{m}_{\text{outlet}}}
 \end{equation}
-and the inital conditions are 
+and the initial conditions are 
 \begin{equation}
     \mathbf{n}^{j}_{\text{thru, }0,r} = \mathbf{n}^{j}(i+1)
 \end{equation}
@@ -186,9 +186,9 @@ Similarly, for the waste streams, we have
     m^{j}_{\text{waste, }p,r} = \alpha_{p,r} m^{j}_{\text{thru, }p-1,r} \langle\mathbf{1},\mathbf{n}^{j}_{\text{waste, }p,r}\rangle
 \end{equation}
 SaltProc does not currently track the volume and mass flowrate of waste streams.
-In practice, since it is very difficult to separate individual isotopes,
-SaltProc only allows extraction efficiencies to be defined for elements. So for
-any isotope $a$ of xenon,
+In practice, since it is extremely resource intensive to separate individual
+isotopes, SaltProc only allows extraction efficiencies to be defined for
+elements. So for any isotope $a$ of xenon,
 $\epsilon_{\ce{^{a}Xe}} = \epsilon_{\ce{^{a^{\prime}}Xe}}$  where
 $a^{\prime} \in \text{isotopes of Xe}$
 
