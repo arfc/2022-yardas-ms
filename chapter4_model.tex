@@ -1,37 +1,37 @@
 \chapter{Model Description}
 \label{ch:chapter4}
-As mentioned in Chapter 1, I am using a \Gls{csg} model of the \Gls{msbr}
-\cite{robertson_conceptual_1971} to verify my \OpenMC implementation in
-\SaltProc.
+As mentioned in Section \ref{sec:objectives}, I am using a \Gls{csg} model of
+the \Gls{msbr} \cite{robertson_conceptual_1971} to verify my \OpenMC
+implementation in \SaltProc.
 
 The \Gls{msbr} design is the result of a design study of a single-fluid
 \Gls{msr} following the success of the \Gls{msre}
-\cite{haubenreich_experience_1970}\cite{rosenthal_history_1970}.
+\cite{haubenreich_experience_1970} \cite{rosenthal_history_1970}.
 
 I picked the \Gls{msbr} for two reasons:
 \begin{enumerate}
     \item Several papers studying the \Gls{msbr} exist\footnote{see Chapter
     \ref{ch:chapter2} for a discussion of these papers} enabling qualitative
-    results comparision.
+    results comparison.
     \item Rykhlevskii created a \SerpentTWO \Gls{csg} model and the processing
     system graph for the \Gls{msbr} based on the specifications in
     \cite{robertson_conceptual_1971} for use in \SaltProc
-    v0.3.0\cite{rykhlevskii_fuel_2020}. The models used in this work is derived
+    v0.3.0 \cite{rykhlevskii_fuel_2020}. The models used in this work is derived
     from Rykhlevskii's model.
 \end{enumerate}
 
 Most of the discussion below summarizes and condenses the information in
-Robertson et al., and compares it to the \Gls{csg} model. Unless otherwise
+Robertson et al. (1971) and compares it to the \Gls{csg} model. Unless otherwise
 specified, there are no differences between the model used in this work and in
 \cite{rykhlevskii_fuel_2020}\footnote{The relevant component of Reference
 \cite{rykhlevskii_fuel_2020}, Chapters 2 and 3, are based on Reference
 \cite{rykhlevskii_modeling_2019}. I may use these references interchangeably}. I
 will only describe the following reactor systems that are relevant to my
 validation study\footnote{A complete description of the entire \Gls{msbr} system
-can be found in Robertson, et al (1971)\cite{robertson_conceptual_1971}.
+can be found in Robertson et al. (1971) \cite{robertson_conceptual_1971}.
 Interested readers should focus on Table S.1, Sections 3.4, 3.1, and 3.5 in
-Robertson et al. for further details and design considerations.}: the fuel salt,
-the reactor core, and the salt reprocessing system.
+Robertson et al. (1971) for further details and design considerations.}: the
+fuel salt, the reactor core, and the salt reprocessing system.
 
 \begin{figure}[htpb] 
     \centering
@@ -62,8 +62,8 @@ the reactor core, and the salt reprocessing system.
 \end{figure}
 
 As seen in Figure \ref{fig:msbr-overview}, the \Gls{csg} Gls{msbr}
-model reproduces these systems with several approixmations. I will
-describe each reactor system, as well as any relavant changes or
+model reproduces these systems with several approximations. I will
+describe each reactor system, as well as any relevant changes or
 approximations made in the model.
 
 \section{Materials}
@@ -78,14 +78,15 @@ composition used in the \Gls{msbr}:
 99.995\% \ce{^{7}Li}. This is because \ce{^{6}Li} is a strong neutron absorber
 and produces tritium in the absorption reaction. The atom-\% for each nuclide is
 given in Table \ref{tab:msbr-fuel-salt-ref}\footnote{Most of the discussion of
-the fuel salt compositon in Robertson el al \cite{robertson_conceptual_1971}
+the fuel salt composition in Robertson el al. (1971)
+\cite{robertson_conceptual_1971}
 specify elemental version of the nuclides in Table \ref{tab:msbr-fuel-salt-ref}.
 I have specific specific nuclides for the following reasons: (1) both \ce{F} and
-\ce{Be} have only one stable isotope, (2) the fuel salt recieves initial fissile
-loading from \ce{^{233}U} or \ce{^{235}U}, and (3) the fuel salt recieves its
+\ce{Be} have only one stable isotope, (2) the fuel salt receives initial fissile
+loading from \ce{^{233}U} or \ce{^{235}U}, and (3) the fuel salt receives its
 fertile loading from \ce{^{232}Th}}\footnote{I use OpenMC's Python API with the
 ENDF/V VII.0 library along with a custom Python script
-(\href{https://github.com/arfc/2022-yardas-ms/tree/master/model/salt-composition.ipynb})
+(\url{github.com/arfc/2022-yardas-ms/tree/master/model/salt-composition.ipynb})
 to calculate these values. You may obtain slightly different numbers if you use
 a different cross section library or calculation method, but they should  be
 roughly the same.}.
@@ -112,7 +113,7 @@ description in Section \ref{sec:msbr-core}}
 The density of the fuel salt is given by a function\footnote{This function 
 comes from an earlier report on the Molten-Salt Reactor Program
 \cite{rosenthal_molten-salt_1969}.} of temperature in \unit{\celsius} in Table
-S.1 in Robertson et al. \cite{robertson_conceptual_1971}:
+S.1 in Robertson et al. (1971) \cite{robertson_conceptual_1971}:
 \begin{equation}
     \rho = 3.752 - 6.68\cdot 10^{-4} \cdot T \quad \unit{\gram\per\square  \centi\meter}
 \end{equation}
@@ -121,10 +122,10 @@ The temperature of the fuel salt flowing into the core at the inlet at the
 bottom of the reactor is 1050\unit{\degree}F (565.5556\unit{\celsius}, 838.7056
 \unit{\kelvin}), and the temperature of the fuel salt flowing out of the core at
 the outlet is approximately 1300\unit{\degree}F (704.4444\unit{\celsius},
-977.5944 \unit{\kelvin})\cite{robertson_conceptual_1971}. The average
+977.5944 \unit{\kelvin}) \cite{robertson_conceptual_1971}. The average
 temperature of the salt over the core inlets and outlets is then 1175
 \unit{\degree}F (635\unit{\celsius}, 908.15 \unit{\kelvin}). While the
-various solid components of the core are at a slightly higer temperature on
+various solid components of the core are at a slightly higher temperature on
 average\footnote{see figure 3.29 in \cite{robertson_conceptual_1971}}, for
 simplicity, I set the evaluated temperature of all materials to 900
 \unit{\kelvin} consistent cross-section selection between the \OpenMC and
@@ -150,12 +151,12 @@ In the CSG model, we use a mole-\% composition of 71.75-16-12-0.25. This slight
 difference is due to an unpublished reactivity study investigating decreased
 composition of \ce{UF_4} to obtain a more reasonable 
 $k_\text{eff}$\footnote{According to Rykhlevskii, using 0.3 mole-\% \ce{UF_4} 
-gave $k_\text{eff} > 1.3$}\cite{rykhlevskii_personal_2022}. The fuel salt 
+gave $k_\text{eff} > 1.3$} \cite{rykhlevskii_personal_2022}. The fuel salt 
 material uses the composition specified in Table \ref{tab:msbr-fuel-salt-model}
 and has a density of 3.35 \unit{\gram\per\centi\metre\cubed}. Notice that the
-lithium has been enriched to 100\% \ce{^{7}Li}. This is because during inital
+lithium has been enriched to 100\% \ce{^{7}Li}. This is because during initial
 simulations, even those very small amounts of \ce{^{6}Li} were enough to kill
-the reaction. The inital fissile and fertile loading has also been slightly
+the reaction. The initial fissile and fertile loading has also been slightly
 increased.
 
 \subsection{Graphite}
@@ -165,7 +166,7 @@ For a detailed description of the reactor graphite used in the \Gls{msbr}, see
 Section 3.2.3 in \cite{robertson_conceptual_1971}. At 70\unit{\degree}F (294.3
 \unit{\kelvin}), the \Gls{msbr} graphite has a density of 1843
 \unit{\kilo\gram\per\cubic\metre}. This is the only density specification
-for graphite that I was able to find in Robertson et al.
+for graphite that I was able to find in Robertson et al. (1971)
 \cite{robertson_conceptual_1971}
 
 In the CSG model, the graphite material uses elemental carbon and has a
@@ -176,10 +177,10 @@ density of 1.84\unit{\gram\per\centi\metre\cubed}.
 Hastelloy N is an alloy developed at \Gls{ornl} during the Molten-Salt Reactor
 Program as a structural material that could maintain structural stability while
 in contact with the corrosive and high temperature molten salt fuel while also
-being under irradation for a long period of time.
+being under irradiation for a long period of time.
 
 The \Gls{msbr} used a modified version of Hastelloy N designed to improve
-embrittlement resistance and weldibility \cite{robertson_conceptual_1971}.
+embrittlement resistance and weldability \cite{robertson_conceptual_1971}.
 The \Gls{msbr} uses modified Hastelloy N on all nearly all salt-facing
 components included in the CSG model.
 
@@ -256,7 +257,7 @@ the faces of the square elements near the corners, as well as cylindrical
 channels in the centers of the elements. The purpose of the fuel holes are to
 facilitate salt flow through the core elements. The purpose of the ribs are to
 separate the elements from each other as well as create interstitial salt flow
-channels\cite{robertson_conceptual_1971}. These interstitial flow channels
+channels \cite{robertson_conceptual_1971}. These interstitial flow channels
 are seen in Figures \ref{fig:msbr-ia-lattice} and
 \ref{fig:msbr-ib-lattice}\footnote{Notice that the shape of the model zone I-B
 elements qualitatively matches the reference design in Figure
@@ -269,27 +270,27 @@ Tables \ref{tab:zone-ia-ref-specs} and \ref{tab:zone-ib-specs}). Zone I-A
 elements have a smaller cylindrical channel and larger interstitial channel
 than zone I-B elements. The central part of zone I consists of zone I-A
 elements, whereas the outer part of zone I consists of zone I-B
-elements\cite{robertson_conceptual_1971}. The purpose this configuration is to
+elements \cite{robertson_conceptual_1971}. The purpose this configuration is to
 reduce the temperature gradient across the core. The salt velocity through the
 zone I-B elemets is much lower than the salt velocity through the zone I-A
-elements\footnote{Robetson et al states that the salt velociy varies ``from 8
-fps at the cetner [of the core] to about 2 fps near the
-perihpery''\cite{robertson_conceptual_1971}}.
+elements\footnote{Robetson et al. (1971) states that the salt velocity varies
+``from 8 fps at the center [of the core] to about 2 fps near the periphery''
+\cite{robertson_conceptual_1971}}.
 
 Additionally the zone I elements are machined to a cylindrical shape at the ends
 to create an undermoderated region of 37\% salt at the top and bottom of the
-reactor\cite{robertson_conceptual_1971}. These machined ends are referred to as
+reactor \cite{robertson_conceptual_1971}. These machined ends are referred to as
 Section A (see Figures \ref{fig:msbr-ia-xy}, \ref{fig:msbr-ib-xy}, and
 \ref{fig:msbr-i-xz-full}). The top of each element also has an outlet plenum to
 direct salt flow towards the exit nozzlese at the edje of the vessel, however
 these are not included in the \Gls{csg} model. The outermost layer of zone I
 elements also have grooves in them to fit eliptical graphite sealing rods (see
-Figure \cite{fig:msbr-detail}) that separate the salt flow in zone I from the
-salt flow in zone II\cite{robertson_conceptual_1971}. Robertson et al does not
-specify precise dimensions and positions of these rods, so they are not included
-in the \Gls{csg} model.
+Figure \ref{fig:msbr-detail}) that separate the salt flow in zone I from the
+salt flow in zone II \cite{robertson_conceptual_1971}. Robertson et al. (1971)
+does not specify precise dimensions and positions of these rods, so they are not
+included in the \Gls{csg} model.
 
-Robertson et al. does not specify exact distribution of zone I-A and I-B
+Robertson et al. (1971) does not specify exact distribution of zone I-A and I-B
 elements. Rather than guess the distribution of I-A and I-B elements, the CSG
 model assumes that zone I consists entirely of I-B elements. This assumption
 greatly simplifies the work needed to create the model. Had we picked zone I-A
@@ -513,7 +514,7 @@ include them.
 
 Zone II is the undermoderated zone surrounding zone I, and is 37\% fuel salt by
 volume. Zone II acts as a blanket zone that reduces neutron leakage from the
-core\cite{robertson_conceptual_1971}. Zone II is divided into two subzones: zone
+core \cite{robertson_conceptual_1971}. Zone II is divided into two subzones: zone
 II-A and zone II-B.
 
 Zone II-A consists of elements that are identical to zone I-B elements except
@@ -522,18 +523,18 @@ that their cylindrical fuel channel is larger, there is no machining on the bott
 Zone II-B consists of two different types of elements arranged radially around the core: eight 6 in. (15.24 \unit{\centi\metre}) wide 13 ft. (396.24 \unit{\centi\metre}) tall rectangular slats with holes to fit the 2.5 in. diameter core lifting rods\footnote{the diameter of these holes is unknown, so the \Gls{csg} model assumes they are 6.176 cm in diameter} arranged at 45\unit{\degree} intervals, and 200 (25 between each of the previous type of elements) 2 in. (5.08 \unit{\centi\metre}) wide 13 ft. (396.24 \unit{\centi\metre})
 tall rectangular slats of varying length such that the core cross section is
 changed from octagonal to circular at the outer bound of zone
-II\cite{robertson_conceptual_1971}. These slats have an average length of 10.5
+II \cite{robertson_conceptual_1971}. These slats have an average length of 10.5
 in. (26.67 \unit{\centi\metre}).
 
 The slats have two additional features: dowel pins at the inner periphery that
 separate the slabs to create flow passages, and elliptical graphite pins at the
 outer periphery that isolates the salt flowing through the core region from the
 salt flowing through the reflector region. The slats have axial grooves 1.5 in.
-from the outer edge that accomodate the eliptical pins. Robertson et al. does
-not specify the precise dimensions or positions  of these pins, so they are not
-included in the \Gls{csg} model (see Figure \ref{fig:msbr-detail}).
+from the outer edge that accomodate the eliptical pins. Robertson et al. (1971)
+does not specify the precise dimensions or positions  of these pins, so they are
+not included in the \Gls{csg} model (see Figure \ref{fig:msbr-detail}).
 
-In addition to the aformentioned simplifications, Figure \ref{fig:msbr-detial}
+In addition to the aformentioned simplifications, Figure \ref{fig:msbr-detail}
 shows that the \Gls{csg} model makes some notable approximations and
 simplifications to the geometry of the individual zone II-B elements which
 results in a significantly different appearance than the reference design. Table
@@ -639,7 +640,7 @@ results in a significantly different appearance than the reference design. Table
 A 2 in. wide annular space of 100-\% fuel salt separates zone II from the
 graphite reflectors. The annulus serves as a clearance space when inserting or
 removing the reactor core assembly, and provides some additional shielding to
-extend the lifetime of the graphite reflectors\cite{robertson_conceptual_1971}. The annulus region is reproduced in full in the \Gls{csg} model. The annulus region is the dark teal section in between the brown and pink sections in Figure \ref{fig:msbr-cells}
+extend the lifetime of the graphite reflectors \cite{robertson_conceptual_1971}. The annulus region is reproduced in full in the \Gls{csg} model. The annulus region is the dark teal section in between the brown and pink sections in Figure \ref{fig:msbr-cells}
 
 \subsection{Reflectors}
 \begin{figure}[htpb]
@@ -659,19 +660,19 @@ extend the lifetime of the graphite reflectors\cite{robertson_conceptual_1971}. 
 \end{figure}
 The \Gls{msbr} has both axial and radial reflectors as seen in Figures
 \ref{fig:msbr-overview} and \ref{fig:msbr-detail}. Both reflector regions are around 1\% fuel salt by volume. The radial
-reflectors\footnote{I exclucde the following details about the radial reflector
+reflectors\footnote{I exclude the following details about the radial reflector
 due to insufficient information in the report to reproduce them in a model:
 modified Hastelloy N orifice plates, milled radial grooves at the bottom of each
-reflector block, top layer blocks (see pages 15 and 16 in Robertson et al.)}
-consist of 29 in. (48.26 cm) thick wedge-shaped blocks that are 43 in. tall and 10 in. (25.4 cm) wide at the vessel wall and 9 in. wide at the inner end \cite{robertson_conceptual_1971}.
+reflector block, top layer blocks (see pages 15 and 16 in Robertson et al.
+(1971))} consist of 29 in. (48.26 cm) thick wedge-shaped blocks that are 43 in. tall and 10 in. (25.4 cm) wide at the vessel wall and 9 in. wide at the inner end \cite{robertson_conceptual_1971}.
 Four layers of these blocks comprise the entire radial reflector. Slots cut out
 of the outer edge of the blocks facilitate modified Hastelloy N axial ribs to create a
 0.25 in (0.635 cm) standoff space between the blocks and the vessel wall. Axial
 flow from the reactor inlet through this space cools both the outer portion of
-the reflector blocks and the vessel wall. Additionally, Robertson et al. states
-that 1 in. graphite pins ``are inserted into the reflector pieces to hold them
-apart'', but does not specify the position or number of these pins. These pins
-create passages\footnote{these passages change dimension from 0.05 in. wide
+the reflector blocks and the vessel wall. Additionally, Robertson et al. (1971)
+states that 1 in. graphite pins ``are inserted into the reflector pieces to hold
+them apart'', but does not specify the position or number of these pins. These
+pins create passages\footnote{these passages change dimension from 0.05 in. wide
 while cold to 0.1 in. wide while hot \cite{robertson_conceptual_1971}} for
 radial salt flow through the radial reflector region towards the annulus,
 providing additional cooling. Modified Hastelloy N retaining rings placed in slots
@@ -685,8 +686,8 @@ The axial reflectors consist of wedge shaped graphite pieces (see Figure
 (40.64 cm) wide at the outer end \cite{robertson_conceptual_1971}. The dished
 vessel heads cause the pieces to vary in thickness from 30 in. (76.2 cm) at the
 center to 15 in. (38.1 cm) at the outer end (see Figure
-\ref{fig:msbr-ref-xz})\cite{robertson_conceptual_1971}. Robertson et al does not
-specify a length for the axial reflector pieces. 
+\ref{fig:msbr-ref-xz}) \cite{robertson_conceptual_1971}. Robertson et al. (1971)
+does not specify a length for the axial reflector pieces. 
 
 The \Gls{csg} model approximates the complicated structure of the radial
 reflector blocks as a hollow cylinder 601.98 cm tall and 77.216 cm thick, and
@@ -702,7 +703,7 @@ reflector as a purple region.
 \section{Vessel}
 \label{sec:msbr-vessel}
 The \Gls{msbr} vessel is made of modified Hastelloy N, and has a wall thickness
-of 2 in. unless otherwise specified\cite{robertson_conceptual_1971}. The vessel
+of 2 in. unless otherwise specified \cite{robertson_conceptual_1971}. The vessel
 is broken into the following sections:
 \begin{enumerate}
     \item The main wall: a 13 ft. tall cylindrical section with an outer
@@ -816,21 +817,32 @@ reference MSBR core regions. Reproduced from Table 3.2 in
 \label{sec:msbr-reprocessing-system}
 The MSBR reference design included the specification of a fuel-salt processing
 system\footnote{for this thesis, processing refers to both gas removal and
-chemical processing}. The purpose of this reprocessing system is to improve neutronic performance by removing neutron poisons and other containants from recirculating through the core. The reprocessing system is split into two parts: gas removal and chemical extraction. The gas removal system takes advantage of\ldots to remove\ldots from the fuel salt. The reprocessing system is based on reductive extraction\footnote{reductive
-extraction takes advantage of the higher electronegatvity of a particular
-element to drive reduction reactions that remove target elements from covalently
-bonded molecules}. I will provide a brief descrption of the entire reprocessing system,
-but justifying in and evaluating its efficacy are beyond the scope of this thesis\footnote{I
-encourage interested readers to look at chapters 7 and 8 in
-\cite{robertson_conceptual_1971}, the entirety of \cite{carter_design_1972} and
-\cite{lindauer_design_1969}, as well as the molten salt reactor program
-semiannual progress reports, all of which you can find at
-\href{energyfromthorium.com/url}{https://energyfromthorium.com/pdf/}}.
+chemical processing}. The purpose of this reprocessing system is to improve
+neutronic performance by removing neutron poisons and other containants from
+recirculating through the core. The reprocessing system is split into two parts:
+gas removal and chemical extraction. The gas removal system takes advantage
+of entrainment of insoluble species in helium bubbles to remove noble gas
+fission products from the fuel salt. The reprocessing system is based on
+reductive extraction\footnote{reductive extraction takes advantage of the higher
+electronegativity of a particular element to drive reduction reactions that
+remove target elements from covalently bonded molecules}. I will provide a brief
+descrption of the entire reprocessing system, but justifying in and evaluating
+its efficacy are beyond the scope of this thesis\footnote{I encourage interested
+readers to look at chapters 7 and 8 in \cite{robertson_conceptual_1971}, the
+entirety of \cite{carter_design_1972} and \cite{lindauer_design_1969}, as well
+as the molten salt reactor program semiannual progress reports, all of which you
+can find at \url{energyfromthorium.com/pdf}}.
 
 \begin{figure}[htpb]
     \centering
     \includegraphics[width=0.8\textwidth]{figs/ch4/msbr_primary_system.png}
-    \caption{Simplified flow diagram of primary drain tank and heat removal system. Reproduced from Figure 2.3 in \cite{robertson_conceptual_1971}. (A) Combiner tank for separated gases and overflow salt, (B) Off-gas line with cooling jacket, (C) Fuel-salt drain line, (D) Drain line continuous bleed flow, (E) Jet pumps fro returning overflow fuel salt to primary system, (F) Ancillary fuel-salt transfer pump, (G) Jet pump for filling primary system and sending salt to chemical processing, (H) Freeze-plug type valve }
+    \caption{Simplified flow diagram of primary drain tank and heat removal
+    system. Reproduced from Figure 2.3 in \cite{robertson_conceptual_1971}. (A)
+    Combiner tank for separated gases and overflow salt, (B) Off-gas line with
+    cooling jacket, (C) Fuel-salt drain line, (D) Drain line continuous bleed
+    flow, (E) Jet pumps from returning overflow fuel salt to primary system, (F)
+    Ancillary fuel-salt transfer pump, (G) Jet pump for filling primary system
+    and sending salt to chemical processing, (H) Freeze-plug type valve }
     \label{fig:msbr_primary_system}
 \end{figure}
 
@@ -865,7 +877,7 @@ In addition to providing a emergency salt storage system in the case of
 electrical system failure, the fuel salt drain tank plays an important role in
 the fuel-salt reprocessing system \cite{robertson_conceptual_1971}. The drain tank catches around 150 gpm (approxmiately 0.9\% of the total salt flow) of
 overflow from the primary salt circulation pumps, prodviding it with a small
-amount of salt during operation\cite{robertson_concetpual_1971}. A 0.88 gpm
+amount of salt during operation \cite{robertson_conceptual_1971}. A 0.88 gpm
 stream of salt from the drain tank flows through the chemical processing system
 and back to the draink tank. Jet pumps at the bottom of the drain tank send salt
 back to the primary loop. Figure \ref{fig:msbr_primary_system} shows this
@@ -907,7 +919,7 @@ Figure \ref{fig:pa-removal} shows a block diagram of this loop.
 
 \paragraph{Rare-earth removal system}
 The rare-earch removal system utilized the same metal transfer process used to
-isolate protactinium from the fuel salt\cite{robertson_conceptual_1971}. This
+isolate protactinium from the fuel salt \cite{robertson_conceptual_1971}. This
 system begins at the output of the extractor column for protactinium isolation.
 It is a multistage extraction system:
 \begin{enumerate}
@@ -941,18 +953,22 @@ Figure \ref{fig:metal-removal} shows a block diagram of this loop.
 
 \paragraph{Nickel-mesh filter}
 Insoluble impurities in the processed salt needs to be removed at two locations:
-before the salt stream is sent to reducitve extraction system\cite{lindauer_design_1969}, and before the processed salt stream coming
+before the salt stream is sent to reducitve extraction system
+\cite{lindauer_design_1969}, and before the processed salt stream coming
 from the reductive extration system returns to the
-reactor\cite{robertson_conceptual_1971}. The first filter removes insoluble
+reactor \cite{robertson_conceptual_1971}. The first filter removes insoluble
 impurities from transmutation and corrosion in the core, heat exchanger, and
 other systems. The second filter removes  bismuth entrained or dissolved in the
 fuel salt as a side effect from processing, and any additional insoluble
 impurities such as \ce{FeF_2} and \ce{NiF_2}. The filter itself consists of a
-nickel mesh\cite{robertson_conceptual_1971}.
+nickel mesh \cite{robertson_conceptual_1971}.
 
 
 \subsection{Reprocessing system model}
-As described in Section \ref{sub:feeds-separations}, SaltProc relies on extraction efficiencies to model chemical removal of target elements from the fuel salt.  Unfortunately, Robertson et. al. \cite{robertson_conceptual_1971} provide no such values, and a literature review to find such values is outside the scope of this thesis. What Robertson does give us are the cycle times for elements in the fuel salt.
+As described in Section \ref{sub:feeds-separations}, SaltProc relies on extraction efficiencies to model chemical removal of target elements from the fuel salt.  Unfortunately, Robertson et al. (1971) 
+\cite{robertson_conceptual_1971} provide no such values, and a literature review
+to find such values is outside the scope of this thesis. What Robertson does
+give us are the cycle times for elements in the fuel salt.
 
 \begin{table}[htpb] 
     \centering 
@@ -982,7 +998,7 @@ As described in Section \ref{sub:feeds-separations}, SaltProc relies on extracti
 \end{table}
 
 Rykhlevskii previously used 100\% extraction efficiency with 3-day depletion
-steps\cite{rykhlevskii_modeling_2019} using SaltProc v0.1.0. As mentioned in
+steps \cite{rykhlevskii_modeling_2019} using SaltProc v0.1.0. As mentioned in
 Section \ref{sec:saltproc-history}, this version of SaltProc required the user
 to hardcode in the cycle times. The program would then extract the target
 elements from the fuel once a full cycle time had passed. In SaltProc v0.2.0 and
@@ -1001,7 +1017,7 @@ transmutation or feeds, we can define the extraction efficiency $\epsilon_{X}$
 to be:
 
 \begin{equation}
-    \ref{eq:extraction_efficieny}
+    \label{eq:extraction-efficiency}
     \epsilon_{X} = 1 - \delta^{\frac{l_{d}}{c_{X}}}
 \end{equation}
 
@@ -1014,8 +1030,8 @@ The process graph is a simplified version of the processing system described
 above. There are only three components: the gas separator, the nickel filter and
 the reductive extractor. Figure \ref{fig:process-graph} dsiplays the process
 graph. This simple configuration is designed to match results from Rykhlevskii
-and Park et al\cite{park} by processing 100\% of the salt flow. Note that this
-does not match the processing system specification in
+and Park et al. (2015) \cite{park_whole_2015} by processing 100\% of the salt
+flow. Note that this does not match the processing system specification in
 \cite{robertson_conceptual_1971}.
 
 \begin{figure}[htpb]
@@ -1025,13 +1041,16 @@ does not match the processing system specification in
     \label{fig:process-graph}
 \end{figure}
 
-Table \ref{tab:excraction_efficiencies} lists element groups and their
-extraction efficiencies. Note the presence of a LEU feed process. This process\ldots
-%% EXPLAIN THE FEED PROCESS
+Table \ref{tab:msbr-cycle-times} lists element groups and their extraction
+efficiencies. Note the presence of a \verb.thorium_feed. feed process. This
+process replaces the lost mass via reprocessing with an equal mass of fuel salt
+of identical composition to the inital fuel salt, but with all \ce{^{233}U}
+replaced by \ce{^{232}Th}. This ensures we have a relatively constant level of
+\ce{^{232}Th} in the reactor.
 
 \begin{table}[htpb] 
     \centering 
-    \caption{Extraction efficiencies using cycle times in Table \ref{tab:msbr-cycle-times} and Equation \ref{eq:extraction_efficiency}}
+    \caption{Extraction efficiencies using cycle times in Table \ref{tab:msbr-cycle-times} and Equation \ref{eq:extraction-efficiency}}
     \label{tab:msbr-cycle-times}
     \begin{tabularx}{400pt}{|X|X|X|X|X|} 
         \hline
@@ -1062,4 +1081,6 @@ Ryklevskii used the JEFF 3.1.2 cross section library in the inital evaluation of
 The only differences between the \OpenMC and \SerpentTWO CSG models are in the
 construction of the geometry. The \OpenMC model is constructed programmatically
 using the OpenMC Python API, whereas the \SerpentTWO model is written entirely
-in an input file. I encourage interested readers to check out the 
+in an input file. I encourage interested readers to compare the files stored at
+\url{github.com/arfc/2022-yardasol-ms/tree/model/} under \verb.openmc/. and
+\verb.serpent/.

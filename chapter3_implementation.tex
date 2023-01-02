@@ -2,11 +2,11 @@
 Development of \SaltProc to enable use with \OpenMC constitutes a major portion
 of this thesis. In this chapter, I will provide a high level overview
 of my development process. The release
-notes\footnote{\href{https://github.com/arfc/saltproc/releases}} contain more
+notes (\url{github.com/arfc/saltproc/releases}) contain more
 details for those interested in specific API changes. 
 
 \section{SaltProc development history}%
-\label{sub:saltproc-hisory}
+\label{sec:saltproc-history}
 
 \SaltProc\cite{rykhlevskii_saltproc_2018} is an open source Python package that
 simulates on-line reprocessing via a batch-wise approach\footnote{Material is
@@ -71,7 +71,7 @@ with methods for getting depletion results and neutronics parameters from the
 class-based structure, which allows reuse of most of the existing code for
 this feature. I encourage readers interested in architectural and design
 details to reference Ryklhevskii's dissertation \cite{rykhlevskii_fuel_2020}
-or the web-hosted \SaltProc docpages at \href{arfc.github.io/saltproc}.
+or the web-hosted \SaltProc docpages at \url{arfc.github.io/saltproc}.
 
 
 \section{Mathematical description of material reprocessing}
@@ -84,6 +84,7 @@ has yet to be submitted and accepted.}, and to properly interpret the math, we
 must first understand the design of the feeds and separations.
 
 \subsection{Feeds and Separations}
+\label{sub:feeds-separations}
 \SaltProc models separations and feeds using three different data structures:
 
 \paragraph{Material flows}
@@ -195,7 +196,9 @@ $a^{\prime} \in \text{isotopes of Xe}$
 
 After the recursive computation, \SaltProc sums thru and waste streams over all
 paths to get the total thru stream at the inlet, and the total waste stream at
-the inlet which represents all material removed during reprocessing.
+the inlet which represents all material removed during reprocessing. In practice,
+we are working with nuclide mass fractions, not total masses, so in the program
+there is an expansion and then normalization of the vectors:
 \begin{equation}
     \mathbf{n}^{j}_\text{thru, inlet, net} = \frac{\sum_{r} m^{j}_{\text{thru, inlet, }r} \mathbf{n}^{j}_{\text{thru, inlet, }r}}{\sum_{r} m^{j}_{\text{thru, inlet, }r}}
 \end{equation}
