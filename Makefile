@@ -2,7 +2,15 @@ manuscript = main
 references = $(wildcard *.bib)
 latexopt   = -halt-on-error -file-line-error
 
+all-pygments: all-via-pdf-pygments
+
 all: all-via-pdf
+
+all-via-pdf-pygments: $(manuscript).tex $(references)
+	pdflatex $(latexopt) --shell-escape $<
+	bibtex $(manuscript).aux
+	pdflatex $(latexopt) --shell-escape $<
+	pdflatex $(latexopt) --shell-escape $<
 
 all-via-pdf: $(manuscript).tex $(references)
 	pdflatex $(latexopt) --shell-escape $<
