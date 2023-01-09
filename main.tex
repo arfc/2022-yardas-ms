@@ -96,8 +96,8 @@
 \schools{B.A., Grinnell College, 2020}
 \msthesis
 \advisor{Madicken Munk}
-\degreeyear{2022}
-\committee{Research Scientist Madicken Munk, Advisor \\ ... }
+\degreeyear{2023}
+\committee{Dr. Madicken Munk, Advisor \\ Professor Tomasz Kozlowski}
 
 
 \begin{document}
@@ -108,14 +108,54 @@
 %% Create an abstract that can also be used for the ProQuest abstract.
 %% Note that ProQuest truncates their abstracts at 350 words.
 \begin{abstract}
-
-Abstract.
-
+Like their contemporary counterparts, next generation nuclear reactors will produce no \Gls{ghg} emissions, while being safer and more efficient. \Gls{msr}
+technology is of particular interest due to the opportunities and challenges it
+presents. No operating \Gls{msr}s exist, so we must rely on computer simulations
+to study this technology. Popular \Gls{msr} designs to use in simulations
+include the \Gls{msbr}, the \Gls{msre}, and the \Gls{msfr}. A key process to
+consider for \Gls{msr}s is on-line fuel reprocessing and its effect on reactor
+dynamics. \SaltProc is an open source interface code tool that simulates on-line
+fuel reprocessing when coupled with a depletion-capable transport solver.
+\SaltProc was intended to be usable with any depletion solver, but only had
+support for \SerpentTWO. I overhauled the \SaltProc code to simplify coupling
+supports for depletion solvers, and added support for \OpenMC. I also validated
+the new functionality on a full-core model of the \Gls{msbr}. The results show that (fill in details about results once obtained).
+This is significant as this makes \SaltProc the first completely open-source tool to accurately simulate on-line fuel reprocessing.
 \end{abstract}
 
 \chapter*{Acknowledgments}
 
-Acks.
+This manuscript is the culmination of hundreds of hours of work, a substantial
+amount of which is not my own. I would like to thank Dr. Madicken Munk and Dr.
+Paul Romano for their guidance and mentorship, and to opening my eyes to the
+complexity, frustrations, and joys of software development. I would also like to
+thank Dr. Tomasz Kozlowski for his thorough feedback and critical perspective
+that have vastly improved the quality of this manuscript. I would also like to
+thank the Nuclear Regulatory Commission for funding this work through the NRC
+Integrated University Grant Program Fellowship.
+
+I would also like to thank my Advanced Reactors and Fuel Cycles peers,
+particularly Amanda Bachmann, Samuel Dotson, and Luke Sefiert for their code
+reviews and knowledge on nuclear systems, Python, and molten salt reactors. And
+to Andrei Rykhlevskii, thank you for creating \SaltProc and for your response to
+my probing questions. To the NPRE Staff who run the show behind the scenes, you
+are awesome and are the ones who make this whole show work. I would especially
+like to thank Scott Dalby for always being a friendly face, and Kristie
+Stramatski, for her reasoned and fast responses to my sometimes panicked emails.
+
+In my personal life, I am extremely fortunate to have the boundless love and
+support of my mother, Zanna, and father, David, and for that I have endless
+gratitude. To my brother, Nico, and sister, Sophie, thank you for showing me
+different ways of being. To my partner BJ and my friends in OAC, I am so
+thankful to have met you all during my time in Illinois. You have made it all
+the more bearable. And to my late, lifetime friend and brother, Nyima, I am
+thankful for the 15 years I was able to spend with you. Your kindness and
+loyalty are forever etched in my heart.
+
+Finally, I would like to thank Dr. Kathryn Huff for allowing me to join ARFC and
+start on this journey. While we haven't had much time to work together, I am
+thankful for meeting her and reigniting my optimism for the future of nuclear
+power.
 
 %% The thesis format requires the Table of Contents to come
 %% before any other major sections, all of these sections after
