@@ -15,21 +15,21 @@ As of writing this thesis, there are no \Gls{msr}s currently in operation; we
 must rely on computational and/or surrogate models to further study \Gls{msr}
 physics. The \Gls{msre} is a popular choice for computational models due to the
 availability of experimental data to compare results against. For example,
-Roelofs et al used the system thermal hydraulics code SPECTRA to model steady
-state parameters of the fuel-salt, \Gls{dnp} drift, and various fission product
-behaviors in comparison with actual MSRE data \cite{roelofs_molten_2021}.
-Podila et al performed a \Gls{cfd} simulation of the \Gls{msre} core to
+Roelofs et al. (2021) used the system thermal hydraulics code SPECTRA to model
+steady state parameters of the fuel-salt, \Gls{dnp} drift, and various fission
+product behaviors in comparison with actual MSRE data \cite{roelofs_molten_2021}.
+Podila et al. (2019) performed a \Gls{cfd} simulation of the \Gls{msre} core to
 investigate the ability of \Gls{cfd} to predict 3D effects in this kind of
 reactor \cite{podila_cfd_2019}. 
 %cite some MSRE studies
 In addition to the \Gls{msre}, the \Gls{msfr} \cite{merle-lucotte_launching_2011}
 and \Gls{msbr} \cite{robertson_conceptual_1971} conceptual reactors are well
-developed and are actively used in research. Park et al performed a whole core
-analysis of the \Gls{msbr} using \MCNPSIX with additional depletion and
-reprocessing using \CINDERNINETY and a custom Python script \cite{park_whole_2015}.
-Aufiero et al extended \SerpentTWO with online fuel reprocessing capabilities to
-study depletion in the \Gls{msfr} \cite{aufiero_extended_2013}. These efforts
-illustrate that \Gls{msr} modeling encompasses a wide range of physics domains.
+developed and are actively used in research. Park et al. (2015) performed a
+whole core analysis of the \Gls{msbr} using \MCNPSIX with additional depletion
+and reprocessing using \CINDERNINETY and a custom Python script \cite{park_whole_2015}. Aufiero et al. (2015) extended \SerpentTWO with online
+fuel reprocessing capabilities to study depletion in the \Gls{msfr}
+\cite{aufiero_extended_2013}. These efforts illustrate that \Gls{msr} modeling
+encompasses a wide range of physics domains.
 
 \section{Modeling depletion in MSRs} Recall in Sections
 \ref{sec:molten_salt_reactors} and \ref{sec:msr_codes} we introduced the
@@ -83,7 +83,7 @@ as well as with data from the original MSBR report from Robertson et. al
         \includegraphics[width=0.6\linewidth]{figs/ch2/robertson_data.png}
         \label{fig:robertson_spectrum}
     }
-    \caption[Side-by-side results of MSBR spectra between Ryhklevskii et al (2019) and Park et al (2015)]{
+    \caption[Side-by-side results of MSBR spectra between Ryhklevskii et al, (2019) and Park et al. (2015)]{
     \subref{fig:msbr_spectrum_sub1} Neutron flux energy spectrum at
     initial and equilibrium states normalized by unit lethargy. Reproduced
     from \cite{rykhlevskii_modeling_2019}; \subref{fig:msbr_spectrum_sub2}
@@ -182,8 +182,8 @@ results and \SerpentTWO depletion results. I will now briefly discuss these
 results in more detail.
 
 \OpenMC's depletion module contains functions to create a depletion chain from
-user-provided data. Romano et al used three different depletion chains in their
-study \cite{romano_depletion_2021}:
+user-provided data. Romano et al. (2021) used three different depletion chains
+in their study \cite{romano_depletion_2021}:
 \begin{enumerate}
     \item A full depletion chain that contains data from ever neutron, decay
         and fission product yield sublibray file in the ENDF/B-VII.1 library.
@@ -192,7 +192,7 @@ study \cite{romano_depletion_2021}:
         size of the depletion matrix.
     \item A depletion chain based on the VERA depletion benchmark
         specifictation \cite{kim_specification_2015}, referred to as the CASL
-        depletion chain by Romano et al \cite{romano_depletion_2021}.
+        depletion chain by Romano et al. (2021) \cite{romano_depletion_2021}.
 \end{enumerate}
 \SerpentTWO allows users to select same data using the appropriate ``set''
 cards, however does not include a method to reduce the depletion chain or
@@ -202,7 +202,7 @@ be used with the version of \SerpentTWO used in \cite{romano_depletion_2021}
 
 \OpenMC's depletion module also contains various methods for obtaining reaction
 rates, calculating power normalization of reaction rates, and selecting fission
-product yields. Romano et al used two methods  for selecting the fission
+product yields. Romano et al. (2021) used two methods  for selecting the fission
 product yields \cite{romano_depletion_2021}. One is to simply use fission product
 yields at thermal energy, and the other is analagous to the method use in
 ORIGEN \cite{gauld_isotopic_2011} where the average energy of neutrons causing
@@ -275,7 +275,7 @@ shows us that using interpolated fission yields for \OpenMC depletion
 simulations will give us very good agreement with the \SerpentTWO depletion
 results.
 
-Romano et al also compared depletion performance between \OpenMC and
+Romano et al. (2021) also compared depletion performance between \OpenMC and
 \SerpentTWO on a model of the \Gls{sfr} \cite{oecd_benchmark_2016}, which is a
 fast reactor design. Compared to the PWR pincell study, the results of this
 study showed similar trends and magnitudes in the time-dependent nuclide
@@ -287,14 +287,15 @@ depletion even on more complex geometries.
 
 While these results are in good agreement, obtaining them took careful
 consideration of settings and methods uses by each code. In addition to the
-depletion settings and methods used by the codes,  Romano et al notes that one
-must take careful consideration of the data and internal settings to get good
-results between codes. Of note are the default energy release per fission of
-\ce{^{235}U} used for power normalization and capture branching ratios. We
-follow Romano's methodology to ensure data consistency in our comparative
-study. The key features to consider:
+depletion settings and methods used by the codes,  Romano et al. (2021) notes
+that one must take careful consideration of the data and internal settings to
+get good results between codes. Of note are the default energy release per
+fission of \ce{^{235}U} used for power normalization and capture branching
+ratios. We follow Romano's methodology to ensure data consistency in our
+comparative study. The key features to consider:
 \begin{itemize}
-    \item Utilize identical cross-section libraries, depletion data, and capture branching ratios
+    \item Utilize identical cross-section libraries, depletion data, and capture
+    branching ratios
     \item Use the same fission heating values.
 \end{itemize}
 We will discuss our procedure for ensuring data consistency in Chapter 4.
