@@ -12,13 +12,13 @@ details for those interested in specific API changes.
 simulates on-line reprocessing via a batch-wise approach\footnote{Material is
 moved to or from the core at specific time intervals} in liquid-fueled
 \Gls{msr}s. More precisely, \SaltProc manages material flows and separation
-processes on nuclides in the fuel. \SaltProc relies on external codes to simulate
+processes for nuclides in the fuel. \SaltProc relies on external codes to simulate
 fuel depletion.
 
 The first version of \SaltProc (v0.1) was a simple Python 2.7 package that used
 \SerpentTWO for the fuel depletion simulations. A single Python file contained
 all functions; separation processes applied to materials used an implicit 100\%
-extraction efficiency at hardcoded cycle times\cite{rykhlevskii_advanced_2018}.
+extraction efficiency at hardcoded cycle times \cite{rykhlevskii_advanced_2018}.
 The structure of \SaltProc v0.1 did not lend itsef easily to development of more
 sophisticated treatments of reprocessing. This led to the release of \SaltProc
 v0.2, in which the entire codebase was refactored into an object oriented
@@ -33,7 +33,7 @@ refactoring to better follow OOP concepts.
 While v0.2 and v0.3 saw most of \SaltProc refactored for OOP, before I could
 implement \OpenMC support, I needed to resolve the following issues:
 \begin{enumerate}
-    \item Relocate several functions to have better separation of concerns
+    \item Relocate several functions for a more streamlined program flow
     \item Overhaul the \SaltProc input file format giving users more control over their simulations
     \item Generalize docstrings\footnote{Since \SaltProc was initially written as a script wrapped around Serpent2, many of the docstrings explicitly referenced Serpent2.}
     \item Improve function and variable names
@@ -76,7 +76,7 @@ or the web-hosted \SaltProc docpages at \url{arfc.github.io/saltproc}.
 
 \section{Mathematical description of material reprocessing}
 Rykhlevskii has discussed the design of \SaltProc's feeds and separations in
-his dissertation qualitatively, however the existing \SaltProc literature is lacking a {\it mathematical} description of the reprocessing scheme\footnote{Luke Sefiert's master's thesis does provide a general
+his dissertation qualitatively, however the existing \SaltProc literature is lacking a {\it mathematical} description of the reprocessing scheme\footnote{Luke Seifert's master's thesis does provide a general
 mathematical description of batchwise reprocessing based on \SaltProc, and
 compares it to continuous reprocessing, and I encourage readers to
 cross-reference it against my own description. As of writing this, his thesis
@@ -89,13 +89,20 @@ must first understand the design of the feeds and separations.
 
 \paragraph{Material flows}
     A material flow represents a material with a given
-    volume, density, and temperature, and nuclide composition.
+    volume, density, temperature, and nuclide composition.
     It can also include information such as void fraction. \verb.Materialflow.
     objects contain the prior mentioned quantities as attributes, as well as
     methods to perform the following:
     \begin{itemize}
         \item Add two \verb.Materialflow. objects together
-        \item Multiply a \verb.Materialflow. object by a constant
+            \begin{itemize}
+                \item The mass of the sum is $m_{1+2} = m_{1} + m_{2}$
+                \item The composition of the sum is $N_{1+2} = \frac{N_{1} * m_{1} + N_{2} * m_{2}}{m_{1} + m_{2}}$
+                \item The temperature and density are assumed to be equal to the
+                    first \verb.Materialflow. object
+            \end{itemize}
+        \item Scale a \verb.Materialflow. object by a constant, specifically
+            the mass and volume of the \verb.Materialflow. object.
     \end{itemize}
     \verb.Materialflow. objects are used to store information about materials
     in reprocessing as well as materials being fed into the system.
@@ -109,7 +116,7 @@ must first understand the design of the feeds and separations.
     the following
     \begin{itemize}
         \item A mass flowrate, $\dot{m}$, that specifies the mass of fuel salt a process can operate on per unit time
-        \item An extraction efficiency, $\epsilon$, for target element(s). This can be a constant value or a function.
+        \item An extraction efficiency, $\epsilon$, for target element(s).
         \item A method to apply the process on a \verb.Materialflow. object. 
     \end{itemize}
 
@@ -150,21 +157,21 @@ Now, let the mass and volume of depletable material $j$ be
 $m^{j}$ and $V^{j}$ respectively. Let the mass flowrate of process $p$ be
 $\dot{m}_{p}$. At the end of each depletion step, \SaltProc constructs process
 paths from the process graph defined in the DOT file, and sequentially applies
-each process $p$ in each path $r$ to the relevant materials to obtain thru
-and waste streams for each material. \SaltProc tracks the mass and nuclide vector for both thru and waste streams. For thru
+each process $p$ in each path $r$ to the relevant materials to obtain through
+and waste streams for each material. \SaltProc tracks the mass and nuclide vector for both through and waste streams. For through
 streams, \SaltProc also tracks the volume and mass flowrate. For every node
 $p\in[0,l]$ where $0$ represents the core outlet and $l$ represents the core
-inlet, in the path $r$, for the thru streams we have
+inlet, in the path $r$, for the through streams we have
 
 % still need burnup, temp, density, void frac
 \begin{equation}
-    \mathbf{n}^{j}_{\text{thru, }p,r} = \mathbf{n}^{j}_{\text{thru, }p-1,r} (1 - \pmb{\epsilon}^{j}_{p,r})
+    \mathbf{n}^{j}_{\text{through, }p,r} = \mathbf{n}^{j}_{\text{through, }p-1,r} (1 - \pmb{\epsilon}^{j}_{p,r})
 \end{equation}
 \begin{equation}
-    m^{j}_{\text{thru, } p,r} = \alpha_{p} m^{j}_{\text{thru, }p-1,r} - m^{j}_{\text{waste, }p,r}
+    m^{j}_{\text{through, } p,r} = \alpha_{p} m^{j}_{\text{through, }p-1,r} - m^{j}_{\text{waste, }p,r}
 \end{equation}
 \begin{equation}
-    V^{j}_{\text{thru, }p,r} = \alpha_{p}V^{j}_{\text{thru, }p-1,r}
+    V^{j}_{\text{through, }p,r} = \alpha_{p}V^{j}_{\text{through, }p-1,r}
 \end{equation}
 where 
 \begin{equation}
@@ -172,21 +179,29 @@ where
 \end{equation}
 and the initial conditions are 
 \begin{equation}
-    \mathbf{n}^{j}_{\text{thru, }0,r} = \mathbf{n}^{j}(i+1)
+    \mathbf{n}^{j}_{\text{through, }0,r} = \mathbf{n}^{j}(i+1)
 \end{equation}
 \begin{equation}
-    m^{j}_{\text{thru, }0,r} = \rho^{j}(i+1)V^{j}(i+1)
+    m^{j}_{\text{through, }0,r} = \rho^{j}(i+1)V^{j}(i+1)
 \end{equation}
 \begin{equation}
-    V^{j}_{\text{thru, }0,r} = V^{j}(i+1)
+    V^{j}_{\text{through, }0,r} = V^{j}(i+1)
 \end{equation}
 Similarly, for the waste streams, we have
 \begin{equation}
-    \mathbf{n}^{j}_{\text{waste, }p,r} = \mathbf{n}^{j}_{\text{thru, }p-1,r} \cdot \pmb{\epsilon}^{j}_{p,r}
+    \mathbf{n}^{j}_{\text{waste, }p,r} = \mathbf{n}^{j}_{\text{through, }p-1,r} \cdot \pmb{\epsilon}^{j}_{p,r}
 \end{equation}
 \begin{equation}
-    m^{j}_{\text{waste, }p,r} = \alpha_{p,r} m^{j}_{\text{thru, }p-1,r} \langle\mathbf{1},\mathbf{n}^{j}_{\text{waste, }p,r}\rangle
+    m^{j}_{\text{waste, }p,r} = \alpha_{p,r} m^{j}_{\text{through, }p-1,r} \langle\mathbf{1},\mathbf{n}^{j}_{\text{waste, }p,r}\rangle
 \end{equation}
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/ch3/example_process_graph}
+    \caption{Example processing system graph}
+    \label{fig:example-graph}
+\end{figure}
+
 SaltProc does not currently track the volume and mass flowrate of waste streams.
 In practice, since it is extremely resource intensive to separate individual
 isotopes, SaltProc only allows extraction efficiencies to be defined for
@@ -194,13 +209,13 @@ elements. So for any isotope $a$ of xenon,
 $\epsilon_{\ce{^{a}Xe}} = \epsilon_{\ce{^{a^{\prime}}Xe}}$  where
 $a^{\prime} \in \text{isotopes of Xe}$
 
-After the recursive computation, \SaltProc sums thru and waste streams over all
-paths to get the total thru stream at the inlet, and the total waste stream at
+After the recursive computation, \SaltProc sums through and waste streams over all
+paths to get the total through stream at the inlet, and the total waste stream at
 the inlet which represents all material removed during reprocessing. In practice,
 we are working with nuclide mass fractions, not total masses, so in the program
 there is an expansion and then normalization of the vectors:
 \begin{equation}
-    \mathbf{n}^{j}_\text{thru, inlet, net} = \frac{\sum_{r} m^{j}_{\text{thru, inlet, }r} \mathbf{n}^{j}_{\text{thru, inlet, }r}}{\sum_{r} m^{j}_{\text{thru, inlet, }r}}
+    \mathbf{n}^{j}_\text{through, inlet, net} = \frac{\sum_{r} m^{j}_{\text{through, inlet, }r} \mathbf{n}^{j}_{\text{through, inlet, }r}}{\sum_{r} m^{j}_{\text{through, inlet, }r}}
 \end{equation}
 \begin{equation}
     \mathbf{n}^{j}_{\text{waste, inlet, net}} = \frac{\sum_{r} m^{j}_{\text{waste, inlet, }r} \mathbf{n}^{j}_{\text{waste, inlet, }r}}{m^{j}_{\text{waste, inlet, }r}}
@@ -211,10 +226,10 @@ feed material defined, \SaltProc will add an amount of the feed material
 equivalent to the removed mass so that the mass of fuel salt undergoing depletion
 remains constant. For feed $j'$ corresponding to material $j$, we have
 \begin{equation}
-    \mathbf{n}^{j}_\text{filled} = \frac{m^{j}_{\text{thru, }l}\mathbf{n}^{j}_\text{thru, inlet, net} +  m^{j}_{\text{removed}}\mathbf{n}^{j'}}{m^{j}_{\text{thru, }0}}
+    \mathbf{n}^{j}_\text{filled} = \frac{m^{j}_{\text{through, }l}\mathbf{n}^{j}_\text{through, inlet, net} +  m^{j}_{\text{removed}}\mathbf{n}^{j'}}{m^{j}_{\text{through, }0}}
 \end{equation}
 
 where 
 \begin{equation}
-    m^{j}_\text{removed} = m^{j}_{\text{thru, }0} - m^{j}_{\text{thru, }l}
+    m^{j}_\text{removed} = m^{j}_{\text{through, }0} - m^{j}_{\text{through, }l}
 \end{equation}

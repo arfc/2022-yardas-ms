@@ -7,7 +7,7 @@ It is based on the [ARFC UIUC master's thesis template](https://github.com/arfc/
 ## To compile:
 This manuscript uses the [`minted`](https://ctan.org/pkg/minted?lang=en) LaTeX
 package, which requires [`pygments`](https://pygments.org/). After installing
-`pygments`, run `make-pygments` to generate the manuscript.
+`pygments`, run `make all-pygments` to generate the manuscript.
 
 ## Guide on scripts and models
 to be filled in

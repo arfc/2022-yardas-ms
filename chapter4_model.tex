@@ -10,13 +10,13 @@ The \Gls{msbr} design is the result of a design study of a single-fluid
 
 I picked the \Gls{msbr} for two reasons:
 \begin{enumerate}
-    \item Several papers studying the \Gls{msbr} exist\footnote{see Chapter
+    \item Several papers studying the \Gls{msbr} exist,\footnote{see Chapter
     \ref{ch:chapter2} for a discussion of these papers} enabling qualitative
     results comparison.
     \item Rykhlevskii created a \SerpentTWO \Gls{csg} model and the processing
     system graph for the \Gls{msbr} based on the specifications in
     \cite{robertson_conceptual_1971} for use in \SaltProc
-    v0.3.0 \cite{rykhlevskii_fuel_2020}. The models used in this work is derived
+    v0.3.0 \cite{rykhlevskii_fuel_2020}. The models used in this work are derived
     from Rykhlevskii's model.
 \end{enumerate}
 
@@ -61,7 +61,7 @@ fuel salt, the reactor core, and the salt reprocessing system.
     \label{fig:msbr-overview}
 \end{figure}
 
-As seen in Figure \ref{fig:msbr-overview}, the \Gls{csg} Gls{msbr}
+As seen in Figure \ref{fig:msbr-overview}, the \Gls{csg} \Gls{msbr}
 model reproduces these systems with several approximations. I will
 describe each reactor system, as well as any relevant changes or
 approximations made in the model.
@@ -97,7 +97,7 @@ description in Section \ref{sec:msbr-core}}
 
 \begin{table}[htpb] 
     \centering 
-    \caption{Reference \Gls{msbr} fuel salt specifications rounded to 6 decimals}
+    \caption{Reference \Gls{msbr} fuel salt specifications rounded to six decimals}
     \label{tab:msbr-fuel-salt-ref}
     \begin{tabular}{|c|c|c|c|c|c|c|} 
         \hline
@@ -115,7 +115,7 @@ comes from an earlier report on the Molten-Salt Reactor Program
 \cite{rosenthal_molten-salt_1969}.} of temperature in \unit{\celsius} in Table
 S.1 in Robertson et al. (1971) \cite{robertson_conceptual_1971}:
 \begin{equation}
-    \rho = 3.752 - 6.68\cdot 10^{-4} \cdot T \quad \unit{\gram\per\square  \centi\meter}
+    \rho = 3.752 - 6.68\cdot 10^{-4} \cdot T \quad \unit{\gram\per\cubic\centi\meter}
 \end{equation}
 
 The temperature of the fuel salt flowing into the core at the inlet at the
@@ -167,10 +167,8 @@ Section 3.2.3 in \cite{robertson_conceptual_1971}. At 70\unit{\degree}F (294.3
 \unit{\kelvin}), the \Gls{msbr} graphite has a density of 1843
 \unit{\kilo\gram\per\cubic\metre}. This is the only density specification
 for graphite that I was able to find in Robertson et al. (1971)
-\cite{robertson_conceptual_1971}
-
-In the CSG model, the graphite material uses elemental carbon and has a
-density of 1.84\unit{\gram\per\centi\metre\cubed}.
+\cite{robertson_conceptual_1971}. In the CSG model, the graphite material uses
+elemental carbon and has a density of 1.84 \unit{\gram\per\centi\metre\cubed}.
 
 \subsection{Modified Hastelloy N}
 \label{sub:hastelloy}
@@ -250,9 +248,9 @@ II, and the reflector zone.
 fuel salt by volume. Zone I is divided into three subzones: zone I-A, zone I-B,
 and the control rod zone.
 
-Zone I-A and I-B consist of 4-in.$\times$4-in. (10.16-cm$\times$10.16-cm)
+Zone I-A and I-B consist of 4 in. $\times$ 4 in. (10.16 cm $\times$ 10.16 cm)
 square graphite elements. As seen in Figures \ref{fig:msbr-ia-xy} and
-\ref{fig:msbr-ib-xy} elements in both zones have axial ribs protruding from
+\ref{fig:msbr-ib-xy}, elements in both zones have axial ribs protruding from
 the faces of the square elements near the corners, as well as cylindrical
 channels in the centers of the elements. The purpose of the fuel holes are to
 facilitate salt flow through the core elements. The purpose of the ribs are to
@@ -282,7 +280,7 @@ to create an undermoderated region of 37\% salt at the top and bottom of the
 reactor \cite{robertson_conceptual_1971}. These machined ends are referred to as
 Section A (see Figures \ref{fig:msbr-ia-xy}, \ref{fig:msbr-ib-xy}, and
 \ref{fig:msbr-i-xz-full}). The top of each element also has an outlet plenum to
-direct salt flow towards the exit nozzlese at the edje of the vessel, however
+direct salt flow towards the exit nozzles at the edge of the vessel, however
 these are not included in the \Gls{csg} model. The outermost layer of zone I
 elements also have grooves in them to fit eliptical graphite sealing rods (see
 Figure \ref{fig:msbr-detail}) that separate the salt flow in zone I from the
@@ -311,7 +309,7 @@ configuration where the II-A element is adjacent to two I-A elements.}
     \hline
     Section A inner diameter & 0.6 & 1.524 \\
     \hline
-    Section A Outer diameter & 3.698 & 9.39292 \\
+    Section A outer diameter & 3.698 & 9.39292 \\
     \hline
     Rib tip radius of curvature & 0.25 & 0.635 \\
     \hline
@@ -329,7 +327,7 @@ configuration where the II-A element is adjacent to two I-A elements.}
     \hline
     Hastelloy plug height & 2.875 & 7.3025 \\
     \hline
-    Hastelloy plug diameter\footnote{the hastelloy N plug has the same diameter as the fuel hole in the I-A elements} & 0.6 & 1.524 \\
+    Hastelloy plug diameter & 0.6 & 1.524 \\
     \hline
     Top part height & 1.75 & 4.445 \\
     \hline
@@ -342,14 +340,13 @@ configuration where the II-A element is adjacent to two I-A elements.}
 \begin{table}[htpb]
     \centering
     \caption{Zone I-B dimensions}
-    \label{tab:zone-ib-specs}
     \begin{tabulary}{\linewidth}{|C|CC|CC|}
     \hline
     Quantity & Reference Dimension [in] & Reference Dimension [\unit{\centi\metre}] & Model Dimension [in] & Model Dimension [\unit{\centi\metre}]\\
     \hline
     Section A inner diameter & 1.340 (Fig. \ref{fig:msbr_ib_bottom_ref}) or 1.347 (Fig. \ref{fig:msbr_ib_lattice_ref}) & 3.4036 or 3.42138 & 1.347 & 3.42138 \\
     \hline
-    Section A Outer diameter & 3.900 & 9.906 & 3.900 & 9.906 \\
+    Section A outer diameter & 3.900 & 9.906 & 3.900 & 9.906 \\
     \hline
     Rib tip radius of curvature & 0.25 & 0.635 & 0.263 & 0.66802\\
     \hline
@@ -367,7 +364,7 @@ configuration where the II-A element is adjacent to two I-A elements.}
     \hline
     Hastelloy plug height & 2.875 & 7.3025 & 1.75 & 4.445 \\
     \hline
-    Hastelloy plug diameter\footnote{the hastelloy N plug has the same diameter as the fuel holdein the I-B elements} & 1.340 (Fig. \ref{fig:msbr_ib_bottom_ref}) or 1.347 (Fig. \ref{fig:msbr_ib_lattice_ref}) & 3.4036 or 3.42138 & 1.347 & 3.42138 \\
+    Hastelloy plug diameter & 1.340 (Fig. \ref{fig:msbr_ib_bottom_ref}) or 1.347 (Fig. \ref{fig:msbr_ib_lattice_ref}) & 3.4036 or 3.42138 & 1.347 & 3.42138 \\
     \hline
     Top part height & 1.75 & 4.445 & 1.75 & 4.445 \\
     \hline
@@ -389,8 +386,8 @@ configuration where the II-A element is adjacent to two I-A elements.}
     }
     %\end{tabular}
     \caption[$xz$ cross sections of Zone I elements]{
-        \subref{fig:msbr_i_full_ref} Reference Zone I element
-        \subref{fig:msbr_ib_full_model} Model Zone I-B element
+        \subref{fig:msbr_i_full_ref} Reference zone I element
+        \subref{fig:msbr_ib_full_model} Model zone I-B element
     }
     \label{fig:msbr-i-xz-full}
 \end{figure}
@@ -415,10 +412,10 @@ configuration where the II-A element is adjacent to two I-A elements.}
         \label{fig:msbr_ib_bottom_model}
     }
     \caption[$xy$ cross sections of Zone I-B elements]{
-        \subref{fig:msbr_ib_main_ref} Reference Zone I-B element; Section B.
-        \subref{fig:msbr_ib_main_model} Model Zone I-B element; Section B.
-        \subref{fig:msbr_ib_bottom_ref} Reference Zone I-B element; Section A.
-        \subref{fig:msbr_ib_bottom_model} Model Zone I-B element; Section A.
+        \subref{fig:msbr_ib_main_ref} Reference zone I-B element; section B.
+        \subref{fig:msbr_ib_main_model} Model zone I-B element; section B.
+        \subref{fig:msbr_ib_bottom_ref} Reference zone I-B element; section A.
+        \subref{fig:msbr_ib_bottom_model} Model zone I-B element; section A.
     }
     \label{fig:msbr-ib-xy}
 \end{figure}
@@ -435,8 +432,8 @@ configuration where the II-A element is adjacent to two I-A elements.}
     }
     %\end{tabular}
     \caption[Lattice view of Zone I-B elements]{
-        \subref{fig:msbr_ib_lattice_ref} Reference Zone I-B lattice
-        \subref{fig:msbr_ib_lattice_model} Model Zone I-B lattice 
+        \subref{fig:msbr_ib_lattice_ref} Reference zone I-B lattice
+        \subref{fig:msbr_ib_lattice_model} Model zone I-B lattice 
     }
     \label{fig:msbr-ib-lattice}
 \end{figure}
@@ -453,8 +450,8 @@ configuration where the II-A element is adjacent to two I-A elements.}
         \label{fig:msbr_ia_bottom_ref}
     }
     \caption[$xy$ cross sections of Zone I-A elements]{
-        \subref{fig:msbr_ia_main_ref} Reference Zone I-A element; Section B.
-        \subref{fig:msbr_ia_bottom_ref} Reference Zone I-A element; Section A.
+        \subref{fig:msbr_ia_main_ref} Reference zone I-A element; Section B.
+        \subref{fig:msbr_ia_bottom_ref} Reference zone I-A element; Section A.
     }
     \label{fig:msbr-ia-xy}
 \end{figure}
@@ -462,21 +459,21 @@ configuration where the II-A element is adjacent to two I-A elements.}
 \begin{figure}[htpb]
     \centering
     \includegraphics[width=0.25\linewidth]{figs/ch4/zone_ia_lattice_ref.png}
-    \caption{Lattice view of Zone I-A elements}
+    \caption{Lattice view of zone I-A elements}
     \label{fig:msbr-ia-lattice}
 \end{figure}
 
-Four 6 in.$\times$6 in.
-(15.24\unit{\centi\metre}$\times$15.24\unit{\centi\metre}) graphite elements
+Four 6 in. $\times$ 6 in.
+(15.24-cm $\times$ 15.24-cm) graphite elements
 sit at the center of the core. Two of these elements contain graphite control
 rods, and the other two elements are for neutron-absorbing rods for shutting
 down the reactor, and are left empty during operation
 \cite{robertson_conceptual_1971}. Robertson el al does not specify a design nor
 dimensions for the control rod graphite elements. The \Gls{csg} model assumes
-that theese elements will be similar in shape to the zone I-A element (see Table
+that these elements will be similar in shape to the zone I-A element (see Table
 \ref{tab:cr-specification} and Figure \ref{fig:control-rods}). The control rods
-themselves have axial passages through them to faciliatate salt flow, but the
-dimesions of these passages are not given, so the \Gls{csg} model does not
+themselves have axial passages through them to facilitate salt flow, but the
+dimensions of these passages are not given, so the \Gls{csg} model does not
 include them.
 
 \begin{table}[htpb]
@@ -530,11 +527,11 @@ The slats have two additional features: dowel pins at the inner periphery that
 separate the slabs to create flow passages, and elliptical graphite pins at the
 outer periphery that isolates the salt flowing through the core region from the
 salt flowing through the reflector region. The slats have axial grooves 1.5 in.
-from the outer edge that accomodate the eliptical pins. Robertson et al. (1971)
+from the outer edge that accommodate the elliptical pins. Robertson et al. (1971)
 does not specify the precise dimensions or positions  of these pins, so they are
 not included in the \Gls{csg} model (see Figure \ref{fig:msbr-detail}).
 
-In addition to the aformentioned simplifications, Figure \ref{fig:msbr-detail}
+In addition to the aforementioned simplifications, Figure \ref{fig:msbr-detail}
 shows that the \Gls{csg} model makes some notable approximations and
 simplifications to the geometry of the individual zone II-B elements which
 results in a significantly different appearance than the reference design. Table
@@ -542,13 +539,13 @@ results in a significantly different appearance than the reference design. Table
 
 \begin{table}[htpb]
     \centering
-    \caption{caption}
+    \caption{Differences between zone II-B in reference and \Gls{csg} models}
     \label{tab:zone-iib-diff}
     \begin{tabulary}{\linewidth}{|C|C|C|C|}
         \hline
         & 2-in. slats shape & 6-in. slat shape & Pins\\
         \hline
-        Reference model & Rectangular prisms ending in a half cylinder & Rectangular prism with deep grooves creating a mixed-concavity surface & Eliptical sealing pins and separating dowel pins\\
+        Reference model & Rectangular prisms ending in a half cylinder & Rectangular prism with deep grooves creating a mixed-concavity surface & Elliptical sealing pins and separating dowel pins\\
         \hline
         \Gls{csg} model & Cylinder sector approximating a rectangular prism & Cylinder sector approximating a rectangular prism & No pins\\
         \hline
@@ -565,7 +562,7 @@ results in a significantly different appearance than the reference design. Table
     \hline
     Section A inner diameter & 0.5 & 1.27 & 0.5 & 1.27 \\
     \hline
-    Section A Outer diameter & 2.875 & 7.3025 & 2.875 & 7.3025 \\
+    Section A outer diameter & 2.875 & 7.3025 & 2.875 & 7.3025 \\
     \hline
     Section B inner diameter & 2.6 & 6.604 & 2.6 & 6.604 \\
     \hline
@@ -600,8 +597,8 @@ results in a significantly different appearance than the reference design. Table
     }
     %\end{tabular}
     \caption[$xz$ cross sections of Zone II-A elements]{
-        \subref{fig:msbr_iia_full_ref} Reference Zone II-A element
-        \subref{fig:msbr_iia_full_model} Model Zone II-A element
+        \subref{fig:msbr_iia_full_ref} Reference zone II-A element
+        \subref{fig:msbr_iia_full_model} Model zone II-A element
     }
     \label{fig:msbr-iia-xz-full}
 \end{figure}
@@ -628,10 +625,10 @@ results in a significantly different appearance than the reference design. Table
     }
     %\end{tabular}
     \caption[$xy$ cross sections of Zone II-A elements]{
-        \subref{fig:msbr_iia_top_ref} Reference Zone II-A element; Section A.
-        \subref{fig:msbr_iia_top_model} Model Zone II-A element; Section A.
-        \subref{fig:msbr_iia_main_ref} Reference Zone II-A element; Section B.
-        \subref{fig:msbr_iia_main_model} Model Zone II-A element; Section B.
+        \subref{fig:msbr_iia_top_ref} Reference zone II-A element; Section A.
+        \subref{fig:msbr_iia_top_model} Model zone II-A element; Section A.
+        \subref{fig:msbr_iia_main_ref} Reference zone II-A element; Section B.
+        \subref{fig:msbr_iia_main_model} Model zone II-A element; Section B.
     }
     \label{fig:msbr-iia-xy}
 \end{figure}
@@ -691,9 +688,9 @@ does not specify a length for the axial reflector pieces.
 
 The \Gls{csg} model approximates the complicated structure of the radial
 reflector blocks as a hollow cylinder 601.98 cm tall and 77.216 cm thick, and
-the axial reflector pieces as flat disks\footnote{the \Gls{csg} model doesn not
+the axial reflector pieces as flat disks\footnote{the \Gls{csg} model does not
 include the hole out of the top of the core for the control rods, and flattens
-the dish-shape as no dimensions are given to accurately reproduce the curvature
+the dished shape as no dimensions are given to accurately reproduce the curvature
 of the axial reflector pieces} 68.58 (bottom)/76.12 (top) cm thick and a radius
 of 261.112 cm. The \Gls{csg} model also contains no fuel salt in the reflector
 regions. Figure \ref{fig:msbr-cells} shows the radial reflector as a large pink
@@ -719,8 +716,7 @@ is broken into the following sections:
     slightly less than 18ft to allow for clearance to fit the two pieces
     together. The assembly is flanged at the top to close the vessel. The
     flanged support section is also the main point of contact with the
-    reinforced concrete roof structure from which the reactor hangs. also serves
-    as a lip to rest on ato rest on a reinforced concrete structure.
+    reinforced concrete roof structure from which the reactor hangs.
     \item The dished head sections: both heads have a 3 in. wall thickness. The
     lower head has a 22.5 ft diameter and the upper head an 18 ft. diameter. No
     radius of curvature is given for the dished heads, but it may be possible to
@@ -730,12 +726,12 @@ is broken into the following sections:
 
 The CSG model representation of the vessel has a 2 in. (5.08
 \unit{\centi\metre}) thickness, and hugs the radial region in the CSG model,
-giving an outer diameter of r 22.53 ft. (686.816 \unit{\centi\metre}) and a
+giving an outer diameter of 22.53 ft. (686.816 \unit{\centi\metre}) and a
 height of 20.08 ft (612.14 \unit{\centi\metre}). The CSG model does not include
 the nested support sections as they are of little neutronic importance. Figure
 \ref{fig:msbr-cells} shows the radial vessel as a thin blue region at the outer
-edge of the radial reflector region, and the axial vessel as a thin pink regio
-at the outer edge of the axial reflector regions.n
+edge of the radial reflector region, and the axial vessel as a thin pink region
+at the outer edge of the axial reflector regions.
 
 \section{An aside on the salt volume}
 \label{sec:salt-volume}
@@ -745,7 +741,7 @@ volume in the core in the reference specification (see Table
 \ref{tab:salt-volumes}). I performed stochastic volume calculations on both the
 \SerpentTWO and \OpenMC versions of the \Gls{csg} model, and found they both
 calculated volumes around $2.6\cdot 10^7$ \unit{\centi\metre\cubed}. Averaging
-the two volumes gives a rougly 8\% error in the salt volume in the core compared
+the two volumes gives a roughly 8\% error in the salt volume in the core compared
 to the reference specification (see Table \ref{tab:stoch-vol}).
 
 \begin{table}[htpb]
@@ -774,10 +770,10 @@ as specified, however in the \Gls{msbr} reference design, the total volume of
 salt in the reactor vessel is 1074 ft$^{3}$ ($3.0412 \cdot 10^{7}$
 \unit{\centi\metre\cubed}) \cite{robertson_conceptual_1971}, which is 
 approximately 13\% greater than the geometrical volume of the salt. This
-discrepency is due to the absense of the core inlets, outlets, and the narrow
+discrepancy is due to the absence of the core inlets, outlets, and the narrow
 salt passages in the reflector region. These features are important for thermal
 hydraulic accuracy, however they are most likely not particularly neutronically
-important. Additionally, we want to stay as conistent as possible with
+important. Additionally, we want to stay as consistent as possible with
 Rykhlevskii's previous works \cite{rykhlevskii_fuel_2020}
 \cite{rykhlevskii_modeling_2019}, so we will use the existing value for the salt
 volume of $4.871\cdot 10^7$. \unit{\centi\metre\cubed}. This choice carries the
@@ -798,7 +794,7 @@ reference MSBR core regions. Reproduced from Table 3.2 in
     \label{tab:salt-volumes}
     \begin{tabular}{|c|c|cc|}
         \hline
-        Zone & Percent salt & Salt volume [ft$^3$] & Salt volume [$10^6$\unit{\centi\metre\cubed}] \\
+        Zone & Percent salt & Salt volume [ft$^3$] & Salt volume [\unit{\metre\cubed}] \\
         \hline
         Zone I & 13.2 & 288 & 8.155252 \\
         \hline
@@ -818,17 +814,17 @@ reference MSBR core regions. Reproduced from Table 3.2 in
 \section{Reprocessing system}
 \label{sec:msbr-reprocessing-system}
 The MSBR reference design included the specification of a fuel-salt processing
-system\footnote{for this thesis, processing refers to both gas removal and
+system\footnote{For this thesis, processing refers to both gas removal and
 chemical processing}. The purpose of this reprocessing system is to improve
-neutronic performance by removing neutron poisons and other containants from
+neutronic performance by removing neutron poisons and other contaminants from
 recirculating through the core. The reprocessing system is split into two parts:
 gas removal and chemical extraction. The gas removal system takes advantage
 of entrainment of insoluble species in helium bubbles to remove noble gas
 fission products from the fuel salt. The reprocessing system is based on
-reductive extraction\footnote{reductive extraction takes advantage of the higher
+reductive extraction\footnote{Reductive extraction takes advantage of the higher
 electronegativity of a particular element to drive reduction reactions that
 remove target elements from covalently bonded molecules}. I will provide a brief
-descrption of the entire reprocessing system, but justifying in and evaluating
+description of the entire reprocessing system, but justifying in and evaluating
 its efficacy are beyond the scope of this thesis\footnote{I encourage interested
 readers to look at chapters 7 and 8 in \cite{robertson_conceptual_1971}, the
 entirety of \cite{carter_design_1972} and \cite{lindauer_design_1969}, as well
@@ -849,7 +845,7 @@ can find at \url{energyfromthorium.com/pdf}}.
 \end{figure}
 
 \subsection{Gas removal system}
-The gas removal system removes short-lived neutron poisions gases (tritium,
+The gas removal system removes short-lived neutron poisons gases (tritium,
 xenon, and krypton) from returning to the core region. There are three
 components to this system: the bubble generator, the gas separator, and the
 off-gas system. The gas separator is where the physical separation of the
@@ -874,14 +870,20 @@ is routed from the primary pumps into this system. Figure
     \label{fig:gas_removal_system}
 \end{figure}
 
+The main purpose of the off-gas system is to separate the helium from the
+fission product gasses for reuse in sparging. We only care about the
+corresponding extraction efficiency of the fission product gases, so we do
+not include the off-gas system in our model. Interested readers should reference
+Chapter 7 in Robertson et al. (1971) \cite{robertson_conceptual_1971}.
+
 \subsection{Fuel salt drain tank}
 In addition to providing a emergency salt storage system in the case of
 electrical system failure, the fuel salt drain tank plays an important role in
-the fuel-salt reprocessing system \cite{robertson_conceptual_1971}. The drain tank catches around 150 gpm (approxmiately 0.9\% of the total salt flow) of
-overflow from the primary salt circulation pumps, prodviding it with a small
+the fuel-salt reprocessing system \cite{robertson_conceptual_1971}. The drain tank catches around 150 gpm (approximately 0.9\% of the total salt flow) of
+overflow from the primary salt circulation pumps, providing it with a small
 amount of salt during operation \cite{robertson_conceptual_1971}. A 0.88 gpm
 stream of salt from the drain tank flows through the chemical processing system
-and back to the draink tank. Jet pumps at the bottom of the drain tank send salt
+and back to the drain tank. Jet pumps at the bottom of the drain tank send salt
 back to the primary loop. Figure \ref{fig:msbr_primary_system} shows this
 arrangement.
 
@@ -903,13 +905,13 @@ The chemical processing system has two purposes:
 In order to remove the protactinium from the fuel salt, all uranium must first be removed. The protactinium isolation loop consists of several components: 
 \begin{enumerate}
     \item A fluorinator to remove 95\% of the uranium in the fuel salt.
-    \item An extraction column where the stream leaving the fluorinator is combined with a stream of bismuth and thorium that removes protactinium and additional uranium from the fuel salt. The salt stream leaving the extrator is routed to the rare metal removal system. This salt stream has nearly no protactinium or uranium in it.
+    \item An extraction column where the stream leaving the fluorinator is combined with a stream of bismuth and thorium that removes protactinium and additional uranium from the fuel salt. The salt stream leaving the extractor is routed to the rare metal removal system. This salt stream has nearly no protactinium or uranium in it.
     \item A hydrofluorinator where the stream leaving the extraction column removes the thorium, lithium, and uranium from the bismuth. The bismuth is sent to a reductant adder where lithium is added to the bismuth stream, and then is rerouted back to the extraction column.
     \item A second fluorinator that removes 95\% of the remaining uranium from the stream leaving the extraction column.
     \item A protactinium decay tank into which the stream leaving the second fluorinator flows. This stream is circulating as it feeds back to the hydrofluorinator for additional uranium removal. Uranium produced by protactinium decay is removed by this circulating stream.
 \end{enumerate}
 
-The uranium exctracted via fluorination is returned to 
+The uranium extracted via fluorination is returned to 
 Figure \ref{fig:pa-removal} shows a block diagram of this loop. 
 
 \begin{figure}[htpb]
@@ -920,7 +922,7 @@ Figure \ref{fig:pa-removal} shows a block diagram of this loop.
 \end{figure}
 
 \paragraph{Rare-earth removal system}
-The rare-earch removal system utilized the same metal transfer process used to
+The rare-earth removal system utilized the same metal transfer process used to
 isolate protactinium from the fuel salt \cite{robertson_conceptual_1971}. This
 system begins at the output of the extractor column for protactinium isolation.
 It is a multistage extraction system:
@@ -932,14 +934,14 @@ It is a multistage extraction system:
     \item In the second extractor, the bismuth stream containing rare earths is
     contacted with a \ce{LiCl} stream.  The \ce{LiCl} stream picks up a fraction
     of the rare earths (with trace amounts of thorium), and is routed to the
-    fourth extractor. The bismith stream is returned to the first extractor.
-    \item In the fourth extrator, the \ce{LiCl} stream is contacted with a
+    fourth extractor. The bismuth stream is returned to the first extractor.
+    \item In the fourth extractor, the \ce{LiCl} stream is contacted with a
     circulating bismuth stream containing 5 mol-\% lithium. This bismuth stream
     removes trivalent rare earths from the \ce{LiCl} stream. The \ce{LiCl}
     stream is returned to the second extractor, however 2\% of this \ce{LiCl}
     stream is routed to the third extractor.
     \item In the third extractor, the \ce{LiCl} stream is contacted with a
-    circulating bismuth stream containig 50 mol-\% lithium. This bismuth stream
+    circulating bismuth stream containing 50 mol-\% lithium. This bismuth stream
     removes divalent and alkaline rare earths from the \ce{LiCl} stream. The
     \ce{LiCl} stream is rerouted back to the second extractor.
 \end{enumerate}
@@ -948,16 +950,16 @@ Figure \ref{fig:metal-removal} shows a block diagram of this loop.
 
 \begin{figure}[htpb]
     \centering
-    \includegraphics[width=0.8\textwidth]{figs/ch4/metal_removal_loop.png}
+    \includegraphics[width=0.3\textwidth]{figs/ch4/metal_removal_loop.png}
     \caption{Metal removal loop. Reproduced from Figure 8.2 in \cite{robertson_conceptual_1971}}
     \label{fig:metal-removal}
 \end{figure}
 
 \paragraph{Nickel-mesh filter}
 Insoluble impurities in the processed salt needs to be removed at two locations:
-before the salt stream is sent to reducitve extraction system
+before the salt stream is sent to reductive extraction system
 \cite{lindauer_design_1969}, and before the processed salt stream coming
-from the reductive extration system returns to the
+from the reductive extraction system returns to the
 reactor \cite{robertson_conceptual_1971}. The first filter removes insoluble
 impurities from transmutation and corrosion in the core, heat exchanger, and
 other systems. The second filter removes  bismuth entrained or dissolved in the
@@ -976,21 +978,21 @@ give us are the cycle times for elements in the fuel salt.
     \centering 
     \caption{Reprocessing system cycle times. A combination of tables 3.7B in \cite{robertson_conceptual_1971}, Table 3 in \cite{carter_design_1972}, and Table 25.1 in \cite{rosenthal_molten-salt_1970}}
     \label{tab:msbr-cycle-times}
-    \begin{tabularx}{400pt}{|X|X|X|X|X|} 
+    \begin{tabularx}{500pt}{|c|c|c|X|X|} 
         \hline
         Processing group & Target component(s) & Cycle time for processing & Primary mechanism of removal from salt & Secondary mechanism of removal from salt\\
         \hline
         Protactinium & \ce{^{233}Pa} & 3 days & Reductive extraction with \ce{Bi-Li} in \ce{Pa} extraction column followed by isolation in \ce{Pa} decay salt & None \\
         \hline
-        Rare earths & Trivalent: \ce{Y}, \ce{La}, \ce{Ce}, \ce{Pr}, \ce{Nd}, \ce{Pm}, \ce{Gd}, Divalent: \ce{Sm}, \ce{Eu} & 50 days (500 for \ce{Eu}) & Reductive extraction with \ce{Bi-Li} in \ce{Pa} extraction column followed by isolation in \ce{Pa} decay salt & Reduction to metallic particulates by \ce{H_2} in reduction column followed by filtraion\\
+        Rare earths & Trivalent: \ce{Y}, \ce{La}, \ce{Ce}, \ce{Pr}, \ce{Nd}, \ce{Pm}, \ce{Gd}, Divalent: \ce{Sm}, \ce{Eu} & 50 days (500 for \ce{Eu}) & Reductive extraction with \ce{Bi-Li} in \ce{Pa} extraction column followed by isolation in \ce{Pa} decay salt & Reduction to metallic particulates by \ce{H_2} in reduction column followed by filtration\\
         \hline 
         Noble metals & \ce{Se}, \ce{Nb}, \ce{Mo}, \ce{Tc}, \ce{Ru}, \ce{Rh}, \ce{Pd}, \ce{Ag}, \ce{Sb}, \ce{Te} & 20 sec & Plating out on surfaces in reactor vessel and heat exchangers & \ce{Nb}, \ce{Mo}, \ce{Tc}, \ce{Ru}, \ce{Rh},\ce{Sb}, and \ce{Te} have volatile fluorides and are removed in fluorinators; \ce{Pd}, \ce{Ag } reduced by \ce{Bi-Li} alloy in reductive extraction.\\
         \hline
-        Seminoble metals & \ce{Zr}, \ce{Cd}, \ce{In}, \ce{Sn} & 200 days & Plating out on surfaces in ractor vessel and heat exchangers & Reducive extraction with \ce{Bi-Li} in \ce{Pa} extraction column followed by isolation in \ce{Pa} decay salt \\
+        Seminoble metals & \ce{Zr}, \ce{Cd}, \ce{In}, \ce{Sn} & 200 days & Plating out on surfaces in ractor vessel and heat exchangers & Reductive extraction with \ce{Bi-Li} in \ce{Pa} extraction column followed by isolation in \ce{Pa} decay salt \\
         \hline
-        Gases & \ce{Kr}, \ce{Xe} & 20 sec & Sparged from salt with \ce{He} gas in primary loop & Purged in fluorniators due to spargin action of \ce{F_2} and \ce{H_2}\\
+        Gases & \ce{Kr}, \ce{Xe} & 20 sec & Sparged from salt with \ce{He} gas in primary loop & Purged in fluorniators due to sparging action of \ce{F_2} and \ce{H_2}\\
         \hline
-        Halogens & \ce{Br}, \ce{I} & 60 days & Volitalization in primary fluorinator & None \\
+        Halogens & \ce{Br}, \ce{I} & 60 days & Volatilization in primary fluorinator & None \\
         \hline
         Carrier salt & \ce{Th}, \ce{Li}, \ce{Be}, \ce{F} & 3435 days & Fuel salt discard to remove excess \ce{Li} added in reductive extraction process. & None \\
         \hline
@@ -1005,7 +1007,7 @@ Section \ref{sec:saltproc-history}, this version of SaltProc required the user
 to hardcode in the cycle times. The program would then extract the target
 elements from the fuel once a full cycle time had passed. In SaltProc v0.2.0 and
 onward, this cycle time capability was removed in favor of user-defined
-extraction efficiencies. This means we are unable to completley reproduce the
+extraction efficiencies. This means we are unable to completely reproduce the
 results in \cite{rykhlevskii_modeling_2019} as all extractions now happen after
 every depletion step, rather than only after the hardcoded cycle times.
 To get around this, we can construct proxy extraction efficiencies based on the
@@ -1030,7 +1032,7 @@ that our equation does not account for the addition of material.
 
 The process graph is a simplified version of the processing system described 
 above. There are only three components: the gas separator, the nickel filter and
-the reductive extractor. Figure \ref{fig:process-graph} dsiplays the process
+the reductive extractor. Figure \ref{fig:process-graph} displays the process
 graph. This simple configuration is designed to match results from Rykhlevskii
 and Park et al. (2015) \cite{park_whole_2015} by processing 100\% of the salt
 flow. Note that this does not match the processing system specification in
@@ -1046,7 +1048,7 @@ flow. Note that this does not match the processing system specification in
 Table \ref{tab:msbr-cycle-times} lists element groups and their extraction
 efficiencies. Note the presence of a \verb.thorium_feed. feed process. This
 process replaces the lost mass via reprocessing with an equal mass of fuel salt
-of identical composition to the inital fuel salt, but with all \ce{^{233}U}
+of identical composition to the initial fuel salt, but with all \ce{^{233}U}
 replaced by \ce{^{232}Th}. This ensures we have a relatively constant level of
 \ce{^{232}Th} in the reactor.
 
@@ -1064,7 +1066,7 @@ replaced by \ce{^{232}Th}. This ensures we have a relatively constant level of
         \hline 
         Noble metals & \ce{Se}, \ce{Nb}, \ce{Mo}, \ce{Tc}, \ce{Ru}, \ce{Rh}, \ce{Pd}, \ce{Ag}, \ce{Sb}, \ce{Te} & 20 sec & nickel filter & 1\\
         \hline
-        Seminoble metals & \ce{Zr}, \ce{Cd}, \ce{In}, \ce{Sn} & 200 days & reductive extrator & 0.425\\
+        Seminoble metals & \ce{Zr}, \ce{Cd}, \ce{In}, \ce{Sn} & 200 days & reductive extractor & 0.425\\
         \hline
         Gases & \ce{Kr}, \ce{Xe} & 20 sec & gas separator & 1\\
         \hline
@@ -1077,7 +1079,7 @@ replaced by \ce{^{232}Th}. This ensures we have a relatively constant level of
 
 \section{Cross Section Data}
 \label{sec:xs-data}
-Ryklevskii used the JEFF 3.1.2 cross section library in the inital evaluation of the \Gls{msbr} CSG model. I have not been able to convert the JEFF 3.1.2 library to \OpenMC's HDF5 format, so I am instead using the ENDF/B VII.1 cross section library.
+Ryklevskii used the JEFF 3.1.2 cross section library in the initial evaluation of the \Gls{msbr} CSG model. I have not been able to convert the JEFF 3.1.2 library to \OpenMC's HDF5 format, so I am instead using the ENDF/B VII.1 cross section library.
 
 \section{Differences between the \OpenMC and \SerpentTWO models}
 The only differences between the \OpenMC and \SerpentTWO CSG models are in the
