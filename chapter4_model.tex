@@ -1088,3 +1088,67 @@ using the OpenMC Python API, whereas the \SerpentTWO model is written entirely
 in an input file. I encourage interested readers to compare the files stored at
 \url{github.com/arfc/2022-yardasol-ms/tree/model/} under \verb.openmc/. and
 \verb.serpent/.
+
+\section{Eigenvalue and source distribution convergence}
+Both \SerpentTWO and \OpenMC are monte-carlo codes that rely on the Method of
+Successive Generations to perform eigenvalue calculations. A complete
+description of this method is outside the scope of this thesis, but it requires
+that the source distribution of particles and our $k_{\text{eff}}$ values
+be converged before counting reaction tallies. In practice, the source
+distribtuion converges much slower than $k_{\text{eff}}$, so we must pick our
+a number of inactive batches that enables the source distribtion to
+converge. We do this experimentally by plotting the Shannon entropy
+versus the batch number. The source distribution is converged when the 
+Shannon entropy levels out.\footnote{\OpenMC discusses how it calculates Shannon entropy
+on this page: \url{https://docs.openmc.org/en/stable/methods/eigenvalue.html\#diagnosing-convergence-with-shannon-entropy},
+and I assume \SerpentTWO uses a similar method.}
+
+I did not perform a detailed convergence study, and by trial-and error found
+that using around XX inactive batches ensures our source distributions for both
+the \OpenMC and \SerpentTWO models are well converged, as seen in Figures
+\ref{fig:msbr-source-convergence-openmc} and \ref{fig:msbr-source-convergence-serpent},
+respectively.
+
+\begin{figure}[htpb]
+    \centering
+    \subfloat[][]{
+        \includegraphics[width=0.5\linewidth]{figs/ch4/openmc_source_convergence.png}
+        \label{fig:msbr-source-convergence-openmc}
+    }
+    \subfloat[][]{
+        \includegraphics[width=0.5\linewidth]{figs/ch4/serpent_source_convergence.png}
+        \label{fig:msbr-source-convergence-serpent}
+    }
+    \caption[MSBR source convergence]{MSBR source convergence
+        for both \OpenMC and \SerpentTWO:
+        \subref{fig:msbr-source-convergence-openmc} \OpenMC;
+        \subref{fig:msbr-source-convergence-serpent} \SerpentTWO;
+        both simulations performed using 80 inactive, 120 active batches,
+        60k particles per batch
+    }
+    \label{fig:msbr-source-convergence}
+\end{figure}
+
+For completeness, Figure \ref{fig:msbr-keff-convergence} shows the convergence
+of $k_{\text{eff}}$ vs. Batch number for \OpenMC and \SerpentTWO. Note that
+$k_{\text{eff}}$ converges around the 50th batch for both codes.
+
+\begin{figure}[htpb]
+    \centering
+    \subfloat[][]{
+        \includegraphics[width=0.5\linewidth]{figs/ch4/openmc_keff_convergence.png}
+        \label{fig:msbr-keff-convergence-openmc}
+    }
+    \subfloat[][]{
+        \includegraphics[width=0.5\linewidth]{figs/ch4/serpent_keff_convergence.png}
+        \label{fig:msbr-keff-convergence-serpent}
+    }
+    \caption[MSBR $k_\text{eff}$ convergence]{MSBR $k_\text{eff}$ convergence
+        for both \OpenMC and \SerpentTWO:
+        \subref{fig:msbr-keff-convergence-openmc} \OpenMC;
+        \subref{fig:msbr-keff-convergence-serpent} \SerpentTWO;
+        both simulations performed using 80 inactive, 120 active batches,
+        60k particles per batch
+    }
+    \label{fig:msbr-keff-convergence}
+\end{figure}

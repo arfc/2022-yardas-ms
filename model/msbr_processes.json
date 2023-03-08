@@ -2,29 +2,29 @@
   "fuel": {
     "extraction_processes": {
       "core_inlet": {
-        "capacity": 9920000,
+        "capacity": 9.92e6,
         "efficiency": {},
-        "mass_flowrate": 9920000,
+        "mass_flowrate": 9.92e6,
         "volume": 0
       },
       "core_outlet": {
-        "capacity": 9920000,
+        "capacity": 9.92e6,
         "efficiency": {},
-        "mass_flowrate": 9920000,
+        "mass_flowrate": 9.92e6,
         "volume": 0
       },
       "gas_separator": {
-        "capacity": 9920000,
+        "capacity": 9.92e6,
         "efficiency": {
           "Kr": 1,
           "Xe": 1,
           "H": 1
         },
-        "mass_flowrate": 9920000,
-        "volume": 10000000
+        "mass_flowrate": 9.92e6,
+        "volume": 1e7
       },
       "nickel_filter": {
-        "capacity": 9920000,
+        "capacity": 9.92e6,
         "efficiency": {
           "Se": 1,
           "Nb": 1,
@@ -37,11 +37,11 @@
           "Sb": 1,
           "Te": 1
         },
-        "mass_flowrate": 9920000,
+        "mass_flowrate": 9.92e6,
         "volume": 11
       },
       "reductive_extractor": {
-        "capacity": 9920000,
+        "capacity": 9.92e6,
         "efficiency": {
           "Pa": 1,
           "Y": 0.8904,
@@ -65,15 +65,15 @@
           "I": 0.842
 
         },
-        "mass_flowrate": 9920000,
+        "mass_flowrate": 9.92e6,
         "volume": 11
       }
     },
     "feeds": {
-      "thorium": {
+      "fuel_salt": {
         "density": 3.35,
-        "volume": 100000000,
-        "mass": 335000000,
+        "volume": 1e8,
+        "mass": 3.35e8,
         "comp": {
           "Li-7": 0.07875361306856505,
           "Be-9": 0.022558425114333525,
