@@ -1104,10 +1104,11 @@ on this page: \url{https://docs.openmc.org/en/stable/methods/eigenvalue.html\#di
 and I assume \SerpentTWO uses a similar method.}
 
 I did not perform a detailed convergence study, and by trial-and error found
-that using around XX inactive batches ensures our source distributions for both
+that using around 80 inactive batches ensures our source distributions for both
 the \OpenMC and \SerpentTWO models are well converged, as seen in Figures
 \ref{fig:msbr-source-convergence-openmc} and \ref{fig:msbr-source-convergence-serpent},
-respectively.
+respectively.\footnote{I do not know why the Shannon entropy values between the
+\SerpentTWO and \OpenMC results are so different.}
 
 \begin{figure}[htpb]
     \centering
@@ -1124,14 +1125,14 @@ respectively.
         \subref{fig:msbr-source-convergence-openmc} \OpenMC;
         \subref{fig:msbr-source-convergence-serpent} \SerpentTWO;
         both simulations performed using 80 inactive, 120 active batches,
-        60k particles per batch
+        10k particles per batch
     }
     \label{fig:msbr-source-convergence}
 \end{figure}
 
 For completeness, Figure \ref{fig:msbr-keff-convergence} shows the convergence
 of $k_{\text{eff}}$ vs. Batch number for \OpenMC and \SerpentTWO. Note that
-$k_{\text{eff}}$ converges around the 50th batch for both codes.
+$k_{\text{eff}}$ is not well converged for 10k particles per batch.
 
 \begin{figure}[htpb]
     \centering
@@ -1148,7 +1149,7 @@ $k_{\text{eff}}$ converges around the 50th batch for both codes.
         \subref{fig:msbr-keff-convergence-openmc} \OpenMC;
         \subref{fig:msbr-keff-convergence-serpent} \SerpentTWO;
         both simulations performed using 80 inactive, 120 active batches,
-        60k particles per batch
+        10k particles per batch
     }
     \label{fig:msbr-keff-convergence}
 \end{figure}
