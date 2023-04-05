@@ -9,7 +9,8 @@
        "geo_file_paths": ["msbr_geometry.ini"]
    },
    "simulation": {
-       "sim_name": "msbr_serpent_local"
+       "sim_name": "msbr_serpent_local",
+       "restart_flag": true
    },
    "reactor": {
        "volume": 1.0,
