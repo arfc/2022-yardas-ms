@@ -1,10 +1,103 @@
 \chapter{Results}
 \label{ch:chapter5}
 
-\section{Simulation Parameters}
-\label{sec:simulation-params}
+\subsection{Platform and Software}
+\label{sub:platform-software}
+We ran our \OpenMC simulation on Theta, a supercomputer at ANL. Use of export
+controlled code is currently prohibited on Theta, so for our \SerpentTWO runs,
+we used a Dell Precision 3430 Workstation.
+
+% make this subsection a table
+% Talk about KNL, cross compiling, etc\ldots
+Theta's compute nodes and constancia nodes used cross-compilation\ldots
+
+\begin{table}[htpb] 
+    \centering 
+    \caption{Theta job parameters for 100k particle \OpenMC run}
+    \label{tab:theta-params}
+    \begin{tabular}{|c|c|c|} 
+        \hline
+        Quantity & \verb.aprun. option & Value\\
+        \hline
+        Nodes & \verb.-n. & 128 \\
+        \hline
+        MPI processes per node & \verb.-N. 4 \\
+        \hline
+        Threads per core & \verb.-j. & 4 \\
+        \hline
+        MPI Process binding & \verb.-cc. & depth \\
+        \hline
+        Depth & \verb.-d. & ?? \\
+        \hline
+        OpenMP threads per MPI process & \verb.-e OMP_NUM_THREADS=64. & 64 \\
+        \hline
+        Clustering mode & -- & SNC-4 \\
+        \hline
+        Memory mode & -- & Cache \\
+        \hline
+    \end{tabular}
+\end{table}
+% make this subsection a table
+
+\subsection{Simulation Design and Parameters}
+\label{sub:simulation-parameters}
+
+I design
+
+
+Table \ref{tab:saltproc-params} summarizes the simulation settings used
+for both the \SerpentTWO and \OpenMC simulations.
+ 
+\begin{table}[htpb] 
+    \centering 
+    \caption{Neutronics and Depletion parameters for SaltProc}
+    \label{tab:saltproc-params}
+    \begin{tabular}{|c|c|} 
+        \hline
+        Batches & 200 \\
+        \hline
+        Inactive batches & 80 \\
+        \hline
+        Particles per batch & 1e6 \\
+        \hline
+        Power [W] & 2.25e9 \\
+        \hline
+        Depletion steps & 122 \\
+        \hline
+        Depletion step length [days] & 3 \\
+        \hline
+        Depletion equation solver & IPF CRAM 48 \\
+        \hline
+        Time integration method & Euler's Method \\
+        \hline
+    \end{tabular}
+\end{table}
 
 \subsection{Data}
-\label{sub:data}
+\label{sub:results-xs-data}
 
-I used the ENDF B/VII.1 cross section library and chain file created from this library
+I used the ENDF/B-VII.1 library for both the \SerpentTWO and
+\OpenMC simulations (cite endfb). I specifically used the neutron reaction,
+neutron induced fission product yields, and spontaneous fission product yields
+sublibraries. I used the thermal neutron scattering sublibrary from the
+ENDF/B-VII.0 library, which contains the same data as what is in the
+ENDF/B-VII.1 library. The thermal neutron scattering sublibray in ENDF/B-VII.1
+uses a continuous representation that \SerpentTWO v2.1.32 does not support.
+
+To ensure data consistency, I donwloaded the \verb,.ace, files from the NNDC
+website, then processed these files into HDF5 format using the \OpenMC Python
+API. I also used the Python API to create a depletion chain from the
+spontaneous and delayed fission yield data, decay data, and neutron cross
+secttion data from the ENDF B/VII.1 library. Interested readers are able to
+create this library files by running the scripts located at
+\url{https://github.com/arfc/saltproc/tree/master/scripts/xsdata}.\footnote{See
+the \verb,README.md, in the parent directory for user instructions}.
+
+We assumed material temperatures to be around 900K. For cross section data
+unavailable at that temperature, we used interpolation between 800K and 1000
+to get reasonable values.
+ 
+
+\section{Comparison of OpenMC to Serpent}
+\label{sec:openmc-vs-serpent}
+
