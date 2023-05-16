@@ -1,0 +1,1 @@
+qsub -I -P imsr -l select=96:ncpus=48:mpiprocs=24:ompthreads=2 -l walltime=6:0:0

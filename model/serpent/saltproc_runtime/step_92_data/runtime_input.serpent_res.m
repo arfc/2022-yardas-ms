@@ -19,8 +19,8 @@ WORKING_DIRECTORY         (idx, [1: 68])  = '/home/ooblack/projects/2022-yardas-
 HOSTNAME                  (idx, [1:  9])  = 'beloyarsk' ;
 CPU_TYPE                  (idx, [1: 39])  = 'Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz' ;
 CPU_MHZ                   (idx, 1)        = 240.0 ;
-START_DATE                (idx, [1: 24])  = 'Wed Mar 29 06:16:53 2023' ;
-COMPLETE_DATE             (idx, [1: 24])  = 'Wed Mar 29 06:41:47 2023' ;
+START_DATE                (idx, [1: 24])  = 'Sat May 13 08:24:04 2023' ;
+COMPLETE_DATE             (idx, [1: 24])  = 'Sat May 13 08:48:10 2023' ;
 
 % Run parameters:
 
@@ -29,7 +29,7 @@ CYCLES                    (idx, 1)        = 120 ;
 SKIP                      (idx, 1)        = 80 ;
 BATCH_INTERVAL            (idx, 1)        = 1 ;
 SRC_NORM_MODE             (idx, 1)        = 2 ;
-SEED                      (idx, 1)        = 1680088613634 ;
+SEED                      (idx, 1)        = 1683984244942 ;
 UFS_MODE                  (idx, 1)        = 0 ;
 UFS_ORDER                 (idx, 1)        = 1.00000;
 NEUTRON_TRANSPORT_MODE    (idx, 1)        = 1 ;
@@ -56,7 +56,7 @@ MPI_TASKS                 (idx, 1)        = 1 ;
 OMP_THREADS               (idx, 1)        = 12 ;
 MPI_REPRODUCIBILITY       (idx, 1)        = 0 ;
 OMP_REPRODUCIBILITY       (idx, 1)        = 1 ;
-OMP_HISTORY_PROFILE       (idx, [1:  12]) = [  1.00796E+00  1.00036E+00  1.00014E+00  9.77273E-01  1.00374E+00  1.00087E+00  9.95222E-01  1.00493E+00  1.00143E+00  1.00253E+00  1.00051E+00  1.00503E+00  ];
+OMP_HISTORY_PROFILE       (idx, [1:  12]) = [  9.95353E-01  9.99005E-01  9.98323E-01  1.00306E+00  1.00086E+00  9.99620E-01  1.00097E+00  1.00114E+00  1.00347E+00  9.96184E-01  1.00277E+00  9.99255E-01  ];
 SHARE_BUF_ARRAY           (idx, 1)        = 0 ;
 SHARE_RES2_ARRAY          (idx, 1)        = 1 ;
 OMP_SHARED_QUEUE_LIM      (idx, 1)        = 0 ;
@@ -71,47 +71,47 @@ BRA_DATA_FILE_PATH        (idx, [1:  3])  = 'N/A' ;
 
 % Collision and reaction sampling (neutrons/photons):
 
-MIN_MACROXS               (idx, [1:   4]) = [  5.00000E-02 1.9E-09  0.00000E+00 0.0E+00 ];
+MIN_MACROXS               (idx, [1:   4]) = [  5.00000E-02 0.0E+00  0.00000E+00 0.0E+00 ];
 DT_THRESH                 (idx, [1:  2])  = [  9.00000E-01  9.00000E-01 ];
-ST_FRAC                   (idx, [1:   4]) = [  1.43305E-02 0.00037  0.00000E+00 0.0E+00 ];
-DT_FRAC                   (idx, [1:   4]) = [  9.85669E-01 5.4E-06  0.00000E+00 0.0E+00 ];
-DT_EFF                    (idx, [1:   4]) = [  3.48463E-01 2.8E-05  0.00000E+00 0.0E+00 ];
+ST_FRAC                   (idx, [1:   4]) = [  1.43198E-02 0.00036  0.00000E+00 0.0E+00 ];
+DT_FRAC                   (idx, [1:   4]) = [  9.85680E-01 5.2E-06  0.00000E+00 0.0E+00 ];
+DT_EFF                    (idx, [1:   4]) = [  3.48449E-01 2.7E-05  0.00000E+00 0.0E+00 ];
 REA_SAMPLING_EFF          (idx, [1:   4]) = [  1.00000E+00 0.0E+00  0.00000E+00 0.0E+00 ];
 REA_SAMPLING_FAIL         (idx, [1:   4]) = [  0.00000E+00 0.0E+00  0.00000E+00 0.0E+00 ];
-TOT_COL_EFF               (idx, [1:   4]) = [  3.53098E-01 3.0E-05  0.00000E+00 0.0E+00 ];
-AVG_TRACKING_LOOPS        (idx, [1:   8]) = [  4.35893E+00 0.00020  0.00000E+00 0.0E+00  0.00000E+00 0.0E+00  0.00000E+00 0.0E+00 ];
-AVG_TRACKS                (idx, [1:   4]) = [  1.51236E+02 0.00026  0.00000E+00 0.0E+00 ];
-AVG_REAL_COL              (idx, [1:   4]) = [  1.51235E+02 0.00026  0.00000E+00 0.0E+00 ];
-AVG_VIRT_COL              (idx, [1:   4]) = [  2.77074E+02 0.00029  0.00000E+00 0.0E+00 ];
-AVG_SURF_CROSS            (idx, [1:   4]) = [  3.13627E+00 0.00039  0.00000E+00 0.0E+00 ];
+TOT_COL_EFF               (idx, [1:   4]) = [  3.53083E-01 2.8E-05  0.00000E+00 0.0E+00 ];
+AVG_TRACKING_LOOPS        (idx, [1:   8]) = [  4.35923E+00 0.00019  0.00000E+00 0.0E+00  0.00000E+00 0.0E+00  0.00000E+00 0.0E+00 ];
+AVG_TRACKS                (idx, [1:   4]) = [  1.51255E+02 0.00025  0.00000E+00 0.0E+00 ];
+AVG_REAL_COL              (idx, [1:   4]) = [  1.51254E+02 0.00025  0.00000E+00 0.0E+00 ];
+AVG_VIRT_COL              (idx, [1:   4]) = [  2.77127E+02 0.00027  0.00000E+00 0.0E+00 ];
+AVG_SURF_CROSS            (idx, [1:   4]) = [  3.13240E+00 0.00039  0.00000E+00 0.0E+00 ];
 LOST_PARTICLES            (idx, 1)        = 0 ;
 
 % Run statistics:
 
 CYCLE_IDX                 (idx, 1)        = 120 ;
-SIMULATED_HISTORIES       (idx, 1)        = 12000599 ;
-MEAN_POP_SIZE             (idx, [1:  2])  = [  1.00005E+05 0.00048 ];
-MEAN_POP_WGT              (idx, [1:  2])  = [  1.00005E+05 0.00048 ];
+SIMULATED_HISTORIES       (idx, 1)        = 12000395 ;
+MEAN_POP_SIZE             (idx, [1:  2])  = [  1.00003E+05 0.00046 ];
+MEAN_POP_WGT              (idx, [1:  2])  = [  1.00003E+05 0.00046 ];
 SIMULATION_COMPLETED      (idx, 1)        = 1 ;
 
 % Running times:
 
-TOT_CPU_TIME              (idx, 1)        =  2.80814E+02 ;
-RUNNING_TIME              (idx, 1)        =  2.49001E+01 ;
-INIT_TIME                 (idx, [1:  2])  = [  9.17083E-01  9.17083E-01 ];
-PROCESS_TIME              (idx, [1:  2])  = [  2.80000E-03  2.80000E-03 ];
-TRANSPORT_CYCLE_TIME      (idx, [1:  3])  = [  2.39802E+01  2.39802E+01  0.00000E+00 ];
+TOT_CPU_TIME              (idx, 1)        =  2.76794E+02 ;
+RUNNING_TIME              (idx, 1)        =  2.40883E+01 ;
+INIT_TIME                 (idx, [1:  2])  = [  9.10350E-01  9.10350E-01 ];
+PROCESS_TIME              (idx, [1:  2])  = [  2.51667E-03  2.51667E-03 ];
+TRANSPORT_CYCLE_TIME      (idx, [1:  3])  = [  2.31753E+01  2.31753E+01  0.00000E+00 ];
 BURNUP_CYCLE_TIME         (idx, [1:  2])  = [  0.00000E+00  0.00000E+00 ];
 BATEMAN_SOLUTION_TIME     (idx, [1:  2])  = [  0.00000E+00  0.00000E+00 ];
 MPI_OVERHEAD_TIME         (idx, [1:  2])  = [  0.00000E+00  0.00000E+00 ];
-ESTIMATED_RUNNING_TIME    (idx, [1:  2])  = [  2.48999E+01  0.00000E+00 ];
-CPU_USAGE                 (idx, 1)        = 11.27763 ;
-TRANSPORT_CPU_USAGE       (idx, [1:   2]) = [  1.16678E+01 0.00281 ];
-OMP_PARALLEL_FRAC         (idx, 1)        =  9.51230E-01 ;
+ESTIMATED_RUNNING_TIME    (idx, [1:  2])  = [  2.40881E+01  0.00000E+00 ];
+CPU_USAGE                 (idx, 1)        = 11.49081 ;
+TRANSPORT_CPU_USAGE       (idx, [1:   2]) = [  1.19002E+01 0.00019 ];
+OMP_PARALLEL_FRAC         (idx, 1)        =  9.52273E-01 ;
 
 % Memory usage:
 
-AVAIL_MEM                 (idx, 1)        = 31898.95 ;
+AVAIL_MEM                 (idx, 1)        = 31898.94 ;
 ALLOC_MEMSIZE             (idx, 1)        = 19056.27;
 MEMSIZE                   (idx, 1)        = 18918.58;
 XS_MEMSIZE                (idx, 1)        = 18191.37;
@@ -177,33 +177,33 @@ EDEP_CAPT_E               (idx, 1)        =  0.00000E+00 ;
 
 % Radioactivity data:
 
-TOT_ACTIVITY              (idx, 1)        =  1.87639E+20 ;
-TOT_DECAY_HEAT            (idx, 1)        =  5.12203E+07 ;
-TOT_SF_RATE               (idx, 1)        =  7.28538E+02 ;
-ACTINIDE_ACTIVITY         (idx, 1)        =  7.81735E+19 ;
-ACTINIDE_DECAY_HEAT       (idx, 1)        =  5.66653E+06 ;
-FISSION_PRODUCT_ACTIVITY  (idx, 1)        =  1.05982E+20 ;
-FISSION_PRODUCT_DECAY_HEAT(idx, 1)        =  4.20563E+07 ;
-INHALATION_TOXICITY       (idx, 1)        =  6.13059E+10 ;
-INGESTION_TOXICITY        (idx, 1)        =  3.63167E+10 ;
-ACTINIDE_INH_TOX          (idx, 1)        =  4.99575E+09 ;
-ACTINIDE_ING_TOX          (idx, 1)        =  5.99183E+07 ;
-FISSION_PRODUCT_INH_TOX   (idx, 1)        =  5.63089E+10 ;
-FISSION_PRODUCT_ING_TOX   (idx, 1)        =  3.62567E+10 ;
-SR90_ACTIVITY             (idx, 1)        =  2.68964E+16 ;
+TOT_ACTIVITY              (idx, 1)        =  1.87681E+20 ;
+TOT_DECAY_HEAT            (idx, 1)        =  5.12212E+07 ;
+TOT_SF_RATE               (idx, 1)        =  7.28446E+02 ;
+ACTINIDE_ACTIVITY         (idx, 1)        =  7.82187E+19 ;
+ACTINIDE_DECAY_HEAT       (idx, 1)        =  5.66987E+06 ;
+FISSION_PRODUCT_ACTIVITY  (idx, 1)        =  1.05981E+20 ;
+FISSION_PRODUCT_DECAY_HEAT(idx, 1)        =  4.20560E+07 ;
+INHALATION_TOXICITY       (idx, 1)        =  6.13040E+10 ;
+INGESTION_TOXICITY        (idx, 1)        =  3.63161E+10 ;
+ACTINIDE_INH_TOX          (idx, 1)        =  4.99509E+09 ;
+ACTINIDE_ING_TOX          (idx, 1)        =  5.98764E+07 ;
+FISSION_PRODUCT_INH_TOX   (idx, 1)        =  5.63076E+10 ;
+FISSION_PRODUCT_ING_TOX   (idx, 1)        =  3.62562E+10 ;
+SR90_ACTIVITY             (idx, 1)        =  2.68946E+16 ;
 TE132_ACTIVITY            (idx, 1)        =  0.00000E+00 ;
-I131_ACTIVITY             (idx, 1)        =  8.47872E+16 ;
+I131_ACTIVITY             (idx, 1)        =  8.47869E+16 ;
 I132_ACTIVITY             (idx, 1)        =  2.62706E+17 ;
-CS134_ACTIVITY            (idx, 1)        =  6.54661E+14 ;
-CS137_ACTIVITY            (idx, 1)        =  2.55620E+16 ;
-PHOTON_DECAY_SOURCE       (idx, 1)        =  1.58543E+20 ;
-NEUTRON_DECAY_SOURCE      (idx, 1)        =  2.06290E+17 ;
-ALPHA_DECAY_SOURCE        (idx, 1)        =  1.53467E+18 ;
-ELECTRON_DECAY_SOURCE     (idx, 1)        =  3.68312E+20 ;
+CS134_ACTIVITY            (idx, 1)        =  6.54723E+14 ;
+CS137_ACTIVITY            (idx, 1)        =  2.55605E+16 ;
+PHOTON_DECAY_SOURCE       (idx, 1)        =  1.58553E+20 ;
+NEUTRON_DECAY_SOURCE      (idx, 1)        =  2.06285E+17 ;
+ALPHA_DECAY_SOURCE        (idx, 1)        =  1.53438E+18 ;
+ELECTRON_DECAY_SOURCE     (idx, 1)        =  3.68430E+20 ;
 
 % Normalization coefficient:
 
-NORM_COEF                 (idx, [1:   4]) = [  1.66910E+15 0.00036  0.00000E+00 0.0E+00 ];
+NORM_COEF                 (idx, [1:   4]) = [  1.66841E+15 0.00034  0.00000E+00 0.0E+00 ];
 
 % Parameters for burnup calculation:
 
@@ -213,145 +213,145 @@ BURN_STEP                 (idx, 1)        = 0 ;
 BURN_RANDOMIZE_DATA       (idx, [1:  3])  = [ 0 0 0 ];
 BURNUP                    (idx, [1:  2])  = [  0.00000E+00  0.00000E+00 ];
 BURN_DAYS                 (idx, [1:  2])  = [  0.00000E+00  0.00000E+00 ];
-FIMA                      (idx, [1:  3])  = [  0.00000E+00  0.00000E+00  1.88210E+29 ];
+FIMA                      (idx, [1:  3])  = [  0.00000E+00  0.00000E+00  1.88179E+29 ];
 
 % Analog reaction rate estimators:
 
-CONVERSION_RATIO          (idx, [1:   2]) = [  1.00393E+00 0.00063 ];
-TH232_FISS                (idx, [1:   4]) = [  2.61224E+17 0.00656  3.71615E-03 0.00656 ];
-U233_FISS                 (idx, [1:   4]) = [  6.98134E+19 0.00046  9.93142E-01 3.5E-05 ];
-U235_FISS                 (idx, [1:   4]) = [  2.13005E+17 0.00830  3.03011E-03 0.00828 ];
-TH232_CAPT                (idx, [1:   4]) = [  7.76475E+19 0.00054  8.00342E-01 0.00019 ];
-U233_CAPT                 (idx, [1:   4]) = [  8.49557E+18 0.00126  8.75677E-02 0.00121 ];
-U235_CAPT                 (idx, [1:   4]) = [  4.60599E+16 0.01714  4.74778E-04 0.01715 ];
-SM149_CAPT                (idx, [1:   4]) = [  1.24002E+16 0.03681  1.27795E-04 0.03676 ];
+CONVERSION_RATIO          (idx, [1:   2]) = [  1.00437E+00 0.00063 ];
+TH232_FISS                (idx, [1:   4]) = [  2.58862E+17 0.00794  3.68407E-03 0.00789 ];
+U233_FISS                 (idx, [1:   4]) = [  6.97800E+19 0.00040  9.93132E-01 4.0E-05 ];
+U235_FISS                 (idx, [1:   4]) = [  2.15445E+17 0.00791  3.06631E-03 0.00790 ];
+TH232_CAPT                (idx, [1:   4]) = [  7.76263E+19 0.00053  8.00415E-01 0.00017 ];
+U233_CAPT                 (idx, [1:   4]) = [  8.47150E+18 0.00124  8.73512E-02 0.00117 ];
+U235_CAPT                 (idx, [1:   4]) = [  4.75045E+16 0.01867  4.89861E-04 0.01869 ];
+SM149_CAPT                (idx, [1:   4]) = [  1.14555E+16 0.03847  1.18125E-04 0.03847 ];
 
 % Neutron balance (particles/weight):
 
 BALA_SRC_NEUTRON_SRC     (idx, [1:  2])  = [ 0 0.00000E+00 ];
-BALA_SRC_NEUTRON_FISS    (idx, [1:  2])  = [ 12000599 1.20000E+07 ];
-BALA_SRC_NEUTRON_NXN     (idx, [1:  2])  = [ 0 3.29451E+04 ];
+BALA_SRC_NEUTRON_FISS    (idx, [1:  2])  = [ 12000395 1.20000E+07 ];
+BALA_SRC_NEUTRON_NXN     (idx, [1:  2])  = [ 0 3.29551E+04 ];
 BALA_SRC_NEUTRON_VR      (idx, [1:  2])  = [ 0 0.00000E+00 ];
-BALA_SRC_NEUTRON_TOT     (idx, [1:  2])  = [ 12000599 1.20329E+07 ];
+BALA_SRC_NEUTRON_TOT     (idx, [1:  2])  = [ 12000395 1.20330E+07 ];
 
-BALA_LOSS_NEUTRON_CAPT    (idx, [1:  2])  = [ 6955969 6.97510E+06 ];
-BALA_LOSS_NEUTRON_FISS    (idx, [1:  2])  = [ 5040725 5.05393E+06 ];
-BALA_LOSS_NEUTRON_LEAK    (idx, [1:  2])  = [ 3905 3.91934E+03 ];
+BALA_LOSS_NEUTRON_CAPT    (idx, [1:  2])  = [ 6956247 6.97544E+06 ];
+BALA_LOSS_NEUTRON_FISS    (idx, [1:  2])  = [ 5040311 5.05366E+06 ];
+BALA_LOSS_NEUTRON_LEAK    (idx, [1:  2])  = [ 3837 3.85974E+03 ];
 BALA_LOSS_NEUTRON_CUT     (idx, [1:  2])  = [ 0 0.00000E+00 ];
 BALA_LOSS_NEUTRON_ERR     (idx, [1:  2])  = [ 0 0.00000E+00 ];
-BALA_LOSS_NEUTRON_TOT     (idx, [1:  2])  = [ 12000599 1.20329E+07 ];
+BALA_LOSS_NEUTRON_TOT     (idx, [1:  2])  = [ 12000395 1.20330E+07 ];
 
-BALA_NEUTRON_DIFF         (idx, [1:  2])  = [ 0 2.70270E-06 ];
+BALA_NEUTRON_DIFF         (idx, [1:  2])  = [ 0 1.98185E-06 ];
 
 % Normalized total reaction rates (neutrons):
 
 TOT_POWER                 (idx, [1:   6]) = [  2.25000E+09 0.0E+00  2.25000E+09 0.0E+00  0.00000E+00 0.0E+00 ];
-TOT_POWDENS               (idx, [1:   6]) = [  3.10230E-02 0.0E+00  3.10230E-02 0.0E+00  0.00000E+00 0.0E+00 ];
-TOT_GENRATE               (idx, [1:   6]) = [  1.75515E+20 3.3E-07  1.75515E+20 3.3E-07  0.00000E+00 0.0E+00 ];
-TOT_FISSRATE              (idx, [1:   6]) = [  7.02895E+19 3.9E-08  7.02895E+19 3.9E-08  0.00000E+00 0.0E+00 ];
-TOT_CAPTRATE              (idx, [1:   6]) = [  9.69649E+19 0.00029  9.06377E+19 0.00026  6.32711E+18 0.00141 ];
-TOT_ABSRATE               (idx, [1:   6]) = [  1.67254E+20 0.00017  1.60927E+20 0.00015  6.32711E+18 0.00141 ];
-TOT_SRCRATE               (idx, [1:   6]) = [  1.66910E+20 0.00036  1.66910E+20 0.00036  0.00000E+00 0.0E+00 ];
-TOT_FLUX                  (idx, [1:   6]) = [  6.28979E+22 0.00029  9.83511E+21 0.00032  5.30627E+22 0.00031 ];
+TOT_POWDENS               (idx, [1:   6]) = [  3.10281E-02 0.0E+00  3.10281E-02 0.0E+00  0.00000E+00 0.0E+00 ];
+TOT_GENRATE               (idx, [1:   6]) = [  1.75515E+20 3.2E-07  1.75515E+20 3.2E-07  0.00000E+00 0.0E+00 ];
+TOT_FISSRATE              (idx, [1:   6]) = [  7.02895E+19 4.0E-08  7.02895E+19 4.0E-08  0.00000E+00 0.0E+00 ];
+TOT_CAPTRATE              (idx, [1:   6]) = [  9.69485E+19 0.00028  9.06272E+19 0.00026  6.32129E+18 0.00140 ];
+TOT_ABSRATE               (idx, [1:   6]) = [  1.67238E+20 0.00016  1.60917E+20 0.00015  6.32129E+18 0.00140 ];
+TOT_SRCRATE               (idx, [1:   6]) = [  1.66841E+20 0.00034  1.66841E+20 0.00034  0.00000E+00 0.0E+00 ];
+TOT_FLUX                  (idx, [1:   6]) = [  6.28820E+22 0.00028  9.83848E+21 0.00036  5.30435E+22 0.00029 ];
 TOT_PHOTON_PRODRATE       (idx, [1:   4]) = [  0.00000E+00 0.0E+00  0.00000E+00 0.0E+00 ];
-TOT_LEAKRATE              (idx, [1:   2]) = [  5.45192E+16 0.01527 ];
+TOT_LEAKRATE              (idx, [1:   2]) = [  5.36633E+16 0.01587 ];
 ALBEDO_LEAKRATE           (idx, [1:   2]) = [  0.00000E+00 0.0E+00 ];
-TOT_LOSSRATE              (idx, [1:   2]) = [  1.67309E+20 0.00017 ];
+TOT_LOSSRATE              (idx, [1:   2]) = [  1.67292E+20 0.00016 ];
 TOT_CUTRATE               (idx, [1:   2]) = [  0.00000E+00 0.0E+00 ];
-TOT_RR                    (idx, [1:   2]) = [  2.53093E+22 0.00030 ];
-INI_FMASS                 (idx, 1)        =  7.25268E+04 ;
-TOT_FMASS                 (idx, 1)        =  7.25268E+04 ;
-INI_BURN_FMASS            (idx, 1)        =  7.25268E+04 ;
-TOT_BURN_FMASS            (idx, 1)        =  7.25268E+04 ;
+TOT_RR                    (idx, [1:   2]) = [  2.53020E+22 0.00029 ];
+INI_FMASS                 (idx, 1)        =  7.25148E+04 ;
+TOT_FMASS                 (idx, 1)        =  7.25148E+04 ;
+INI_BURN_FMASS            (idx, 1)        =  7.25148E+04 ;
+TOT_BURN_FMASS            (idx, 1)        =  7.25148E+04 ;
 
 % Six-factor formula:
 
-SIX_FF_ETA                (idx, [1:   2]) = [  1.36277E+00 0.00036 ];
-SIX_FF_F                  (idx, [1:   2]) = [  9.44184E-01 0.00011 ];
-SIX_FF_P                  (idx, [1:   2]) = [  6.15706E-01 0.00027 ];
-SIX_FF_EPSILON            (idx, [1:   2]) = [  1.32790E+00 0.00027 ];
-SIX_FF_LF                 (idx, [1:   2]) = [  9.99969E-01 1.5E-06 ];
-SIX_FF_LT                 (idx, [1:   2]) = [  9.99704E-01 4.6E-06 ];
-SIX_FF_KINF               (idx, [1:   2]) = [  1.05199E+00 0.00038 ];
-SIX_FF_KEFF               (idx, [1:   2]) = [  1.05165E+00 0.00038 ];
+SIX_FF_ETA                (idx, [1:   2]) = [  1.36256E+00 0.00035 ];
+SIX_FF_F                  (idx, [1:   2]) = [  9.44061E-01 9.3E-05 ];
+SIX_FF_P                  (idx, [1:   2]) = [  6.15480E-01 0.00026 ];
+SIX_FF_EPSILON            (idx, [1:   2]) = [  1.32868E+00 0.00026 ];
+SIX_FF_LF                 (idx, [1:   2]) = [  9.99969E-01 1.6E-06 ];
+SIX_FF_LT                 (idx, [1:   2]) = [  9.99709E-01 4.8E-06 ];
+SIX_FF_KINF               (idx, [1:   2]) = [  1.05193E+00 0.00036 ];
+SIX_FF_KEFF               (idx, [1:   2]) = [  1.05160E+00 0.00036 ];
 
 % Fission neutron and energy production:
 
 NUBAR                     (idx, [1:   2]) = [  2.49703E+00 3.0E-07 ];
-FISSE                     (idx, [1:   2]) = [  1.99794E+02 3.9E-08 ];
+FISSE                     (idx, [1:   2]) = [  1.99794E+02 4.0E-08 ];
 
 % Criticality eigenvalues:
 
-ANA_KEFF                  (idx, [1:   6]) = [  1.05181E+00 0.00039  1.04844E+00 0.00038  3.21153E-03 0.00864 ];
-IMP_KEFF                  (idx, [1:   2]) = [  1.05194E+00 0.00017 ];
-COL_KEFF                  (idx, [1:   2]) = [  1.05157E+00 0.00036 ];
-ABS_KEFF                  (idx, [1:   2]) = [  1.05194E+00 0.00017 ];
-ABS_KINF                  (idx, [1:   2]) = [  1.05228E+00 0.00017 ];
+ANA_KEFF                  (idx, [1:   6]) = [  1.05180E+00 0.00035  1.04846E+00 0.00036  3.13566E-03 0.00812 ];
+IMP_KEFF                  (idx, [1:   2]) = [  1.05206E+00 0.00016 ];
+COL_KEFF                  (idx, [1:   2]) = [  1.05200E+00 0.00034 ];
+ABS_KEFF                  (idx, [1:   2]) = [  1.05206E+00 0.00016 ];
+ABS_KINF                  (idx, [1:   2]) = [  1.05240E+00 0.00016 ];
 GEOM_ALBEDO               (idx, [1:   6]) = [  1.00000E+00 0.0E+00  1.00000E+00 0.0E+00  1.00000E+00 0.0E+00 ];
 
 % ALF (Average lethargy of neutrons causing fission):
 % Based on E0 = 2.000000E+01 MeV
 
-ANA_ALF                   (idx, [1:   2]) = [  1.79511E+01 7.0E-05 ];
-IMP_ALF                   (idx, [1:   2]) = [  1.79515E+01 3.0E-05 ];
+ANA_ALF                   (idx, [1:   2]) = [  1.79487E+01 6.7E-05 ];
+IMP_ALF                   (idx, [1:   2]) = [  1.79506E+01 3.6E-05 ];
 
 % EALF (Energy corresponding to average lethargy of neutrons causing fission):
 
-ANA_EALF                  (idx, [1:   2]) = [  3.19884E-07 0.00126 ];
-IMP_EALF                  (idx, [1:   2]) = [  3.19746E-07 0.00055 ];
+ANA_EALF                  (idx, [1:   2]) = [  3.20653E-07 0.00120 ];
+IMP_EALF                  (idx, [1:   2]) = [  3.20047E-07 0.00066 ];
 
 % AFGE (Average energy of neutrons causing fission):
 
-ANA_AFGE                  (idx, [1:   2]) = [  1.58856E-02 0.00636 ];
-IMP_AFGE                  (idx, [1:   2]) = [  1.57858E-02 0.00090 ];
+ANA_AFGE                  (idx, [1:   2]) = [  1.58271E-02 0.00697 ];
+IMP_AFGE                  (idx, [1:   2]) = [  1.58128E-02 0.00087 ];
 
 % Forward-weighted delayed neutron parameters:
 
 PRECURSOR_GROUPS          (idx, 1)        = 6 ;
-FWD_ANA_BETA_ZERO         (idx, [1:  14]) = [  2.93286E-03 0.00570  2.44772E-04 0.01732  6.52369E-04 0.01263  5.25605E-04 0.01218  1.04345E-03 0.00897  3.44401E-04 0.01435  1.22265E-04 0.02330 ];
-FWD_ANA_LAMBDA            (idx, [1:  14]) = [  3.30532E-01 0.00715  1.29046E-02 9.0E-05  3.47094E-02 7.2E-05  1.19330E-01 2.8E-05  2.87344E-01 0.00018  8.03457E-01 0.00166  2.48578E+00 0.00185 ];
+FWD_ANA_BETA_ZERO         (idx, [1:  14]) = [  2.86074E-03 0.00505  2.40163E-04 0.01825  6.47096E-04 0.01210  5.00878E-04 0.01282  1.01652E-03 0.00884  3.33040E-04 0.01530  1.23049E-04 0.02468 ];
+FWD_ANA_LAMBDA            (idx, [1:  14]) = [  3.32733E-01 0.00824  1.29063E-02 7.2E-05  3.47097E-02 7.0E-05  1.19322E-01 2.9E-05  2.87357E-01 0.00017  8.03656E-01 0.00156  2.49395E+00 0.00212 ];
 
 % Beta-eff using Meulekamp's method:
 
-ADJ_MEULEKAMP_BETA_EFF    (idx, [1:  14]) = [  3.03359E-03 0.00791  2.54313E-04 0.02710  6.70842E-04 0.01832  5.50728E-04 0.02046  1.07178E-03 0.01395  3.57480E-04 0.02200  1.28450E-04 0.03694 ];
-ADJ_MEULEKAMP_LAMBDA      (idx, [1:  14]) = [  3.31812E-01 0.01183  1.29032E-02 0.00014  3.47098E-02 0.00012  1.19331E-01 4.0E-05  2.87361E-01 0.00027  8.00804E-01 0.00196  2.48057E+00 0.00261 ];
+ADJ_MEULEKAMP_BETA_EFF    (idx, [1:  14]) = [  3.01480E-03 0.00795  2.62799E-04 0.02543  6.80491E-04 0.01992  5.28764E-04 0.02058  1.07288E-03 0.01427  3.46923E-04 0.02259  1.22947E-04 0.03827 ];
+ADJ_MEULEKAMP_LAMBDA      (idx, [1:  14]) = [  3.25927E-01 0.01188  1.29075E-02 9.1E-05  3.47094E-02 9.7E-05  1.19325E-01 4.7E-05  2.87315E-01 0.00025  8.04687E-01 0.00265  2.49267E+00 0.00321 ];
 
 % Adjoint weighted time constants using Nauchi's method:
 
 IFP_CHAIN_LENGTH          (idx, 1)        = 15 ;
-ADJ_NAUCHI_GEN_TIME       (idx, [1:   6]) = [  3.69808E-04 0.00082  3.69843E-04 0.00082  3.59316E-04 0.01482 ];
-ADJ_NAUCHI_LIFETIME       (idx, [1:   6]) = [  3.88960E-04 0.00074  3.88997E-04 0.00074  3.77896E-04 0.01477 ];
-ADJ_NAUCHI_BETA_EFF       (idx, [1:  14]) = [  3.05685E-03 0.00853  2.57549E-04 0.02716  6.83814E-04 0.01929  5.49802E-04 0.02150  1.08557E-03 0.01418  3.57791E-04 0.02405  1.22322E-04 0.04076 ];
-ADJ_NAUCHI_LAMBDA         (idx, [1:  14]) = [  3.25918E-01 0.01244  1.29057E-02 0.00014  3.47104E-02 9.8E-05  1.19331E-01 4.7E-05  2.87243E-01 0.00027  8.00655E-01 0.00213  2.49153E+00 0.00412 ];
+ADJ_NAUCHI_GEN_TIME       (idx, [1:   6]) = [  3.69829E-04 0.00085  3.69836E-04 0.00086  3.67540E-04 0.01244 ];
+ADJ_NAUCHI_LIFETIME       (idx, [1:   6]) = [  3.88981E-04 0.00077  3.88988E-04 0.00078  3.86568E-04 0.01242 ];
+ADJ_NAUCHI_BETA_EFF       (idx, [1:  14]) = [  2.98251E-03 0.00805  2.61415E-04 0.02575  6.64955E-04 0.01725  5.21579E-04 0.02202  1.05793E-03 0.01582  3.55933E-04 0.02375  1.20693E-04 0.03817 ];
+ADJ_NAUCHI_LAMBDA         (idx, [1:  14]) = [  3.28029E-01 0.01294  1.29051E-02 0.00013  3.47095E-02 0.00010  1.19321E-01 5.1E-05  2.87295E-01 0.00025  8.02663E-01 0.00266  2.48860E+00 0.00312 ];
 
 % Adjoint weighted time constants using IFP:
 
-ADJ_IFP_GEN_TIME          (idx, [1:   6]) = [  3.76194E-04 0.00191  3.76217E-04 0.00191  3.75043E-04 0.03478 ];
-ADJ_IFP_LIFETIME          (idx, [1:   6]) = [  3.95673E-04 0.00183  3.95697E-04 0.00183  3.94389E-04 0.03471 ];
-ADJ_IFP_IMP_BETA_EFF      (idx, [1:  14]) = [  2.95030E-03 0.02880  2.60004E-04 0.08710  6.81760E-04 0.05364  5.03681E-04 0.06961  1.00437E-03 0.04978  3.55399E-04 0.08670  1.45088E-04 0.13191 ];
-ADJ_IFP_IMP_LAMBDA        (idx, [1:  14]) = [  3.46244E-01 0.04215  1.29094E-02 0.00011  3.47247E-02 0.00018  1.19306E-01 8.0E-05  2.86813E-01 0.00063  7.98349E-01 0.00574  2.47648E+00 0.00618 ];
-ADJ_IFP_ANA_BETA_EFF      (idx, [1:  14]) = [  2.97922E-03 0.02787  2.72214E-04 0.08410  6.98332E-04 0.05303  4.97955E-04 0.06584  1.00254E-03 0.04849  3.57007E-04 0.08240  1.51170E-04 0.13012 ];
-ADJ_IFP_ANA_LAMBDA        (idx, [1:  14]) = [  3.47170E-01 0.04001  1.29090E-02 0.00013  3.47241E-02 0.00018  1.19303E-01 7.3E-05  2.86788E-01 0.00058  7.99512E-01 0.00596  2.47714E+00 0.00648 ];
-ADJ_IFP_ROSSI_ALPHA       (idx, [1:   2]) = [ -7.85332E+00 0.02913 ];
+ADJ_IFP_GEN_TIME          (idx, [1:   6]) = [  3.75080E-04 0.00180  3.75096E-04 0.00181  3.70521E-04 0.03091 ];
+ADJ_IFP_LIFETIME          (idx, [1:   6]) = [  3.94504E-04 0.00176  3.94521E-04 0.00177  3.89723E-04 0.03091 ];
+ADJ_IFP_IMP_BETA_EFF      (idx, [1:  14]) = [  3.08389E-03 0.02697  2.30788E-04 0.09108  6.99443E-04 0.05958  5.36191E-04 0.07029  1.12253E-03 0.04689  3.73318E-04 0.06910  1.21620E-04 0.13499 ];
+ADJ_IFP_IMP_LAMBDA        (idx, [1:  14]) = [  3.30462E-01 0.04188  1.29108E-02 1.4E-05  3.46982E-02 0.00039  1.19305E-01 0.00013  2.87039E-01 0.00076  8.03003E-01 0.00713  2.45751E+00 0.00541 ];
+ADJ_IFP_ANA_BETA_EFF      (idx, [1:  14]) = [  3.08874E-03 0.02550  2.38300E-04 0.08648  7.08880E-04 0.05585  5.24474E-04 0.06807  1.12233E-03 0.04339  3.69412E-04 0.06640  1.25340E-04 0.12723 ];
+ADJ_IFP_ANA_LAMBDA        (idx, [1:  14]) = [  3.30962E-01 0.03907  1.29102E-02 4.3E-05  3.46980E-02 0.00038  1.19305E-01 0.00013  2.86962E-01 0.00064  8.04562E-01 0.00769  2.45632E+00 0.00534 ];
+ADJ_IFP_ROSSI_ALPHA       (idx, [1:   2]) = [ -8.21943E+00 0.02679 ];
 
 % Adjoint weighted time constants using perturbation technique:
 
-ADJ_PERT_GEN_TIME         (idx, [1:   2]) = [  3.72263E-04 0.00052 ];
-ADJ_PERT_LIFETIME         (idx, [1:   2]) = [  3.91542E-04 0.00035 ];
-ADJ_PERT_BETA_EFF         (idx, [1:   2]) = [  3.07673E-03 0.00595 ];
-ADJ_PERT_ROSSI_ALPHA      (idx, [1:   2]) = [ -8.26566E+00 0.00606 ];
+ADJ_PERT_GEN_TIME         (idx, [1:   2]) = [  3.71729E-04 0.00046 ];
+ADJ_PERT_LIFETIME         (idx, [1:   2]) = [  3.90981E-04 0.00035 ];
+ADJ_PERT_BETA_EFF         (idx, [1:   2]) = [  3.00754E-03 0.00452 ];
+ADJ_PERT_ROSSI_ALPHA      (idx, [1:   2]) = [ -8.09029E+00 0.00441 ];
 
 % Inverse neutron speed :
 
-ANA_INV_SPD               (idx, [1:   2]) = [  9.34117E-07 0.00031 ];
+ANA_INV_SPD               (idx, [1:   2]) = [  9.34238E-07 0.00032 ];
 
 % Analog slowing-down and thermal neutron lifetime (total/prompt/delayed):
 
-ANA_SLOW_TIME             (idx, [1:   6]) = [  3.05450E-05 0.00012  3.05452E-05 0.00012  3.05048E-05 0.00236 ];
-ANA_THERM_TIME            (idx, [1:   6]) = [  5.34478E-04 0.00056  5.34519E-04 0.00056  5.20702E-04 0.00945 ];
-ANA_THERM_FRAC            (idx, [1:   6]) = [  6.18514E-01 0.00027  6.18441E-01 0.00027  6.46129E-01 0.00874 ];
-ANA_DELAYED_EMTIME        (idx, [1:   2]) = [  1.58297E+01 0.01032 ];
-ANA_MEAN_NCOL             (idx, [1:   4]) = [  1.51235E+02 0.00026  1.65815E+02 0.00030 ];
+ANA_SLOW_TIME             (idx, [1:   6]) = [  3.05475E-05 0.00012  3.05475E-05 0.00012  3.05572E-05 0.00204 ];
+ANA_THERM_TIME            (idx, [1:   6]) = [  5.34809E-04 0.00055  5.34840E-04 0.00055  5.23935E-04 0.00848 ];
+ANA_THERM_FRAC            (idx, [1:   6]) = [  6.18300E-01 0.00027  6.18219E-01 0.00027  6.48312E-01 0.00813 ];
+ANA_DELAYED_EMTIME        (idx, [1:   2]) = [  1.58157E+01 0.01039 ];
+ANA_MEAN_NCOL             (idx, [1:   4]) = [  1.51254E+02 0.00025  1.65821E+02 0.00029 ];
 
 
 % Increase counter:
@@ -374,8 +374,8 @@ WORKING_DIRECTORY         (idx, [1: 68])  = '/home/ooblack/projects/2022-yardas-
 HOSTNAME                  (idx, [1:  9])  = 'beloyarsk' ;
 CPU_TYPE                  (idx, [1: 39])  = 'Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz' ;
 CPU_MHZ                   (idx, 1)        = 240.0 ;
-START_DATE                (idx, [1: 24])  = 'Wed Mar 29 06:16:53 2023' ;
-COMPLETE_DATE             (idx, [1: 24])  = 'Wed Mar 29 07:04:52 2023' ;
+START_DATE                (idx, [1: 24])  = 'Sat May 13 08:24:04 2023' ;
+COMPLETE_DATE             (idx, [1: 24])  = 'Sat May 13 09:11:05 2023' ;
 
 % Run parameters:
 
@@ -384,7 +384,7 @@ CYCLES                    (idx, 1)        = 120 ;
 SKIP                      (idx, 1)        = 80 ;
 BATCH_INTERVAL            (idx, 1)        = 1 ;
 SRC_NORM_MODE             (idx, 1)        = 2 ;
-SEED                      (idx, 1)        = 1680088613634 ;
+SEED                      (idx, 1)        = 1683984244942 ;
 UFS_MODE                  (idx, 1)        = 0 ;
 UFS_ORDER                 (idx, 1)        = 1.00000;
 NEUTRON_TRANSPORT_MODE    (idx, 1)        = 1 ;
@@ -411,7 +411,7 @@ MPI_TASKS                 (idx, 1)        = 1 ;
 OMP_THREADS               (idx, 1)        = 12 ;
 MPI_REPRODUCIBILITY       (idx, 1)        = 0 ;
 OMP_REPRODUCIBILITY       (idx, 1)        = 1 ;
-OMP_HISTORY_PROFILE       (idx, [1:  12]) = [  1.00754E+00  1.00114E+00  1.00127E+00  9.79510E-01  1.00173E+00  1.00227E+00  9.95256E-01  1.00273E+00  1.00341E+00  1.00496E+00  9.97098E-01  1.00308E+00  ];
+OMP_HISTORY_PROFILE       (idx, [1:  12]) = [  9.96000E-01  1.00067E+00  9.98299E-01  9.99591E-01  1.00304E+00  9.99147E-01  9.98760E-01  1.00304E+00  1.00533E+00  9.95941E-01  1.00291E+00  9.97276E-01  ];
 SHARE_BUF_ARRAY           (idx, 1)        = 0 ;
 SHARE_RES2_ARRAY          (idx, 1)        = 1 ;
 OMP_SHARED_QUEUE_LIM      (idx, 1)        = 0 ;
@@ -426,47 +426,47 @@ BRA_DATA_FILE_PATH        (idx, [1:  3])  = 'N/A' ;
 
 % Collision and reaction sampling (neutrons/photons):
 
-MIN_MACROXS               (idx, [1:   4]) = [  5.00000E-02 3.2E-09  0.00000E+00 0.0E+00 ];
+MIN_MACROXS               (idx, [1:   4]) = [  5.00000E-02 0.0E+00  0.00000E+00 0.0E+00 ];
 DT_THRESH                 (idx, [1:  2])  = [  9.00000E-01  9.00000E-01 ];
-ST_FRAC                   (idx, [1:   4]) = [  1.44623E-02 0.00035  0.00000E+00 0.0E+00 ];
-DT_FRAC                   (idx, [1:   4]) = [  9.85538E-01 5.1E-06  0.00000E+00 0.0E+00 ];
-DT_EFF                    (idx, [1:   4]) = [  3.48783E-01 2.3E-05  0.00000E+00 0.0E+00 ];
+ST_FRAC                   (idx, [1:   4]) = [  1.44656E-02 0.00030  0.00000E+00 0.0E+00 ];
+DT_FRAC                   (idx, [1:   4]) = [  9.85534E-01 4.4E-06  0.00000E+00 0.0E+00 ];
+DT_EFF                    (idx, [1:   4]) = [  3.48790E-01 2.6E-05  0.00000E+00 0.0E+00 ];
 REA_SAMPLING_EFF          (idx, [1:   4]) = [  1.00000E+00 0.0E+00  0.00000E+00 0.0E+00 ];
 REA_SAMPLING_FAIL         (idx, [1:   4]) = [  0.00000E+00 0.0E+00  0.00000E+00 0.0E+00 ];
-TOT_COL_EFF               (idx, [1:   4]) = [  3.53464E-01 2.4E-05  0.00000E+00 0.0E+00 ];
-AVG_TRACKING_LOOPS        (idx, [1:   8]) = [  4.35747E+00 0.00019  0.00000E+00 0.0E+00  0.00000E+00 0.0E+00  0.00000E+00 0.0E+00 ];
-AVG_TRACKS                (idx, [1:   4]) = [  1.49859E+02 0.00027  0.00000E+00 0.0E+00 ];
-AVG_REAL_COL              (idx, [1:   4]) = [  1.49859E+02 0.00027  0.00000E+00 0.0E+00 ];
-AVG_VIRT_COL              (idx, [1:   4]) = [  2.74114E+02 0.00029  0.00000E+00 0.0E+00 ];
-AVG_SURF_CROSS            (idx, [1:   4]) = [  3.12976E+00 0.00036  0.00000E+00 0.0E+00 ];
+TOT_COL_EFF               (idx, [1:   4]) = [  3.53470E-01 2.7E-05  0.00000E+00 0.0E+00 ];
+AVG_TRACKING_LOOPS        (idx, [1:   8]) = [  4.35803E+00 0.00019  0.00000E+00 0.0E+00  0.00000E+00 0.0E+00  0.00000E+00 0.0E+00 ];
+AVG_TRACKS                (idx, [1:   4]) = [  1.49876E+02 0.00022  0.00000E+00 0.0E+00 ];
+AVG_REAL_COL              (idx, [1:   4]) = [  1.49876E+02 0.00022  0.00000E+00 0.0E+00 ];
+AVG_VIRT_COL              (idx, [1:   4]) = [  2.74137E+02 0.00025  0.00000E+00 0.0E+00 ];
+AVG_SURF_CROSS            (idx, [1:   4]) = [  3.13178E+00 0.00032  0.00000E+00 0.0E+00 ];
 LOST_PARTICLES            (idx, 1)        = 0 ;
 
 % Run statistics:
 
 CYCLE_IDX                 (idx, 1)        = 120 ;
-SIMULATED_HISTORIES       (idx, 1)        = 12001063 ;
-MEAN_POP_SIZE             (idx, [1:  2])  = [  1.00009E+05 0.00043 ];
-MEAN_POP_WGT              (idx, [1:  2])  = [  1.00009E+05 0.00043 ];
+SIMULATED_HISTORIES       (idx, 1)        = 12000221 ;
+MEAN_POP_SIZE             (idx, [1:  2])  = [  1.00002E+05 0.00051 ];
+MEAN_POP_WGT              (idx, [1:  2])  = [  1.00002E+05 0.00051 ];
 SIMULATION_COMPLETED      (idx, 1)        = 1 ;
 
 % Running times:
 
-TOT_CPU_TIME              (idx, 1)        =  5.54573E+02 ;
-RUNNING_TIME              (idx, 1)        =  4.79803E+01 ;
-INIT_TIME                 (idx, [1:  2])  = [  9.17083E-01  9.17083E-01 ];
-PROCESS_TIME              (idx, [1:  2])  = [  6.23333E-03  3.43333E-03 ];
-TRANSPORT_CYCLE_TIME      (idx, [1:  3])  = [  4.70310E+01  2.30508E+01  0.00000E+00 ];
-BURNUP_CYCLE_TIME         (idx, [1:  2])  = [  2.53333E-02  2.53333E-02 ];
-BATEMAN_SOLUTION_TIME     (idx, [1:  2])  = [  3.85000E-03  3.85000E-03 ];
+TOT_CPU_TIME              (idx, 1)        =  5.49237E+02 ;
+RUNNING_TIME              (idx, 1)        =  4.70038E+01 ;
+INIT_TIME                 (idx, [1:  2])  = [  9.10350E-01  9.10350E-01 ];
+PROCESS_TIME              (idx, [1:  2])  = [  5.78333E-03  3.26666E-03 ];
+TRANSPORT_CYCLE_TIME      (idx, [1:  3])  = [  4.60624E+01  2.28870E+01  0.00000E+00 ];
+BURNUP_CYCLE_TIME         (idx, [1:  2])  = [  2.45167E-02  2.45167E-02 ];
+BATEMAN_SOLUTION_TIME     (idx, [1:  2])  = [  3.83333E-03  3.83333E-03 ];
 MPI_OVERHEAD_TIME         (idx, [1:  2])  = [  0.00000E+00  0.00000E+00 ];
-ESTIMATED_RUNNING_TIME    (idx, [1:  2])  = [  4.79801E+01  4.79801E+01 ];
-CPU_USAGE                 (idx, 1)        = 11.55834 ;
-TRANSPORT_CPU_USAGE       (idx, [1:   2]) = [  1.18736E+01 0.00017 ];
-OMP_PARALLEL_FRAC         (idx, 1)        =  9.69491E-01 ;
+ESTIMATED_RUNNING_TIME    (idx, [1:  2])  = [  4.70036E+01  4.70036E+01 ];
+CPU_USAGE                 (idx, 1)        = 11.68495 ;
+TRANSPORT_CPU_USAGE       (idx, [1:   2]) = [  1.19002E+01 3.0E-05 ];
+OMP_PARALLEL_FRAC         (idx, 1)        =  9.70416E-01 ;
 
 % Memory usage:
 
-AVAIL_MEM                 (idx, 1)        = 31898.95 ;
+AVAIL_MEM                 (idx, 1)        = 31898.94 ;
 ALLOC_MEMSIZE             (idx, 1)        = 19056.27;
 MEMSIZE                   (idx, 1)        = 18918.58;
 XS_MEMSIZE                (idx, 1)        = 18191.37;
@@ -532,33 +532,33 @@ EDEP_CAPT_E               (idx, 1)        =  0.00000E+00 ;
 
 % Radioactivity data:
 
-TOT_ACTIVITY              (idx, 1)        =  3.85324E+20 ;
-TOT_DECAY_HEAT            (idx, 1)        =  1.17050E+08 ;
-TOT_SF_RATE               (idx, 1)        =  7.27886E+02 ;
-ACTINIDE_ACTIVITY         (idx, 1)        =  8.41355E+19 ;
-ACTINIDE_DECAY_HEAT       (idx, 1)        =  6.07954E+06 ;
-FISSION_PRODUCT_ACTIVITY  (idx, 1)        =  2.97691E+20 ;
+TOT_ACTIVITY              (idx, 1)        =  3.85313E+20 ;
+TOT_DECAY_HEAT            (idx, 1)        =  1.17051E+08 ;
+TOT_SF_RATE               (idx, 1)        =  7.27795E+02 ;
+ACTINIDE_ACTIVITY         (idx, 1)        =  8.41215E+19 ;
+ACTINIDE_DECAY_HEAT       (idx, 1)        =  6.07859E+06 ;
+FISSION_PRODUCT_ACTIVITY  (idx, 1)        =  2.97692E+20 ;
 FISSION_PRODUCT_DECAY_HEAT(idx, 1)        =  1.07468E+08 ;
-INHALATION_TOXICITY       (idx, 1)        =  1.19507E+11 ;
-INGESTION_TOXICITY        (idx, 1)        =  1.05561E+11 ;
-ACTINIDE_INH_TOX          (idx, 1)        =  2.74306E+10 ;
-ACTINIDE_ING_TOX          (idx, 1)        =  5.09114E+09 ;
-FISSION_PRODUCT_INH_TOX   (idx, 1)        =  9.20747E+10 ;
+INHALATION_TOXICITY       (idx, 1)        =  1.19501E+11 ;
+INGESTION_TOXICITY        (idx, 1)        =  1.05559E+11 ;
+ACTINIDE_INH_TOX          (idx, 1)        =  2.74266E+10 ;
+ACTINIDE_ING_TOX          (idx, 1)        =  5.09031E+09 ;
+FISSION_PRODUCT_INH_TOX   (idx, 1)        =  9.20735E+10 ;
 FISSION_PRODUCT_ING_TOX   (idx, 1)        =  1.00469E+11 ;
-SR90_ACTIVITY             (idx, 1)        =  2.78317E+16 ;
+SR90_ACTIVITY             (idx, 1)        =  2.78298E+16 ;
 TE132_ACTIVITY            (idx, 1)        =  1.58907E+18 ;
-I131_ACTIVITY             (idx, 1)        =  5.36623E+17 ;
-I132_ACTIVITY             (idx, 1)        =  1.66268E+18 ;
-CS134_ACTIVITY            (idx, 1)        =  6.80284E+14 ;
-CS137_ACTIVITY            (idx, 1)        =  2.64509E+16 ;
-PHOTON_DECAY_SOURCE       (idx, 1)        =  4.26040E+20 ;
-NEUTRON_DECAY_SOURCE      (idx, 1)        =  5.32366E+17 ;
-ALPHA_DECAY_SOURCE        (idx, 1)        =  1.53581E+18 ;
-ELECTRON_DECAY_SOURCE     (idx, 1)        =  7.19656E+20 ;
+I131_ACTIVITY             (idx, 1)        =  5.36622E+17 ;
+I132_ACTIVITY             (idx, 1)        =  1.66267E+18 ;
+CS134_ACTIVITY            (idx, 1)        =  6.80274E+14 ;
+CS137_ACTIVITY            (idx, 1)        =  2.64494E+16 ;
+PHOTON_DECAY_SOURCE       (idx, 1)        =  4.26038E+20 ;
+NEUTRON_DECAY_SOURCE      (idx, 1)        =  5.32388E+17 ;
+ALPHA_DECAY_SOURCE        (idx, 1)        =  1.53547E+18 ;
+ELECTRON_DECAY_SOURCE     (idx, 1)        =  7.19621E+20 ;
 
 % Normalization coefficient:
 
-NORM_COEF                 (idx, [1:   4]) = [  1.71881E+15 0.00036  0.00000E+00 0.0E+00 ];
+NORM_COEF                 (idx, [1:   4]) = [  1.71830E+15 0.00032  0.00000E+00 0.0E+00 ];
 
 % Parameters for burnup calculation:
 
@@ -566,146 +566,146 @@ BURN_MATERIALS            (idx, 1)        = 1 ;
 BURN_MODE                 (idx, 1)        = 2 ;
 BURN_STEP                 (idx, 1)        = 1 ;
 BURN_RANDOMIZE_DATA       (idx, [1:  3])  = [ 0 0 0 ];
-BURNUP                    (idx, [1:  2])  = [  9.30690E-02  9.30700E-02 ];
+BURNUP                    (idx, [1:  2])  = [  9.30844E-02  9.30855E-02 ];
 BURN_DAYS                 (idx, [1:  2])  = [  3.00000E+00  3.00000E+00 ];
-FIMA                      (idx, [1:  3])  = [  9.65361E-05  1.81691E+25  1.88192E+29 ];
+FIMA                      (idx, [1:  3])  = [  9.65521E-05  1.81691E+25  1.88161E+29 ];
 
 % Analog reaction rate estimators:
 
-CONVERSION_RATIO          (idx, [1:   2]) = [  1.01887E+00 0.00062 ];
-TH232_FISS                (idx, [1:   4]) = [  2.67314E+17 0.00728  3.80411E-03 0.00728 ];
-U233_FISS                 (idx, [1:   4]) = [  6.97783E+19 0.00040  9.92995E-01 4.1E-05 ];
-U235_FISS                 (idx, [1:   4]) = [  2.16772E+17 0.00842  3.08486E-03 0.00843 ];
-TH232_CAPT                (idx, [1:   4]) = [  7.87881E+19 0.00054  7.72210E-01 0.00021 ];
-U233_CAPT                 (idx, [1:   4]) = [  8.51811E+18 0.00130  8.34880E-02 0.00129 ];
-U235_CAPT                 (idx, [1:   4]) = [  4.70031E+16 0.01601  4.60745E-04 0.01608 ];
-XE135_CAPT                (idx, [1:   4]) = [  3.38272E+18 0.00192  3.31544E-02 0.00185 ];
-SM149_CAPT                (idx, [1:   4]) = [  1.08121E+17 0.01126  1.05977E-03 0.01129 ];
+CONVERSION_RATIO          (idx, [1:   2]) = [  1.01918E+00 0.00055 ];
+TH232_FISS                (idx, [1:   4]) = [  2.67547E+17 0.00711  3.80845E-03 0.00714 ];
+U233_FISS                 (idx, [1:   4]) = [  6.97591E+19 0.00040  9.92971E-01 3.6E-05 ];
+U235_FISS                 (idx, [1:   4]) = [  2.18108E+17 0.00789  3.10476E-03 0.00792 ];
+TH232_CAPT                (idx, [1:   4]) = [  7.87861E+19 0.00045  7.72460E-01 0.00019 ];
+U233_CAPT                 (idx, [1:   4]) = [  8.51538E+18 0.00118  8.34888E-02 0.00107 ];
+U235_CAPT                 (idx, [1:   4]) = [  4.62785E+16 0.01577  4.53715E-04 0.01574 ];
+XE135_CAPT                (idx, [1:   4]) = [  3.37751E+18 0.00188  3.31150E-02 0.00185 ];
+SM149_CAPT                (idx, [1:   4]) = [  1.08486E+17 0.01187  1.06364E-03 0.01185 ];
 
 % Neutron balance (particles/weight):
 
 BALA_SRC_NEUTRON_SRC     (idx, [1:  2])  = [ 0 0.00000E+00 ];
-BALA_SRC_NEUTRON_FISS    (idx, [1:  2])  = [ 12001063 1.20000E+07 ];
-BALA_SRC_NEUTRON_NXN     (idx, [1:  2])  = [ 0 3.31720E+04 ];
+BALA_SRC_NEUTRON_FISS    (idx, [1:  2])  = [ 12000221 1.20000E+07 ];
+BALA_SRC_NEUTRON_NXN     (idx, [1:  2])  = [ 0 3.30191E+04 ];
 BALA_SRC_NEUTRON_VR      (idx, [1:  2])  = [ 0 0.00000E+00 ];
-BALA_SRC_NEUTRON_TOT     (idx, [1:  2])  = [ 12001063 1.20332E+07 ];
+BALA_SRC_NEUTRON_TOT     (idx, [1:  2])  = [ 12000221 1.20330E+07 ];
 
-BALA_LOSS_NEUTRON_CAPT    (idx, [1:  2])  = [ 7103806 7.12323E+06 ];
-BALA_LOSS_NEUTRON_FISS    (idx, [1:  2])  = [ 4893351 4.90602E+06 ];
-BALA_LOSS_NEUTRON_LEAK    (idx, [1:  2])  = [ 3906 3.92303E+03 ];
+BALA_LOSS_NEUTRON_CAPT    (idx, [1:  2])  = [ 7103103 7.12287E+06 ];
+BALA_LOSS_NEUTRON_FISS    (idx, [1:  2])  = [ 4893211 4.90622E+06 ];
+BALA_LOSS_NEUTRON_LEAK    (idx, [1:  2])  = [ 3907 3.92500E+03 ];
 BALA_LOSS_NEUTRON_CUT     (idx, [1:  2])  = [ 0 0.00000E+00 ];
 BALA_LOSS_NEUTRON_ERR     (idx, [1:  2])  = [ 0 0.00000E+00 ];
-BALA_LOSS_NEUTRON_TOT     (idx, [1:  2])  = [ 12001063 1.20332E+07 ];
+BALA_LOSS_NEUTRON_TOT     (idx, [1:  2])  = [ 12000221 1.20330E+07 ];
 
-BALA_NEUTRON_DIFF         (idx, [1:  2])  = [ 0 -7.33882E-07 ];
+BALA_NEUTRON_DIFF         (idx, [1:  2])  = [ 0 -1.17533E-06 ];
 
 % Normalized total reaction rates (neutrons):
 
 TOT_POWER                 (idx, [1:   6]) = [  2.25000E+09 0.0E+00  2.25000E+09 0.0E+00  0.00000E+00 0.0E+00 ];
-TOT_POWDENS               (idx, [1:   6]) = [  3.10230E-02 0.0E+00  3.10230E-02 0.0E+00  0.00000E+00 0.0E+00 ];
-TOT_GENRATE               (idx, [1:   6]) = [  1.75515E+20 3.0E-07  1.75515E+20 3.0E-07  0.00000E+00 0.0E+00 ];
-TOT_FISSRATE              (idx, [1:   6]) = [  7.02895E+19 3.8E-08  7.02895E+19 3.8E-08  0.00000E+00 0.0E+00 ];
-TOT_CAPTRATE              (idx, [1:   6]) = [  1.02037E+20 0.00026  9.55871E+19 0.00024  6.45005E+18 0.00139 ];
-TOT_ABSRATE               (idx, [1:   6]) = [  1.72327E+20 0.00015  1.65877E+20 0.00014  6.45005E+18 0.00139 ];
-TOT_SRCRATE               (idx, [1:   6]) = [  1.71881E+20 0.00036  1.71881E+20 0.00036  0.00000E+00 0.0E+00 ];
-TOT_FLUX                  (idx, [1:   6]) = [  6.42168E+22 0.00028  1.00640E+22 0.00033  5.41528E+22 0.00030 ];
+TOT_POWDENS               (idx, [1:   6]) = [  3.10281E-02 0.0E+00  3.10281E-02 0.0E+00  0.00000E+00 0.0E+00 ];
+TOT_GENRATE               (idx, [1:   6]) = [  1.75515E+20 3.2E-07  1.75515E+20 3.2E-07  0.00000E+00 0.0E+00 ];
+TOT_FISSRATE              (idx, [1:   6]) = [  7.02895E+19 3.3E-08  7.02895E+19 3.3E-08  0.00000E+00 0.0E+00 ];
+TOT_CAPTRATE              (idx, [1:   6]) = [  1.01994E+20 0.00023  9.55599E+19 0.00022  6.43411E+18 0.00124 ];
+TOT_ABSRATE               (idx, [1:   6]) = [  1.72283E+20 0.00014  1.65849E+20 0.00013  6.43411E+18 0.00124 ];
+TOT_SRCRATE               (idx, [1:   6]) = [  1.71830E+20 0.00032  1.71830E+20 0.00032  0.00000E+00 0.0E+00 ];
+TOT_FLUX                  (idx, [1:   6]) = [  6.42020E+22 0.00026  1.00580E+22 0.00026  5.41440E+22 0.00029 ];
 TOT_PHOTON_PRODRATE       (idx, [1:   4]) = [  0.00000E+00 0.0E+00  0.00000E+00 0.0E+00 ];
-TOT_LEAKRATE              (idx, [1:   2]) = [  5.61905E+16 0.01557 ];
+TOT_LEAKRATE              (idx, [1:   2]) = [  5.61984E+16 0.01489 ];
 ALBEDO_LEAKRATE           (idx, [1:   2]) = [  0.00000E+00 0.0E+00 ];
-TOT_LOSSRATE              (idx, [1:   2]) = [  1.72383E+20 0.00015 ];
+TOT_LOSSRATE              (idx, [1:   2]) = [  1.72340E+20 0.00014 ];
 TOT_CUTRATE               (idx, [1:   2]) = [  0.00000E+00 0.0E+00 ];
-TOT_RR                    (idx, [1:   2]) = [  2.58272E+22 0.00029 ];
-INI_FMASS                 (idx, 1)        =  7.25268E+04 ;
-TOT_FMASS                 (idx, 1)        =  7.25198E+04 ;
-INI_BURN_FMASS            (idx, 1)        =  7.25268E+04 ;
-TOT_BURN_FMASS            (idx, 1)        =  7.25198E+04 ;
+TOT_RR                    (idx, [1:   2]) = [  2.58213E+22 0.00027 ];
+INI_FMASS                 (idx, 1)        =  7.25148E+04 ;
+TOT_FMASS                 (idx, 1)        =  7.25078E+04 ;
+INI_BURN_FMASS            (idx, 1)        =  7.25148E+04 ;
+TOT_BURN_FMASS            (idx, 1)        =  7.25078E+04 ;
 
 % Six-factor formula:
 
-SIX_FF_ETA                (idx, [1:   2]) = [  1.31183E+00 0.00031 ];
-SIX_FF_F                  (idx, [1:   2]) = [  9.44670E-01 8.4E-05 ];
-SIX_FF_P                  (idx, [1:   2]) = [  6.15120E-01 0.00023 ];
-SIX_FF_EPSILON            (idx, [1:   2]) = [  1.33968E+00 0.00027 ];
-SIX_FF_LF                 (idx, [1:   2]) = [  9.99969E-01 1.7E-06 ];
-SIX_FF_LT                 (idx, [1:   2]) = [  9.99704E-01 4.5E-06 ];
-SIX_FF_KINF               (idx, [1:   2]) = [  1.02121E+00 0.00032 ];
-SIX_FF_KEFF               (idx, [1:   2]) = [  1.02087E+00 0.00032 ];
+SIX_FF_ETA                (idx, [1:   2]) = [  1.31144E+00 0.00035 ];
+SIX_FF_F                  (idx, [1:   2]) = [  9.44932E-01 9.2E-05 ];
+SIX_FF_P                  (idx, [1:   2]) = [  6.15288E-01 0.00023 ];
+SIX_FF_EPSILON            (idx, [1:   2]) = [  1.33940E+00 0.00029 ];
+SIX_FF_LF                 (idx, [1:   2]) = [  9.99971E-01 1.6E-06 ];
+SIX_FF_LT                 (idx, [1:   2]) = [  9.99702E-01 4.6E-06 ];
+SIX_FF_KINF               (idx, [1:   2]) = [  1.02125E+00 0.00033 ];
+SIX_FF_KEFF               (idx, [1:   2]) = [  1.02092E+00 0.00033 ];
 
 % Fission neutron and energy production:
 
-NUBAR                     (idx, [1:   2]) = [  2.49703E+00 2.8E-07 ];
-FISSE                     (idx, [1:   2]) = [  1.99794E+02 3.8E-08 ];
+NUBAR                     (idx, [1:   2]) = [  2.49703E+00 3.0E-07 ];
+FISSE                     (idx, [1:   2]) = [  1.99794E+02 3.3E-08 ];
 
 % Criticality eigenvalues:
 
-ANA_KEFF                  (idx, [1:   6]) = [  1.02070E+00 0.00032  1.01772E+00 0.00032  3.15403E-03 0.00717 ];
-IMP_KEFF                  (idx, [1:   2]) = [  1.02099E+00 0.00015 ];
-COL_KEFF                  (idx, [1:   2]) = [  1.02116E+00 0.00036 ];
-ABS_KEFF                  (idx, [1:   2]) = [  1.02099E+00 0.00015 ];
-ABS_KINF                  (idx, [1:   2]) = [  1.02132E+00 0.00015 ];
+ANA_KEFF                  (idx, [1:   6]) = [  1.02094E+00 0.00035  1.01781E+00 0.00033  3.11346E-03 0.00795 ];
+IMP_KEFF                  (idx, [1:   2]) = [  1.02124E+00 0.00014 ];
+COL_KEFF                  (idx, [1:   2]) = [  1.02146E+00 0.00032 ];
+ABS_KEFF                  (idx, [1:   2]) = [  1.02124E+00 0.00014 ];
+ABS_KINF                  (idx, [1:   2]) = [  1.02157E+00 0.00014 ];
 GEOM_ALBEDO               (idx, [1:   6]) = [  1.00000E+00 0.0E+00  1.00000E+00 0.0E+00  1.00000E+00 0.0E+00 ];
 
 % ALF (Average lethargy of neutrons causing fission):
 % Based on E0 = 2.000000E+01 MeV
 
-ANA_ALF                   (idx, [1:   2]) = [  1.79138E+01 7.3E-05 ];
-IMP_ALF                   (idx, [1:   2]) = [  1.79153E+01 3.4E-05 ];
+ANA_ALF                   (idx, [1:   2]) = [  1.79146E+01 6.9E-05 ];
+IMP_ALF                   (idx, [1:   2]) = [  1.79152E+01 2.6E-05 ];
 
 % EALF (Energy corresponding to average lethargy of neutrons causing fission):
 
-ANA_EALF                  (idx, [1:   2]) = [  3.32041E-07 0.00131 ];
-IMP_EALF                  (idx, [1:   2]) = [  3.31531E-07 0.00062 ];
+ANA_EALF                  (idx, [1:   2]) = [  3.31796E-07 0.00123 ];
+IMP_EALF                  (idx, [1:   2]) = [  3.31566E-07 0.00047 ];
 
 % AFGE (Average energy of neutrons causing fission):
 
-ANA_AFGE                  (idx, [1:   2]) = [  1.62731E-02 0.00667 ];
-IMP_AFGE                  (idx, [1:   2]) = [  1.63039E-02 0.00083 ];
+ANA_AFGE                  (idx, [1:   2]) = [  1.63561E-02 0.00617 ];
+IMP_AFGE                  (idx, [1:   2]) = [  1.62660E-02 0.00074 ];
 
 % Forward-weighted delayed neutron parameters:
 
 PRECURSOR_GROUPS          (idx, 1)        = 6 ;
-FWD_ANA_BETA_ZERO         (idx, [1:  14]) = [  3.02033E-03 0.00458  2.57691E-04 0.01731  6.84470E-04 0.01120  5.26693E-04 0.01109  1.06750E-03 0.00830  3.54482E-04 0.01453  1.29497E-04 0.02288 ];
-FWD_ANA_LAMBDA            (idx, [1:  14]) = [  3.32943E-01 0.00832  1.29067E-02 6.9E-05  3.47116E-02 6.4E-05  1.19323E-01 2.8E-05  2.87435E-01 0.00019  8.04482E-01 0.00145  2.49243E+00 0.00183 ];
+FWD_ANA_BETA_ZERO         (idx, [1:  14]) = [  2.97211E-03 0.00580  2.57341E-04 0.01896  6.67367E-04 0.01285  5.20956E-04 0.01390  1.05677E-03 0.00855  3.44546E-04 0.01742  1.25127E-04 0.02691 ];
+FWD_ANA_LAMBDA            (idx, [1:  14]) = [  3.30167E-01 0.00837  1.29066E-02 7.9E-05  3.47065E-02 7.4E-05  1.19325E-01 3.0E-05  2.87398E-01 0.00019  8.05555E-01 0.00151  2.49106E+00 0.00220 ];
 
 % Beta-eff using Meulekamp's method:
 
-ADJ_MEULEKAMP_BETA_EFF    (idx, [1:  14]) = [  3.09339E-03 0.00712  2.74215E-04 0.02449  7.03243E-04 0.01712  5.42186E-04 0.01936  1.08109E-03 0.01195  3.64672E-04 0.02197  1.27974E-04 0.03848 ];
-ADJ_MEULEKAMP_LAMBDA      (idx, [1:  14]) = [  3.28374E-01 0.01369  1.29066E-02 0.00011  3.47114E-02 8.1E-05  1.19321E-01 3.6E-05  2.87456E-01 0.00031  8.01350E-01 0.00197  2.48687E+00 0.00254 ];
+ADJ_MEULEKAMP_BETA_EFF    (idx, [1:  14]) = [  3.01721E-03 0.00803  2.63003E-04 0.02761  6.96092E-04 0.01782  5.35859E-04 0.02031  1.04481E-03 0.01330  3.50268E-04 0.02324  1.27170E-04 0.03717 ];
+ADJ_MEULEKAMP_LAMBDA      (idx, [1:  14]) = [  3.28339E-01 0.01138  1.29076E-02 8.8E-05  3.47079E-02 0.00011  1.19324E-01 4.6E-05  2.87368E-01 0.00032  8.03516E-01 0.00238  2.49315E+00 0.00317 ];
 
 % Adjoint weighted time constants using Nauchi's method:
 
 IFP_CHAIN_LENGTH          (idx, 1)        = 15 ;
-ADJ_NAUCHI_GEN_TIME       (idx, [1:   6]) = [  3.67381E-04 0.00087  3.67384E-04 0.00087  3.66682E-04 0.01504 ];
-ADJ_NAUCHI_LIFETIME       (idx, [1:   6]) = [  3.74984E-04 0.00084  3.74987E-04 0.00083  3.74259E-04 0.01502 ];
-ADJ_NAUCHI_BETA_EFF       (idx, [1:  14]) = [  3.09145E-03 0.00709  2.56787E-04 0.02887  7.11859E-04 0.01845  5.38731E-04 0.01886  1.08258E-03 0.01288  3.68301E-04 0.02341  1.33196E-04 0.03831 ];
-ADJ_NAUCHI_LAMBDA         (idx, [1:  14]) = [  3.32762E-01 0.01306  1.29056E-02 0.00013  3.47099E-02 0.00010  1.19327E-01 5.0E-05  2.87445E-01 0.00032  8.00603E-01 0.00216  2.48464E+00 0.00278 ];
+ADJ_NAUCHI_GEN_TIME       (idx, [1:   6]) = [  3.67645E-04 0.00086  3.67666E-04 0.00086  3.60808E-04 0.01508 ];
+ADJ_NAUCHI_LIFETIME       (idx, [1:   6]) = [  3.75338E-04 0.00082  3.75360E-04 0.00082  3.68350E-04 0.01507 ];
+ADJ_NAUCHI_BETA_EFF       (idx, [1:  14]) = [  3.04822E-03 0.00808  2.61351E-04 0.02897  6.79953E-04 0.01799  5.38143E-04 0.02170  1.08537E-03 0.01434  3.52917E-04 0.02523  1.30492E-04 0.03936 ];
+ADJ_NAUCHI_LAMBDA         (idx, [1:  14]) = [  3.32595E-01 0.01268  1.29071E-02 0.00013  3.47066E-02 0.00012  1.19321E-01 4.2E-05  2.87364E-01 0.00029  8.04158E-01 0.00259  2.51245E+00 0.00487 ];
 
 % Adjoint weighted time constants using IFP:
 
-ADJ_IFP_GEN_TIME          (idx, [1:   6]) = [  3.73763E-04 0.00217  3.73776E-04 0.00217  3.75433E-04 0.03114 ];
-ADJ_IFP_LIFETIME          (idx, [1:   6]) = [  3.81496E-04 0.00213  3.81509E-04 0.00214  3.83220E-04 0.03116 ];
-ADJ_IFP_IMP_BETA_EFF      (idx, [1:  14]) = [  3.05747E-03 0.02942  2.59426E-04 0.09752  6.96802E-04 0.05849  5.46187E-04 0.06259  1.06120E-03 0.04912  3.53212E-04 0.11033  1.40640E-04 0.12338 ];
-ADJ_IFP_IMP_LAMBDA        (idx, [1:  14]) = [  3.28999E-01 0.04353  1.29098E-02 9.0E-05  3.47087E-02 0.00039  1.19332E-01 0.00017  2.87529E-01 0.00116  8.03673E-01 0.00846  2.46484E+00 0.00505 ];
-ADJ_IFP_ANA_BETA_EFF      (idx, [1:  14]) = [  3.05047E-03 0.02811  2.53794E-04 0.09446  7.07910E-04 0.05783  5.53890E-04 0.06131  1.04955E-03 0.04714  3.44204E-04 0.10857  1.41122E-04 0.11972 ];
-ADJ_IFP_ANA_LAMBDA        (idx, [1:  14]) = [  3.27353E-01 0.04304  1.29096E-02 0.00011  3.47113E-02 0.00034  1.19335E-01 0.00018  2.87664E-01 0.00120  8.04408E-01 0.00855  2.46474E+00 0.00509 ];
-ADJ_IFP_ROSSI_ALPHA       (idx, [1:   2]) = [ -8.17856E+00 0.02926 ];
+ADJ_IFP_GEN_TIME          (idx, [1:   6]) = [  3.74039E-04 0.00190  3.73982E-04 0.00190  3.88541E-04 0.03270 ];
+ADJ_IFP_LIFETIME          (idx, [1:   6]) = [  3.81862E-04 0.00184  3.81804E-04 0.00183  3.96737E-04 0.03272 ];
+ADJ_IFP_IMP_BETA_EFF      (idx, [1:  14]) = [  3.01319E-03 0.02681  2.02743E-04 0.09573  6.88149E-04 0.05773  5.36164E-04 0.07040  1.09546E-03 0.04417  3.80299E-04 0.08539  1.10375E-04 0.16073 ];
+ADJ_IFP_IMP_LAMBDA        (idx, [1:  14]) = [  3.28647E-01 0.04690  1.29065E-02 0.00035  3.47064E-02 0.00039  1.19315E-01 0.00015  2.86755E-01 0.00070  8.03412E-01 0.00761  2.48989E+00 0.00919 ];
+ADJ_IFP_ANA_BETA_EFF      (idx, [1:  14]) = [  3.02244E-03 0.02586  2.00827E-04 0.09176  6.89667E-04 0.05771  5.36594E-04 0.06851  1.10141E-03 0.04161  3.79359E-04 0.08053  1.14589E-04 0.15795 ];
+ADJ_IFP_ANA_LAMBDA        (idx, [1:  14]) = [  3.30551E-01 0.04526  1.29062E-02 0.00037  3.47098E-02 0.00037  1.19313E-01 0.00014  2.86791E-01 0.00080  8.03594E-01 0.00760  2.49397E+00 0.00930 ];
+ADJ_IFP_ROSSI_ALPHA       (idx, [1:   2]) = [ -8.05866E+00 0.02678 ];
 
 % Adjoint weighted time constants using perturbation technique:
 
-ADJ_PERT_GEN_TIME         (idx, [1:   2]) = [  3.69738E-04 0.00049 ];
-ADJ_PERT_LIFETIME         (idx, [1:   2]) = [  3.77389E-04 0.00035 ];
-ADJ_PERT_BETA_EFF         (idx, [1:   2]) = [  3.11121E-03 0.00481 ];
-ADJ_PERT_ROSSI_ALPHA      (idx, [1:   2]) = [ -8.41520E+00 0.00491 ];
+ADJ_PERT_GEN_TIME         (idx, [1:   2]) = [  3.69560E-04 0.00052 ];
+ADJ_PERT_LIFETIME         (idx, [1:   2]) = [  3.77292E-04 0.00037 ];
+ADJ_PERT_BETA_EFF         (idx, [1:   2]) = [  3.06447E-03 0.00476 ];
+ADJ_PERT_ROSSI_ALPHA      (idx, [1:   2]) = [ -8.29328E+00 0.00496 ];
 
 % Inverse neutron speed :
 
-ANA_INV_SPD               (idx, [1:   2]) = [  9.22330E-07 0.00032 ];
+ANA_INV_SPD               (idx, [1:   2]) = [  9.22173E-07 0.00029 ];
 
 % Analog slowing-down and thermal neutron lifetime (total/prompt/delayed):
 
-ANA_SLOW_TIME             (idx, [1:   6]) = [  3.05501E-05 0.00011  3.05501E-05 0.00011  3.05340E-05 0.00200 ];
-ANA_THERM_TIME            (idx, [1:   6]) = [  5.22944E-04 0.00053  5.22996E-04 0.00054  5.06065E-04 0.00887 ];
-ANA_THERM_FRAC            (idx, [1:   6]) = [  6.17928E-01 0.00023  6.17894E-01 0.00023  6.30791E-01 0.00776 ];
-ANA_DELAYED_EMTIME        (idx, [1:   2]) = [  1.60571E+01 0.01147 ];
-ANA_MEAN_NCOL             (idx, [1:   4]) = [  1.49859E+02 0.00027  1.63109E+02 0.00031 ];
+ANA_SLOW_TIME             (idx, [1:   6]) = [  3.05467E-05 0.00012  3.05471E-05 0.00012  3.04342E-05 0.00210 ];
+ANA_THERM_TIME            (idx, [1:   6]) = [  5.22762E-04 0.00049  5.22800E-04 0.00049  5.09843E-04 0.00869 ];
+ANA_THERM_FRAC            (idx, [1:   6]) = [  6.18065E-01 0.00022  6.18039E-01 0.00023  6.28978E-01 0.00861 ];
+ANA_DELAYED_EMTIME        (idx, [1:   2]) = [  1.60169E+01 0.01037 ];
+ANA_MEAN_NCOL             (idx, [1:   4]) = [  1.49876E+02 0.00022  1.63256E+02 0.00032 ];
 

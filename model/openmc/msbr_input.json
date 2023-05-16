@@ -2,6 +2,7 @@
    "proc_input_file": "../msbr_processes.json",
    "dot_input_file": "../msbr.dot",
    "n_depletion_steps": 122, 
+   "mpi_args": ["mpirun", "--map-by", "numa:PE=8"],
    "depcode": {
        "codename": "openmc",
        "template_input_file_path": {
@@ -16,7 +17,8 @@
        }
    },
    "simulation": {
-       "sim_name": "msbr_openmc_local"
+       "sim_name": "msbr_openmc_theta",
+       "restart_flag": true
    },
    "reactor": {
        "volume": 1.0,
