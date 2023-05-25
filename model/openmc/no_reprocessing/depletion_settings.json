@@ -1,6 +1,6 @@
 {
     "operator_kwargs": {
-        "fission_q": "/home/ooblack/projects/2022-yardas-ms/model/openmc/serpent_fissq.json",
+        "fission_q": "/home/yardolek/model/100k/serpent_fissq.json",
         "diff_burnable_mats": false,
         "normalization_mode": "fission-q",
         "dilute_initial": 1000,
@@ -10,7 +10,7 @@
         "reaction_rate_opts": null,
         "reduce_chain": false,
         "reduce_chain_level": null,
-        "chain_file": "/home/ooblack/projects/2022-yardas-ms/model/openmc/chain_endfb71_pwr.xml"
+        "chain_file": "/home/yardolek/model/100k/chain_endfb71_ace.xml"
     },
     "method": "predictor",
     "final_step": true,
@@ -19,7 +19,7 @@
         "power": 2250000000.0,
         "timestep_units": "d"
     },
-    "directory": "/home/ooblack/projects/2022-yardas-ms/model/openmc/no_reprocessing",
+    "directory": "/home/yardolek/model/100k/no_reprocessing",
     "timesteps": [
         3
     ]

@@ -1,0 +1,46 @@
+\chapter{Conclusions}
+\label{ch:chapter6}
+
+In this thesis, I have discussed an approximate \Gls{csg} model of the
+\Gls{msbr} for use in \OpenMC. I have demonstrated this model to be consistent
+with the \SerpentTWO model it is based on through a convergence study as well as
+through demonstration of the results of the new \OpenMC functionailty in
+\SaltProc in comparison with the \SerpentTWO functionality.
+With the release of v0.5.0, I can happily say that \SaltProc is truly
+open-source, as it no longer requires the use of export-controlled software
+to function. Even so, I believe that there are several issues facing \SaltProc
+that I want to bring attention to. Not all of these are problems with obvious
+solutions, but they are still important to consider as they effect the long
+term survival of the tool.
+
+First, the need to reinitialize the geometry, neutronics
+settings, and cross sections after applying the processeing scheme to the
+materials is computationally inefficient. The most time consuming of these tasks
+is loading cross sections, which can take up several node hours of additional
+time if there are many timesteps. The solution to this problem is not obvious,
+and will be depletion code-dependent.
+
+Second, while in principle the tool is
+designed to be compatible with any depletion code, in practice, this requires
+implementing a new \verb.Depcode. class, which can potentially require major
+refactoring as the work for this thesis did.
+
+Third, as an interface code, \SaltProc needs to stay up-to-date with the
+software it is intended for use with (\OpenMC and \SerpentTWO). If there are
+major changes in the relevant parts of the API or results format, this change
+will need to be addressed in a new \SaltProc release. While this is a normal
+component of software development, right now there is only a single active
+maintainer of \SaltProc (myself), and it is not a guarantee that I will
+be able to continue to maintain it in the future.
+
+The addition of continuous reprocessing functionality into \SerpentTWO -- and 
+just recently, in  \OpenMC -- also call in to question the necessity for a
+batch-wise reprocessing tool for advanced nuclear reactors. In countries using
+LWRs that require fuel to be reprocessed (France and Japan, for example) perform
+reprocessing, the reprocessing is physically batch-wise, happening once every 6
+months or so (check this). I think for these kinds of simulations, \SaltProc
+has a legitimate purpose for existing, as it is still the only open-source tool
+of its kind. Assuming a suitable name-change, I think that it would work very
+well as a tool for simulating MOX fuel in LWRs. I also think the graph-based
+approach of material reprocessing has uses even for continuous reprocessing,
+and could be added to other open source tools like \OpenMC.

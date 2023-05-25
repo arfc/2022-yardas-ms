@@ -65,14 +65,52 @@ improvements and additions:
     for examples of the input files for versions v0.3.0, v0.4.0, and v0.5.0}
 \end{itemize}
 
-Implementation of \OpenMC support only required the creation of a child class
-with methods for getting depletion results and neutronics parameters from the
-\OpenMC simulation. The general program flow is unchanged due to the
-class-based structure, which allows reuse of most of the existing code for
-this feature. I encourage readers interested in architectural and design
-details to reference Ryklhevskii's dissertation \cite{rykhlevskii_fuel_2020}
-or the web-hosted \SaltProc docpages at \url{arfc.github.io/saltproc}.
+The majority of the work for implementing \OpenMC support focused on the
+creation of a child class with methods for getting depletion results and
+neutronics parameters from the \OpenMC simulation. The general program
+flow is unchanged due to the class-based structure, which allows reuse of most
+of the existing code for this feature. I encourage readers interested in
+architectural and design details to reference Ryklhevskii's dissertation
+\cite{rykhlevskii_fuel_2020} or the web-hosted \SaltProc docpages at
+\url{arfc.github.io/saltproc}.
 
+
+An important feature of the \OpenMC implementation is the use of control flow
+to add nuclides in the depletion chain to depletable materials. As of \OpenMC
+v0.13.3, in order to obtain reaction rate tallies for a nuclide, that nuclide
+must be explicitly present in a material. For regular \OpenMC depletion
+simulations, the program adds any nuclides in the depletion chain not present
+in the material at a concentration of 1e-21 atom-\%. This is so any nuclides
+that would be produced during the timestep have accurate reaction rates. If
+these nuclides were not included, they would only be produced which is
+non-physical behavior. Since there are additional removal processes in
+\SaltProc, nuclides can be included in a material with zero percent composition,
+which is effectively the same as not having the nuclide in a material at all. This
+bypasses the \OpenMC machinery that detects missing nuclides, and will cause
+the simulation to only caclulate production reactions for those nuclides.
+
+To fix this, I introduced control flow in the main function\footnote{in hindsight,
+the root of this issue lies in how materials are processed in \SaltProc, so any code
+added to fix it should have gone in the Materialflow class. I have
+added an issue to the repository to fix this PUT ISSUE LINK HERE}
+to add these missing nuclides back in. While overall this shouldn't
+significantly effect the neutronics of the simulation, it could influence the
+compositions of individual nuclides present in small quantities in the
+simulation, leading to massive errors in the nuclide compositon. I give
+examples of some of these nuclides in Section \ref{sub:nuclide-compositons}
+
+The behavior of depletion in \SerpentTWO is \ldots
+
+I did make one significant change to \SaltProc as part of the v0.5.0 release
+not directly related to \OpenMC support; I removed of PyNE as a dependency.
+I did this to make \SaltProc easier to install, as installing PyNE alongside
+\OpenMC is difficult to do unless the user is comfortable installing packages
+from source. \OpenMC's \verb.Material. class replaces PyNE's \verb.Material.
+class, and the SerpentTools package replaced the \SerpentTWO parsing
+functionality of PyNE. I do not expect this change to introduce errors into
+\SaltProc.
+
+in the main execution function to add any missing nuclides
 
 \section{Mathematical description of material reprocessing}
 Rykhlevskii has discussed the design of \SaltProc's feeds and separations in

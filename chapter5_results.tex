@@ -1,41 +1,36 @@
 \chapter{Results}
 \label{ch:chapter5}
 
-\subsection{Platform and Software}
+\section{Platform and Software}
 \label{sub:platform-software}
-I ran the \OpenMC simulation on Sawtooth, a supercomputer at \Gls{inl}.
-I previously attempted to use Theta, a supercomputer at \Gls{anl}, for this
-simualation, however \OpenMC
-Use of export controlled code is currently prohibited on Theta, so for our \SerpentTWO runs,
-we used a Dell Precision 3430 Workstation.
+I ran the \OpenMC simulation on Sawtooth, a supercomputer at
+\Gls{inl}\footnote{I previously attempted to use Theta, a supercomputer at
+\Gls{anl}, for this simualation, but I ran into {\it many} difficulties due to
+the differing architectures of the non-KNL login nodes and the KNL MOM nodes.}
 
-% make this subsection a table
-% Talk about KNL, cross compiling, etc\ldots
-Theta's compute nodes and constancia nodes used cross-compilation\ldots
+On Sawtooth, the compute nodes have 2 Intel Xeon 8268 CPUs with 24 cores per
+CPU. Hyperthreading is disabled on compute nodes. Each node had 192 GB of RAM.
+The login nodes have the same specifications.
+
+To avoid any potential licensing issues with getting \SerpentTWO on Sawtooth,
+I performed the \SerpentTWO runs on my office computer, a Dell Precision 3430
+Workstation, using 12 OpenMP threads.
 
 \begin{table}[htpb] 
     \centering 
-    \caption{Theta job parameters for 100k particle \OpenMC run}
-    \label{tab:theta-params}
-    \begin{tabular}{|c|c|c|} 
+    \caption{Sawtooth job parameters for 100k particle \OpenMC run}
+    \label{tab:sawtooth-params}
+    \begin{tabular}{|c|c|} 
         \hline
-        Quantity & \verb.aprun. option & Value\\
+        Quantity & Value\\
         \hline
-        Nodes & \verb.-n. & 128 \\
+        Nodes & 92 \\
         \hline
-        MPI processes per node & \verb.-N. 4 \\
+        MPI processes per node & 6 \\
         \hline
-        Threads per core & \verb.-j. & 4 \\
+        Threads per core & 1 \\
         \hline
-        MPI Process binding & \verb.-cc. & depth \\
-        \hline
-        Depth & \verb.-d. & ?? \\
-        \hline
-        OpenMP threads per MPI process & \verb.-e OMP_NUM_THREADS=64. & 64 \\
-        \hline
-        Clustering mode & -- & SNC-4 \\
-        \hline
-        Memory mode & -- & Cache \\
+        OpenMP threads per MPI process & 8 \\
         \hline
     \end{tabular}
 \end{table}
@@ -44,11 +39,17 @@ Theta's compute nodes and constancia nodes used cross-compilation\ldots
 \subsection{Simulation Design and Parameters}
 \label{sub:simulation-parameters}
 
-I design
+As my process graph differs from Ryklevskii's previous works
+\cite{rykhlevskii_fuel_2020}, I decided to use a different scope for my
+simulations. Since the purpose of these simulations is to test the accuracy of
+the implementation of \OpenMC support we do not need to do as detailed an
+analysis as Ryhlevskii did on finding the equilibrium state. A moderate amount
+of timesteps will suffice.
 
-
-Table \ref{tab:saltproc-params} summarizes the simulation settings used
-for both the \SerpentTWO and \OpenMC simulations.
+With this in mind, I decided to use the same 3-day timesteps as Ryhklevskii
+\cite{rykhlevskii_modeling_2019} for a year's worth of runtime. Table
+\ref{tab:saltproc-params} summarizes the simulation settings used for both the
+\SerpentTWO and \OpenMC simulations.
  
 \begin{table}[htpb] 
     \centering 
@@ -93,13 +94,162 @@ spontaneous and delayed fission yield data, decay data, and neutron cross
 secttion data from the ENDF B/VII.1 library. Interested readers are able to
 create this library files by running the scripts located at
 \url{https://github.com/arfc/saltproc/tree/master/scripts/xsdata}.\footnote{See
-the \verb,README.md, in the parent directory for user instructions}.
+the README.md in the parent directory for user instructions}.
 
 We assumed material temperatures to be around 900K. For cross section data
 unavailable at that temperature, we used interpolation between 800K and 1000
 to get reasonable values.
- 
 
 \section{Comparison of OpenMC to Serpent}
 \label{sec:openmc-vs-serpent}
 
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/ch5/keff.pdf}
+    \caption{$k_\text{eff}$ over time.}
+    \label{fig:keff}
+\end{figure}
+
+Figure \ref{fig:keff} shows the change in $k_\text{eff}$ over time, as well as
+the relative error\footnote{For the purposes of this thesis, whenever I refer
+to relative error in the results, I am referring to (\OpenMC result -
+\SerpentTWO result) / \SerpentTWO result}. In the upper figure, the error bars
+are black, and the lower figure they are green. For the first 70 days or so, the
+$k_\text{eff}$ calculated by \OpenMC is slightly  higher than the 
+$k_\text{eff}$ calculated by \SerpentTWO. After 70 days, the $k_\text{eff}$
+calculated by \OpenMC is becomes smaller than the $k_\text{eff}$ calculated by
+\SerpentTWO. As time goes on, the difference between the two grows at a constant
+rate. At the end of the simulation, the absolute value of the relative error is
+around 0.6\%
+
+Notice the oscillating behavior of $k_\text{eff}$. This is due to fuel
+reprocessing every 3 days.% If we did not reprocess the fuel, the simulation
+%would look like \ldots
+
+\subsection{Nuclide compositions}
+\label{sub:nuclide-compositions}
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/ch5/actinides.pdf}
+    \caption{Relative error of actinides mass in fuel. \ce{Th} isotopes have
+    been included for simplicity, and \ce{^{242m}Am}, \ce{^{242}Cm},
+    \ce{^{245}Cm}, \ce{^{246}Cm} have been ommitted due to their high error.}
+    \label{fig:actinides}
+\end{figure}
+
+Figure \ref{fig:actinides} shows the relative error of actinide mass in the fuel
+salt at several points in the simulation. As time goes on, the error for
+\ce{^{241}Am}, \ce{^{242}Am}, and \ce{^{235}U} generally decreases in
+magnitude, and for the rest of the actinides it increases in magnitude. The
+maximum error for the actinides is around 8\% at the end of the simulation.
+
+The main fissionable nuclide in our fuel salt is \ce{^{233}U}, and the
+compositon in the \OpenMC fuel is less than the composition in the \SerpentTWO
+fuel. This is consistent with our results for $k_\text{eff}$.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/ch5/fission_products.pdf}
+    \caption{Relative error of fission products mass in fuel. \ce{^{97}Mo}
+        has been ommitted to
+        maintain clarity in the results. It's error is around -20\%
+    }
+    \label{fig:fission-products}
+\end{figure}
+
+Figure \ref{fig:fission-products} shows the relative error of fission product
+mass in the fuel. The behavior of the error varies depending on the nuclide.
+The maximum error for the fission products that are not cesium is around 3\%
+and the end of the simulation.
+
+%go into detail about each nuclide?
+
+\ce{^{242}Cm} is one of the few actinited with significant error early in the
+simulation that even out later on. Figure \ref{fig:cm242-mass} shows this
+behavior
+
+\begin{figure}[htpb]
+    \centering
+    \subfloat[][]{
+        \includegraphics[width=0.5\linewidth]{figs/ch5/Cm242_mass_0.pdf}
+        \label{fig:cm242-mass-0}
+    }
+    \subfloat[][]{
+        \includegraphics[width=0.5\linewidth]{figs/ch5/Cm242_mass_1.pdf}
+        \label{fig:cm242-mass-1}
+    }
+    \caption{}
+    \caption[\ce{^{242}Cm} mass]{
+    \subref{fig:cm242-mass-0} \ce{^{242}Cm} mass up to 183 days;
+    \subref{fig:cm242-mass-1} \ce{^{242}Cm} mass after 183 days}
+    \label{fig:cm242-mass}
+\end{figure}
+
+There are several important actinides, that
+have very large errors for all but the first depletion step, specifically
+\ce{^{242m}Am}, \ce{^{245}Cm}, and  \ce{^{246}Cm}. Figures
+\ref{fig:am242_m1-mass}, \ref{fig:cm245-mass}, and \ref{fig:cm246-mass} show
+the behavior for each of these nuclides, respectively.
+
+\begin{figure}[htpb]
+    \centering
+    \subfloat[][]{
+        \includegraphics[width=0.5\linewidth]{figs/ch5/Am242_m1_mass_0.pdf}
+        \label{fig:am242_m1-mass-0}
+    }
+    \subfloat[][]{
+        \includegraphics[width=0.5\linewidth]{figs/ch5/Am242_m1_mass_1.pdf}
+        \label{fig:am242_m1-mass-1}
+    }
+    \caption[\ce{^{242m}Am} mass]{
+    \subref{fig:am242_m1-mass-0} \ce{^{242m}Am} mass up to 183 days;
+    \subref{fig:am242_m1-mass-1} \ce{^{242m}Am} mass after 183 days}
+    \label{fig:am242_m1-mass}
+\end{figure}
+
+\begin{figure}[htpb]
+    \centering
+    \subfloat[][]{
+        \includegraphics[width=0.5\linewidth]{figs/ch5/Cm245_mass_0.pdf}
+        \label{fig:cm245-mass-0}
+    }
+    \subfloat[][]{
+        \includegraphics[width=0.5\linewidth]{figs/ch5/Cm245_mass_1.pdf}
+        \label{fig:cm245-mass-1}
+    }
+    \caption{}
+    \caption[\ce{^{245}Cm} mass]{
+    \subref{fig:cm245-mass-0} \ce{^{245}Cm} mass up to 183 days;
+    \subref{fig:cm245-mass-1} \ce{^{245}Cm} mass after 183 days}
+    \label{fig:cm245-mass}
+\end{figure}
+
+\begin{figure}[htpb]
+    \centering
+    \subfloat[][]{
+        \includegraphics[width=0.5\linewidth]{figs/ch5/Cm246_mass_0.pdf}
+        \label{fig:cm246-mass-0}
+    }
+    \subfloat[][]{
+        \includegraphics[width=0.5\linewidth]{figs/ch5/Cm246_mass_1.pdf}
+        \label{fig:cm246-mass-1}
+    }
+    \caption{}
+    \caption[\ce{^{246}Cm} mass]{
+    \subref{fig:cm246-mass-0} \ce{^{246}Cm} mass up to 183 days;
+    \subref{fig:cm246-mass-1} \ce{^{246}Cm} mass after 183 days}
+    \label{fig:cm246-mass}
+\end{figure}
+
+
+From a computational perspective, the high errors after the first timestep may
+be due to the extremly small amount of these nuclides present in the material.
+This would not effect the first depletion step, as the materials for both
+simulations have been verified to be using the same inital compositions.
+However, due to the control flow described in section
+\ref{sec:saltproc-detail}, the nuclide compositions of nuclides present in
+small amounts could be effected.
+
+%\subsection{Elements targeted for removal}
+%\label{sub:removed-elements}
