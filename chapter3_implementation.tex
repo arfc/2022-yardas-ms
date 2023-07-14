@@ -2,8 +2,9 @@
 Development of \SaltProc to enable use with \OpenMC constitutes a major portion
 of this thesis. In this chapter, I will provide a high level overview
 of my development process. The release
-notes (\url{github.com/arfc/saltproc/releases}) contain more
-details for those interested in specific API changes. 
+notes (\url{github.com/arfc/saltproc/releases}) contains
+details for those interested in specific API changes, feature additions,
+and dependency changes. 
 
 \section{SaltProc development history}%
 \label{sec:saltproc-history}
@@ -12,14 +13,14 @@ details for those interested in specific API changes.
 simulates on-line reprocessing via a batch-wise approach\footnote{Material is
 moved to or from the core at specific time intervals} in liquid-fueled
 \Gls{msr}s. More precisely, \SaltProc manages material flows and separation
-processes for nuclides in the fuel. \SaltProc relies on external codes to simulate
+processes for nuclides in the fuel. \SaltProc couples with external codes to simulate
 fuel depletion.
 
-The first version of \SaltProc (v0.1) was a simple Python 2.7 package that used
+The first version of \SaltProc (v0.1) was a Python 2.7 package that used
 \SerpentTWO for the fuel depletion simulations. A single Python file contained
 all functions; separation processes applied to materials used an implicit 100\%
-extraction efficiency at hardcoded cycle times \cite{rykhlevskii_advanced_2018}.
-The structure of \SaltProc v0.1 did not lend itsef easily to development of more
+extraction efficiency at hard-coded cycle times \cite{rykhlevskii_advanced_2018}.
+The structure of \SaltProc v0.1 did not lend itself easily to development of more
 sophisticated treatments of reprocessing. This led to the release of \SaltProc
 v0.2, in which the entire codebase was refactored into an object oriented
 context in Python 3. The addition of new functionality in the \verb.Process.
@@ -28,14 +29,14 @@ defined extraction efficiencies and removed the cycle time functionality\cite{ry
 
 \SaltProc v0.3 saw the implementation of processes for gas sparging and
 separation to more accurately simulate the \gls{msbr}, as well as additional
-refactoring to better follow OOP concepts.
+refactoring to better follow \Gls{oop} concepts.
 
-While v0.2 and v0.3 saw most of \SaltProc refactored for OOP, before I could
+While v0.2 and v0.3 saw most of \SaltProc refactored for \Gls{oop}, before I could
 implement \OpenMC support, I needed to resolve the following issues:
 \begin{enumerate}
     \item Relocate several functions for a more streamlined program flow
     \item Overhaul the \SaltProc input file format giving users more control over their simulations
-    \item Generalize docstrings\footnote{Since \SaltProc was initially written as a script wrapped around Serpent2, many of the docstrings explicitly referenced Serpent2.}
+    \item Generalize docstrings\footnote{Since \SaltProc was initially written as a script wrapped around \SerpentTWO, many of the docstrings explicitly referenced \SerpentTWO.}
     \item Improve function and variable names
     \item Add input file verification via JSON schema
 \end{enumerate}
@@ -57,9 +58,9 @@ release, including:
 improvements and additions:
 \begin{itemize}
     \item Full support for \OpenMC
-    \item Revamped and revitalized webhosted docpages, including an
-    \OpenMC-style user guide and theory manual, examples, and descriptions of
-    the input and output 
+    \item Revamped and revitalized web-hosted docpages, including a
+    user and developer guide, theory manual, examples, and descriptions of
+    the input and output
     \item Adjusted input file structure to accommodate \OpenMC depletion 
     options and default values\footnote{See Appendix \ref{appex:input-files}
     for examples of the input files for versions v0.3.0, v0.4.0, and v0.5.0}
@@ -74,10 +75,12 @@ architectural and design details to reference Ryklhevskii's dissertation
 \cite{rykhlevskii_fuel_2020} or the web-hosted \SaltProc docpages at
 \url{arfc.github.io/saltproc}.
 
-
 An important feature of the \OpenMC implementation is the use of control flow
 to add nuclides in the depletion chain to depletable materials. As of \OpenMC
-v0.13.3, in order to obtain reaction rate tallies for a nuclide, that nuclide
+v0.13.3\footnote{the development version of \OpenMC slated to be released
+as v0.13.4 removed this feature, and in the most recent version of \SaltProc
+it is no longer present, however I am keeping this description here to
+show my process.}, in order to obtain reaction rate tallies for a nuclide, that nuclide
 must be explicitly present in a material. For regular \OpenMC depletion
 simulations, the program adds any nuclides in the depletion chain not present
 in the material at a concentration of 1e-21 atom-\%. This is so any nuclides
@@ -87,19 +90,18 @@ non-physical behavior. Since there are additional removal processes in
 \SaltProc, nuclides can be included in a material with zero percent composition,
 which is effectively the same as not having the nuclide in a material at all. This
 bypasses the \OpenMC machinery that detects missing nuclides, and will cause
-the simulation to only caclulate production reactions for those nuclides.
+the simulation to only calculate production reactions for those nuclides.
 
 To fix this, I introduced control flow in the main function\footnote{in hindsight,
 the root of this issue lies in how materials are processed in \SaltProc, so any code
-added to fix it should have gone in the Materialflow class. I have
-added an issue to the repository to fix this PUT ISSUE LINK HERE}
+added to fix it should have gone in the Materialflow class.}
 to add these missing nuclides back in. While overall this shouldn't
 significantly effect the neutronics of the simulation, it could influence the
 compositions of individual nuclides present in small quantities in the
-simulation, leading to massive errors in the nuclide compositon. I give
-examples of some of these nuclides in Section \ref{sub:nuclide-compositons}
+simulation, leading to massive errors in the nuclide composition.% I give
+%examples of some of these nuclides in Section \ref{sub:nuclide-compositions}
 
-The behavior of depletion in \SerpentTWO is \ldots
+%The behavior of depletion in \SerpentTWO is \ldots
 
 I did make one significant change to \SaltProc as part of the v0.5.0 release
 not directly related to \OpenMC support; I removed of PyNE as a dependency.
@@ -109,8 +111,6 @@ from source. \OpenMC's \verb.Material. class replaces PyNE's \verb.Material.
 class, and the SerpentTools package replaced the \SerpentTWO parsing
 functionality of PyNE. I do not expect this change to introduce errors into
 \SaltProc.
-
-in the main execution function to add any missing nuclides
 
 \section{Mathematical description of material reprocessing}
 Rykhlevskii has discussed the design of \SaltProc's feeds and separations in
@@ -153,7 +153,7 @@ must first understand the design of the feeds and separations.
     associated processing task. At a minimum, a \verb.Process. object includes
     the following
     \begin{itemize}
-        \item A mass flowrate, $\dot{m}$, that specifies the mass of fuel salt a process can operate on per unit time
+        \item A mass flow rate, $\dot{m}$, that specifies the mass of fuel salt a process can operate on per unit time
         \item An extraction efficiency, $\epsilon$, for target element(s).
         \item A method to apply the process on a \verb.Materialflow. object. 
     \end{itemize}
@@ -192,12 +192,12 @@ from time $i$ to time $i+1$ to get $\mathbf{n}^{j}(i+1)$, where $A$ is the
 depletion matrix. This sequence is called a {\bf depletion step}.
 
 Now, let the mass and volume of depletable material $j$ be
-$m^{j}$ and $V^{j}$ respectively. Let the mass flowrate of process $p$ be
+$m^{j}$ and $V^{j}$ respectively. Let the mass flow rate of process $p$ be
 $\dot{m}_{p}$. At the end of each depletion step, \SaltProc constructs process
 paths from the process graph defined in the DOT file, and sequentially applies
 each process $p$ in each path $r$ to the relevant materials to obtain through
 and waste streams for each material. \SaltProc tracks the mass and nuclide vector for both through and waste streams. For through
-streams, \SaltProc also tracks the volume and mass flowrate. For every node
+streams, \SaltProc also tracks the volume and mass flow rate. For every node
 $p\in[0,l]$ where $0$ represents the core outlet and $l$ represents the core
 inlet, in the path $r$, for the through streams we have
 
@@ -240,9 +240,9 @@ Similarly, for the waste streams, we have
     \label{fig:example-graph}
 \end{figure}
 
-SaltProc does not currently track the volume and mass flowrate of waste streams.
+\SaltProc does not currently track the volume and mass flow rate of waste streams.
 In practice, since it is extremely resource intensive to separate individual
-isotopes, SaltProc only allows extraction efficiencies to be defined for
+isotopes, \SaltProc only allows extraction efficiencies to be defined for
 elements. So for any isotope $a$ of xenon,
 $\epsilon_{\ce{^{a}Xe}} = \epsilon_{\ce{^{a^{\prime}}Xe}}$  where
 $a^{\prime} \in \text{isotopes of Xe}$

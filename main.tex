@@ -1,5 +1,5 @@
 %% Package and Class "uiucthesis2014" for use with LaTeX2e.
-\documentclass[edeposit,fullpage]{uiucthesis2018}
+\documentclass[edeposit,fullpage,hidelinks]{uiucthesis2018}
 
 
 \usepackage[acronym,toc]{glossaries}
@@ -90,7 +90,7 @@
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
 
-\title{Implementation and validation of \OpenMC in \SaltProc}
+\title{Implementation and validation of \OpenMC depletion capabilities in \SaltProc}
 \author{Oleksandr Redin Yardas}
 \department{Nuclear, Plasma, Radiological Engineering}
 \schools{B.A., Grinnell College, 2020}
@@ -108,19 +108,27 @@
 %% Create an abstract that can also be used for the ProQuest abstract.
 %% Note that ProQuest truncates their abstracts at 350 words.
 \begin{abstract}
-Like their contemporary counterparts, next generation nuclear reactors will produce no \Gls{ghg} emissions, while being safer and more efficient. \Gls{msr}
-technology is of particular interest due to the opportunities and challenges it
-presents. No operating \Gls{msr}s exist, so we must rely on computer simulations
+No operating \Gls{msr}s exist, so we must rely on computer simulations
 to study this technology. Popular \Gls{msr} designs to use in simulations
 include the \Gls{msbr}, the \Gls{msre}, and the \Gls{msfr}. A key process to
 consider for \Gls{msr}s is on-line fuel reprocessing and its effect on reactor
 dynamics. \SaltProc is an open source interface code tool that simulates on-line
 fuel reprocessing when coupled with a depletion-capable transport solver.
-\SaltProc was intended to be usable with any depletion solver, but only had
-support for \SerpentTWO. I overhauled the \SaltProc code to simplify coupling
-supports for depletion solvers, and added support for \OpenMC. I also validated
-the new functionality on a full-core model of the \Gls{msbr}. The results show that (fill in details about results once obtained).
-This is significant as this makes \SaltProc the first completely open-source tool to accurately simulate on-line fuel reprocessing.
+\SaltProc was intended to be usable with any depletion solver, but initially was written
+with support for \SerpentTWO exclusively. In this wokr, I overhauled the \SaltProc code
+to simplify coupling supports for depletion solvers, and added support for \OpenMC.
+To ensure that the code maintained existing functionality as well as extended it, I
+validated the new functionality on a full-core model of the \Gls{msbr}. In this work I find
+$k_\text{eff}$ between \OpenMC and \SerpentTWO differ by +150 pcm at \Gls{bol}
+and by -600 pcm at the end of the simulation after one year of operation. I also find
+that the relative difference of most actinides is less than 10\%. The actinides
+with smaller concentrations in the fuel tend to have larger relative differences
+between the two codes. I find similar results for fission products, however the 
+relative difference is smaller, with most of the fission products having a
+relative difference no greater than 4\%. There are some outliers in the results
+with very high relative errors, however these can be attributed to their very small 
+concentrations in the material. This is significant as this makes \SaltProc the first
+completely open-source tool to flexibly and accurately simulate on-line fuel reprocessing.
 \end{abstract}
 
 \chapter*{Acknowledgments}
@@ -139,7 +147,7 @@ are supported by the Office of Nuclear Energy of the U.S. Department of Energy
 and the Nuclear Science User Facilities under Contract No. DE-AC07-05ID14517.
 
 I would also like to thank my Advanced Reactors and Fuel Cycles peers,
-particularly Amanda Bachmann, Samuel Dotson, and Luke Sefiert for their code
+particularly Amanda Bachmann, Samuel Dotson, and Luke Seifert for their code
 reviews and knowledge on nuclear systems, Python, and molten salt reactors. And
 to Andrei Rykhlevskii, thank you for creating \SaltProc and for your response to
 my probing questions. To the NPRE Staff who run the show behind the scenes, you
@@ -190,8 +198,8 @@ power.
 \input{chapter2_litreview}
 \input{chapter3_implementation}
 \input{chapter4_model}
-%\input{chapter5_results}
-%\input{chatper6_conclusions}
+\input{chapter5_results}
+\input{chapter6_conclusions}
 
 \appendix
 \input{appendix}

@@ -2,23 +2,21 @@
 \label{ch:chapter4}
 As mentioned in Section \ref{sec:objectives}, I am using a \Gls{csg} model of
 the \Gls{msbr} \cite{robertson_conceptual_1971} to verify my \OpenMC
-implementation in \SaltProc.
-
-The \Gls{msbr} design is the result of a design study of a single-fluid
-\Gls{msr} following the success of the \Gls{msre}
-\cite{haubenreich_experience_1970} \cite{rosenthal_history_1970}.
-
-I picked the \Gls{msbr} for two reasons:
-\begin{enumerate}
-    \item Several papers studying the \Gls{msbr} exist,\footnote{see Chapter
-    \ref{ch:chapter2} for a discussion of these papers} enabling qualitative
-    results comparison.
-    \item Rykhlevskii created a \SerpentTWO \Gls{csg} model and the processing
-    system graph for the \Gls{msbr} based on the specifications in
-    \cite{robertson_conceptual_1971} for use in \SaltProc
-    v0.3.0 \cite{rykhlevskii_fuel_2020}. The models used in this work are derived
-    from Rykhlevskii's model.
-\end{enumerate}
+implementation in \SaltProc. The \Gls{msbr} design is the result of a
+design study of a single-fluid \Gls{msr} following the success of the \Gls{msre}
+\cite{haubenreich_experience_1970} \cite{rosenthal_history_1970}. Like the \Gls{msre},
+the \Gls{msbr} is a single fluid design, but unlike the \Gls{msre}, the \Gls{msbr}
+never made it past the concept stage. Even so, there exist very detailed specifications for
+the reactor. I selected the \Gls{msbr} over the \Gls{msre} primarily because
+Rykhlevskii created a \SerpentTWO \Gls{csg} model and the processing
+system graph for the \Gls{msbr} based on the specifications in
+\cite{robertson_conceptual_1971} for use in \SaltProc
+v0.3.0 \cite{rykhlevskii_fuel_2020}. The models used in this work are derived
+from Rykhlevskii's model. Addionally, several papers studying the
+\Gls{msbr} exist,\footnote{see Chapter
+\ref{ch:chapter2} for a discussion of these papers} enabling 
+results comparison with several sources, however this point is
+also true for the \Gls{msre}.
 
 Most of the discussion below summarizes and condenses the information in
 Robertson et al. (1971) and compares it to the \Gls{csg} model. Unless otherwise
@@ -969,6 +967,7 @@ nickel mesh \cite{robertson_conceptual_1971}.
 
 
 \subsection{Reprocessing system model}
+\label{sub:reprocessing-system-model}
 As described in Section \ref{sub:feeds-separations}, SaltProc relies on extraction efficiencies to model chemical removal of target elements from the fuel salt.  Unfortunately, Robertson et al. (1971) 
 \cite{robertson_conceptual_1971} provide no such values, and a literature review
 to find such values is outside the scope of this thesis. What Robertson does
@@ -1015,14 +1014,14 @@ cycle times that will remove a large majority of the material after the
 designated amount of time has passed.
 
 Assuming we are running a simulation with constant-length depletion steps, let
-$l_{d}$ be the length of a depletion step, and let $c_{X}$ be the cycle time for
+$l_{d}$ be the length of a depletion step, and let $c_{x}$ be the cycle time for
 element $X$. Ignoring the addition of element $X$ to the material via
-transmutation or feeds, we can define the extraction efficiency $\epsilon_{X}$
+transmutation or feeds, we can define the extraction efficiency $\epsilon_{x}$
 to be:
 
 \begin{equation}
     \label{eq:extraction-efficiency}
-    \epsilon_{X} = 1 - \delta^{\frac{l_{d}}{c_{X}}}
+    \epsilon_{x} = 1 - \delta^{\frac{l_{d}}{c_{x}}}
 \end{equation}
 
 where $\delta$ is a threshold for the mass fraction remaining of the original
@@ -1035,8 +1034,15 @@ above. There are only three components: the gas separator, the nickel filter and
 the reductive extractor. Figure \ref{fig:process-graph} displays the process
 graph. This simple configuration is designed to match results from Rykhlevskii
 and Park et al. (2015) \cite{park_whole_2015} by processing 100\% of the salt
-flow. Note that this does not match the processing system specification in
-\cite{robertson_conceptual_1971}.
+flow. Note the presence of a \verb.thorium_feed. feed process. This
+process replaces the lost mass via reprocessing with an equal mass of fuel salt
+of identical composition to the initial fuel salt, but with all \ce{^{233}U}
+replaced by \ce{^{232}Th}. This ensures we have a relatively constant level of
+\ce{^{232}Th} in the reactor. This process graph differs from Ryklevskii's
+in \cite{rykhlevskii_fuel_2020}, as seen in Figure \ref{fig:rykhlevskii-process-graph}.
+I did not use Ryklevksii's process graph as it incorporates more complicated
+physics-based modeling of gas sparging that I felt did not fit in the scope
+of this thesis.
 
 \begin{figure}[htpb]
     \centering
@@ -1045,13 +1051,20 @@ flow. Note that this does not match the processing system specification in
     \label{fig:process-graph}
 \end{figure}
 
-Table \ref{tab:msbr-cycle-times} lists element groups and their extraction
-efficiencies. Note the presence of a \verb.thorium_feed. feed process. This
-process replaces the lost mass via reprocessing with an equal mass of fuel salt
-of identical composition to the initial fuel salt, but with all \ce{^{233}U}
-replaced by \ce{^{232}Th}. This ensures we have a relatively constant level of
-\ce{^{232}Th} in the reactor.
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/ch4/rykhlevskii-process-graph.png}
+    \caption{Process graph for salt reprocessing system used in \cite{rykhlevskii_fuel_2020}}
+    \label{fig:rykhlevskii-process-graph}
+\end{figure}
 
+Table \ref{tab:msbr-cycle-times} lists element groups and their extraction
+efficiencies for depletion step length of 3 days. A 3 day depletion step size is
+commonly chosen for modeling efforts of the \Gls{msbr} \cite{rykhlevskii_modeling_2019}
+\cite{park_whole_2015}, as this corresponds to the the cycle time for \ce{^{233}Pa}
+(which decays into \ce{^{233}U}), and strikes a good balance between capturing the
+effect of short-lived fission products, and having a reasonable amount of depletions steps.
+For this reason, I also use a 3 day depletion step size.
 \begin{table}[htpb] 
     \centering 
     \caption{Extraction efficiencies using cycle times in Table \ref{tab:msbr-cycle-times} and Equation \ref{eq:extraction-efficiency}}
@@ -1076,6 +1089,8 @@ replaced by \ce{^{232}Th}. This ensures we have a relatively constant level of
         \hline
     \end{tabularx}
 \end{table}
+
+The 
 
 \section{Cross Section Data}
 \label{sec:xs-data}
