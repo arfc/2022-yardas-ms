@@ -1,34 +1,51 @@
 \chapter{Molten Salt Reactor Modeling}% \label{cha:msr_modeling}
 \label{ch:chapter2}
+\glsresetall
 %% lit review goes here
-Much of our knowledge about \Gls{msr}s come from experiments on a test reactor
+Much of our knowledge about \gls{msr}s come from experiments on a test reactor
 called the \Gls{msre} conducted at \Gls{ornl} in the 1960s, which demonstrated
 the viability of the \Gls{msr} concept for use in civilian power programs
 \cite{haubenreich_experience_1970} \cite{rosenthal_history_1970}.
-%% Give brief description of the MSRE
-%% cite a bunch of MSRE ORNL work.
 The \Gls{msre} reactor to this day remains one of the few \Gls{msr}s to operate.
-%% Maybe briefly mention other historical MSRs?
-
 As of writing this thesis, there are no \Gls{msr}s currently in operation; we
 must rely on computational and/or surrogate models to further study \Gls{msr}
-physics. The \Gls{msre} is a popular choice to model with computational tools due to the
+physics. 
+
+Recall in Section \ref{sec:current_and_future_trajectories_of_nuclear_power}
+we briefly highlighted some of the differences between \Gls{msr}s and
+solid fuel reactors; in most solid fuel reactors, the fuel remains
+in one place in the core during operation, whereas in an \Gls{msr}, fuel is continuously pumped
+through a loop with inlets and outlets at opposite sides of the core. 
+The liquid phase of the fuel as well as the movement of the fuel
+in and out of the core region will effect the dynamic behavior of the
+reactor: \gls{dnp}s contained in the fuel will move in and out of the core, and their
+location relative to the core when they decay and release their neutron(s) will have a
+significant effect on reactivity control. Online reprocessing will change the fuel composition
+during operation, effecting the neutronics and reactivity. Neutron poisons could phase out of solution
+in a gaseous phase, or plate-out onto interior surfaces in neutronically important regions.
+Long-term operation could lead to build up of precipitates on interior surfaces of the core
+and the fuel salt loop, altering the fluid mechanical behavior of the fuel salt, and in turn
+the dynamic behavior of the reactor by increasing the flow velocity. These
+phenomena cover a wide range of physics domains and can
+require development of new software or new modules in existing software
+to simulate them.
+
+Current \Gls{msr} modeling covers a wide range of physics domains to simulate
+phenomena like what I discussed above.
+The \Gls{msre} is a popular choice to model with computational tools due to the
 availability of experimental data to compare results against. For example,
-Roelofs et al. (2021) used the system thermal hydraulics code SPECTRA to model
+Roelofs et al. (2021) \cite{roelofs_molten_2021} used the system thermal hydraulics code SPECTRA to model
 steady state parameters of the fuel-salt, \gls{dnp} drift, and various fission
-product behaviors in comparison with actual \Gls{msre} data \cite{roelofs_molten_2021}.
-Podila et al. (2019) performed a \Gls{cfd} simulation of the \Gls{msre} core to
+product behaviors in comparison with actual \Gls{msre} data.
+Podila et al. (2019) \cite{podila_cfd_2019} performed a \Gls{cfd} simulation of the \Gls{msre} core to
 investigate the ability of \Gls{cfd} to predict 3D effects in this kind of
-reactor \cite{podila_cfd_2019}. 
-%cite some MSRE studies
-In addition to the \Gls{msre}, the \Gls{msfr} \cite{merle-lucotte_launching_2011}
+reactor. In addition to the \Gls{msre}, the \Gls{msfr} \cite{merle-lucotte_launching_2011}
 and \Gls{msbr} \cite{robertson_conceptual_1971} conceptual reactors are well
 developed and are actively used in research. Park et al. (2015) performed a
 whole core analysis of the \Gls{msbr} using \MCNPSIX with additional depletion
 and reprocessing using \CINDERNINETY and a custom Python script \cite{park_whole_2015}. Aufiero et al. (2015) extended \SerpentTWO with online
 fuel reprocessing capabilities to study depletion in the \Gls{msfr}
-\cite{aufiero_extended_2013}. These efforts illustrate that \Gls{msr} modeling
-encompasses a wide range of physics domains.
+\cite{aufiero_extended_2013}. 
 
 \section{Modeling depletion in MSRs} Recall in Sections
 \ref{sec:current_and_future_trajectories_of_nuclear_power} and \ref{sec:msr_codes} I introduced the
@@ -39,7 +56,7 @@ measurement due to the lack of a physically operating reactor. Even so,
 simulations will provide a useful estimate of the relative concentrations of
 nuclides one can expect to show up. Table \ref{tab:msr_depletion_tools}
 summarizes some currently available software tools that can model depletion in
-\Gls{msr}s. 
+\Gls{msr}s with fuel reprocessing. 
 
 \begin{table}[htpb] 
     \centering 
@@ -60,11 +77,13 @@ summarizes some currently available software tools that can model depletion in
     \end{tabulary}
 \end{table}
 
-\SaltProc has been used to perform lifetime depletion analysis on full-core
-models of the \Gls{msbr} \cite{rykhlevskii_modeling_2019}. Figure
+Code-to-code comparisons between software tools is one way to validate their results.
+\SaltProc, the subject of this thesis, has been used to perform lifetime
+depletion analysis on full-core models of the \Gls{msbr}\cite{rykhlevskii_modeling_2019} in comparison with
+similar work done by Park et al (2015) \cite{park_whole_2015}. Figure
 \ref{fig:msbr_spectrum_comp} shows the \gls{bol} and \gls{eol} neutron flux spectra for the \Gls{msbr}
-results from Ryhklevskii's work \cite{ryhklevskii_modeling_2019},  Park et. al's work \cite{park_whole_2015},
-as well as with data from the original MSBR report from Robertson et. al
+results from Rykhlevskii et al's work \cite{rykhlevskii_modeling_2019},  Park et al's work \cite{park_whole_2015},
+as well as with data from the original MSBR report from Robertson et al
 \cite{robertson_conceptual_1971}. The figure shows these results qualitatively match,
 with the majority of the neutrons flux being between $10^{-8}$ MeV and $10^{-6}$ MeV,
 with a small peak around $10^0$ MeV\footnote{Park et al. do not discuss how they
@@ -86,15 +105,15 @@ best I can do is a qualitative comparison.}.
         \includegraphics[width=0.6\linewidth]{figs/ch2/robertson_data.png}
         \label{fig:robertson_spectrum}
     }
-    \caption[Side-by-side results of MSBR spectra between Ryhklevskii et al, (2019) and Park et al. (2015)]{
-    Side-by-side results of MSBR spectra between Ryhklevskii et al. (2019) and Park et al. (2015);
+    \caption[Comparison of MSBR spectra between Rykhlevskii et al. (2019), Park et al. (2015), and Robertson et al. (1971)]{
+    Comparison of MSBR spectra between Rykhlevskii et al. (2019), Park et al. (2015), and Robertson et al. (1971);
     \subref{fig:msbr_spectrum_sub1} Neutron flux energy spectrum at
     initial and equilibrium states normalized by unit lethargy. Calculated using \SaltProc coupled
     with \SerpentTWO. Reproduced
-    from \cite{rykhlevskii_modeling_2019}; \subref{fig:msbr_spectrum_sub2}
+    from Rykhlevskii et al. \cite{rykhlevskii_modeling_2019}; \subref{fig:msbr_spectrum_sub2}
     Neutron flux spectrum at initial and equilibrium states. Reproduced from
-    \cite{park_whole_2015}; \subref{fig:robertson_spectrum} Neutron flux
-    spectrum at the mid-plane of the \Gls{msbr} design normalized by the peak flux. Made using data in Table B.2 in \cite{robertson_conceptual_1971}}
+    Park et al. \cite{park_whole_2015}; \subref{fig:robertson_spectrum} Neutron flux
+    spectrum at the mid-plane of the \Gls{msbr} design normalized by the peak flux. Made using data in Table B.2 in Robertson et al. \cite{robertson_conceptual_1971}}
     \label{fig:msbr_spectrum_comp}
 \end{figure}
 % in andrei's paper he makes several claims about good agreement with the MSBR results in the Robertson report, but I have been unable to find said results in that report
@@ -110,19 +129,21 @@ using the \SCALE suite for coupled transport-depletion, to couple with Shift
 \cite{davidson_nuclide_2018}, a monte carlo particle transport tool for 3D
 neutron transport and depletion\footnote{at the time of publication of Betzler
 et al. (2017), Shift had not yet been incorporated into SCALE}.
-Ryklevskii's work used identical cross section libraries and model parameters as
+Rykhlevskii's work used identical cross section libraries and model parameters as
 Betzler et al. (2017).
 
 Figure \ref{fig:tap-spectra} compares the neutron flux spectra between the
 \SaltProc and ChemTriton simulations at \Gls{bol} and \gls{eol}. The
-figure shows overall qualitative agreement between the two codes. At \Gls{bol},
-both results have a similar set of peaks and valleys between $10^{-2}$ MeV and
+figure shows overall qualitative agreement between the two codes. Figure \ref{fig:tap-spectrum-bol}
+shows the neutron spectrum at \Gls{bol}, with \SaltProc in yellow and ChemTriton in blue.
+Both results have a similar set of peaks and valleys between $10^{-2}$ MeV and
 $10^{0}$ MeV, although the magnitudes differ quite a bit, with \SaltProc
-tending to have smaller magnitudes. At \Gls{eol}, we see the 
-at \Gls{bol}, with 
-\ref{fig:tap-spectra}, neutron flux spectra results between the \SaltProc and
-ChemTriton simulations show quantitative and qualitative agreement at 
-\Gls{bol} and \Gls{eol}. The \SaltProc results
+tending to have smaller magnitudes. Figure \ref{fig:tap-spectrum-eol} shows the neutron spectrum
+at \Gls{eol}. The neutron spectrum has shifted quite significantly, with a larger peak around $10^{-7}$
+MeV, and a much narrower peak around $10^{0}$ MeV. Again, \SaltProc tends to have smaller magnitudes
+for the spectrum than ChemTriton, except at the low-energy peak. While \SaltProc has not been compared
+to \SCALE or \ADDER, the discussed results verify that \SaltProc produces results that are comparable
+to those of similar tools.
 
 \begin{figure}[htpb]
     \centering
@@ -139,9 +160,6 @@ ChemTriton simulations show quantitative and qualitative agreement at
     }
     \label{fig:tap-spectra}
 \end{figure}
-
-While \SaltProc has not been compared to \SCALE or \ADDER, the discussed results verify
-that \SaltProc produces results that are comparable to those of similar tools.
 
 
 \subsection{Practical differences in continuous and batch-wise reprocessing}
@@ -180,7 +198,7 @@ discussed in that paper in Table \ref{tab:mc_code_diffs}.
     \label{tab:mc_code_diffs}
     \begin{tabulary}{\linewidth}{|C|C|C|} 
         \hline
-        Metric & \OpenMC & \SerpentTWO \\ 
+        Metric & \OpenMC (v0.13.4) & \SerpentTWO (v2.1.32)\\ 
         \hline 
         Access & Open source, hosted on GitHub & Export controlled, code distributed by RSICC (USA), OECD/NEA\\
         \hline
@@ -205,8 +223,8 @@ discussed in that paper in Table \ref{tab:mc_code_diffs}.
 user-provided data. Romano et al. (2021) used three different depletion chains
 in their study \cite{romano_depletion_2021}:
 \begin{enumerate}
-    \item A full depletion chain that contains data from ever neutron, decay
-        and fission product yield sublibrary file in the ENDF/B-VII.1 library.
+    \item A full depletion chain that contains data from the neutron, decay,
+        and fission product yield sublibraries from the ENDF/B-VII.1 library.
     \item A reduced depletion chain that finds all potential products from the
         nuclear reactions based on a set of starting nuclides to reduce the
         size of the depletion matrix.
@@ -214,7 +232,7 @@ in their study \cite{romano_depletion_2021}:
         specification \cite{kim_specification_2015}, referred to as the CASL
         depletion chain by Romano et al. (2021) \cite{romano_depletion_2021}.
 \end{enumerate}
-\SerpentTWO allows users to select same data using the appropriate ``set''
+\SerpentTWO allows users to select same data using the appropriate \verb,set,
 cards, however does not include a method to reduce the depletion chain or
 modify a depletion chain directly, meaning that the CASL depletion chain cannot
 be used with the version of \SerpentTWO used in \cite{romano_depletion_2021}
@@ -267,7 +285,11 @@ depletion chains used are identical.
 
 Figure \ref{fig:pwr-serpent-openmc-actinides} shows the relative difference in
 actinide concentrations using the full depletion chain. Most of the differences
-are less than 0.1\% and all are within 0.15\%.  
+are less than 0.1\% and all are within 0.15\%. Note that the differences of concentration of 
+\ce{^{235}U} and \ce{^{239}Pu} between the \OpenMC and \SerpentTWO simulations increase
+with increasing burnup. The authors of \cite{romano_depletion_2021} conclude that this
+increasing difference is the most likeley cause of the the increasing difference
+in $k_{\text{eff}}$ lseen in Figure \ref{fig:pwr-serpent-openmc-keff}.
 
 \begin{figure}[htpb]
     \centering
@@ -311,7 +333,7 @@ depletion settings and methods used by the codes,  Romano et al. (2021) notes
 that one must take careful consideration of the data and internal settings to
 get good results between codes. Of note are the default energy release per
 fission of \ce{^{235}U} used for power normalization and capture branching
-ratios. We follow Romano's methodology to ensure data consistency in our
+ratios. I follow Romano's methodology to ensure data consistency in our
 comparative study. The key features to consider:
 \begin{itemize}
     \item Utilize identical cross-section libraries, depletion data, and capture
@@ -319,7 +341,7 @@ comparative study. The key features to consider:
     \item Use the same fission heating values.
     \item Utilize interpolated fission product yields.
 \end{itemize}
-I will discuss the procedure for ensuring data consistency in Chapter 4.
+I discuss the procedure for ensuring data consistency in Section \ref{sub:results-xs-data}.
 %% talk about saltproc in it's current state, the gaps that exist
 %% lead into discussion about why it's important to add openmc 
 %% capabilities to SaltProc. Also mention the differences in 

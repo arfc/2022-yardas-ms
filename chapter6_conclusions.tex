@@ -1,23 +1,37 @@
 \chapter{Conclusions}
 \label{ch:chapter6}
+\glsresetall
 
 In this thesis, I have discussed an approximate \Gls{csg} model of the
 \Gls{msbr} for use in \OpenMC. I have demonstrated this model to be consistent
 with the \SerpentTWO model it is based on through a convergence study as well as
-through demonstration of the results of the new \OpenMC functionailty in
+through demonstration of the results of the new \OpenMC functionality in
 \SaltProc in comparison with the \SerpentTWO functionality.
-With the release of v0.5.0, \SaltProc has the capabiltiy to run
-with a completely open source workflow. Even so, I believe that there are several issues facing \SaltProc
+I found that the difference in $k_\text{eff}$ averaged 35 pcm
+towards the beginning of the simulation, however this grew to
+700 pcm towards the end of the simulation. I attributed this growth
+to the difference in \ce{^{232}Th} between the \OpenMC and \SerpentTWO
+calculations. I also found that actinides in general has very small
+differences in mass between the two codes, around 2\%, and fission products
+had even lower differences in mass, around 0.6\%. Finally, I attributed
+large numerical discrepancies in the masses of \ce{^{241}Am}, \ce^{{242}Am},
+\ce{^{242m}Am}, \ce{^{242}Cm}, \ce{^{245}Cm}, and \ce{^{246}Cm} present in the fuel
+to an experimental \OpenMC feature I added to ensure accurate results for decay-only
+nuclides, as the numerical discrepancies were only present at the beginning of the simulation.
+
+\section{Future Work}
+With the release of v0.5.0, \SaltProc has the capability to run
+with a completely open source workflow. Even so, There are several issues facing \SaltProc
 that I want to bring attention to. Not all of these are problems with obvious
 solutions, but they are still important to consider as they effect the long
 term survival of the tool.
 
 First, the need to reinitialize the geometry, neutronics
-settings, and cross sections after applying the processeing scheme to the
+settings, and cross sections after applying the processing scheme to the
 materials is computationally inefficient. The most time consuming of these tasks
 is loading cross sections, which can take up several node hours of additional
-time if there are many timesteps. The solution to this problem is not obvious,
-and will be depletion code-dependent.
+time if there are many timesteps. The solution to this problem depends on
+the presence of an API, which will be depletion code-dependent.
 
 Second, while in principle the tool is
 designed to be compatible with any depletion code, in practice, this requires
@@ -37,9 +51,5 @@ just recently, in  \OpenMC -- also call in to question the necessity for a
 batch-wise reprocessing tool for advanced nuclear reactors. In countries using
 LWRs that require fuel to be reprocessed (France and Japan, for example) perform
 reprocessing, the reprocessing is physically batch-wise, happening once every 6
-months or so (check this). I think for these kinds of simulations, \SaltProc
-has a legitimate purpose for existing, as it is still the only open-source tool
-of its kind. Assuming a suitable name-change, I think that it would work very
-well as a tool for simulating MOX fuel in LWRs. I also think the graph-based
-approach of material reprocessing has uses even for continuous reprocessing,
-and could be added to other open source tools like \OpenMC.
+months or so. In these use cases, \SaltProc is uniquely poised to simulate them,
+as it is still the only open-source tool of its kind.

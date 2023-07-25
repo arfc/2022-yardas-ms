@@ -1,0 +1,22 @@
+{
+   "proc_input_file": "../msbr_processes.json",
+   "dot_input_file": "../msbr.dot",
+   "n_depletion_steps": 3,
+   "output_path": "test",
+   "depcode": {
+       "codename": "serpent",
+       "exec_path": "sss2",
+       "template_input_file_path": "msbr_endfb71.serpent",
+       "geo_file_paths": ["msbr_geometry.ini"]
+   },
+   "simulation": {
+       "sim_name": "msbr_serpent_local"
+   },
+   "reactor": {
+       "volume": 1.0,
+       "mass_flowrate": 9.92e6,
+       "power_levels": [ 2.25e9 ],
+       "depletion_timesteps": [3],
+       "timestep_units": "d"
+   }
+}

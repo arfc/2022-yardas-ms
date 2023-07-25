@@ -12,15 +12,13 @@ rcParams['pdf.use14corefonts'] = True
 rcParams['savefig.bbox'] = 'tight'
 rcParams['font.size'] = 12.0
 rcParams['text.usetex'] = True
-rcParams['text.latex.preamble'] = [
-    r'\usepackage{amsmath}',
-]
+rcParams['text.latex.preamble'] = r'\usepackage{amsmath}'
 
 plt.style.use('tableau-colorblind10')
 
 # Read convergence results
-sp = openmc.StatePoint('../../model/openmc/convergence/statepoint.200.h5')
-his = st.HistoryReader('../../model/serpent/convergence/msbr_endfb71.serpent_his0.m')
+sp = openmc.StatePoint('../../model/openmc_results/convergence/statepoint.200.h5')
+his = st.HistoryReader('../../model/serpent_results/convergence/msbr_endfb71.serpent_his0.m')
 his.read()
 
 serpent_entropy = his.get('entrSpt')

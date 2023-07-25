@@ -3,22 +3,22 @@
  Universe 13
    Delayed Group 1
      Total Material
-       Delayed-Nu-Fission Rate              0.000268269 +/- 8.83729e-08
+       Delayed-Nu-Fission Rate              0.000265274 +/- 1.0705e-07
    Delayed Group 2
      Total Material
-       Delayed-Nu-Fission Rate              0.000718206 +/- 2.36026e-07
+       Delayed-Nu-Fission Rate              0.000710256 +/- 2.8553e-07
    Delayed Group 3
      Total Material
-       Delayed-Nu-Fission Rate              0.000562406 +/- 1.83802e-07
+       Delayed-Nu-Fission Rate              0.000556302 +/- 2.21661e-07
    Delayed Group 4
      Total Material
-       Delayed-Nu-Fission Rate              0.00112156 +/- 3.63817e-07
+       Delayed-Nu-Fission Rate              0.00110972 +/- 4.36834e-07
    Delayed Group 5
      Total Material
-       Delayed-Nu-Fission Rate              0.000366428 +/- 1.18448e-07
+       Delayed-Nu-Fission Rate              0.000362613 +/- 1.41911e-07
    Delayed Group 6
      Total Material
-       Delayed-Nu-Fission Rate              0.000132885 +/- 4.25845e-08
+       Delayed-Nu-Fission Rate              0.00013155 +/- 5.07333e-08
  ============================>     TALLY 2     <============================
 
  Universe 13
@@ -27,7 +27,7 @@
        Decay Rate                           -nan +/- 0
    Delayed Group 2
      Total Material
-       Decay Rate                           2.49344e-05 +/- 8.19758e-09
+       Decay Rate                           2.4658e-05 +/- 9.91915e-09
    Delayed Group 3
      Total Material
        Decay Rate                           -nan +/- 0
@@ -45,75 +45,83 @@
  Universe 13
    Incoming Energy [0, 200000000)
      Total Material
-       Nu-Fission Rate                      1.04593 +/- 0.000346436
+       Nu-Fission Rate                      1.03411 +/- 0.000420899
  ============================>     TALLY 4     <============================
 
  Universe 13
    Delayed Group 1
      Incoming Energy [0, 200000000)
        Total Material
-         Delayed-Nu-Fission Rate              0.000268269 +/- 8.83729e-08
+         Delayed-Nu-Fission Rate              0.000265274 +/- 1.0705e-07
    Delayed Group 2
      Incoming Energy [0, 200000000)
        Total Material
-         Delayed-Nu-Fission Rate              0.000718206 +/- 2.36026e-07
+         Delayed-Nu-Fission Rate              0.000710256 +/- 2.8553e-07
    Delayed Group 3
      Incoming Energy [0, 200000000)
        Total Material
-         Delayed-Nu-Fission Rate              0.000562406 +/- 1.83802e-07
+         Delayed-Nu-Fission Rate              0.000556302 +/- 2.21661e-07
    Delayed Group 4
      Incoming Energy [0, 200000000)
        Total Material
-         Delayed-Nu-Fission Rate              0.00112156 +/- 3.63817e-07
+         Delayed-Nu-Fission Rate              0.00110972 +/- 4.36834e-07
    Delayed Group 5
      Incoming Energy [0, 200000000)
        Total Material
-         Delayed-Nu-Fission Rate              0.000366428 +/- 1.18448e-07
+         Delayed-Nu-Fission Rate              0.000362613 +/- 1.41911e-07
    Delayed Group 6
      Incoming Energy [0, 200000000)
        Total Material
-         Delayed-Nu-Fission Rate              0.000132885 +/- 4.25845e-08
+         Delayed-Nu-Fission Rate              0.00013155 +/- 5.07333e-08
  =================>     TALLY 5: BREEDING_RATIO_TALLY     <=================
 
  Universe 13
-   Pu241
-     (n,gamma)                            5.13828e-15 +/- 2.1158e-18
-     Absorption Rate                      1.85865e-14 +/- 7.60504e-18
-   U233
-     (n,gamma)                            0.0510381 +/- 1.55326e-05
-     Absorption Rate                      0.468156 +/- 0.000153469
-   Pu238
-     (n,gamma)                            5.7402e-11 +/- 2.34971e-14
-     Absorption Rate                      6.13381e-11 +/- 2.44776e-14
-   U234
-     (n,gamma)                            0.00293577 +/- 2.71205e-06
-     Absorption Rate                      0.00295373 +/- 2.7135e-06
-   Pu240
-     (n,gamma)                            2.70426e-13 +/- 2.47804e-16
-     Absorption Rate                      2.7067e-13 +/- 2.47864e-16
-   U238
-     (n,gamma)                            1.27458e-11 +/- 1.32989e-14
-     Absorption Rate                      1.2785e-11 +/- 1.33029e-14
    U235
-     (n,gamma)                            4.32403e-05 +/- 1.38933e-08
-     Absorption Rate                      0.00023857 +/- 8.9048e-08
-   Th232
-     (n,gamma)                            0.452839 +/- 0.000141993
-     Absorption Rate                      0.454358 +/- 0.000142155
+     (n,gamma)                            4.30275e-05 +/- 1.71727e-08
+     Absorption Rate                      0.000236732 +/- 1.06928e-07
+   Pu240
+     (n,gamma)                            2.72138e-13 +/- 2.44851e-16
+     Absorption Rate                      2.72387e-13 +/- 2.44902e-16
+   U234
+     (n,gamma)                            0.00291332 +/- 2.71163e-06
+     Absorption Rate                      0.00293143 +/- 2.71404e-06
+   Pu241
+     (n,gamma)                            5.14301e-15 +/- 2.42496e-18
+     Absorption Rate                      1.86014e-14 +/- 8.69789e-18
+   U238
+     (n,gamma)                            1.29638e-11 +/- 1.47965e-14
+     Absorption Rate                      1.30045e-11 +/- 1.48003e-14
    Pu239
-     (n,gamma)                            3.50861e-12 +/- 1.53397e-15
-     Absorption Rate                      9.33331e-12 +/- 4.02857e-15
+     (n,gamma)                            3.50901e-12 +/- 1.71659e-15
+     Absorption Rate                      9.3319e-12 +/- 4.54353e-15
+   U233
+     (n,gamma)                            0.0505752 +/- 1.89595e-05
+     Absorption Rate                      0.462904 +/- 0.000187034
+   Th232
+     (n,gamma)                            0.448414 +/- 0.000140168
+     Absorption Rate                      0.449976 +/- 0.000140162
+   Pu238
+     (n,gamma)                            5.75162e-11 +/- 2.86021e-14
+     Absorption Rate                      6.14937e-11 +/- 2.96516e-14
  ====================>     TALLY 6: FISSION_ENERGY     <====================
 
  Universe 13
    Total Material
-     Kappa-Fission Rate                   8.00141e+07 +/- 26507.7
+     Kappa-Fission Rate                   7.91068e+07 +/- 32206
  =======================>     TALLY 7: HEATING     <========================
 
  Universe 13
    Total Material
-     heating                              7.65448e+07 +/- 25800.4
+     heating                              7.49031e+07 +/- 29761.8
  ============================>     TALLY 8     <============================
+
+ Internal
+
+ ============================>     TALLY 9     <============================
+
+ Internal
+
+ ===========================>     TALLY 10     <============================
 
  Internal
 

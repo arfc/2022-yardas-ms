@@ -48,6 +48,13 @@ If $t$ is greater than $c_{x}$, then the above equation no longer applies and we
 \label{appex:input-files}
 \definecolor{bg}{rgb}{0.95,0.95,0.95}
 
+The \SaltProc input file has gone through several iterations between version
+\verb,0.3.0, and \verb,0.5.0,. Code \ref{code:input-1} shows the structure
+of the input file for \SaltProc \verb,v0.3.0,. The input keys are long,
+full-sentence descriptions, rather than short keywords. I tried to improve upon
+this structure in the input file for \SaltProc \verb,v0.4.0,, seen in
+Code \ref{code:input-2}.
+
 \begin{listing}[!ht]
     \begin{minted}[frame=single,
                    framesep=3mm,
@@ -74,8 +81,18 @@ If $t$ is greater than $c_{x}$, then the above equation no longer applies and we
     }
     \end{minted}
     \caption{\SaltProc v0.3.0 input file}
-    \label{listing:1}
+    \label{code:input-1}
 \end{listing}
+
+I organized the inputs based on the class they corresponed to in the \SaltProc
+code. \verb.depcode. inputs correspond to input files and options used in the
+transport-coupled depletion simulation. \verb.simulation. inputs correspond to
+simulation metadata (i.e. the simulation name and results file name), as well as
+flags to specify certain behaviors (e.g. running the simulation from the most
+recent depletion step, switchint to another geometry when $k_{\text{eff}}$ drops below
+1, etc.). \verb.reactor. inputs correspond to the specifications of the reactor,
+such as the volume, mass flowrate, power profile, as well as 
+specifying the units and type of timesteps.
 
 \begin{listing}[!ht]
     \begin{minted}[frame=single,
@@ -114,8 +131,15 @@ If $t$ is greater than $c_{x}$, then the above equation no longer applies and we
     }
     \end{minted}
     \caption{\SaltProc v0.4.0 input file}
-    \label{listing:2}
+    \label{code:input-2}
 \end{listing}
+
+I streamlined the \SaltProc \verb,v0.5.0, from the \verb,v0.4.0, one,
+removing any options that could be directly specified in the transport code
+itself (e.g. neutrons per batch and number of batches). I also removed the
+ability to specify the name of the iteration input and material files, opting to
+have \SaltProc use hardcoded values for these. I also added support for
+\OpenMC input in the \verb.depcode. option.
 
 \begin{listing}[!ht]
     \begin{minted}[frame=single,
@@ -145,5 +169,5 @@ If $t$ is greater than $c_{x}$, then the above equation no longer applies and we
     }
     \end{minted}
     \caption{\SaltProc v0.5.0 input file}
-    \label{listing:3}
+    \label{code:input-3}
 \end{listing}

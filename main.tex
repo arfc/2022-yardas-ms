@@ -99,6 +99,7 @@
 \degreeyear{2023}
 \committee{Dr. Madicken Munk, Advisor \\ Professor Tomasz Kozlowski}
 
+\renewcommand{\lstlistingname}{Code}% Listing -> Algorithm
 
 \begin{document}
 \include{acros}
@@ -108,27 +109,28 @@
 %% Create an abstract that can also be used for the ProQuest abstract.
 %% Note that ProQuest truncates their abstracts at 350 words.
 \begin{abstract}
-No operating \Gls{msr}s exist, so we must rely on computer simulations
-to study this technology. Popular \Gls{msr} designs to use in simulations
-include the \Gls{msbr}, the \Gls{msre}, and the \Gls{msfr}. A key process to
-consider for \Gls{msr}s is on-line fuel reprocessing and its effect on reactor
+No operating molten salt reactors (MSRs) exist, so we must rely on computer simulations
+to study this technology. Popular MSR designs to use in simulations
+include the Molten Salt Breeder Reactor (MSBR), the Molten Salt Reactor Experiment
+(MSRE), and the Molten Salt Fast Reactor (MSFR). A key process to
+consider for MSRss is on-line fuel reprocessing and its effect on reactor
 dynamics. \SaltProc is an open source interface code tool that simulates on-line
 fuel reprocessing when coupled with a depletion-capable transport solver.
 \SaltProc was intended to be usable with any depletion solver, but initially was written
 with support for \SerpentTWO exclusively. In this wokr, I overhauled the \SaltProc code
 to simplify coupling supports for depletion solvers, and added support for \OpenMC.
 To ensure that the code maintained existing functionality as well as extended it, I
-validated the new functionality on a full-core model of the \Gls{msbr}. In this work I find
-$k_\text{eff}$ between \OpenMC and \SerpentTWO differ by +150 pcm at \Gls{bol}
-and by -600 pcm at the end of the simulation after one year of operation. I also find
-that the relative difference of most actinides is less than 10\%. The actinides
+validated the new functionality on a full-core model of the MSBR. In this work I find
+$k_\text{eff}$ between \OpenMC and \SerpentTWO differ by +35 pcm at beginning of life
+and by 700 pcm at the end of the simulation after one year of operation. I also find
+that the relative difference of most actinides is less than 2\%. The actinides
 with smaller concentrations in the fuel tend to have larger relative differences
 between the two codes. I find similar results for fission products, however the 
 relative difference is smaller, with most of the fission products having a
-relative difference no greater than 4\%. There are some outliers in the results
-with very high relative errors, however these can be attributed to their very small 
-concentrations in the material. This is significant as this makes \SaltProc the first
-completely open-source tool to flexibly and accurately simulate on-line fuel reprocessing.
+relative difference no greater than 0.6\%. There are some outliers in the results
+with very high relative errors, however these can be attributed to numerical errors.
+This is significant as this makes \SaltProc the first completely open-source tool to
+flexibly and accurately simulate on-line fuel reprocessing.
 \end{abstract}
 
 \chapter*{Acknowledgments}
@@ -160,9 +162,7 @@ support of my mother, Zanna, and father, David, and for that I have endless
 gratitude. To my brother, Nico, and sister, Sophie, thank you for showing me
 different ways of being. To my partner BJ and my friends in OAC, I am so
 thankful to have met you all during my time in Illinois. You have made it all
-the more bearable. And to my late, lifetime friend and brother, Nyima, I am
-thankful for the 15 years I was able to spend with you. Your kindness and
-loyalty are forever etched in my heart.
+the more bearable.
 
 Finally, I would like to thank Dr. Kathryn Huff for allowing me to join ARFC and
 start on this journey. While we haven't had much time to work together, I am

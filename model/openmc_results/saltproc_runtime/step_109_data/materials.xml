@@ -1,365 +1,1292 @@
 <?xml version='1.0' encoding='utf-8'?>
 <materials>
-  <material depletable="true" id="1" name="fuel" volume="48704362.86958766">
-    <density units="g/cm3" value="3.349407333605658" />
-    <nuclide name="Ce143" wo="9.113350130587905e-08" />
-    <nuclide name="Sm148" wo="1.3421137332279695e-12" />
-    <nuclide name="Ba130" wo="1.7224858322612217e-21" />
-    <nuclide name="Sn117" wo="3.807440055564091e-09" />
-    <nuclide name="Sm153" wo="2.0536588179145427e-09" />
-    <nuclide name="Rb86" wo="2.0567227442986257e-09" />
-    <nuclide name="Sn118" wo="4.5190512534091285e-09" />
-    <nuclide name="Eu152" wo="1.3217107312153094e-12" />
-    <nuclide name="Ba136" wo="8.643609063145302e-07" />
-    <nuclide name="Pm148_m1" wo="6.060995135048503e-12" />
-    <nuclide name="Gd153" wo="9.185755918559706e-19" />
-    <nuclide name="Cd106" wo="5.0581849912769346e-34" />
-    <nuclide name="Pm149" wo="1.5506731132841002e-08" />
-    <nuclide name="Sn120" wo="6.572579681559731e-09" />
-    <nuclide name="Nd145" wo="1.0010125332165091e-07" />
-    <nuclide name="Zr94" wo="1.5928925693026085e-06" />
-    <nuclide name="Nd143" wo="7.499212504475022e-09" />
-    <nuclide name="La138" wo="5.613248779277981e-13" />
-    <nuclide name="Pm148" wo="6.847808602457464e-12" />
-    <nuclide name="Ba132" wo="2.1304017029634835e-15" />
-    <nuclide name="Sn112" wo="1.0543661571193167e-20" />
-    <nuclide name="Sm150" wo="2.5693519070664938e-09" />
-    <nuclide name="Nd146" wo="8.515402264373725e-08" />
-    <nuclide name="La140" wo="9.03303132228384e-08" />
-    <nuclide name="Nd148" wo="4.404803550542975e-08" />
-    <nuclide name="Cs133" wo="3.430326574345938e-06" />
-    <nuclide name="Sn124" wo="2.300646017449949e-08" />
-    <nuclide name="Zr95" wo="1.4167719064715651e-06" />
-    <nuclide name="Eu153" wo="4.973282997397001e-08" />
-    <nuclide name="In113" wo="7.226362440340071e-15" />
-    <nuclide name="Zr93" wo="1.2900998833436015e-06" />
-    <nuclide name="Sm149" wo="7.468555602434784e-09" />
-    <nuclide name="Zr92" wo="1.3207380082185116e-06" />
-    <nuclide name="Sr86" wo="6.443263586924618e-09" />
-    <nuclide name="Eu155" wo="1.7946522407335327e-08" />
-    <nuclide name="Pr142" wo="1.9181222521309858e-13" />
-    <nuclide name="Br79" wo="2.1287165515195706e-12" />
-    <nuclide name="Y89" wo="7.123715441522371e-08" />
-    <nuclide name="I130" wo="2.5215051207847893e-11" />
-    <nuclide name="I129" wo="5.2463791623724624e-08" />
-    <nuclide name="Sn125" wo="1.2342365899986138e-08" />
-    <nuclide name="Gd157" wo="1.3894680473797398e-10" />
-    <nuclide name="Cd111" wo="7.931150270587232e-10" />
-    <nuclide name="Sn113" wo="2.0968523844705337e-24" />
-    <nuclide name="Ba140" wo="8.324880098273184e-06" />
-    <nuclide name="Sn123" wo="3.744121567722526e-09" />
-    <nuclide name="Ce140" wo="8.043727496778583e-08" />
-    <nuclide name="Pr143" wo="9.45278408496988e-08" />
-    <nuclide name="Zr90" wo="3.1237426513002037e-09" />
-    <nuclide name="Rb87" wo="1.8556411612121286e-05" />
-    <nuclide name="Sn119" wo="5.322866597714222e-09" />
-    <nuclide name="Eu156" wo="1.1398374426493707e-08" />
-    <nuclide name="Gd154" wo="8.580001580505281e-14" />
-    <nuclide name="Sr84" wo="6.595669394719928e-16" />
-    <nuclide name="I131" wo="1.1293697566645644e-07" />
-    <nuclide name="I127" wo="3.100703731316219e-09" />
-    <nuclide name="Rb85" wo="7.041310833518962e-06" />
-    <nuclide name="In115" wo="1.1630697788122336e-09" />
-    <nuclide name="Zr96" wo="1.36131438797139e-06" />
-    <nuclide name="I135" wo="2.60853846276366e-08" />
-    <nuclide name="Sr88" wo="2.456469810745422e-05" />
-    <nuclide name="Cs135" wo="8.849503468421699e-06" />
-    <nuclide name="Nd150" wo="1.7268812843530145e-08" />
-    <nuclide name="Gd158" wo="1.4905921397855108e-10" />
-    <nuclide name="Nd142" wo="2.3006195321839325e-13" />
-    <nuclide name="Pr141" wo="6.908490080107587e-09" />
-    <nuclide name="Cs136" wo="1.3295393748483374e-07" />
-    <nuclide name="Gd152" wo="9.873537697887847e-17" />
-    <nuclide name="Ce136" wo="2.656326364359626e-34" />
-    <nuclide name="Ce138" wo="5.79906374599515e-17" />
-    <nuclide name="Cd112" wo="2.1338186065009414e-09" />
-    <nuclide name="Gd155" wo="2.6655955084806075e-12" />
-    <nuclide name="Ba137" wo="2.8707507536833405e-07" />
-    <nuclide name="Sn115" wo="6.084767089924844e-11" />
-    <nuclide name="Cs134" wo="7.945756095834466e-08" />
-    <nuclide name="Nd144" wo="7.588717164182056e-10" />
-    <nuclide name="Gd160" wo="1.1486042982949687e-11" />
-    <nuclide name="Ba135" wo="3.356424998760202e-11" />
-    <nuclide name="Cd116" wo="3.888977470078354e-09" />
-    <nuclide name="Cs137" wo="4.990689931459868e-05" />
-    <nuclide name="Sm154" wo="1.6496272647949448e-09" />
-    <nuclide name="Sm151" wo="5.9824133439323536e-09" />
-    <nuclide name="Sn114" wo="2.7197991719870208e-17" />
-    <nuclide name="Sr89" wo="1.3835811638974454e-05" />
-    <nuclide name="Ce139" wo="4.541169085226675e-15" />
-    <nuclide name="Sm144" wo="6.302256990846166e-35" />
-    <nuclide name="Eu157" wo="4.4919461550622493e-10" />
-    <nuclide name="Ba138" wo="4.367096410907827e-05" />
-    <nuclide name="Y91" wo="1.0509753795509868e-07" />
-    <nuclide name="Ba134" wo="5.372032331237042e-09" />
-    <nuclide name="Cd114" wo="5.373782037942272e-09" />
-    <nuclide name="Eu154" wo="9.409712061872544e-10" />
-    <nuclide name="Sm152" wo="7.529153482727356e-09" />
-    <nuclide name="Sm147" wo="6.63052347977282e-12" />
-    <nuclide name="Ce144" wo="1.5458142072673978e-07" />
-    <nuclide name="Cd108" wo="1.8943504231395873e-21" />
-    <nuclide name="Nd147" wo="5.1708093666138244e-08" />
-    <nuclide name="Br81" wo="1.0230260628546766e-08" />
-    <nuclide name="Pm151" wo="4.622583179932372e-09" />
-    <nuclide name="Cd115_m1" wo="2.2607843812785573e-10" />
-    <nuclide name="Ce142" wo="2.081679930430097e-07" />
-    <nuclide name="Sn116" wo="1.3774237352526434e-11" />
-    <nuclide name="Ce141" wo="1.834355636938961e-07" />
-    <nuclide name="Sr87" wo="1.6710218731903506e-10" />
-    <nuclide name="Zr91" wo="2.2423733181048313e-08" />
-    <nuclide name="Sn126" wo="7.02491494546766e-08" />
-    <nuclide name="Gd156" wo="2.1278454003740056e-10" />
-    <nuclide name="Sr90" wo="3.298353414726427e-05" />
-    <nuclide name="Pm147" wo="6.217369606695634e-09" />
-    <nuclide name="Y90" wo="5.343622235424817e-10" />
-    <nuclide name="Eu151" wo="4.778393586458752e-12" />
-    <nuclide name="Cd113" wo="1.947758340930723e-09" />
-    <nuclide name="Cd110" wo="9.509259778898817e-12" />
-    <nuclide name="Ba133" wo="2.659625503756651e-15" />
-    <nuclide name="La139" wo="1.9337970760834224e-07" />
-    <nuclide name="Sn122" wo="1.2444671778223792e-08" />
-    <nuclide name="Tb159" wo="1.764879878803891e-08" />
-    <nuclide name="Ni64" wo="8.32049046653057e-18" />
-    <nuclide name="W180" wo="9.481849995296115e-20" />
-    <nuclide name="Np235" wo="3.081698788226363e-20" />
-    <nuclide name="Ta180" wo="3.433677788207103e-30" />
-    <nuclide name="Cf251" wo="1.8468706434194362e-20" />
-    <nuclide name="Mg26" wo="1.2884652833714888e-20" />
-    <nuclide name="Pu244" wo="2.894339617067651e-19" />
-    <nuclide name="Ni61" wo="3.020233984629538e-20" />
-    <nuclide name="Cm246" wo="1.815946558451968e-18" />
-    <nuclide name="Hg198" wo="1.0734889134128316e-19" />
-    <nuclide name="U239" wo="1.3320581708452593e-15" />
-    <nuclide name="Er164" wo="3.235606835223692e-16" />
-    <nuclide name="Ca44" wo="2.1996750075912713e-20" />
-    <nuclide name="Er167" wo="7.491288626762326e-13" />
-    <nuclide name="Ti50" wo="2.4800453353605026e-20" />
-    <nuclide name="Cl37" wo="1.833967035453232e-20" />
-    <nuclide name="U234" wo="0.0005291931172608865" />
-    <nuclide name="Hg201" wo="9.875391194142206e-20" />
-    <nuclide name="Ni58" wo="2.862036908224055e-20" />
-    <nuclide name="Si28" wo="1.3872573640525575e-20" />
-    <nuclide name="Pu242" wo="6.155582935659602e-14" />
-    <nuclide name="Re185" wo="6.152461489623368e-20" />
-    <nuclide name="Cm240" wo="2.1371522647679533e-23" />
-    <nuclide name="Am243" wo="1.3834256132669123e-15" />
-    <nuclide name="Es254" wo="7.599527869655535e-21" />
-    <nuclide name="Es252" wo="6.570299070276753e-21" />
-    <nuclide name="Hf179" wo="1.2306668829927189e-19" />
-    <nuclide name="W182" wo="8.614539091458311e-20" />
-    <nuclide name="Th228" wo="2.3558468784612207e-11" />
-    <nuclide name="Th229" wo="2.6408872072839004e-08" />
-    <nuclide name="Am240" wo="2.413369602596343e-24" />
-    <nuclide name="Lu175" wo="7.629510487401942e-20" />
-    <nuclide name="S36" wo="1.7830680062257148e-20" />
-    <nuclide name="Ta182" wo="4.236774124863611e-22" />
-    <nuclide name="Cr53" wo="2.5865600036282808e-20" />
-    <nuclide name="Co59" wo="6.443925041565332e-20" />
-    <nuclide name="Np237" wo="2.20523312121181e-08" />
-    <nuclide name="K40" wo="1.9275929692960914e-20" />
-    <nuclide name="Hf180" wo="1.7699151726746164e-19" />
-    <nuclide name="Np234" wo="6.539120032901269e-30" />
-    <nuclide name="Pu239" wo="4.088696090711188e-11" />
-    <nuclide name="Ir193" wo="6.771177845033109e-20" />
-    <nuclide name="U236" wo="1.5198230161556375e-06" />
-    <nuclide name="Ra223" wo="5.816033346955668e-17" />
-    <nuclide name="Cr52" wo="2.58465877682697e-20" />
-    <nuclide name="Ta181" wo="7.70869264994314e-20" />
-    <nuclide name="Fm255" wo="1.460282468728793e-23" />
-    <nuclide name="Th230" wo="5.766279805460725e-09" />
-    <nuclide name="Ho166_m1" wo="3.930854432432822e-14" />
-    <nuclide name="Pu246" wo="6.432565181966751e-26" />
-    <nuclide name="U238" wo="3.375586675717477e-10" />
-    <nuclide name="B11" wo="4.616093188989477e-20" />
-    <nuclide name="Am244" wo="6.985680780436796e-20" />
-    <nuclide name="Am242_m1" wo="3.262682493364806e-17" />
-    <nuclide name="Es255" wo="7.562081073131853e-22" />
-    <nuclide name="Fe56" wo="2.840787647051502e-20" />
-    <nuclide name="Cm247" wo="1.0112398302955862e-19" />
-    <nuclide name="Co58" wo="9.901856684175143e-21" />
-    <nuclide name="U237" wo="2.8332365575022305e-09" />
-    <nuclide name="Hf177" wo="2.672265251058874e-20" />
-    <nuclide name="Cf246" wo="6.550983591139509e-29" />
-    <nuclide name="Sc45" wo="2.1780447629074695e-20" />
-    <nuclide name="U230" wo="1.9479348958954088e-19" />
-    <nuclide name="Tm170" wo="1.6264407058171709e-15" />
-    <nuclide name="Pb207" wo="5.185413444124767e-16" />
-    <nuclide name="Ni59" wo="2.637450348654979e-20" />
-    <nuclide name="Fe57" wo="2.823339365016308e-20" />
-    <nuclide name="Ge76" wo="2.1313095468639238e-07" />
-    <nuclide name="Na22" wo="9.817350869639412e-32" />
-    <nuclide name="Cm249" wo="2.5925555700715053e-24" />
-    <nuclide name="Ra226" wo="3.096706422964612e-14" />
-    <nuclide name="Hg196" wo="1.0692586238395144e-20" />
-    <nuclide name="Pu236" wo="1.3980746759814368e-19" />
-    <nuclide name="Ga69" wo="1.2990004796560905e-10" />
-    <nuclide name="Re187" wo="8.790894498160986e-20" />
-    <nuclide name="Au197" wo="8.883006548122082e-20" />
-    <nuclide name="Ca42" wo="2.0812992799609734e-20" />
-    <nuclide name="Es254_m1" wo="8.055723563488003e-24" />
-    <nuclide name="Ir191" wo="2.0425428735356538e-20" />
-    <nuclide name="Lu176" wo="6.018161251378166e-22" />
-    <nuclide name="U232" wo="6.171277144295028e-09" />
-    <nuclide name="Ar36" wo="1.7754838600077123e-20" />
-    <nuclide name="U233" wo="0.008135377439157994" />
-    <nuclide name="Cr54" wo="2.7146383518670586e-20" />
-    <nuclide name="Pu241" wo="9.506524697112546e-13" />
-    <nuclide name="Zn66" wo="1.1733660102185151e-12" />
-    <nuclide name="As74" wo="3.936108655742329e-15" />
-    <nuclide name="K41" wo="2.0805719904624407e-20" />
-    <nuclide name="Zn68" wo="4.7794735603067106e-11" />
-    <nuclide name="Cu65" wo="1.571164793078175e-15" />
-    <nuclide name="P31" wo="1.535863852942828e-20" />
-    <nuclide name="Ni62" wo="3.0458974401667527e-20" />
-    <nuclide name="Be9" wo="0.022561639309243653" />
-    <nuclide name="Li6" wo="2.782345943938213e-07" />
-    <nuclide name="Ge73" wo="1.5236743451571525e-08" />
-    <nuclide name="Tm168" wo="7.723485612810225e-20" />
-    <nuclide name="Bk247" wo="5.410394040415435e-20" />
-    <nuclide name="Li7" wo="0.07876746799080175" />
-    <nuclide name="W183" wo="1.1172402688514235e-19" />
-    <nuclide name="Cf254" wo="1.2179543045105383e-19" />
-    <nuclide name="F19" wo="0.45412884553678323" />
-    <nuclide name="Ti49" wo="2.4424431869278793e-20" />
-    <nuclide name="Er168" wo="1.593589201140482e-12" />
-    <nuclide name="Tl203" wo="9.883904831163365e-20" />
-    <nuclide name="Mg24" wo="1.1895921195072415e-20" />
-    <nuclide name="Al27" wo="1.33758936017341e-20" />
-    <nuclide name="He4" wo="5.142135052026151e-06" />
-    <nuclide name="Pu237" wo="1.138564979284587e-18" />
-    <nuclide name="Ti47" wo="2.3256392982167253e-20" />
-    <nuclide name="O17" wo="3.692236269986703e-13" />
-    <nuclide name="Ti46" wo="2.2778823698182496e-20" />
-    <nuclide name="Cm250" wo="1.0079905309803314e-19" />
-    <nuclide name="Dy164" wo="5.6823688879756135e-11" />
-    <nuclide name="Zn65" wo="1.1864692251105326e-20" />
-    <nuclide name="Bk250" wo="3.659828652765215e-23" />
-    <nuclide name="As75" wo="1.1657863116592718e-07" />
-    <nuclide name="V51" wo="2.6333728861130878e-20" />
-    <nuclide name="Am241" wo="4.033817341095546e-15" />
-    <nuclide name="Cl35" wo="1.6703732709081658e-20" />
-    <nuclide name="Hf176" wo="8.162247959627861e-20" />
-    <nuclide name="Cm243" wo="1.88566896315981e-18" />
-    <nuclide name="Hg200" wo="1.7847877162256263e-19" />
-    <nuclide name="Cm241" wo="1.263271749376171e-19" />
-    <nuclide name="Ac226" wo="1.4241476921337336e-16" />
-    <nuclide name="Dy163" wo="2.8855627186317926e-10" />
-    <nuclide name="Np238" wo="6.846026879710678e-11" />
-    <nuclide name="Ga71" wo="2.298243420303336e-09" />
-    <nuclide name="Am244_m1" wo="4.5888336827271656e-20" />
-    <nuclide name="Bk246" wo="7.01830923148171e-21" />
-    <nuclide name="Pu240" wo="4.881036322830485e-12" />
-    <nuclide name="K39" wo="1.928262334976583e-20" />
-    <nuclide name="Bi209" wo="8.278896058661535e-13" />
-    <nuclide name="S32" wo="1.584408393878035e-20" />
-    <nuclide name="Ge74" wo="4.088704353417631e-08" />
-    <nuclide name="He3" wo="3.226020858079503e-23" />
-    <nuclide name="Cf249" wo="4.882690066116042e-20" />
-    <nuclide name="Hf174" wo="5.4090995537575225e-20" />
-    <nuclide name="Hg199" wo="2.094954461148954e-20" />
-    <nuclide name="Pu243" wo="1.2727767038531378e-17" />
-    <nuclide name="Ac227" wo="4.83156064140976e-14" />
-    <nuclide name="U240" wo="2.6805653535977405e-19" />
-    <nuclide name="S34" wo="1.684406546124277e-20" />
-    <nuclide name="Ra225" wo="1.35656010523749e-13" />
-    <nuclide name="Dy156" wo="6.251264803985391e-20" />
-    <nuclide name="Hg202" wo="1.0085200711056245e-19" />
-    <nuclide name="Cm245" wo="4.984595695879368e-18" />
-    <nuclide name="Cf253" wo="9.260052119655173e-22" />
-    <nuclide name="Zn70" wo="5.229661873529583e-10" />
-    <nuclide name="Dy161" wo="4.4175521691470285e-10" />
-    <nuclide name="Dy162" wo="4.245712644323388e-10" />
-    <nuclide name="Th233" wo="3.6212772580012313e-07" />
-    <nuclide name="Ho165" wo="6.863248544763487e-11" />
-    <nuclide name="Ni60" wo="3.217960171986503e-20" />
-    <nuclide name="O16" wo="2.2063358039774865e-06" />
-    <nuclide name="U231" wo="1.0325534864786413e-18" />
-    <nuclide name="S33" wo="1.6334808118071628e-20" />
-    <nuclide name="Tl205" wo="1.0179127550589363e-19" />
-    <nuclide name="Ac225" wo="8.669510907769538e-14" />
-    <nuclide name="Ra224" wo="1.1794822672947876e-13" />
-    <nuclide name="Ca46" wo="2.2770727373556714e-20" />
-    <nuclide name="Th232" wo="0.43560368660567755" />
-    <nuclide name="Th234" wo="4.3636526078745354e-08" />
-    <nuclide name="Es251" wo="1.8313723526019153e-28" />
-    <nuclide name="Ar38" wo="1.881696884331396e-20" />
-    <nuclide name="Ti48" wo="2.3642605146945422e-20" />
-    <nuclide name="Es253" wo="1.1379513336673888e-21" />
-    <nuclide name="N15" wo="7.437954635523796e-21" />
-    <nuclide name="Na23" wo="1.1491327769545221e-20" />
-    <nuclide name="Ca43" wo="2.1098920928831378e-20" />
-    <nuclide name="Pb204" wo="1.0103679750556762e-19" />
-    <nuclide name="Hf178" wo="1.2716362316115252e-19" />
-    <nuclide name="Ge70" wo="3.672028413559585e-13" />
-    <nuclide name="Zn64" wo="3.1708614311076875e-20" />
-    <nuclide name="Dy158" wo="3.0582987381637613e-19" />
-    <nuclide name="Ca48" wo="2.3754130119545692e-20" />
-    <nuclide name="Am242" wo="1.922367783416033e-17" />
-    <nuclide name="Bk249" wo="1.054916453951596e-20" />
-    <nuclide name="Co58_m1" wo="3.1475157916623994e-66" />
-    <nuclide name="Cm244" wo="5.64233064924944e-17" />
-    <nuclide name="Er166" wo="3.807371950961627e-12" />
-    <nuclide name="Pb208" wo="1.8426226624840457e-12" />
-    <nuclide name="Np239" wo="4.142780527549338e-13" />
-    <nuclide name="Cu63" wo="3.106629642221855e-20" />
-    <nuclide name="Mn55" wo="2.689365194644384e-20" />
-    <nuclide name="Er162" wo="7.245600866665932e-20" />
-    <nuclide name="Np236" wo="4.787367442986304e-16" />
-    <nuclide name="Er170" wo="5.736131879440928e-14" />
-    <nuclide name="Zn67" wo="4.802785613606597e-12" />
-    <nuclide name="Fe58" wo="6.810736384358036e-20" />
-    <nuclide name="Be7" wo="8.062250080355049e-37" />
-    <nuclide name="W186" wo="8.275743127343092e-20" />
-    <nuclide name="Tm169" wo="1.3986260072064732e-14" />
-    <nuclide name="U235" wo="4.212563540956563e-05" />
-    <nuclide name="Cf252" wo="5.073750495210904e-19" />
-    <nuclide name="Cm248" wo="2.329656156386677e-19" />
-    <nuclide name="Dy160" wo="4.1699028843442625e-10" />
-    <nuclide name="Th227" wo="1.0013329450784837e-16" />
-    <nuclide name="V50" wo="2.361952288596175e-20" />
-    <nuclide name="Mg25" wo="1.2387121426127183e-20" />
-    <nuclide name="Si30" wo="1.4874385324393213e-20" />
-    <nuclide name="Bk248" wo="2.2350301694139222e-20" />
-    <nuclide name="B10" wo="1.1946484817965659e-16" />
-    <nuclide name="Si29" wo="1.4368895431518565e-20" />
-    <nuclide name="Cr50" wo="2.4438850419035538e-20" />
-    <nuclide name="Hg204" wo="1.0101161336307164e-19" />
-    <nuclide name="Cf250" wo="3.252562448365465e-20" />
-    <nuclide name="Ca40" wo="1.980631444120666e-20" />
-    <nuclide name="Cm242" wo="4.95852028634495e-16" />
-    <nuclide name="Pb206" wo="1.1711444759228428e-19" />
-    <nuclide name="Tb160" wo="3.4138289602254003e-10" />
-    <nuclide name="Th231" wo="3.951239028439931e-09" />
-    <nuclide name="W184" wo="9.925261145445763e-20" />
-    <nuclide name="Cf248" wo="1.3623407921073927e-20" />
-    <nuclide name="Fe54" wo="2.6691145047022592e-20" />
-    <nuclide name="N14" wo="6.945460439082018e-21" />
-    <nuclide name="U241" wo="1.0436414812572926e-24" />
-    <nuclide name="Pu238" wo="1.381192493571811e-09" />
-    <nuclide name="Ge72" wo="1.4878719085500268e-09" />
-    <nuclide name="Ar40" wo="1.9866526832459865e-20" />
+  <material depletable="true" id="1" name="fuel" volume="48704120.303794704">
+    <density units="g/cm3" value="3.3503782222413956"/>
+    <nuclide name="In113" wo="3.172987395125819e-14"/>
+    <nuclide name="Y91_m1" wo="1.1641219712281878e-09"/>
+    <nuclide name="Ba139" wo="4.3361393334583086e-08"/>
+    <nuclide name="Zr99" wo="4.937352930551059e-12"/>
+    <nuclide name="Ba128" wo="3.186932293237609e-38"/>
+    <nuclide name="In118_m2" wo="7.635283879052107e-17"/>
+    <nuclide name="Pm152_m1" wo="1.8114553172683227e-13"/>
+    <nuclide name="Ce154" wo="2.9013999626116094e-18"/>
+    <nuclide name="Ba137_m1" wo="8.153323456590017e-12"/>
+    <nuclide name="Cs129" wo="6.239489013885312e-21"/>
+    <nuclide name="Sn113" wo="2.3051163007820374e-23"/>
+    <nuclide name="I132" wo="4.203607195910714e-09"/>
+    <nuclide name="I139" wo="1.1674031107678847e-13"/>
+    <nuclide name="Cd132" wo="2.346392884746145e-20"/>
+    <nuclide name="Cs150" wo="2.872077507199566e-22"/>
+    <nuclide name="Rb96" wo="6.688440887453568e-15"/>
+    <nuclide name="Nd153" wo="4.847081504714566e-13"/>
+    <nuclide name="Ba131_m1" wo="7.711953448042488e-32"/>
+    <nuclide name="Ce140" wo="8.037607127403165e-08"/>
+    <nuclide name="Ba137" wo="2.874883482128714e-07"/>
+    <nuclide name="Ba142" wo="5.55753266388907e-09"/>
+    <nuclide name="Sn117" wo="4.429518120263979e-09"/>
+    <nuclide name="Br94" wo="3.2454814343938946e-19"/>
+    <nuclide name="Zr93" wo="1.3288206219906474e-06"/>
+    <nuclide name="Rb94" wo="1.5934029045289767e-12"/>
+    <nuclide name="Eu154" wo="9.367819079273207e-10"/>
+    <nuclide name="Y93" wo="2.6559916368670155e-08"/>
+    <nuclide name="Sr93" wo="2.6636864348572483e-09"/>
+    <nuclide name="Sm146" wo="1.4310163514612153e-19"/>
+    <nuclide name="Pm159" wo="1.2754351462247328e-17"/>
+    <nuclide name="Cs144" wo="1.625500242108368e-13"/>
+    <nuclide name="I135" wo="2.6087827748676014e-08"/>
+    <nuclide name="Sm147" wo="6.632640988499431e-12"/>
+    <nuclide name="Zr95" wo="1.4167227688554441e-06"/>
+    <nuclide name="Cd112" wo="2.3651001256095416e-09"/>
+    <nuclide name="Cs127" wo="1.4713487773974165e-24"/>
+    <nuclide name="Pm148_m1" wo="6.066561271779126e-12"/>
+    <nuclide name="Sn125" wo="1.241148042640153e-08"/>
+    <nuclide name="Gd155" wo="2.6855411739562323e-12"/>
+    <nuclide name="Zr91" wo="3.1301102135262436e-08"/>
+    <nuclide name="Sr90" wo="3.29835174197572e-05"/>
+    <nuclide name="Pr140" wo="1.9711630821056323e-20"/>
+    <nuclide name="Pm143" wo="7.819009581456014e-23"/>
+    <nuclide name="Cd117_m1" wo="3.0798336461065306e-11"/>
+    <nuclide name="Zr89_m1" wo="1.4873229680693364e-28"/>
+    <nuclide name="Eu154_m1" wo="6.249185861324275e-14"/>
+    <nuclide name="Pr143" wo="9.450473757374275e-08"/>
+    <nuclide name="Sm148" wo="1.3402837554649024e-12"/>
+    <nuclide name="Y98_m1" wo="1.4344598222005878e-13"/>
+    <nuclide name="Cd131" wo="3.441106610502397e-18"/>
+    <nuclide name="Sm152" wo="7.52153043529197e-09"/>
+    <nuclide name="Ba147" wo="6.176884830563054e-14"/>
+    <nuclide name="Br77" wo="1.307990695252071e-19"/>
+    <nuclide name="Cd121_m1" wo="4.2166698610561175e-14"/>
+    <nuclide name="La150" wo="5.114004029373604e-16"/>
+    <nuclide name="In115_m1" wo="1.2969759760599118e-10"/>
+    <nuclide name="Br95" wo="5.617468959202059e-21"/>
+    <nuclide name="Br82" wo="1.1689652167540116e-11"/>
+    <nuclide name="In116_m1" wo="6.888739422242792e-16"/>
+    <nuclide name="Ce146" wo="3.424526961509729e-10"/>
+    <nuclide name="Pr147" wo="2.3161237354035753e-10"/>
+    <nuclide name="La146_m1" wo="8.960343955373387e-13"/>
+    <nuclide name="Sm160" wo="2.7094212524503472e-16"/>
+    <nuclide name="Y101" wo="2.801064446893281e-15"/>
+    <nuclide name="Ce138" wo="6.149964500299282e-17"/>
+    <nuclide name="Sn125_m1" wo="2.56730961264248e-11"/>
+    <nuclide name="Cd115" wo="1.586051924201543e-09"/>
+    <nuclide name="Eu158" wo="7.386634300736254e-12"/>
+    <nuclide name="In116" wo="1.4032041061844548e-15"/>
+    <nuclide name="La141" wo="1.4500561904374945e-08"/>
+    <nuclide name="Br78" wo="4.4684465385017376e-20"/>
+    <nuclide name="Sn123_m1" wo="8.388423465798636e-11"/>
+    <nuclide name="Gd151" wo="2.468852981993051e-23"/>
+    <nuclide name="Gd156" wo="2.1657801820728536e-10"/>
+    <nuclide name="Ce152" wo="1.625376719096129e-15"/>
+    <nuclide name="Sr87_m1" wo="6.528976488506872e-14"/>
+    <nuclide name="Sn128" wo="1.8469907007385415e-09"/>
+    <nuclide name="In112_m1" wo="2.2706180655897483e-24"/>
+    <nuclide name="In123_m1" wo="3.3897669001318305e-13"/>
+    <nuclide name="Gd153" wo="1.0526028544671648e-18"/>
+    <nuclide name="Eu153" wo="4.975806195749387e-08"/>
+    <nuclide name="Sn129_m1" wo="9.480011074062199e-11"/>
+    <nuclide name="I142" wo="1.3590961099918908e-17"/>
+    <nuclide name="I138" wo="8.766763129038671e-13"/>
+    <nuclide name="Ce150" wo="1.3964813883448775e-13"/>
+    <nuclide name="Cd113" wo="2.167240195641552e-09"/>
+    <nuclide name="Sn104" wo="5.872894882466874e-70"/>
+    <nuclide name="Pr152" wo="3.8746445492809134e-14"/>
+    <nuclide name="Gd162" wo="1.1865599378320967e-15"/>
+    <nuclide name="Cs135" wo="8.97621654750509e-06"/>
+    <nuclide name="Sm161" wo="1.9491927177653887e-17"/>
+    <nuclide name="Ba135" wo="4.3350161736195954e-11"/>
+    <nuclide name="Nd142" wo="2.3619552600862764e-13"/>
+    <nuclide name="Sn113_m1" wo="6.302480229347768e-29"/>
+    <nuclide name="Rb101" wo="1.830162122006482e-21"/>
+    <nuclide name="La134" wo="5.385383552562984e-48"/>
+    <nuclide name="Rb100" wo="7.477106626654848e-18"/>
+    <nuclide name="In122" wo="2.3620186315256077e-14"/>
+    <nuclide name="In134" wo="1.3048551324930354e-19"/>
+    <nuclide name="Br80_m1" wo="1.5023748759329597e-14"/>
+    <nuclide name="Eu147" wo="1.189492644630545e-31"/>
+    <nuclide name="Y97" wo="7.545155470809177e-13"/>
+    <nuclide name="Pr148" wo="2.794475129386524e-11"/>
+    <nuclide name="I129" wo="5.254101512471461e-08"/>
+    <nuclide name="In127" wo="2.3559341173347515e-14"/>
+    <nuclide name="I140" wo="5.211043987769286e-15"/>
+    <nuclide name="Pm161" wo="4.820854009246221e-20"/>
+    <nuclide name="Y89" wo="7.149838098115515e-08"/>
+    <nuclide name="Rb86_m1" wo="3.0243929135412877e-14"/>
+    <nuclide name="Sr104" wo="1.7590306009312093e-21"/>
+    <nuclide name="La137" wo="2.537781217839722e-14"/>
+    <nuclide name="Ba150" wo="8.336949665871934e-18"/>
+    <nuclide name="Zr104" wo="1.3380669343910489e-14"/>
+    <nuclide name="Eu149" wo="1.2481911778589226e-20"/>
+    <nuclide name="Ce139_m1" wo="9.045467109103222e-19"/>
+    <nuclide name="Ce137" wo="9.633092547542264e-20"/>
+    <nuclide name="Rb81" wo="3.9483698506465298e-22"/>
+    <nuclide name="Nd157" wo="7.227892331064164e-17"/>
+    <nuclide name="In116_m2" wo="2.3049044751923674e-19"/>
+    <nuclide name="Cd111" wo="8.42349628628773e-10"/>
+    <nuclide name="Sn120" wo="6.904067753568092e-09"/>
+    <nuclide name="Zr92" wo="1.4089960592447372e-06"/>
+    <nuclide name="Sn118" wo="4.929404048397155e-09"/>
+    <nuclide name="Rb86" wo="2.078227242093666e-09"/>
+    <nuclide name="Gd161" wo="4.811912618462131e-15"/>
+    <nuclide name="In113_m1" wo="4.780685353435358e-21"/>
+    <nuclide name="In109" wo="1.431362223047549e-34"/>
+    <nuclide name="Sm162" wo="3.5042906172859187e-19"/>
+    <nuclide name="Rb85" wo="7.039944254982391e-06"/>
+    <nuclide name="I132_m1" wo="1.035300380385424e-10"/>
+    <nuclide name="Cd124" wo="1.3494623470748452e-15"/>
+    <nuclide name="Eu152_m1" wo="1.6484772961018588e-16"/>
+    <nuclide name="Sn122" wo="1.2707010399091513e-08"/>
+    <nuclide name="In126_m1" wo="2.3410931313742078e-14"/>
+    <nuclide name="Rb90" wo="6.534489831996857e-10"/>
+    <nuclide name="Eu151" wo="4.8015261669696275e-12"/>
+    <nuclide name="I144" wo="2.79703734896203e-20"/>
+    <nuclide name="Nd159" wo="7.949936686492415e-20"/>
+    <nuclide name="Ce134" wo="3.8170267887541843e-45"/>
+    <nuclide name="In120_m1" wo="2.8336928900985707e-14"/>
+    <nuclide name="Cs151" wo="2.74760533774726e-23"/>
+    <nuclide name="Cs143" wo="1.091768786928263e-12"/>
+    <nuclide name="Br92" wo="3.3726987744144924e-16"/>
+    <nuclide name="In115" wo="2.5710861540560835e-09"/>
+    <nuclide name="Eu156" wo="1.1577541215543378e-08"/>
+    <nuclide name="Y93_m1" wo="2.104369724884485e-13"/>
+    <nuclide name="In122_m1" wo="4.528910529019847e-14"/>
+    <nuclide name="Cd120" wo="7.301654734780107e-13"/>
+    <nuclide name="Rb92" wo="1.5172321614954175e-11"/>
+    <nuclide name="Y96" wo="1.221924640894482e-12"/>
+    <nuclide name="Nd149" wo="8.126939385588728e-10"/>
+    <nuclide name="Eu166" wo="1.289470883283613e-21"/>
+    <nuclide name="Zr106" wo="1.0485644076294552e-17"/>
+    <nuclide name="Sm163" wo="2.2765959072030548e-20"/>
+    <nuclide name="Cd119_m1" wo="7.280239343553997e-13"/>
+    <nuclide name="Gd152" wo="1.166143254333241e-16"/>
+    <nuclide name="Eu163" wo="1.3893458303087952e-17"/>
+    <nuclide name="Rb83" wo="5.064378000121451e-14"/>
+    <nuclide name="In104" wo="2.295159194098775e-69"/>
+    <nuclide name="I143" wo="2.0490149044508996e-18"/>
+    <nuclide name="Sm155" wo="4.997188120105969e-12"/>
+    <nuclide name="I136" wo="3.3686221504737776e-11"/>
+    <nuclide name="Y104" wo="2.8193683968646634e-19"/>
+    <nuclide name="Sr85" wo="2.1138354587670166e-14"/>
+    <nuclide name="Y85" wo="1.5092819443859055e-24"/>
+    <nuclide name="Pr150" wo="4.449925335562531e-13"/>
+    <nuclide name="In125" wo="3.822296378229383e-14"/>
+    <nuclide name="In125_m1" wo="1.9810109418666277e-13"/>
+    <nuclide name="Sm159" wo="1.2693481914468162e-15"/>
+    <nuclide name="I130_m1" wo="1.1169790873753598e-13"/>
+    <nuclide name="Rb98" wo="2.12981068444217e-15"/>
+    <nuclide name="I134" wo="4.179400809358403e-09"/>
+    <nuclide name="Pr149" wo="1.7178390251547928e-11"/>
+    <nuclide name="Cs136_m1" wo="1.6531307382928272e-12"/>
+    <nuclide name="Ce148" wo="1.0686901024458545e-11"/>
+    <nuclide name="Zr94" wo="1.5938661187663543e-06"/>
+    <nuclide name="Ce149" wo="4.4647004185919133e-13"/>
+    <nuclide name="Pm152_m2" wo="3.324250460829503e-13"/>
+    <nuclide name="Zr87" wo="1.2227686728589112e-24"/>
+    <nuclide name="Ba131" wo="9.15647812251444e-21"/>
+    <nuclide name="Sn136" wo="1.2764711580899633e-18"/>
+    <nuclide name="Sn131_m1" wo="1.1527384181530792e-11"/>
+    <nuclide name="La138" wo="5.754443939304828e-13"/>
+    <nuclide name="Ba136" wo="8.631767782568552e-07"/>
+    <nuclide name="Pm142" wo="8.337922378960819e-54"/>
+    <nuclide name="Y94" wo="7.95822114905534e-10"/>
+    <nuclide name="Sn114" wo="6.3186250275928e-17"/>
+    <nuclide name="Zr108" wo="8.037405600732449e-20"/>
+    <nuclide name="Sn123" wo="3.784646914703808e-09"/>
+    <nuclide name="Pm150" wo="1.115217823441887e-11"/>
+    <nuclide name="Cs131" wo="1.5506025226718564e-15"/>
+    <nuclide name="Ba140" wo="8.318457340533456e-06"/>
+    <nuclide name="Cs146" wo="1.1097241864957651e-15"/>
+    <nuclide name="La139" wo="1.9907203984594007e-07"/>
+    <nuclide name="In120" wo="4.6158303515986274e-14"/>
+    <nuclide name="Sm158" wo="1.0548963772166615e-13"/>
+    <nuclide name="Sr97" wo="2.735435398216535e-13"/>
+    <nuclide name="La151" wo="4.62312382260657e-17"/>
+    <nuclide name="Ba143" wo="8.423167722713246e-11"/>
+    <nuclide name="Zr89" wo="2.854753208713194e-17"/>
+    <nuclide name="Br87" wo="1.6272542372197222e-11"/>
+    <nuclide name="Sr102" wo="9.542473188303338e-19"/>
+    <nuclide name="Pr141" wo="7.095842947466369e-09"/>
+    <nuclide name="Ba129" wo="1.713318655934678e-35"/>
+    <nuclide name="Eu155" wo="1.8031843671101817e-08"/>
+    <nuclide name="Y87_m1" wo="1.8036927141876653e-24"/>
+    <nuclide name="Sr83" wo="1.3808564284595656e-21"/>
+    <nuclide name="La148" wo="2.961143312905703e-14"/>
+    <nuclide name="Sn116" wo="3.247367148295357e-11"/>
+    <nuclide name="In111" wo="6.1700780106159956e-24"/>
+    <nuclide name="Nd160" wo="2.1883619469383982e-21"/>
+    <nuclide name="Zr102" wo="1.0805587688712521e-12"/>
+    <nuclide name="Sr86" wo="6.521208435322442e-09"/>
+    <nuclide name="Nd145" wo="1.014687778718314e-07"/>
+    <nuclide name="Sm156" wo="7.535808035370641e-11"/>
+    <nuclide name="In122_m2" wo="4.748760625461125e-14"/>
+    <nuclide name="In112" wo="2.0833741985175183e-24"/>
+    <nuclide name="Ce136" wo="1.0700052859042067e-30"/>
+    <nuclide name="Pr144" wo="7.0060539361425456e-12"/>
+    <nuclide name="In117" wo="1.772280124678176e-11"/>
+    <nuclide name="Sn112" wo="4.577759172789889e-22"/>
+    <nuclide name="Ce145" wo="1.0142254102283396e-10"/>
+    <nuclide name="Nd150" wo="1.724990465756496e-08"/>
+    <nuclide name="In124" wo="4.342439725271667e-14"/>
+    <nuclide name="Eu161" wo="2.9869507636540156e-15"/>
+    <nuclide name="Br85" wo="5.066827317425296e-11"/>
+    <nuclide name="In114" wo="1.2209734687853726e-20"/>
+    <nuclide name="In118_m1" wo="4.763214924928532e-15"/>
+    <nuclide name="In131_m1" wo="6.965487372642281e-16"/>
+    <nuclide name="Sn126" wo="7.056829464810147e-08"/>
+    <nuclide name="La135" wo="8.627681352529299e-19"/>
+    <nuclide name="Cd118" wo="3.513724614776042e-11"/>
+    <nuclide name="Pm163" wo="1.2188115516023233e-23"/>
+    <nuclide name="Cd105" wo="9.555377985141918e-43"/>
+    <nuclide name="Ce157" wo="1.2237607893631435e-23"/>
+    <nuclide name="Pr142_m1" wo="1.5045606957736014e-15"/>
+    <nuclide name="Cs142" wo="3.250547777087626e-12"/>
+    <nuclide name="Y98" wo="5.387291639971383e-14"/>
+    <nuclide name="Pm148" wo="6.83527322306735e-12"/>
+    <nuclide name="Cs130" wo="2.5766851672328713e-36"/>
+    <nuclide name="Cd109" wo="2.724454594298532e-20"/>
+    <nuclide name="In124_m1" wo="4.750261767151133e-14"/>
+    <nuclide name="Pm145" wo="1.9609775112826307e-18"/>
+    <nuclide name="Pm146" wo="4.1087091614957193e-16"/>
+    <nuclide name="In133" wo="5.058875884392576e-18"/>
+    <nuclide name="Cs137" wo="4.9891687287896375e-05"/>
+    <nuclide name="Cd107" wo="1.0023260648374772e-27"/>
+    <nuclide name="Sr92" wo="5.697976399830469e-08"/>
+    <nuclide name="Pr153" wo="1.0935830530127074e-14"/>
+    <nuclide name="Cd110" wo="9.830852789801824e-12"/>
+    <nuclide name="Cd128" wo="1.8244806297504663e-17"/>
+    <nuclide name="Cd122" wo="5.947072506875916e-14"/>
+    <nuclide name="Y103" wo="1.4976333059784958e-17"/>
+    <nuclide name="Ce156" wo="1.2096952596312371e-21"/>
+    <nuclide name="Cd113_m1" wo="4.3637098507050544e-11"/>
+    <nuclide name="In131" wo="5.618144224460413e-16"/>
+    <nuclide name="Rb90_m1" wo="4.3095911237539827e-10"/>
+    <nuclide name="I125" wo="4.654051568138001e-19"/>
+    <nuclide name="Sm157" wo="5.187879717401086e-13"/>
+    <nuclide name="I133" wo="8.765385171324051e-08"/>
+    <nuclide name="Eu162" wo="7.239917070585493e-17"/>
+    <nuclide name="Zr107" wo="7.606417963092957e-19"/>
+    <nuclide name="Ce139" wo="4.780934470635089e-15"/>
+    <nuclide name="Pr158" wo="2.8214040209769315e-22"/>
+    <nuclide name="Zr96" wo="1.3608800905241422e-06"/>
+    <nuclide name="I128" wo="3.260597699511626e-14"/>
+    <nuclide name="Ce155" wo="4.85529230834967e-20"/>
+    <nuclide name="Zr109" wo="1.8729348036165848e-20"/>
+    <nuclide name="Br80" wo="1.3383191047036135e-15"/>
+    <nuclide name="Pr145" wo="1.2115850684879752e-08"/>
+    <nuclide name="Sr94" wo="3.805404902271897e-10"/>
+    <nuclide name="I134_m1" wo="4.025742078304425e-11"/>
+    <nuclide name="In123" wo="1.5514729842564788e-13"/>
+    <nuclide name="Pr157" wo="6.345191357732405e-20"/>
+    <nuclide name="Nd156" wo="1.997099163657179e-15"/>
+    <nuclide name="In127_m1" wo="7.825904752757311e-14"/>
+    <nuclide name="Nd155" wo="1.2467513150290631e-14"/>
+    <nuclide name="Eu159" wo="1.2420470090272517e-12"/>
+    <nuclide name="Sr87" wo="1.7224472950010732e-10"/>
+    <nuclide name="Gd163" wo="6.977645862822441e-17"/>
+    <nuclide name="Cs128" wo="3.2964353104252745e-41"/>
+    <nuclide name="Zr90" wo="3.1240325442908743e-09"/>
+    <nuclide name="Nd158" wo="2.8744672250830277e-18"/>
+    <nuclide name="Sm144" wo="6.180849907422317e-35"/>
+    <nuclide name="Cd125" wo="3.3749800924307246e-16"/>
+    <nuclide name="Cd127" wo="6.640582958867247e-17"/>
+    <nuclide name="Sm150" wo="2.543364197597151e-09"/>
+    <nuclide name="La154" wo="2.1340397703537695e-22"/>
+    <nuclide name="In120_m2" wo="2.901161863422405e-14"/>
+    <nuclide name="Pr155" wo="2.796631417508289e-17"/>
+    <nuclide name="La136" wo="1.4760481058109059e-27"/>
+    <nuclide name="La145" wo="1.1987962599580218e-11"/>
+    <nuclide name="In130_m2" wo="2.3399818777260144e-15"/>
+    <nuclide name="Sr101" wo="3.0956591041956264e-17"/>
+    <nuclide name="Sm151" wo="5.9859548108506e-09"/>
+    <nuclide name="Cs138_m1" wo="1.6598686911074008e-10"/>
+    <nuclide name="Pr156" wo="1.5863151237468466e-18"/>
+    <nuclide name="Cs139" wo="4.409903275494298e-09"/>
+    <nuclide name="La146" wo="9.350275301279542e-13"/>
+    <nuclide name="Eu164" wo="5.932313822258007e-19"/>
+    <nuclide name="Y107" wo="5.0904021162044356e-23"/>
+    <nuclide name="Cs134_m1" wo="2.1590634797076267e-11"/>
+    <nuclide name="Gd169" wo="2.3869387063147196e-23"/>
+    <nuclide name="Ba151" wo="5.444178414208385e-19"/>
+    <nuclide name="Eu152" wo="1.3136154957521857e-12"/>
+    <nuclide name="Zr101" wo="1.9085037693125605e-12"/>
+    <nuclide name="In118" wo="5.848465490454057e-14"/>
+    <nuclide name="Sm142" wo="8.956393497238549e-52"/>
+    <nuclide name="In110_m1" wo="2.0261678130574014e-38"/>
+    <nuclide name="Cd121" wo="7.935415778579349e-14"/>
+    <nuclide name="Sr91" wo="2.030358913879338e-07"/>
+    <nuclide name="Gd150" wo="4.0061550927252234e-28"/>
+    <nuclide name="La155" wo="3.0404907719075593e-24"/>
+    <nuclide name="Eu150" wo="1.6790870930053284e-19"/>
+    <nuclide name="Ba130" wo="3.359314531376085e-25"/>
+    <nuclide name="Cd129" wo="1.8999562983973305e-16"/>
+    <nuclide name="Br96" wo="4.644300808897782e-22"/>
+    <nuclide name="Cd108" wo="9.637932011719093e-18"/>
+    <nuclide name="In117_m1" wo="5.349859340704151e-11"/>
+    <nuclide name="Y87" wo="1.916264628462237e-17"/>
+    <nuclide name="Cs147" wo="2.6055525284179413e-17"/>
+    <nuclide name="Ce137_m1" wo="8.975294005724546e-36"/>
+    <nuclide name="Cd130" wo="5.675427742578856e-17"/>
+    <nuclide name="I130" wo="2.5327456635518977e-11"/>
+    <nuclide name="Eu167" wo="5.268135487465674e-23"/>
+    <nuclide name="Rb87" wo="1.8539970105853186e-05"/>
+    <nuclide name="Cd106" wo="9.20214888612303e-32"/>
+    <nuclide name="Ba146" wo="1.1670461177584327e-12"/>
+    <nuclide name="Cd115_m1" wo="2.4491750051405785e-10"/>
+    <nuclide name="Ba145" wo="7.438569542597495e-12"/>
+    <nuclide name="Sn119" wo="5.689530387468091e-09"/>
+    <nuclide name="Zr105" wo="9.139089482834573e-16"/>
+    <nuclide name="Br91" wo="4.1351841484051216e-15"/>
+    <nuclide name="In132" wo="5.299726578214683e-17"/>
+    <nuclide name="Sm143" wo="1.7363250218577122e-46"/>
+    <nuclide name="Rb91" wo="2.8361004118163065e-10"/>
+    <nuclide name="Cd119" wo="1.2718347131937078e-12"/>
+    <nuclide name="Y105" wo="2.4643490580666262e-20"/>
+    <nuclide name="Rb97" wo="1.4538216223932554e-15"/>
+    <nuclide name="Ba144" wo="5.4143246217829594e-11"/>
+    <nuclide name="Rb95" wo="7.971332004747743e-14"/>
+    <nuclide name="I123" wo="3.996710898464726e-20"/>
+    <nuclide name="Sn121_m1" wo="7.402577338208508e-10"/>
+    <nuclide name="Sr105" wo="4.169666422400439e-22"/>
+    <nuclide name="Cs132" wo="1.0819004708458612e-13"/>
+    <nuclide name="I127" wo="3.2180086333568346e-09"/>
+    <nuclide name="Pm157" wo="4.434384815707237e-15"/>
+    <nuclide name="I121" wo="5.3402765240720825e-28"/>
+    <nuclide name="Rb84" wo="2.1930465807479087e-13"/>
+    <nuclide name="Cs148" wo="1.814331501111303e-18"/>
+    <nuclide name="Cd116" wo="4.274970416215626e-09"/>
+    <nuclide name="Pm144" wo="3.688295449049087e-21"/>
+    <nuclide name="Sn115" wo="1.3577662139540722e-10"/>
+    <nuclide name="Nd143" wo="7.500507168257881e-09"/>
+    <nuclide name="Pm162" wo="2.573088503402226e-22"/>
+    <nuclide name="Gd166" wo="1.0472480565621664e-19"/>
+    <nuclide name="Ba133_m1" wo="1.8957840322333037e-19"/>
+    <nuclide name="Sr84" wo="1.4308491920001405e-14"/>
+    <nuclide name="Ce153" wo="7.215058980355439e-17"/>
+    <nuclide name="Cs138" wo="1.580613786323185e-08"/>
+    <nuclide name="Cd104" wo="1.259076314928464e-51"/>
+    <nuclide name="Cs145" wo="2.3414765912533285e-14"/>
+    <nuclide name="Rb89" wo="4.998820413266499e-09"/>
+    <nuclide name="Y88" wo="2.1340733860287336e-15"/>
+    <nuclide name="Br89" wo="4.0203181312273325e-13"/>
+    <nuclide name="Sm149" wo="7.546467012513588e-09"/>
+    <nuclide name="Zr90_m1" wo="7.189235970486862e-21"/>
+    <nuclide name="Sn110" wo="7.307819518660675e-38"/>
+    <nuclide name="Gd168" wo="5.592485430595855e-23"/>
+    <nuclide name="Sn117_m1" wo="7.618768848323594e-12"/>
+    <nuclide name="Rb99" wo="1.7357641345362144e-18"/>
+    <nuclide name="Br79_m1" wo="6.379559679540294e-20"/>
+    <nuclide name="Br90" wo="6.636492446729325e-14"/>
+    <nuclide name="Rb88" wo="5.0801773200058264e-09"/>
+    <nuclide name="Br86" wo="1.7118638946615254e-11"/>
+    <nuclide name="La149" wo="5.663587759138891e-15"/>
+    <nuclide name="Ba136_m1" wo="4.083416173224419e-15"/>
+    <nuclide name="In128" wo="7.127112679561456e-15"/>
+    <nuclide name="Pm158" wo="2.312736944826484e-16"/>
+    <nuclide name="Cs149" wo="1.558907410301054e-20"/>
+    <nuclide name="Zr103" wo="1.0787156038815387e-13"/>
+    <nuclide name="La143" wo="8.126834216840124e-10"/>
+    <nuclide name="Sn133" wo="3.4963598592573606e-14"/>
+    <nuclide name="Cs140" wo="3.9853085750421367e-10"/>
+    <nuclide name="La133" wo="5.687235695298345e-24"/>
+    <nuclide name="Sn135" wo="6.33875290793337e-17"/>
+    <nuclide name="Y97_m1" wo="1.7600491771395123e-13"/>
+    <nuclide name="Sr98" wo="1.5370357641252675e-13"/>
+    <nuclide name="I126" wo="1.5690414181697926e-17"/>
+    <nuclide name="Ba149" wo="1.8623372139475353e-16"/>
+    <nuclide name="In104_m1" wo="3.8742949463406424e-70"/>
+    <nuclide name="La144" wo="3.0221313398985575e-11"/>
+    <nuclide name="Br97" wo="3.460508204062966e-23"/>
+    <nuclide name="Cd123" wo="4.2987484061097626e-15"/>
+    <nuclide name="Sr85_m1" wo="1.6948305977614477e-17"/>
+    <nuclide name="Br81" wo="1.0242335304552092e-08"/>
+    <nuclide name="Sm165" wo="4.471827058487642e-23"/>
+    <nuclide name="Y99" wo="1.2166778717682048e-13"/>
+    <nuclide name="Ba138" wo="4.4167251043836915e-05"/>
+    <nuclide name="Gd159" wo="1.0016259290203385e-11"/>
+    <nuclide name="Y89_m1" wo="5.514205254427976e-16"/>
+    <nuclide name="Sn127_m1" wo="3.5727661078508374e-11"/>
+    <nuclide name="In129_m1" wo="3.9232891478485915e-14"/>
+    <nuclide name="In130" wo="1.3646190309655512e-15"/>
+    <nuclide name="Nd147" wo="5.1688664542963325e-08"/>
+    <nuclide name="Ce141" wo="1.8610915464636718e-07"/>
+    <nuclide name="Y102" wo="2.7086177779229673e-16"/>
+    <nuclide name="Br83" wo="1.1822126872122909e-09"/>
+    <nuclide name="Gd160" wo="1.1562384538432236e-11"/>
+    <nuclide name="Rb102" wo="2.751572023569538e-22"/>
+    <nuclide name="Nd154" wo="1.5020994746195953e-13"/>
+    <nuclide name="Sm164" wo="1.1530159576710991e-21"/>
+    <nuclide name="Sn130" wo="6.854310290804307e-11"/>
+    <nuclide name="Pm155" wo="1.3584909729870906e-13"/>
+    <nuclide name="Sm153" wo="2.053958571428921e-09"/>
+    <nuclide name="Cs134" wo="9.184495808120318e-08"/>
+    <nuclide name="Sn131" wo="1.1273707521691134e-11"/>
+    <nuclide name="Sn132" wo="2.8618693055651865e-12"/>
+    <nuclide name="Cs133" wo="3.948311311560279e-06"/>
+    <nuclide name="Ba135_m1" wo="3.4938043577075154e-13"/>
+    <nuclide name="In130_m1" wo="2.3399818777260144e-15"/>
+    <nuclide name="Eu160" wo="1.413813240401282e-14"/>
+    <nuclide name="Ba153" wo="1.916399453805738e-23"/>
+    <nuclide name="Sr100" wo="7.108656169790086e-16"/>
+    <nuclide name="I124" wo="5.131026188249637e-41"/>
+    <nuclide name="Pm151" wo="4.619972775867211e-09"/>
+    <nuclide name="Cd126" wo="1.6369610060555013e-16"/>
+    <nuclide name="In119_m1" wo="7.809349844515406e-12"/>
+    <nuclide name="Gd164" wo="1.3814215475053569e-17"/>
+    <nuclide name="Br84" wo="4.0413309013997705e-10"/>
+    <nuclide name="Sr96" wo="1.881844724484267e-12"/>
+    <nuclide name="Y91" wo="1.292649044165026e-07"/>
+    <nuclide name="Br84_m1" wo="6.911872981432656e-12"/>
+    <nuclide name="Cd117" wo="7.477009777336536e-11"/>
+    <nuclide name="Ce147" wo="1.5499952242918964e-11"/>
+    <nuclide name="Br82_m1" wo="1.4678564051295974e-14"/>
+    <nuclide name="Nd148" wo="4.398916754451713e-08"/>
+    <nuclide name="Pr146" wo="6.164663405957142e-10"/>
+    <nuclide name="Gd154" wo="8.541908885485954e-14"/>
+    <nuclide name="Br88" wo="3.023475712582212e-12"/>
+    <nuclide name="Pr154" wo="6.642361767288518e-16"/>
+    <nuclide name="Nd152" wo="2.408534325899371e-11"/>
+    <nuclide name="Pm160" wo="9.795410545151637e-19"/>
+    <nuclide name="Zr98" wo="8.827232007741656e-11"/>
+    <nuclide name="In129" wo="1.9896798852634117e-14"/>
+    <nuclide name="I137" wo="8.961809207570727e-12"/>
+    <nuclide name="In135" wo="2.1019487302521853e-21"/>
+    <nuclide name="Br75" wo="7.548830531717628e-28"/>
+    <nuclide name="Nd144" wo="7.582479849705004e-10"/>
+    <nuclide name="Sn134" wo="2.5798945991377807e-15"/>
+    <nuclide name="Sr88" wo="2.4685891317933297e-05"/>
+    <nuclide name="La140" wo="9.026068743039412e-08"/>
+    <nuclide name="Cs136" wo="1.3281227555493666e-07"/>
+    <nuclide name="La152" wo="1.0349326576050216e-18"/>
+    <nuclide name="In114_m1" wo="8.702698950275628e-17"/>
+    <nuclide name="Zr100" wo="1.3679758224841803e-11"/>
+    <nuclide name="Sn128_m1" wo="1.6815298971016114e-12"/>
+    <nuclide name="Y90" wo="5.344028343209944e-10"/>
+    <nuclide name="Sr99" wo="7.109482954887224e-15"/>
+    <nuclide name="In121_m1" wo="1.1782575016342472e-12"/>
+    <nuclide name="I122" wo="1.5009032874055572e-50"/>
+    <nuclide name="Ce151" wo="1.229918216572884e-14"/>
+    <nuclide name="Sn124" wo="2.3236364298078392e-08"/>
+    <nuclide name="Sn130_m1" wo="3.12470949461771e-11"/>
+    <nuclide name="Pm149" wo="1.552702861014856e-08"/>
+    <nuclide name="Br93" wo="1.3202092458112795e-16"/>
+    <nuclide name="I133_m1" wo="1.310478197638074e-12"/>
+    <nuclide name="Sn127" wo="1.947079660648762e-09"/>
+    <nuclide name="Eu165" wo="6.816320909780758e-20"/>
+    <nuclide name="Pm153" wo="5.596463357123934e-12"/>
+    <nuclide name="Zr110" wo="5.810187005134759e-22"/>
+    <nuclide name="I141" wo="2.8114662918902033e-16"/>
+    <nuclide name="Ba141" wo="9.696118394926583e-09"/>
+    <nuclide name="Sr89" wo="1.3884137464766676e-05"/>
+    <nuclide name="In121" wo="2.71660407298235e-13"/>
+    <nuclide name="Cd111_m1" wo="1.6561898713555875e-19"/>
+    <nuclide name="Cd114" wo="5.887549077005325e-09"/>
+    <nuclide name="Eu157" wo="4.5211672590373667e-10"/>
+    <nuclide name="Y90_m1" wo="8.288395366384793e-14"/>
+    <nuclide name="Zr97" wo="1.830835206832193e-07"/>
+    <nuclide name="Y108" wo="1.3042064860359569e-23"/>
+    <nuclide name="Nd146" wo="8.515133432824327e-08"/>
+    <nuclide name="Y95" wo="3.961919875280113e-10"/>
+    <nuclide name="Pr148_m1" wo="1.5131854023183036e-12"/>
+    <nuclide name="Sm145" wo="1.5728705719056926e-23"/>
+    <nuclide name="Pr159" wo="6.64779244333949e-24"/>
+    <nuclide name="Pr151" wo="6.487490301833973e-13"/>
+    <nuclide name="Ce135" wo="5.473119607425436e-24"/>
+    <nuclide name="Rb93" wo="1.0877273178521246e-11"/>
+    <nuclide name="Pm154" wo="7.080986290791424e-13"/>
+    <nuclide name="Nd140" wo="9.668365660085393e-24"/>
+    <nuclide name="Sn121" wo="1.4079766324177302e-09"/>
+    <nuclide name="Y100" wo="1.1424110185016072e-14"/>
+    <nuclide name="Sr103" wo="1.4943661075774573e-19"/>
+    <nuclide name="Cs141" wo="1.2740280948826994e-10"/>
+    <nuclide name="Pm156" wo="3.587956662531651e-14"/>
+    <nuclide name="Gd158" wo="1.496814155244398e-10"/>
+    <nuclide name="In126" wo="2.2327134386104817e-14"/>
+    <nuclide name="Ba133" wo="3.2550863247769303e-15"/>
+    <nuclide name="Ce143" wo="9.10587468366188e-08"/>
+    <nuclide name="Br79" wo="2.1323016880110065e-12"/>
+    <nuclide name="Gd167" wo="4.260299250614821e-21"/>
+    <nuclide name="La147" wo="3.9204376505880226e-13"/>
+    <nuclide name="I145" wo="8.91981949795339e-22"/>
+    <nuclide name="La142" wo="5.809784483223062e-09"/>
+    <nuclide name="Nd141" wo="3.560039546095837e-22"/>
+    <nuclide name="Ce142" wo="2.0933989652554208e-07"/>
+    <nuclide name="Sn111" wo="4.626133147794482e-33"/>
+    <nuclide name="Y92" wo="8.639050223072976e-09"/>
+    <nuclide name="Ce144" wo="1.5437876653082131e-07"/>
+    <nuclide name="Pr142" wo="1.9595956441897476e-13"/>
+    <nuclide name="Pm154_m1" wo="1.643762798833449e-13"/>
+    <nuclide name="Ba132" wo="1.8349081544771075e-14"/>
+    <nuclide name="Sr95" wo="7.852090319068215e-11"/>
+    <nuclide name="Pm147" wo="6.2177093509787075e-09"/>
+    <nuclide name="Cs135_m1" wo="1.2590120526067555e-11"/>
+    <nuclide name="I131" wo="1.1300403518486042e-07"/>
+    <nuclide name="Pm152" wo="8.89315900843923e-12"/>
+    <nuclide name="Pr139" wo="7.875689070219215e-22"/>
+    <nuclide name="Br77_m1" wo="2.017220213568872e-22"/>
+    <nuclide name="I136_m1" wo="1.1449159098616827e-11"/>
+    <nuclide name="Gd165" wo="7.036380381849684e-19"/>
+    <nuclide name="Eu152_m2" wo="2.832946088463177e-17"/>
+    <nuclide name="Gd149" wo="5.970121408735939e-35"/>
+    <nuclide name="La153" wo="2.3552736952690006e-20"/>
+    <nuclide name="Nd161" wo="4.414841010443479e-23"/>
+    <nuclide name="Y106" wo="2.5566582348517388e-21"/>
+    <nuclide name="Y96_m1" wo="2.571574002366705e-12"/>
+    <nuclide name="Ba152" wo="2.7627735664126087e-21"/>
+    <nuclide name="In128_m1" wo="6.061224735070999e-15"/>
+    <nuclide name="Sn137" wo="2.66594765791047e-20"/>
+    <nuclide name="Gd157" wo="1.412224696094279e-10"/>
+    <nuclide name="Sm154" wo="1.649337242823251e-09"/>
+    <nuclide name="Nd151" wo="3.9726122326908866e-11"/>
+    <nuclide name="Zr88" wo="3.959420645912134e-19"/>
+    <nuclide name="Ba148" wo="5.171690741933919e-15"/>
+    <nuclide name="Sn119_m1" wo="2.2048290808496305e-10"/>
+    <nuclide name="Ba134" wo="6.2165641324625455e-09"/>
+    <nuclide name="In119" wo="1.015622183225781e-12"/>
+    <nuclide name="Sn129" wo="8.199848115422997e-11"/>
+    <nuclide name="Pr144_m1" wo="1.8536782779659893e-13"/>
+    <nuclide name="Es249" wo="2.8145212850684323e-43"/>
+    <nuclide name="Ge70" wo="4.1726558658683034e-13"/>
+    <nuclide name="Th229" wo="2.6635254859981922e-08"/>
+    <nuclide name="Rn219" wo="7.810892834074717e-22"/>
+    <nuclide name="As71" wo="1.958563970702346e-23"/>
+    <nuclide name="Cm241" wo="9.309045884762063e-20"/>
+    <nuclide name="N15" wo="7.328539046301162e-19"/>
+    <nuclide name="Pb214" wo="2.312393734643057e-21"/>
+    <nuclide name="Au194" wo="1.9133784077371398e-78"/>
+    <nuclide name="Na24" wo="7.641660936280084e-127"/>
+    <nuclide name="Ho164_m1" wo="1.583505730524379e-19"/>
+    <nuclide name="Tm166" wo="2.0135881160456656e-22"/>
+    <nuclide name="Np238" wo="6.842231478686723e-11"/>
+    <nuclide name="Po211" wo="2.7205823765885918e-25"/>
+    <nuclide name="Ir193_m1" wo="1.0145894411692666e-87"/>
+    <nuclide name="Ho170" wo="7.676148482528913e-19"/>
+    <nuclide name="Fr219" wo="2.2479781795129728e-26"/>
+    <nuclide name="Ca47" wo="2.140071797095406e-64"/>
+    <nuclide name="Fe68" wo="2.712889890196911e-20"/>
+    <nuclide name="Cf248" wo="2.342412539664664e-25"/>
+    <nuclide name="Tl210" wo="2.311543006964924e-26"/>
+    <nuclide name="Ge75_m1" wo="1.5679833229775934e-14"/>
+    <nuclide name="Au204" wo="1.155219710715884e-41"/>
+    <nuclide name="Cu81" wo="1.6703337734256298e-22"/>
+    <nuclide name="Dy158" wo="1.5414507880358387e-17"/>
+    <nuclide name="Zn63" wo="2.2082285181710197e-34"/>
+    <nuclide name="Pu245" wo="3.796839537193853e-24"/>
+    <nuclide name="Rn220" wo="4.336356124982496e-17"/>
+    <nuclide name="Cf246" wo="5.239511550377974e-37"/>
+    <nuclide name="Ac223" wo="1.4421673815150777e-22"/>
+    <nuclide name="Tb150" wo="4.319395201751736e-48"/>
+    <nuclide name="Th235" wo="7.579067225037363e-15"/>
+    <nuclide name="Pu242" wo="6.010312953055198e-14"/>
+    <nuclide name="Rn218" wo="3.816339581181836e-23"/>
+    <nuclide name="Cu70_m1" wo="1.8110071155432e-16"/>
+    <nuclide name="Bi211" wo="2.4528437007535256e-20"/>
+    <nuclide name="Dy154" wo="2.4469155703396545e-32"/>
+    <nuclide name="Mn67" wo="2.194978541936018e-22"/>
+    <nuclide name="Ti51" wo="2.619875602104931e-57"/>
+    <nuclide name="Ti48" wo="2.027595905958722e-62"/>
+    <nuclide name="Ac225" wo="8.742562757911605e-14"/>
+    <nuclide name="Dy167" wo="4.1075391100205315e-17"/>
+    <nuclide name="Ga71" wo="2.3790505731433937e-09"/>
+    <nuclide name="Yb171" wo="1.3241237254917972e-15"/>
+    <nuclide name="Ho168" wo="6.254847018649446e-18"/>
+    <nuclide name="Ra227" wo="1.1731828809282746e-18"/>
+    <nuclide name="Ga82" wo="6.512190823242862e-16"/>
+    <nuclide name="Ho159" wo="3.6331444204169584e-25"/>
+    <nuclide name="S34" wo="3.587530545323583e-100"/>
+    <nuclide name="Ra220" wo="7.907369317387749e-26"/>
+    <nuclide name="Cr67" wo="1.6110123542977252e-24"/>
+    <nuclide name="Ac226" wo="1.4357559189896425e-16"/>
+    <nuclide name="Tb161" wo="1.3004956922768974e-10"/>
+    <nuclide name="Os188" wo="1.4356778980019646e-94"/>
+    <nuclide name="Hg200" wo="2.7942322383493513e-43"/>
+    <nuclide name="Ho163_m1" wo="8.008128765390408e-25"/>
+    <nuclide name="Tl205" wo="5.118293596440326e-22"/>
+    <nuclide name="Ni69" wo="7.299038412663817e-17"/>
+    <nuclide name="Pt199" wo="1.0972314318882787e-49"/>
+    <nuclide name="Es251" wo="7.209286269004037e-44"/>
+    <nuclide name="Pu246" wo="1.1724556007645997e-40"/>
+    <nuclide name="Zn64" wo="3.669037844324187e-22"/>
+    <nuclide name="Hf168" wo="1.1110396978756017e-50"/>
+    <nuclide name="Pt201" wo="1.3109152314579124e-42"/>
+    <nuclide name="Cu80" wo="1.2777552563101843e-20"/>
+    <nuclide name="Np236" wo="2.7182124927645705e-15"/>
+    <nuclide name="Pt192" wo="1.3397966401673076e-81"/>
+    <nuclide name="Os189" wo="6.573920475456171e-94"/>
+    <nuclide name="Ho162_m1" wo="3.757554600946335e-21"/>
+    <nuclide name="F19" wo="0.4539817293781209"/>
+    <nuclide name="Fr220" wo="4.747597471984269e-26"/>
+    <nuclide name="Zn65" wo="6.932535149680885e-20"/>
+    <nuclide name="Bi207" wo="2.496717767996951e-22"/>
+    <nuclide name="Ge71" wo="1.6754643174585598e-16"/>
+    <nuclide name="Na22" wo="8.126321297646537e-132"/>
+    <nuclide name="Ni60" wo="1.3114634873598767e-30"/>
+    <nuclide name="Bk247" wo="8.319926106981791e-24"/>
+    <nuclide name="Fm253" wo="3.442759409286986e-49"/>
+    <nuclide name="Tb160" wo="3.675144347862063e-10"/>
+    <nuclide name="S31" wo="3.9575330274144056e-119"/>
+    <nuclide name="O15" wo="7.172883530201125e-24"/>
+    <nuclide name="Tl206" wo="4.7391068440266834e-26"/>
+    <nuclide name="Fe66" wo="4.4452292125042595e-20"/>
+    <nuclide name="Ni59" wo="3.939096443034749e-39"/>
+    <nuclide name="Po213" wo="3.9337730549127913e-25"/>
+    <nuclide name="Cu77" wo="1.929702595232279e-17"/>
+    <nuclide name="Hg196" wo="9.574113586389673e-63"/>
+    <nuclide name="F18" wo="3.8843464501866696e-13"/>
+    <nuclide name="Am239" wo="1.0666308611702358e-26"/>
+    <nuclide name="As77" wo="2.87873588689271e-09"/>
+    <nuclide name="Yb167" wo="3.28470460650049e-26"/>
+    <nuclide name="Ge80" wo="4.562924798935445e-12"/>
+    <nuclide name="Ne22" wo="9.22345722995983e-128"/>
+    <nuclide name="Er160" wo="8.166484587460732e-34"/>
+    <nuclide name="Co70" wo="1.6432297294119793e-19"/>
+    <nuclide name="Cu64" wo="4.532440901986409e-24"/>
+    <nuclide name="Ge74" wo="4.1475360612081587e-08"/>
+    <nuclide name="Ge84" wo="1.498264885011093e-14"/>
+    <nuclide name="Hg204" wo="1.8912621292243765e-25"/>
+    <nuclide name="Ga77" wo="1.9368719082503776e-13"/>
+    <nuclide name="Co74" wo="1.1544086868347845e-21"/>
+    <nuclide name="Ho162" wo="7.072264490281946e-22"/>
+    <nuclide name="Th226" wo="2.0734010523977676e-18"/>
+    <nuclide name="Bk250" wo="1.7872541805772664e-29"/>
+    <nuclide name="Dy157" wo="1.1858548828946188e-22"/>
+    <nuclide name="K39" wo="7.397053306552628e-91"/>
+    <nuclide name="Ar41" wo="2.4128951090417497e-81"/>
+    <nuclide name="Co73" wo="7.532347997693597e-21"/>
+    <nuclide name="Ar37" wo="1.3538207091348503e-95"/>
+    <nuclide name="Ga74_m1" wo="9.236461243067002e-16"/>
+    <nuclide name="Tb159" wo="1.89341352837834e-08"/>
+    <nuclide name="Am242" wo="1.8858328584236207e-17"/>
+    <nuclide name="Ge78" wo="2.2251932854412008e-10"/>
+    <nuclide name="Ca45" wo="4.0674025407003705e-71"/>
+    <nuclide name="Ni77" wo="4.7520997560466935e-21"/>
+    <nuclide name="Co58" wo="1.7044142702438757e-39"/>
+    <nuclide name="Ge88" wo="3.208348030996764e-20"/>
+    <nuclide name="Re190" wo="6.346282515070121e-88"/>
+    <nuclide name="Pu235" wo="5.944943955777586e-29"/>
+    <nuclide name="As75" wo="1.2081973075140618e-07"/>
+    <nuclide name="Fe57" wo="1.4133535222918799e-37"/>
+    <nuclide name="Cf255" wo="2.0956307632349638e-40"/>
+    <nuclide name="Na26" wo="3.1623446355306557e-128"/>
+    <nuclide name="V52" wo="7.387849646321052e-54"/>
+    <nuclide name="Bk248" wo="2.36346932390069e-25"/>
+    <nuclide name="Fe67" wo="5.266350213759576e-20"/>
+    <nuclide name="At217" wo="3.1518378950949994e-21"/>
+    <nuclide name="Mn58" wo="5.171857088685004e-48"/>
+    <nuclide name="Cr50" wo="6.694225497472812e-81"/>
+    <nuclide name="Tb170" wo="1.7802330539417162e-21"/>
+    <nuclide name="Ge82" wo="3.2783088657387016e-13"/>
+    <nuclide name="Tm168" wo="3.0050887911096418e-18"/>
+    <nuclide name="V51" wo="2.0710500094680505e-53"/>
+    <nuclide name="Cf247" wo="7.324840983858153e-35"/>
+    <nuclide name="Np235" wo="4.59526273854873e-18"/>
+    <nuclide name="Pb212" wo="2.868667785705357e-14"/>
+    <nuclide name="As78" wo="2.344205392102905e-10"/>
+    <nuclide name="N17" wo="3.609233378746487e-28"/>
+    <nuclide name="Bi210" wo="5.204640481778645e-18"/>
+    <nuclide name="N16" wo="8.678274219581241e-13"/>
+    <nuclide name="Hg203" wo="2.3817761065204066e-28"/>
+    <nuclide name="He4" wo="5.186065438558153e-06"/>
+    <nuclide name="Cm238" wo="2.1891446454597044e-33"/>
+    <nuclide name="Be11" wo="4.2690948412491e-34"/>
+    <nuclide name="Yb160" wo="4.178729804210883e-51"/>
+    <nuclide name="He6" wo="1.1863987412094689e-14"/>
+    <nuclide name="Be9" wo="0.022556100878262927"/>
+    <nuclide name="Tb168" wo="9.984298700087482e-20"/>
+    <nuclide name="Pu243" wo="1.2492831868326809e-17"/>
+    <nuclide name="K42" wo="1.9138278474890137e-81"/>
+    <nuclide name="Au201" wo="1.3629812909446993e-41"/>
+    <nuclide name="Fr223" wo="3.9734279729031454e-21"/>
+    <nuclide name="Mn54" wo="4.5091349132218385e-49"/>
+    <nuclide name="Tb171" wo="4.96779888893692e-23"/>
+    <nuclide name="Tm170" wo="2.3595876250203852e-14"/>
+    <nuclide name="P31" wo="3.0809449667254546e-107"/>
+    <nuclide name="B11" wo="2.090817120497621e-18"/>
+    <nuclide name="Cl35" wo="6.003010302730807e-94"/>
+    <nuclide name="Dy160" wo="4.4965612764720076e-10"/>
+    <nuclide name="Cl37" wo="3.355286062082745e-92"/>
+    <nuclide name="Hg206" wo="9.42250126633887e-29"/>
+    <nuclide name="Pt197" wo="1.947080756353159e-56"/>
+    <nuclide name="As89" wo="1.729078513671044e-18"/>
+    <nuclide name="Tm165" wo="6.735536679088821e-23"/>
+    <nuclide name="Mn56" wo="7.899104449453833e-42"/>
+    <nuclide name="Zn69_m1" wo="1.3535623850737396e-15"/>
+    <nuclide name="Pu234" wo="1.3055854456175462e-31"/>
+    <nuclide name="Ni64" wo="2.982212475107974e-17"/>
+    <nuclide name="Er170" wo="1.0554610320658947e-13"/>
+    <nuclide name="Zn75" wo="4.3778891974900025e-14"/>
+    <nuclide name="Re188" wo="5.850477961075282e-96"/>
+    <nuclide name="Zn66" wo="4.5308964018983625e-12"/>
+    <nuclide name="Zn80" wo="6.657638430267678e-17"/>
+    <nuclide name="Ga67" wo="3.2921365464177144e-22"/>
+    <nuclide name="Pt195" wo="1.6818157947476584e-63"/>
+    <nuclide name="Tm169" wo="2.090717801493995e-13"/>
+    <nuclide name="Bk248_m1" wo="2.181304277711898e-26"/>
+    <nuclide name="Sc45_m1" wo="1.7491789615836437e-83"/>
+    <nuclide name="Fe56" wo="3.0771350687389316e-39"/>
+    <nuclide name="C13" wo="2.183005088392337e-12"/>
+    <nuclide name="Pt196" wo="9.990797149409801e-56"/>
+    <nuclide name="Ge89" wo="8.682506200963184e-22"/>
+    <nuclide name="Er169" wo="1.2438553727232372e-14"/>
+    <nuclide name="Al30" wo="3.8291719751663986e-124"/>
+    <nuclide name="Th234" wo="4.2645518204173793e-08"/>
+    <nuclide name="Ni66" wo="4.658971564981148e-14"/>
+    <nuclide name="At213" wo="5.920992024869685e-40"/>
+    <nuclide name="Ge85" wo="7.756326993980021e-16"/>
+    <nuclide name="Th227" wo="3.421980800654611e-16"/>
+    <nuclide name="Er163" wo="3.7016318504327364e-23"/>
+    <nuclide name="Am246_m1" wo="1.8715678801387068e-43"/>
+    <nuclide name="As83" wo="5.551751449138666e-12"/>
+    <nuclide name="Cu72" wo="1.2340295050021287e-15"/>
+    <nuclide name="Ra224" wo="2.511245479001046e-13"/>
+    <nuclide name="Dy168" wo="1.7101808672820894e-17"/>
+    <nuclide name="Mn53" wo="1.5723560193936027e-56"/>
+    <nuclide name="Lu168" wo="2.7329455241081974e-51"/>
+    <nuclide name="Ho166_m1" wo="4.620166335983023e-14"/>
+    <nuclide name="Er171" wo="6.316884239302806e-17"/>
+    <nuclide name="Ho156_m1" wo="1.668809974322151e-55"/>
+    <nuclide name="Cf249" wo="1.1355449001123674e-26"/>
+    <nuclide name="Tb163" wo="1.2037880520015187e-14"/>
+    <nuclide name="O18" wo="5.080988853798236e-10"/>
+    <nuclide name="Bi209" wo="9.050903855208481e-13"/>
+    <nuclide name="Pt194" wo="1.459135370485798e-65"/>
+    <nuclide name="Si27" wo="4.097823279089552e-133"/>
+    <nuclide name="Pu240" wo="4.795219591466479e-12"/>
+    <nuclide name="Os191" wo="2.1444372110317114e-94"/>
+    <nuclide name="At216" wo="5.085498524329206e-31"/>
+    <nuclide name="Hf160" wo="2.0633680022781636e-52"/>
+    <nuclide name="Ni70" wo="1.1796039437450272e-16"/>
+    <nuclide name="Ni62" wo="1.2476712442982886e-22"/>
+    <nuclide name="Mn68" wo="9.217924564187231e-23"/>
+    <nuclide name="N14" wo="5.620683022511195e-22"/>
+    <nuclide name="Al29" wo="2.055800187720254e-116"/>
+    <nuclide name="Tb165" wo="1.398548924532803e-16"/>
+    <nuclide name="Fm252" wo="5.473263777293311e-54"/>
+    <nuclide name="Ca42" wo="7.042224707881327e-80"/>
+    <nuclide name="Np237" wo="2.221727631426954e-08"/>
+    <nuclide name="Ac229" wo="4.5742658416779e-15"/>
+    <nuclide name="O16" wo="2.346895789963447e-06"/>
+    <nuclide name="Ni78" wo="7.839518384034439e-22"/>
+    <nuclide name="Ra225" wo="1.3686180284035497e-13"/>
+    <nuclide name="Ge86" wo="2.442221671014336e-16"/>
+    <nuclide name="Ra226" wo="7.946654353900915e-14"/>
+    <nuclide name="Cu71" wo="2.0462207396276673e-15"/>
+    <nuclide name="Fr217" wo="9.16942002055224e-38"/>
+    <nuclide name="Zn78" wo="3.410476963610402e-15"/>
+    <nuclide name="Er164" wo="5.547439234281579e-16"/>
+    <nuclide name="Th233" wo="3.6000238628860474e-07"/>
+    <nuclide name="Np229" wo="1.799745496979428e-30"/>
+    <nuclide name="U232" wo="1.3101674450656327e-08"/>
+    <nuclide name="Pb203" wo="8.35254509488855e-36"/>
+    <nuclide name="Cu78" wo="2.3341858766166896e-18"/>
+    <nuclide name="C12" wo="9.351724460531223e-12"/>
+    <nuclide name="U239" wo="1.336618210732093e-15"/>
+    <nuclide name="Pb202" wo="4.0834800467502673e-38"/>
+    <nuclide name="Es254" wo="1.2255089798951268e-35"/>
+    <nuclide name="Np240" wo="7.46787363269164e-18"/>
+    <nuclide name="Dy159" wo="1.4654753368299274e-16"/>
+    <nuclide name="Li9" wo="1.4098934927199908e-21"/>
+    <nuclide name="Mn66" wo="5.568293755250732e-22"/>
+    <nuclide name="Na23" wo="2.5476631195262317e-121"/>
+    <nuclide name="Ca40" wo="8.912199462616868e-99"/>
+    <nuclide name="Es254_m1" wo="1.3880047073383641e-35"/>
+    <nuclide name="Ac228" wo="1.1322675771264185e-15"/>
+    <nuclide name="Co71" wo="1.1226893776242812e-19"/>
+    <nuclide name="Ho154" wo="9.564868283048316e-50"/>
+    <nuclide name="Po214" wo="1.7609050267305432e-25"/>
+    <nuclide name="Ge79_m1" wo="1.816177437594291e-12"/>
+    <nuclide name="Co57" wo="5.823026072032048e-47"/>
+    <nuclide name="Zn77" wo="7.849498162186792e-15"/>
+    <nuclide name="Cm245" wo="2.7475610920053333e-19"/>
+    <nuclide name="Fr218" wo="7.543994258513124e-41"/>
+    <nuclide name="Cf252" wo="5.723787100326473e-30"/>
+    <nuclide name="Os192" wo="6.858850479037136e-83"/>
+    <nuclide name="Er167_m1" wo="9.287885594842283e-20"/>
+    <nuclide name="Sc45" wo="5.350302155870251e-72"/>
+    <nuclide name="Np242" wo="2.8595353070548274e-30"/>
+    <nuclide name="Ni63" wo="7.863349819016037e-19"/>
+    <nuclide name="Po216" wo="1.1102750365690295e-19"/>
+    <nuclide name="As86" wo="3.994986351198717e-14"/>
+    <nuclide name="At218" wo="4.396629603087387e-28"/>
+    <nuclide name="Ni71" wo="1.1406836423463906e-16"/>
+    <nuclide name="Po218" wo="2.7241555846559445e-22"/>
+    <nuclide name="Ga84" wo="4.6603675159247266e-18"/>
+    <nuclide name="Ge76" wo="2.1483179273829714e-07"/>
+    <nuclide name="Cr52" wo="1.053974060666343e-49"/>
+    <nuclide name="As90" wo="1.2257984014341862e-19"/>
+    <nuclide name="Dy165" wo="6.763846000294296e-14"/>
+    <nuclide name="Lu160" wo="5.416124537567896e-52"/>
+    <nuclide name="Dy162" wo="1.104483046869786e-09"/>
+    <nuclide name="Am244" wo="6.881318005655898e-20"/>
+    <nuclide name="Dy155" wo="7.700599735436487e-31"/>
+    <nuclide name="Ge75" wo="3.0504228872851415e-11"/>
+    <nuclide name="Cl40" wo="9.716633160604183e-98"/>
+    <nuclide name="Fe61" wo="2.2293180618532346e-30"/>
+    <nuclide name="Ca48" wo="3.505387782775705e-77"/>
+    <nuclide name="Pu237_m1" wo="2.6265126347303365e-27"/>
+    <nuclide name="P36" wo="2.9439465990258707e-121"/>
+    <nuclide name="Zn71_m1" wo="1.7896821062346755e-13"/>
+    <nuclide name="Cr55" wo="2.376445156260111e-45"/>
+    <nuclide name="Zn73" wo="1.9729824690990743e-14"/>
+    <nuclide name="As85" wo="1.9921951354189508e-13"/>
+    <nuclide name="Mn57" wo="1.7823126482670357e-49"/>
+    <nuclide name="Tb162" wo="1.0004268374660033e-14"/>
+    <nuclide name="Co60" wo="5.809593643104968e-29"/>
+    <nuclide name="Co64" wo="1.5285596031430308e-34"/>
+    <nuclide name="Al27" wo="6.9158020694561985e-118"/>
+    <nuclide name="Dy171" wo="5.587390862383824e-21"/>
+    <nuclide name="Ti45" wo="1.060187265945927e-83"/>
+    <nuclide name="Dy156" wo="1.11058270900203e-21"/>
+    <nuclide name="Ra229" wo="2.918210752815206e-16"/>
+    <nuclide name="Er166" wo="1.756227371959941e-11"/>
+    <nuclide name="Ac221" wo="2.5559098922800014e-34"/>
+    <nuclide name="Tl207" wo="5.345487784507934e-20"/>
+    <nuclide name="Ga85" wo="5.475933642061161e-20"/>
+    <nuclide name="Po215" wo="3.448610651421314e-25"/>
+    <nuclide name="Ge81_m1" wo="1.0928412414367988e-14"/>
+    <nuclide name="Np239" wo="4.1031123330404865e-13"/>
+    <nuclide name="Ir191_m1" wo="7.895583592782659e-100"/>
+    <nuclide name="Th224" wo="6.769190555185139e-24"/>
+    <nuclide name="Es256" wo="2.6905621911555466e-41"/>
+    <nuclide name="Ir192" wo="5.983205604913448e-81"/>
+    <nuclide name="Sc47" wo="1.4315407036608678e-64"/>
+    <nuclide name="Co75" wo="2.0572764908806602e-22"/>
+    <nuclide name="Dy169" wo="4.489142163760863e-19"/>
+    <nuclide name="U237" wo="2.8350427843332474e-09"/>
+    <nuclide name="O19" wo="2.763496327021569e-13"/>
+    <nuclide name="Tm164" wo="1.6020550392540267e-52"/>
+    <nuclide name="K38" wo="2.9091081453004683e-105"/>
+    <nuclide name="Tl203" wo="2.027459546800007e-28"/>
+    <nuclide name="Cm242" wo="4.881670076141061e-16"/>
+    <nuclide name="Na24_m1" wo="1.016295745528262e-133"/>
+    <nuclide name="Ni57" wo="3.7197046662953104e-58"/>
+    <nuclide name="Er172" wo="1.8465935856827851e-16"/>
+    <nuclide name="Es252" wo="3.6449262020925296e-40"/>
+    <nuclide name="Tm172" wo="2.4888834122143603e-16"/>
+    <nuclide name="Ca44" wo="5.295853614730149e-70"/>
+    <nuclide name="Sc44" wo="5.1522884963123556e-83"/>
+    <nuclide name="Ac232" wo="9.555498297919608e-17"/>
+    <nuclide name="Ge73" wo="1.706001559887023e-08"/>
+    <nuclide name="Na21" wo="1.6563637509089533e-146"/>
+    <nuclide name="Yb170" wo="1.2407061058200501e-14"/>
+    <nuclide name="Au195_m1" wo="2.33027932945085e-76"/>
+    <nuclide name="Ga75" wo="7.581191355797079e-13"/>
+    <nuclide name="K44" wo="1.0347858739376894e-81"/>
+    <nuclide name="U229" wo="5.561374728655033e-29"/>
+    <nuclide name="Mg24" wo="1.3935788913825117e-125"/>
+    <nuclide name="Ge68" wo="5.4427111616627474e-24"/>
+    <nuclide name="Lu172" wo="2.3709560970060068e-21"/>
+    <nuclide name="Ga72_m1" wo="4.746413877203841e-19"/>
+    <nuclide name="Mg23" wo="1.6058557028633317e-142"/>
+    <nuclide name="V50" wo="8.273622567056665e-62"/>
+    <nuclide name="Yb172" wo="8.351735955004864e-15"/>
+    <nuclide name="Pu247" wo="6.057461930575969e-44"/>
+    <nuclide name="Fr221" wo="2.921862596821131e-17"/>
+    <nuclide name="Be10" wo="9.509037029566899e-08"/>
+    <nuclide name="Zn76" wo="3.1014760437238255e-14"/>
+    <nuclide name="Au197" wo="7.414114221579312e-55"/>
+    <nuclide name="Cr53" wo="7.868878656669762e-47"/>
+    <nuclide name="At215" wo="1.1038513892556193e-28"/>
+    <nuclide name="Es250" wo="9.61383392118921e-52"/>
+    <nuclide name="Pb211" wo="4.1154623674880223e-19"/>
+    <nuclide name="As80" wo="2.8708848373140047e-12"/>
+    <nuclide name="Er156" wo="2.1367934668732954e-53"/>
+    <nuclide name="Tb158_m1" wo="4.772882951252654e-21"/>
+    <nuclide name="Au198" wo="2.996372626180378e-57"/>
+    <nuclide name="Ge87" wo="2.1131727943828698e-18"/>
+    <nuclide name="Cf251" wo="6.182196507731191e-29"/>
+    <nuclide name="Sc49" wo="5.169603224839289e-68"/>
+    <nuclide name="At219" wo="9.932326751838418e-27"/>
+    <nuclide name="Zn67" wo="1.7113076275602813e-11"/>
+    <nuclide name="Es253" wo="2.0658953010360667e-33"/>
+    <nuclide name="Ga81" wo="4.219644012388713e-15"/>
+    <nuclide name="U236" wo="1.516038126176097e-06"/>
+    <nuclide name="As82_m1" wo="1.8083379587974018e-12"/>
+    <nuclide name="Ge73_m1" wo="4.2857504266542764e-16"/>
+    <nuclide name="S36" wo="6.2121957596639564e-105"/>
+    <nuclide name="Cu68" wo="8.6632383039045e-17"/>
+    <nuclide name="Sc46_m1" wo="5.509388593003692e-80"/>
+    <nuclide name="Zn83" wo="3.6720147245507595e-21"/>
+    <nuclide name="Hg197_m1" wo="3.1305906316178216e-66"/>
+    <nuclide name="U230" wo="6.331809954437119e-18"/>
+    <nuclide name="Ga74" wo="9.972178397972625e-13"/>
+    <nuclide name="Ir193" wo="4.62375631800577e-74"/>
+    <nuclide name="Ga76" wo="3.1614588441992147e-13"/>
+    <nuclide name="Co59" wo="3.065388492097033e-31"/>
+    <nuclide name="Tb157" wo="4.162424248524385e-15"/>
+    <nuclide name="Li6" wo="4.221771541208407e-06"/>
+    <nuclide name="Al26" wo="2.0927106889132348e-128"/>
+    <nuclide name="Yb156" wo="1.7428490570062812e-54"/>
+    <nuclide name="Mn55" wo="4.3509569150391266e-41"/>
+    <nuclide name="Ar40" wo="3.338456329929833e-84"/>
+    <nuclide name="Dy165_m1" wo="3.3213315849911996e-16"/>
+    <nuclide name="Fe69" wo="9.75608697602227e-21"/>
+    <nuclide name="P32" wo="1.5375978975693408e-100"/>
+    <nuclide name="Ga86" wo="4.954763989833994e-21"/>
+    <nuclide name="Ho161_m1" wo="4.5198697587327125e-26"/>
+    <nuclide name="As92" wo="1.1807158728873074e-22"/>
+    <nuclide name="U235_m1" wo="3.937998624088937e-09"/>
+    <nuclide name="Ar39" wo="4.702346224547767e-87"/>
+    <nuclide name="Th232" wo="0.4356481902601431"/>
+    <nuclide name="Cl36" wo="2.5616109154296984e-96"/>
+    <nuclide name="Ir194" wo="4.3529660039304e-67"/>
+    <nuclide name="Sc46" wo="8.969010875930715e-75"/>
+    <nuclide name="Ac227" wo="1.52585290041547e-13"/>
+    <nuclide name="Tb167" wo="1.2539510827617925e-18"/>
+    <nuclide name="C14" wo="2.4942266044801138e-17"/>
+    <nuclide name="S35" wo="3.1444688951803683e-93"/>
+    <nuclide name="Cr54" wo="8.850173713281845e-45"/>
+    <nuclide name="Au199" wo="1.5203583402810114e-47"/>
+    <nuclide name="Cm239" wo="4.25550057892053e-29"/>
+    <nuclide name="Au197_m1" wo="2.4289693881106798e-71"/>
+    <nuclide name="Pu236" wo="8.317147677957583e-18"/>
+    <nuclide name="Zn81" wo="5.374309765366028e-18"/>
+    <nuclide name="Pb209" wo="1.099818306495982e-15"/>
+    <nuclide name="Hg195" wo="1.3208235351911246e-71"/>
+    <nuclide name="Np236_m1" wo="6.3933371265991815e-21"/>
+    <nuclide name="Po210" wo="3.871903236910132e-17"/>
+    <nuclide name="Cu74" wo="4.859911728192287e-16"/>
+    <nuclide name="Ho166" wo="1.3328630965281636e-13"/>
+    <nuclide name="Er165" wo="1.2243155928426345e-19"/>
+    <nuclide name="Ge77_m1" wo="3.978748844077703e-14"/>
+    <nuclide name="Mg26" wo="8.725812071103766e-113"/>
+    <nuclide name="Cm249" wo="1.4851403122770475e-30"/>
+    <nuclide name="At214" wo="4.13209566904573e-44"/>
+    <nuclide name="Au196" wo="1.8104890910531154e-62"/>
+    <nuclide name="Li8" wo="1.5278497615594e-13"/>
+    <nuclide name="Pu241" wo="9.399334736030089e-13"/>
+    <nuclide name="Ga80" wo="1.1016554938749315e-14"/>
+    <nuclide name="Dy170" wo="1.1418280249238212e-19"/>
+    <nuclide name="Th231" wo="1.2368533769454697e-08"/>
+    <nuclide name="Lu171_m1" wo="1.2146839865885964e-26"/>
+    <nuclide name="Co61" wo="3.6881436256933534e-29"/>
+    <nuclide name="Cm244" wo="5.542323085558117e-17"/>
+    <nuclide name="Bi212" wo="2.7199372483796125e-15"/>
+    <nuclide name="Pb208" wo="5.078002642143681e-12"/>
+    <nuclide name="Os189_m1" wo="6.970346547442185e-97"/>
+    <nuclide name="Ir189" wo="5.1261720837269e-94"/>
+    <nuclide name="Co60_m1" wo="2.552210635293325e-37"/>
+    <nuclide name="Ti47" wo="1.2009356646616223e-63"/>
+    <nuclide name="Tm160" wo="7.640619668830797e-51"/>
+    <nuclide name="Ho160" wo="1.2187721403039996e-35"/>
+    <nuclide name="Cf254" wo="7.177375941604173e-35"/>
+    <nuclide name="Hg198" wo="1.4012055422457566e-52"/>
+    <nuclide name="Ho159_m1" wo="6.189741592033616e-30"/>
+    <nuclide name="Am242_m1" wo="3.2393342068101006e-17"/>
+    <nuclide name="Sc48" wo="1.3410908075037246e-63"/>
+    <nuclide name="S37" wo="3.5927463255688142e-96"/>
+    <nuclide name="Co72" wo="3.075330055750077e-20"/>
+    <nuclide name="Cm247" wo="5.5402992851005275e-24"/>
+    <nuclide name="Zn69" wo="2.5344006316912882e-14"/>
+    <nuclide name="Ti49" wo="6.265574272489883e-58"/>
+    <nuclide name="Ni58" wo="5.300163685686095e-47"/>
+    <nuclide name="Ga70" wo="5.2757487256925493e-17"/>
+    <nuclide name="Pu238" wo="1.3875939708586007e-09"/>
+    <nuclide name="O17" wo="3.9270597368137934e-13"/>
+    <nuclide name="As76" wo="1.1182222782587358e-11"/>
+    <nuclide name="Ra221" wo="8.98007503259239e-23"/>
+    <nuclide name="Er162" wo="3.680546788662721e-21"/>
+    <nuclide name="As79" wo="6.234016207738182e-11"/>
+    <nuclide name="Zn71" wo="1.5855637527728452e-14"/>
+    <nuclide name="F20" wo="2.7270689719476775e-12"/>
+    <nuclide name="Zn70" wo="5.523736835516313e-10"/>
+    <nuclide name="Ni68" wo="7.807098373514532e-17"/>
+    <nuclide name="Cm246" wo="4.537557376768542e-21"/>
+    <nuclide name="Hg197" wo="2.777630031186685e-57"/>
+    <nuclide name="Am240" wo="1.3163154570190864e-23"/>
+    <nuclide name="Be8" wo="4.119249333996158e-30"/>
+    <nuclide name="Fe71" wo="4.262177460257241e-22"/>
+    <nuclide name="Ge81" wo="8.677120926739902e-13"/>
+    <nuclide name="Np240_m1" wo="1.566818597002918e-18"/>
+    <nuclide name="As88" wo="9.068747390915122e-17"/>
+    <nuclide name="Bi215" wo="7.802444362181225e-26"/>
+    <nuclide name="Pb210" wo="7.095672487607311e-15"/>
+    <nuclide name="Am241" wo="4.012801608234064e-15"/>
+    <nuclide name="Ne23" wo="9.004025284420972e-126"/>
+    <nuclide name="K45" wo="1.1304013806972828e-87"/>
+    <nuclide name="Cl34" wo="9.44084220069394e-111"/>
+    <nuclide name="Au195" wo="7.033743987699498e-65"/>
+    <nuclide name="Cf245" wo="1.0378032204568853e-22"/>
+    <nuclide name="Cu73" wo="1.3715847856547591e-15"/>
+    <nuclide name="U233" wo="0.00825698806830408"/>
+    <nuclide name="Tb169" wo="6.274991849376805e-21"/>
+    <nuclide name="Th230" wo="1.779023391186362e-08"/>
+    <nuclide name="Ni67" wo="1.8576889664942415e-17"/>
+    <nuclide name="V49" wo="8.036937256228245e-70"/>
+    <nuclide name="Pb207" wo="1.7701250805571045e-15"/>
+    <nuclide name="Cu67" wo="1.9948407558812128e-13"/>
+    <nuclide name="Am244_m1" wo="4.519789702735326e-20"/>
+    <nuclide name="As91" wo="2.1480516427186084e-21"/>
+    <nuclide name="Hg199_m1" wo="2.2277569167519867e-60"/>
+    <nuclide name="As87" wo="2.164722165744562e-15"/>
+    <nuclide name="Cm248" wo="1.3376580128672212e-25"/>
+    <nuclide name="Mg25" wo="2.8452867136929117e-121"/>
+    <nuclide name="Bi210_m1" wo="6.519469344392507e-18"/>
+    <nuclide name="Np234" wo="3.1823549582151876e-26"/>
+    <nuclide name="Tb166" wo="1.2671800064813962e-17"/>
+    <nuclide name="Cr66" wo="1.5828513280728475e-24"/>
+    <nuclide name="Dy164" wo="6.991642250433262e-11"/>
+    <nuclide name="P30" wo="1.4279102852909224e-121"/>
+    <nuclide name="Ca43" wo="2.6815052296129873e-77"/>
+    <nuclide name="Er154" wo="4.771237567408588e-51"/>
+    <nuclide name="Cu68_m1" wo="1.669399813935178e-17"/>
+    <nuclide name="Ti50" wo="3.8401489693181154e-54"/>
+    <nuclide name="Tb164" wo="6.185730980690462e-16"/>
+    <nuclide name="Ca46" wo="3.8281153512488416e-66"/>
+    <nuclide name="U234" wo="0.0005305243766561702"/>
+    <nuclide name="Pb207_m1" wo="5.797572340897518e-31"/>
+    <nuclide name="Pu244" wo="1.6600961418965902e-19"/>
+    <nuclide name="Au200" wo="1.469091347015289e-56"/>
+    <nuclide name="Pb204" wo="1.031940646665184e-27"/>
+    <nuclide name="Tm156" wo="4.648569713048473e-54"/>
+    <nuclide name="Cu63" wo="1.3555093606934954e-21"/>
+    <nuclide name="K41" wo="6.920632271450047e-79"/>
+    <nuclide name="Rn222" wo="4.930555101081269e-19"/>
+    <nuclide name="Dy163" wo="4.439645367701825e-10"/>
+    <nuclide name="Hg195_m1" wo="6.950126438208434e-89"/>
+    <nuclide name="As84" wo="6.425715238833355e-13"/>
+    <nuclide name="C15" wo="3.5276812698418034e-34"/>
+    <nuclide name="Er150" wo="2.0562796831027156e-51"/>
+    <nuclide name="U242" wo="2.18371712967778e-29"/>
+    <nuclide name="Ac224" wo="1.940377058643435e-22"/>
+    <nuclide name="Bi208" wo="4.517682177431613e-19"/>
+    <nuclide name="Ge69" wo="1.1557890739199105e-22"/>
+    <nuclide name="Cu65" wo="1.7940810525041225e-14"/>
+    <nuclide name="Hg199" wo="2.295135366976783e-46"/>
+    <nuclide name="Ar38" wo="2.06046555793368e-86"/>
+    <nuclide name="Cm251" wo="6.612510079169615e-39"/>
+    <nuclide name="K46" wo="2.042020397434387e-80"/>
+    <nuclide name="Ni76" wo="1.9596331996775285e-19"/>
+    <nuclide name="Zn74" wo="1.7941465302731595e-13"/>
+    <nuclide name="Cu69" wo="1.2740675471165152e-15"/>
+    <nuclide name="Yb169" wo="1.6634883923050525e-20"/>
+    <nuclide name="Li7" wo="0.07874385599987375"/>
+    <nuclide name="Mg27" wo="3.7337673730502527e-121"/>
+    <nuclide name="Si28" wo="2.946722436618753e-114"/>
+    <nuclide name="Hg201" wo="2.759726910103907e-37"/>
+    <nuclide name="Zn72" wo="5.2079567090016035e-11"/>
+    <nuclide name="Ar45" wo="2.7332574487194966e-89"/>
+    <nuclide name="Ne21" wo="1.197557795063925e-132"/>
+    <nuclide name="Ge77" wo="8.079355817167776e-10"/>
+    <nuclide name="Tb153" wo="1.3609657327302785e-23"/>
+    <nuclide name="Tl195" wo="6.351393998448822e-88"/>
+    <nuclide name="Ho164" wo="1.7033113685958447e-19"/>
+    <nuclide name="Ne20" wo="2.072104492861148e-06"/>
+    <nuclide name="Ga72" wo="1.5969051304926716e-11"/>
+    <nuclide name="As81" wo="9.485713301243787e-12"/>
+    <nuclide name="As72" wo="1.3136591810376489e-21"/>
+    <nuclide name="Ho169" wo="3.95701577730391e-18"/>
+    <nuclide name="V54" wo="6.511395849118833e-59"/>
+    <nuclide name="V53" wo="5.804750658263127e-59"/>
+    <nuclide name="Al28" wo="1.4977933307457133e-118"/>
+    <nuclide name="Ho170_m1" wo="3.566053668764236e-20"/>
+    <nuclide name="Yb169_m1" wo="2.381669136039851e-26"/>
+    <nuclide name="Cl38" wo="2.7221247483171072e-89"/>
+    <nuclide name="Er161" wo="6.75396741107604e-31"/>
+    <nuclide name="Am245" wo="2.510105809459188e-23"/>
+    <nuclide name="Cf253" wo="3.376048554923994e-33"/>
+    <nuclide name="Hg202" wo="1.4626515303178908e-34"/>
+    <nuclide name="Ge79" wo="1.1943037411132768e-12"/>
+    <nuclide name="Ho163" wo="1.158771287637188e-16"/>
+    <nuclide name="Po212" wo="1.4340044221771922e-25"/>
+    <nuclide name="Yb168" wo="3.9741864911352946e-21"/>
+    <nuclide name="Cm250" wo="5.687890416761273e-34"/>
+    <nuclide name="Dy150" wo="7.846844898630605e-50"/>
+    <nuclide name="Co66" wo="3.975529139075663e-20"/>
+    <nuclide name="Es255" wo="5.261904156844762e-37"/>
+    <nuclide name="S32" wo="1.6204853251762846e-100"/>
+    <nuclide name="Ca39" wo="8.79522105058334e-118"/>
+    <nuclide name="P34" wo="2.931583563270969e-105"/>
+    <nuclide name="Hg194" wo="2.071382102768361e-73"/>
+    <nuclide name="Ga79" wo="4.568475304821071e-14"/>
+    <nuclide name="Co67" wo="2.3345878618339117e-19"/>
+    <nuclide name="Co69" wo="2.9374140062550666e-19"/>
+    <nuclide name="Fe59" wo="2.7335256985644993e-31"/>
+    <nuclide name="Co65" wo="1.0810192485711098e-21"/>
+    <nuclide name="Ar35" wo="2.8122427876485746e-121"/>
+    <nuclide name="Ir191" wo="7.704608189359541e-84"/>
+    <nuclide name="Lu171" wo="2.1135602028110327e-22"/>
+    <nuclide name="Zn82" wo="1.1560303442495016e-19"/>
+    <nuclide name="Mn69" wo="1.368510518226347e-23"/>
+    <nuclide name="Ra228" wo="8.131477460284501e-12"/>
+    <nuclide name="Ca41" wo="6.774766952616607e-89"/>
+    <nuclide name="N13" wo="5.7116084122337965e-36"/>
+    <nuclide name="Dy166" wo="1.966675012420376e-13"/>
+    <nuclide name="Si29" wo="6.82318777116492e-106"/>
+    <nuclide name="Ra223" wo="1.983551632966415e-16"/>
+    <nuclide name="Zn79" wo="6.472974937255081e-16"/>
+    <nuclide name="Fe53" wo="6.028821099260319e-169"/>
+    <nuclide name="Cm243" wo="1.8075242772559096e-18"/>
+    <nuclide name="Ra222" wo="4.016454697557402e-20"/>
+    <nuclide name="P33" wo="8.185524812788075e-111"/>
+    <nuclide name="Si33" wo="3.4694732397625526e-119"/>
+    <nuclide name="Bi214" wo="1.717150933016544e-21"/>
+    <nuclide name="Fm255" wo="9.862128468166793e-39"/>
+    <nuclide name="Np241" wo="2.922662718946409e-24"/>
+    <nuclide name="Ta168" wo="7.171346951206612e-53"/>
+    <nuclide name="As74" wo="4.86136982512251e-15"/>
+    <nuclide name="Pu239" wo="4.066914463886346e-11"/>
+    <nuclide name="Ho171" wo="1.0060745383454415e-19"/>
+    <nuclide name="Es256_m1" wo="7.799313570198197e-42"/>
+    <nuclide name="Os193" wo="5.489559287010266e-86"/>
+    <nuclide name="Rn216" wo="1.940804938427269e-28"/>
+    <nuclide name="Cu62" wo="1.1452303332203746e-33"/>
+    <nuclide name="Ho172" wo="1.7118652861222296e-20"/>
+    <nuclide name="Ni74" wo="9.090026075555825e-18"/>
+    <nuclide name="B12" wo="1.1475370498995192e-32"/>
+    <nuclide name="Ir190" wo="3.237033529054304e-91"/>
+    <nuclide name="Co62" wo="3.752569687476417e-28"/>
+    <nuclide name="As73" wo="2.1395357024208303e-16"/>
+    <nuclide name="He3" wo="1.419534466846847e-27"/>
+    <nuclide name="Cu76" wo="8.242253954686824e-17"/>
+    <nuclide name="Au198_m1" wo="2.558811266838471e-60"/>
+    <nuclide name="Ho167" wo="1.65534474403297e-15"/>
+    <nuclide name="Lu172_m1" wo="4.67804139219475e-25"/>
+    <nuclide name="Cu70" wo="1.0723548277006003e-15"/>
+    <nuclide name="Ga83" wo="3.253321358831746e-17"/>
+    <nuclide name="Ar36" wo="3.206683695275092e-103"/>
+    <nuclide name="Ni75" wo="2.6494927673911725e-18"/>
+    <nuclide name="U231" wo="3.9415710436840606e-15"/>
+    <nuclide name="Tb156_m1" wo="1.6022825859597612e-20"/>
+    <nuclide name="Tl204" wo="1.2658170340737565e-28"/>
+    <nuclide name="Am247" wo="4.247437595625903e-46"/>
+    <nuclide name="Am243" wo="1.3624202704662565e-15"/>
+    <nuclide name="Bk249" wo="5.9272487478209014e-27"/>
+    <nuclide name="Fe72" wo="4.218237095695026e-28"/>
+    <nuclide name="Pb205" wo="2.861429475420261e-24"/>
+    <nuclide name="Fe55" wo="1.103180134544556e-47"/>
+    <nuclide name="Tb156" wo="7.217199461642418e-18"/>
+    <nuclide name="Ga78" wo="8.158993765925822e-14"/>
+    <nuclide name="Fr222" wo="6.818317047985143e-23"/>
+    <nuclide name="Fe58" wo="1.0136257938995341e-32"/>
+    <nuclide name="Pb206" wo="1.1497734383667125e-17"/>
+    <nuclide name="Tb158" wo="4.7027770137052207e-14"/>
+    <nuclide name="Ni73" wo="2.5564549876156348e-17"/>
+    <nuclide name="Er168" wo="2.250449236367483e-12"/>
+    <nuclide name="Rn217" wo="5.3889642196039614e-27"/>
+    <nuclide name="Dy161" wo="2.9291088890143637e-09"/>
+    <nuclide name="Tl202" wo="1.0580392061542118e-35"/>
+    <nuclide name="Ho150" wo="7.281404608903637e-51"/>
+    <nuclide name="Ga73" wo="1.5248947740939048e-11"/>
+    <nuclide name="Ge71_m1" wo="9.214924772449131e-25"/>
+    <nuclide name="Ho161" wo="8.268437310223939e-22"/>
+    <nuclide name="Cm240" wo="3.181968204844998e-18"/>
+    <nuclide name="Ti46" wo="1.4757470636285855e-71"/>
+    <nuclide name="Au202" wo="2.223454785566168e-50"/>
+    <nuclide name="Ho165" wo="7.971466898369535e-11"/>
+    <nuclide name="Yb164" wo="3.924569419653067e-51"/>
+    <nuclide name="Tl209" wo="2.7284794631685057e-19"/>
+    <nuclide name="K40" wo="2.5431285565160855e-88"/>
+    <nuclide name="Tl201" wo="6.628904728244464e-40"/>
+    <nuclide name="Ge83" wo="4.257493269498492e-14"/>
+    <nuclide name="Na25" wo="5.7643278454618746e-133"/>
+    <nuclide name="Tm171" wo="1.86794831705404e-14"/>
+    <nuclide name="Ga68" wo="2.1706597123009843e-21"/>
+    <nuclide name="Os190" wo="5.676122685498576e-84"/>
+    <nuclide name="S33" wo="4.780717051936371e-105"/>
+    <nuclide name="U238" wo="3.367479698794767e-10"/>
+    <nuclide name="Cu66" wo="7.290575624437733e-17"/>
+    <nuclide name="Am233" wo="1.689304288102283e-30"/>
+    <nuclide name="Ga66" wo="5.925033300367224e-25"/>
+    <nuclide name="Ar43" wo="3.8277010103125193e-81"/>
+    <nuclide name="K48" wo="1.767383432446949e-81"/>
+    <nuclide name="Fm254" wo="1.1177654788071271e-36"/>
+    <nuclide name="Tm167" wo="7.104765726421113e-20"/>
+    <nuclide name="Si30" wo="2.5231829176475987e-109"/>
+    <nuclide name="Pu237" wo="1.3634947699312168e-17"/>
+    <nuclide name="Pt193" wo="4.1185410851959366e-71"/>
+    <nuclide name="Ni61" wo="4.08652286028907e-26"/>
+    <nuclide name="Cl38_m1" wo="5.710554636675621e-104"/>
+    <nuclide name="U241" wo="1.051509858808363e-24"/>
+    <nuclide name="Ni72" wo="7.921024353553848e-17"/>
+    <nuclide name="Ge72" wo="6.079061182860066e-09"/>
+    <nuclide name="U240" wo="2.685025471122722e-19"/>
+    <nuclide name="Si31" wo="2.0555640233535131e-109"/>
+    <nuclide name="Er167" wo="1.092507985383803e-12"/>
+    <nuclide name="Ni65" wo="8.445018341578627e-18"/>
+    <nuclide name="Hg205" wo="3.150563789845104e-26"/>
+    <nuclide name="Tl208" wo="4.835598834439462e-17"/>
+    <nuclide name="Bk251" wo="2.198278427495967e-33"/>
+    <nuclide name="As82" wo="3.920071017374174e-12"/>
+    <nuclide name="U235" wo="4.2425471374303e-05"/>
+    <nuclide name="Co68" wo="1.8402893645815977e-19"/>
+    <nuclide name="Fe70" wo="4.167494770835491e-21"/>
+    <nuclide name="Tb155" wo="3.5807438641641685e-20"/>
+    <nuclide name="Fe65" wo="7.54949072215701e-22"/>
+    <nuclide name="Ac222" wo="3.880186020934265e-37"/>
+    <nuclide name="Bi213" wo="2.619387134388127e-16"/>
+    <nuclide name="Fm256" wo="2.0427854906543753e-39"/>
+    <nuclide name="Th225" wo="1.905403901894859e-21"/>
+    <nuclide name="Th228" wo="5.016545949083038e-11"/>
+    <nuclide name="B10" wo="7.437176457865334e-15"/>
+    <nuclide name="Cf250" wo="7.7737863034685945e-28"/>
+    <nuclide name="Cu75" wo="4.144417558908481e-16"/>
+    <nuclide name="Dy172" wo="6.852582781059722e-22"/>
+    <nuclide name="Zn68" wo="5.528369424375733e-11"/>
+    <nuclide name="Ga69" wo="1.4760763862286161e-10"/>
+    <nuclide name="Pt198" wo="2.77220549207405e-48"/>
+    <nuclide name="Cu79" wo="1.7882181829503683e-19"/>
+    <nuclide name="K43" wo="9.25737160009132e-79"/>
+    <nuclide name="Cr51" wo="8.808567416987229e-59"/>
+    <nuclide name="Sc50" wo="6.24309223301378e-68"/>
   </material>
   <material id="2" name="graphite">
-    <density units="g/cm3" value="1.84" />
-    <nuclide name="C0" wo="1.0" />
-    <sab name="c_Graphite" />
+    <density units="g/cm3" value="1.84"/>
+    <nuclide name="C0" wo="1.0"/>
+    <sab name="c_Graphite"/>
   </material>
   <material id="3" name="hastelloyN">
-    <density units="g/cm3" value="8.671" />
-    <nuclide name="Al27" wo="0.003" />
-    <nuclide name="Cr50" wo="0.0029215806359028196" />
-    <nuclide name="Cr52" wo="0.058589553645942136" />
-    <nuclide name="Cr53" wo="0.006771510773072629" />
-    <nuclide name="Cr54" wo="0.00171735494508243" />
-    <nuclide name="Ni58" wo="0.4549284648579136" />
-    <nuclide name="Ni60" wo="0.18127326882778413" />
-    <nuclide name="Ni61" wo="0.008011341007458728" />
-    <nuclide name="Ni62" wo="0.02596174699460814" />
-    <nuclide name="Ni64" wo="0.006825178312235456" />
-    <nuclide name="W180" wo="0.00029364388284820373" />
-    <nuclide name="W182" wo="0.06556762369071831" />
-    <nuclide name="W183" wo="0.035601506321117304" />
-    <nuclide name="W184" wo="0.07664548021845775" />
-    <nuclide name="W186" wo="0.07189174588685844" />
+    <density units="g/cm3" value="8.671"/>
+    <nuclide name="B10" wo="1.835549587507326e-06"/>
+    <nuclide name="B11" wo="8.164450412492673e-06"/>
+    <nuclide name="Al27" wo="0.001"/>
+    <nuclide name="Si28" wo="0.0009187351728283676"/>
+    <nuclide name="Si29" wo="4.831750292786396e-05"/>
+    <nuclide name="Si30" wo="3.2947324243768426e-05"/>
+    <nuclide name="P31" wo="0.00015"/>
+    <nuclide name="S32" wo="0.00014215291621241376"/>
+    <nuclide name="S33" wo="1.154822906631053e-06"/>
+    <nuclide name="S34" wo="6.667728601314034e-06"/>
+    <nuclide name="S36" wo="2.4532279641130547e-08"/>
+    <nuclide name="Ti46" wo="0.0009900119019720071"/>
+    <nuclide name="Ti47" wo="0.0009122227903994025"/>
+    <nuclide name="Ti48" wo="0.009230631531977933"/>
+    <nuclide name="Ti49" wo="0.0006915238172711496"/>
+    <nuclide name="Ti50" wo="0.0006756099583795079"/>
+    <nuclide name="Cr50" wo="0.0029215806359028196"/>
+    <nuclide name="Cr52" wo="0.058589553645942136"/>
+    <nuclide name="Cr53" wo="0.006771510773072629"/>
+    <nuclide name="Cr54" wo="0.00171735494508243"/>
+    <nuclide name="Mn55" wo="0.0035"/>
+    <nuclide name="Fe54" wo="0.0016936674668120565"/>
+    <nuclide name="Fe56" wo="0.027570458633868738"/>
+    <nuclide name="Fe57" wo="0.0006481105841023909"/>
+    <nuclide name="Fe58" wo="8.776331521681765e-05"/>
+    <nuclide name="Co59" wo="0.002"/>
+    <nuclide name="Ni58" wo="0.49530756597063447"/>
+    <nuclide name="Ni60" wo="0.19736294493393117"/>
+    <nuclide name="Ni61" wo="0.00872242148181352"/>
+    <nuclide name="Ni62" wo="0.028266091716773578"/>
+    <nuclide name="Ni64" wo="0.007430975896847314"/>
+    <nuclide name="Cu63" wo="0.0006847919520523901"/>
+    <nuclide name="Cu65" wo="0.00031520804794761"/>
+    <nuclide name="Nb93" wo="0.01"/>
+    <nuclide name="Mo92" wo="0.01683826965647346"/>
+    <nuclide name="Mo94" wo="0.010789582056756033"/>
+    <nuclide name="Mo95" wo="0.018840557266836578"/>
+    <nuclide name="Mo96" wo="0.01999840362163272"/>
+    <nuclide name="Mo97" wo="0.011613114609036522"/>
+    <nuclide name="Mo98" wo="0.02974484682761688"/>
+    <nuclide name="Mo100" wo="0.012175225961647808"/>
+    <nuclide name="Hf174" wo="1.5592576781201616e-05"/>
+    <nuclide name="Hf176" wo="0.0005185040271645928"/>
+    <nuclide name="Hf177" wo="0.0018439333432437896"/>
+    <nuclide name="Hf178" wo="0.002719727077160886"/>
+    <nuclide name="Hf179" wo="0.0013655166554538101"/>
+    <nuclide name="Hf180" wo="0.0035367263201957194"/>
+    <nuclide name="W180" wo="1.174575531392815e-06"/>
+    <nuclide name="W182" wo="0.00026227049476287324"/>
+    <nuclide name="W183" wo="0.0001424060252844692"/>
+    <nuclide name="W184" wo="0.000306581920873831"/>
+    <nuclide name="W186" wo="0.00028756698354743377"/>
+    <nuclide name="C0" wo="0.0006"/>
   </material>
 </materials>

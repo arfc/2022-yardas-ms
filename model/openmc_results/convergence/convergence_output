@@ -1,0 +1,338 @@
+                                %%%%%%%%%%%%%%%
+                           %%%%%%%%%%%%%%%%%%%%%%%%
+                        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                    %%%%%%%%%%%%%%%%%%%%%%%%
+                                     %%%%%%%%%%%%%%%%%%%%%%%%
+                 ###############      %%%%%%%%%%%%%%%%%%%%%%%%
+                ##################     %%%%%%%%%%%%%%%%%%%%%%%
+                ###################     %%%%%%%%%%%%%%%%%%%%%%%
+                ####################     %%%%%%%%%%%%%%%%%%%%%%
+                #####################     %%%%%%%%%%%%%%%%%%%%%
+                ######################     %%%%%%%%%%%%%%%%%%%%
+                #######################     %%%%%%%%%%%%%%%%%%
+                 #######################     %%%%%%%%%%%%%%%%%
+                 ######################     %%%%%%%%%%%%%%%%%
+                  ####################     %%%%%%%%%%%%%%%%%
+                    #################     %%%%%%%%%%%%%%%%%
+                     ###############     %%%%%%%%%%%%%%%%
+                       ############     %%%%%%%%%%%%%%%
+                          ########     %%%%%%%%%%%%%%
+                                      %%%%%%%%%%%
+
+                 | The OpenMC Monte Carlo Code
+       Copyright | 2011-2023 MIT, UChicago Argonne LLC, and contributors
+         License | https://docs.openmc.org/en/latest/license.html
+         Version | 0.13.4-dev
+        Git SHA1 | f3b822ef22ec223131f4331b87717471fd6c3e4f
+       Date/Time | 2023-07-21 13:19:28
+   MPI Processes | 576
+  OpenMP Threads | 8
+
+ Reading settings XML file...
+ Reading cross sections XML file...
+ Reading materials XML file...
+ Reading geometry XML file...
+ Reading Li6 from /home/yardolek/cross-section-libraries/endfb71_h5/Li6.h5
+ Reading Li7 from /home/yardolek/cross-section-libraries/endfb71_h5/Li7.h5
+ Reading F19 from /home/yardolek/cross-section-libraries/endfb71_h5/F19.h5
+ Reading Be9 from /home/yardolek/cross-section-libraries/endfb71_h5/Be9.h5
+ Reading Th232 from /home/yardolek/cross-section-libraries/endfb71_h5/Th232.h5
+ Reading U233 from /home/yardolek/cross-section-libraries/endfb71_h5/U233.h5
+ Reading C0 from /home/yardolek/cross-section-libraries/endfb71_h5/C0.h5
+ Reading Mo92 from /home/yardolek/cross-section-libraries/endfb71_h5/Mo92.h5
+ Reading Mo94 from /home/yardolek/cross-section-libraries/endfb71_h5/Mo94.h5
+ Reading Mo95 from /home/yardolek/cross-section-libraries/endfb71_h5/Mo95.h5
+ Reading Mo96 from /home/yardolek/cross-section-libraries/endfb71_h5/Mo96.h5
+ Reading Mo97 from /home/yardolek/cross-section-libraries/endfb71_h5/Mo97.h5
+ Reading Mo98 from /home/yardolek/cross-section-libraries/endfb71_h5/Mo98.h5
+ Reading Mo100 from /home/yardolek/cross-section-libraries/endfb71_h5/Mo100.h5
+ Reading Cr50 from /home/yardolek/cross-section-libraries/endfb71_h5/Cr50.h5
+ Reading Cr52 from /home/yardolek/cross-section-libraries/endfb71_h5/Cr52.h5
+ Reading Cr53 from /home/yardolek/cross-section-libraries/endfb71_h5/Cr53.h5
+ Reading Cr54 from /home/yardolek/cross-section-libraries/endfb71_h5/Cr54.h5
+ Reading Fe54 from /home/yardolek/cross-section-libraries/endfb71_h5/Fe54.h5
+ Reading Fe56 from /home/yardolek/cross-section-libraries/endfb71_h5/Fe56.h5
+ Reading Fe57 from /home/yardolek/cross-section-libraries/endfb71_h5/Fe57.h5
+ Reading Fe58 from /home/yardolek/cross-section-libraries/endfb71_h5/Fe58.h5
+ Reading Mn55 from /home/yardolek/cross-section-libraries/endfb71_h5/Mn55.h5
+ Reading Si28 from /home/yardolek/cross-section-libraries/endfb71_h5/Si28.h5
+ Reading Si29 from /home/yardolek/cross-section-libraries/endfb71_h5/Si29.h5
+ Reading Si30 from /home/yardolek/cross-section-libraries/endfb71_h5/Si30.h5
+ Reading W180 from /home/yardolek/cross-section-libraries/endfb71_h5/W180.h5
+ Reading W182 from /home/yardolek/cross-section-libraries/endfb71_h5/W182.h5
+ Reading W183 from /home/yardolek/cross-section-libraries/endfb71_h5/W183.h5
+ Reading W184 from /home/yardolek/cross-section-libraries/endfb71_h5/W184.h5
+ Reading W186 from /home/yardolek/cross-section-libraries/endfb71_h5/W186.h5
+ Reading Al27 from /home/yardolek/cross-section-libraries/endfb71_h5/Al27.h5
+ Reading Ti46 from /home/yardolek/cross-section-libraries/endfb71_h5/Ti46.h5
+ Reading Ti47 from /home/yardolek/cross-section-libraries/endfb71_h5/Ti47.h5
+ Reading Ti48 from /home/yardolek/cross-section-libraries/endfb71_h5/Ti48.h5
+ Reading Ti49 from /home/yardolek/cross-section-libraries/endfb71_h5/Ti49.h5
+ Reading Ti50 from /home/yardolek/cross-section-libraries/endfb71_h5/Ti50.h5
+ Reading Cu63 from /home/yardolek/cross-section-libraries/endfb71_h5/Cu63.h5
+ Reading Cu65 from /home/yardolek/cross-section-libraries/endfb71_h5/Cu65.h5
+ Reading Co59 from /home/yardolek/cross-section-libraries/endfb71_h5/Co59.h5
+ Reading P31 from /home/yardolek/cross-section-libraries/endfb71_h5/P31.h5
+ Reading S32 from /home/yardolek/cross-section-libraries/endfb71_h5/S32.h5
+ Reading S33 from /home/yardolek/cross-section-libraries/endfb71_h5/S33.h5
+ Reading S34 from /home/yardolek/cross-section-libraries/endfb71_h5/S34.h5
+ Reading S36 from /home/yardolek/cross-section-libraries/endfb71_h5/S36.h5
+ Reading B10 from /home/yardolek/cross-section-libraries/endfb71_h5/B10.h5
+ Reading B11 from /home/yardolek/cross-section-libraries/endfb71_h5/B11.h5
+ Reading Hf174 from /home/yardolek/cross-section-libraries/endfb71_h5/Hf174.h5
+ Reading Hf176 from /home/yardolek/cross-section-libraries/endfb71_h5/Hf176.h5
+ Reading Hf177 from /home/yardolek/cross-section-libraries/endfb71_h5/Hf177.h5
+ Reading Hf178 from /home/yardolek/cross-section-libraries/endfb71_h5/Hf178.h5
+ Reading Hf179 from /home/yardolek/cross-section-libraries/endfb71_h5/Hf179.h5
+ Reading Hf180 from /home/yardolek/cross-section-libraries/endfb71_h5/Hf180.h5
+ Reading Nb93 from /home/yardolek/cross-section-libraries/endfb71_h5/Nb93.h5
+ Reading Ni58 from /home/yardolek/cross-section-libraries/endfb71_h5/Ni58.h5
+ Reading Ni60 from /home/yardolek/cross-section-libraries/endfb71_h5/Ni60.h5
+ Reading Ni61 from /home/yardolek/cross-section-libraries/endfb71_h5/Ni61.h5
+ Reading Ni62 from /home/yardolek/cross-section-libraries/endfb71_h5/Ni62.h5
+ Reading Ni64 from /home/yardolek/cross-section-libraries/endfb71_h5/Ni64.h5
+ Reading c_Graphite from
+ /home/yardolek/cross-section-libraries/endfb71_h5/c_Graphite.h5
+ Minimum neutron data temperature: 600 K
+ Maximum neutron data temperature: 1200 K
+ Preparing distributed cell instances...
+ Reading plot XML file...
+ Writing summary.h5 file...
+ Maximum neutron transport energy: 20000000 eV for Li6
+ Initializing source particles...
+
+ ====================>     K EIGENVALUE SIMULATION     <====================
+
+  Bat./Gen.      k       Entropy         Average k 
+  =========   ========   ========   ====================
+        1/1    0.91453    4.80544
+        2/1    0.95542    6.13066
+        3/1    0.97934    6.95080
+        4/1    0.99745    7.54672
+        5/1    1.01179    8.03020
+        6/1    1.02843    8.41907
+        7/1    1.03833    8.75900
+        8/1    1.05060    9.04865
+        9/1    1.05502    9.28753
+       10/1    1.06464    9.50336
+       11/1    1.07093    9.68476
+       12/1    1.07033    9.84748
+       13/1    1.07481    9.98753
+       14/1    1.06866   10.09798
+       15/1    1.07316   10.19412
+       16/1    1.08052   10.29708
+       17/1    1.08472   10.37179
+       18/1    1.07557   10.43946
+       19/1    1.07915   10.50572
+       20/1    1.08070   10.55761
+       21/1    1.08223   10.61316
+       22/1    1.07186   10.66590
+       23/1    1.08754   10.70606
+       24/1    1.07897   10.74937
+       25/1    1.08183   10.79026
+       26/1    1.08257   10.82566
+       27/1    1.08173   10.84971
+       28/1    1.07877   10.88622
+       29/1    1.08580   10.91188
+       30/1    1.07962   10.93864
+       31/1    1.08647   10.96896
+       32/1    1.07852   10.97829
+       33/1    1.07837   10.99704
+       34/1    1.08597   11.02335
+       35/1    1.09136   11.04081
+       36/1    1.07913   11.05742
+       37/1    1.08617   11.07204
+       38/1    1.08347   11.08228
+       39/1    1.08595   11.09895
+       40/1    1.07939   11.10162
+       41/1    1.09307   11.11054
+       42/1    1.08057   11.12028
+       43/1    1.07863   11.12871
+       44/1    1.09070   11.13650
+       45/1    1.08076   11.14539
+       46/1    1.08205   11.14981
+       47/1    1.08892   11.15581
+       48/1    1.07943   11.15779
+       49/1    1.07740   11.16403
+       50/1    1.08417   11.16689
+       51/1    1.07899   11.16617
+       52/1    1.08554   11.17081
+       53/1    1.08267   11.17770
+       54/1    1.08631   11.17995
+       55/1    1.08657   11.18169
+       56/1    1.08666   11.17797
+       57/1    1.08030   11.17952
+       58/1    1.08323   11.18793
+       59/1    1.08462   11.19079
+       60/1    1.09150   11.19199
+       61/1    1.08946   11.19166
+       62/1    1.08211   11.19356
+       63/1    1.08804   11.19550
+       64/1    1.08812   11.20031
+       65/1    1.08526   11.20001
+       66/1    1.08160   11.20026
+       67/1    1.07699   11.20166
+       68/1    1.08367   11.19716
+       69/1    1.08420   11.20287
+       70/1    1.08547   11.20099
+       71/1    1.08394   11.20536
+       72/1    1.09231   11.20349
+       73/1    1.08201   11.20536
+       74/1    1.09196   11.21080
+       75/1    1.09059   11.20457
+       76/1    1.09220   11.19949
+       77/1    1.09024   11.20200
+       78/1    1.08551   11.20012
+       79/1    1.08286   11.20249
+       80/1    1.09253   11.20389
+       81/1    1.08082   11.19842
+       82/1    1.09793   11.19891    1.08938 +/- 0.00855
+       83/1    1.08678   11.19898    1.08851 +/- 0.00501
+       84/1    1.08701   11.20749    1.08814 +/- 0.00357
+       85/1    1.08975   11.21185    1.08846 +/- 0.00278
+       86/1    1.08470   11.21658    1.08783 +/- 0.00236
+       87/1    1.08963   11.21088    1.08809 +/- 0.00201
+       88/1    1.08846   11.20399    1.08814 +/- 0.00174
+       89/1    1.08472   11.20874    1.08776 +/- 0.00158
+       90/1    1.08783   11.20565    1.08776 +/- 0.00141
+       91/1    1.07974   11.20656    1.08703 +/- 0.00147
+       92/1    1.08727   11.22019    1.08705 +/- 0.00134
+       93/1    1.08099   11.21469    1.08659 +/- 0.00132
+       94/1    1.08453   11.21948    1.08644 +/- 0.00123
+       95/1    1.08124   11.21797    1.08609 +/- 0.00120
+       96/1    1.08297   11.21670    1.08590 +/- 0.00114
+       97/1    1.08185   11.21488    1.08566 +/- 0.00109
+       98/1    1.09108   11.21164    1.08596 +/- 0.00108
+       99/1    1.08989   11.21664    1.08617 +/- 0.00104
+      100/1    1.08966   11.21964    1.08634 +/- 0.00100
+      101/1    1.08642   11.21720    1.08635 +/- 0.00095
+      102/1    1.08416   11.21533    1.08625 +/- 0.00091
+      103/1    1.08582   11.22253    1.08623 +/- 0.00087
+      104/1    1.09622   11.22140    1.08664 +/- 0.00093
+      105/1    1.08707   11.21960    1.08666 +/- 0.00089
+      106/1    1.09085   11.21792    1.08682 +/- 0.00087
+      107/1    1.08212   11.21763    1.08665 +/- 0.00086
+      108/1    1.07870   11.21798    1.08636 +/- 0.00088
+      109/1    1.09168   11.20785    1.08655 +/- 0.00086
+      110/1    1.08440   11.20361    1.08648 +/- 0.00084
+      111/1    1.08760   11.20812    1.08651 +/- 0.00081
+      112/1    1.08029   11.20452    1.08632 +/- 0.00081
+      113/1    1.08010   11.20926    1.08613 +/- 0.00081
+      114/1    1.07698   11.20727    1.08586 +/- 0.00083
+      115/1    1.07724   11.20179    1.08561 +/- 0.00084
+      116/1    1.08189   11.20563    1.08551 +/- 0.00082
+      117/1    1.08616   11.20594    1.08553 +/- 0.00080
+      118/1    1.08935   11.20934    1.08563 +/- 0.00079
+      119/1    1.08953   11.21020    1.08573 +/- 0.00077
+      120/1    1.08522   11.20626    1.08572 +/- 0.00075
+      121/1    1.08450   11.20702    1.08569 +/- 0.00073
+      122/1    1.08776   11.21387    1.08574 +/- 0.00072
+      123/1    1.08742   11.21048    1.08577 +/- 0.00070
+      124/1    1.08373   11.21206    1.08573 +/- 0.00069
+      125/1    1.08699   11.21753    1.08576 +/- 0.00067
+      126/1    1.08613   11.21537    1.08576 +/- 0.00066
+      127/1    1.08533   11.22220    1.08576 +/- 0.00064
+      128/1    1.08065   11.21509    1.08565 +/- 0.00064
+      129/1    1.08655   11.21126    1.08567 +/- 0.00063
+      130/1    1.08506   11.21642    1.08566 +/- 0.00061
+      131/1    1.08131   11.21894    1.08557 +/- 0.00061
+      132/1    1.08105   11.22489    1.08548 +/- 0.00060
+      133/1    1.09017   11.22820    1.08557 +/- 0.00060
+      134/1    1.08002   11.23340    1.08547 +/- 0.00060
+      135/1    1.08380   11.22840    1.08544 +/- 0.00059
+      136/1    1.08028   11.22423    1.08535 +/- 0.00058
+      137/1    1.08220   11.21600    1.08529 +/- 0.00057
+      138/1    1.08860   11.21767    1.08535 +/- 0.00057
+      139/1    1.08369   11.20819    1.08532 +/- 0.00056
+      140/1    1.07694   11.20723    1.08518 +/- 0.00057
+      141/1    1.08915   11.21070    1.08525 +/- 0.00056
+      142/1    1.08755   11.21657    1.08528 +/- 0.00055
+      143/1    1.09293   11.21670    1.08540 +/- 0.00056
+      144/1    1.08508   11.21751    1.08540 +/- 0.00055
+      145/1    1.08128   11.21992    1.08534 +/- 0.00054
+      146/1    1.07982   11.22141    1.08525 +/- 0.00054
+      147/1    1.08879   11.22042    1.08530 +/- 0.00054
+      148/1    1.08637   11.22402    1.08532 +/- 0.00053
+      149/1    1.08382   11.21556    1.08530 +/- 0.00052
+      150/1    1.08552   11.22207    1.08530 +/- 0.00051
+      151/1    1.08861   11.21527    1.08535 +/- 0.00051
+      152/1    1.08375   11.21268    1.08533 +/- 0.00050
+      153/1    1.08554   11.21556    1.08533 +/- 0.00050
+      154/1    1.08064   11.21254    1.08527 +/- 0.00049
+      155/1    1.07833   11.20760    1.08517 +/- 0.00049
+      156/1    1.09090   11.21718    1.08525 +/- 0.00049
+      157/1    1.08273   11.21284    1.08522 +/- 0.00049
+      158/1    1.08184   11.21256    1.08517 +/- 0.00048
+      159/1    1.08290   11.21828    1.08514 +/- 0.00048
+      160/1    1.09342   11.22182    1.08525 +/- 0.00048
+      161/1    1.08875   11.22210    1.08529 +/- 0.00048
+      162/1    1.08416   11.22170    1.08528 +/- 0.00047
+      163/1    1.08348   11.22218    1.08526 +/- 0.00047
+      164/1    1.08712   11.21608    1.08528 +/- 0.00046
+      165/1    1.08919   11.21602    1.08532 +/- 0.00046
+      166/1    1.08079   11.22263    1.08527 +/- 0.00046
+      167/1    1.08867   11.22318    1.08531 +/- 0.00046
+      168/1    1.08272   11.21542    1.08528 +/- 0.00045
+      169/1    1.09050   11.21614    1.08534 +/- 0.00045
+      170/1    1.08701   11.22121    1.08536 +/- 0.00044
+      171/1    1.07979   11.21981    1.08530 +/- 0.00044
+      172/1    1.08511   11.22055    1.08529 +/- 0.00044
+      173/1    1.08150   11.21497    1.08525 +/- 0.00044
+      174/1    1.08168   11.21707    1.08522 +/- 0.00043
+      175/1    1.09019   11.21538    1.08527 +/- 0.00043
+      176/1    1.08627   11.21572    1.08528 +/- 0.00043
+      177/1    1.09002   11.21818    1.08533 +/- 0.00043
+      178/1    1.08192   11.22088    1.08529 +/- 0.00042
+      179/1    1.08105   11.22016    1.08525 +/- 0.00042
+      180/1    1.08372   11.21569    1.08523 +/- 0.00042
+      181/1    1.09016   11.22251    1.08528 +/- 0.00042
+      182/1    1.08293   11.22392    1.08526 +/- 0.00041
+      183/1    1.08537   11.22118    1.08526 +/- 0.00041
+      184/1    1.08275   11.22694    1.08524 +/- 0.00041
+      185/1    1.08148   11.22777    1.08520 +/- 0.00040
+      186/1    1.07707   11.23039    1.08512 +/- 0.00041
+      187/1    1.08340   11.22042    1.08511 +/- 0.00040
+      188/1    1.08306   11.21833    1.08509 +/- 0.00040
+      189/1    1.08181   11.22786    1.08506 +/- 0.00040
+      190/1    1.08026   11.23352    1.08502 +/- 0.00040
+      191/1    1.08500   11.22847    1.08502 +/- 0.00039
+      192/1    1.08353   11.23042    1.08500 +/- 0.00039
+      193/1    1.08979   11.22730    1.08504 +/- 0.00039
+      194/1    1.08335   11.22368    1.08503 +/- 0.00038
+      195/1    1.07942   11.22910    1.08498 +/- 0.00038
+      196/1    1.07877   11.22605    1.08493 +/- 0.00038
+      197/1    1.07863   11.22864    1.08487 +/- 0.00039
+      198/1    1.08912   11.23391    1.08491 +/- 0.00038
+      199/1    1.08411   11.22655    1.08490 +/- 0.00038
+      200/1    1.08278   11.23101    1.08489 +/- 0.00038
+ Creating state point statepoint.200.h5...
+
+ =======================>     TIMING STATISTICS     <=======================
+
+ Total time for initialization     = 1.3505e+01 seconds
+   Reading cross sections          = 1.2533e+01 seconds
+ Total time in simulation          = 2.7112e+01 seconds
+   Time in transport only          = 5.2350e+00 seconds
+   Time in inactive batches        = 1.1377e+01 seconds
+   Time in active batches          = 1.5736e+01 seconds
+   Time synchronizing fission bank = 4.8438e+00 seconds
+     Sampling source sites         = 2.0419e-01 seconds
+     SEND/RECV source sites        = 1.4470e-03 seconds
+   Time accumulating tallies       = 4.7303e-03 seconds
+   Time writing statepoints        = 1.9694e+00 seconds
+ Total time for finalization       = 2.2764e-05 seconds
+ Total time elapsed                = 4.0724e+01 seconds
+ Calculation Rate (inactive)       = 703195 particles/second
+ Calculation Rate (active)         = 762600 particles/second
+
+ ============================>     RESULTS     <============================
+
+ k-effective (Collision)     = 1.08501 +/- 0.00036
+ k-effective (Track-length)  = 1.08489 +/- 0.00038
+ k-effective (Absorption)    = 1.08554 +/- 0.00032
+ Combined k-effective        = 1.08530 +/- 0.00027
+ Leakage Fraction            = 0.00029 +/- 0.00001
+

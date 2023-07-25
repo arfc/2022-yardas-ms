@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <tallies>
   <filter id="1" type="universe">
     <bins>13</bins>
@@ -35,7 +35,7 @@
   </tally>
   <tally id="5" name="breeding_ratio_tally">
     <filters>1</filters>
-    <nuclides>U234 U233 Pu239 Th232 Pu240 Pu238 U238 Pu241 U235</nuclides>
+    <nuclides>U238 Th232 Pu241 U233 Pu239 Pu240 U235 Pu238 U234</nuclides>
     <scores>(n,gamma) absorption</scores>
   </tally>
   <tally id="6" name="fission_energy">

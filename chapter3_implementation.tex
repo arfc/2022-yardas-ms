@@ -1,4 +1,6 @@
 \chapter{Software Description}
+\label{ch:chapter3}
+\glsresetall
 Development of \SaltProc to enable use with \OpenMC constitutes a major portion
 of this thesis. In this chapter, I will provide a high level overview
 of my development process. The release
@@ -13,12 +15,12 @@ and dependency changes.
 simulates on-line reprocessing via a batch-wise approach\footnote{Material is
 moved to or from the core at specific time intervals} in liquid-fueled
 \Gls{msr}s. More precisely, \SaltProc manages material flows and separation
-processes for nuclides in the fuel. \SaltProc couples with external codes to simulate
+processes for nuclides in the fuel, and couples with external codes to simulate
 fuel depletion.
 
 The first version of \SaltProc (v0.1) was a Python 2.7 package that used
 \SerpentTWO for the fuel depletion simulations. A single Python file contained
-all functions; separation processes applied to materials used an implicit 100\%
+all functions. Separation processes applied to materials used an implicit 100\%
 extraction efficiency at hard-coded cycle times \cite{rykhlevskii_advanced_2018}.
 The structure of \SaltProc v0.1 did not lend itself easily to development of more
 sophisticated treatments of reprocessing. This led to the release of \SaltProc
@@ -26,10 +28,9 @@ v0.2, in which the entire codebase was refactored into an object oriented
 context in Python 3. The addition of new functionality in the \verb.Process.
 classes enabled more sophisticated treatment of online reprocessing using user
 defined extraction efficiencies and removed the cycle time functionality\cite{rykhlevskii_fuel_2020}.
-
 \SaltProc v0.3 saw the implementation of processes for gas sparging and
 separation to more accurately simulate the \gls{msbr}, as well as additional
-refactoring to better follow \Gls{oop} concepts.
+refactoring to better follow \gls{oop} concepts.
 
 While v0.2 and v0.3 saw most of \SaltProc refactored for \Gls{oop}, before I could
 implement \OpenMC support, I needed to resolve the following issues:
@@ -75,36 +76,8 @@ architectural and design details to reference Ryklhevskii's dissertation
 \cite{rykhlevskii_fuel_2020} or the web-hosted \SaltProc docpages at
 \url{arfc.github.io/saltproc}.
 
-An important feature of the \OpenMC implementation is the use of control flow
-to add nuclides in the depletion chain to depletable materials. As of \OpenMC
-v0.13.3\footnote{the development version of \OpenMC slated to be released
-as v0.13.4 removed this feature, and in the most recent version of \SaltProc
-it is no longer present, however I am keeping this description here to
-show my process.}, in order to obtain reaction rate tallies for a nuclide, that nuclide
-must be explicitly present in a material. For regular \OpenMC depletion
-simulations, the program adds any nuclides in the depletion chain not present
-in the material at a concentration of 1e-21 atom-\%. This is so any nuclides
-that would be produced during the timestep have accurate reaction rates. If
-these nuclides were not included, they would only be produced which is
-non-physical behavior. Since there are additional removal processes in
-\SaltProc, nuclides can be included in a material with zero percent composition,
-which is effectively the same as not having the nuclide in a material at all. This
-bypasses the \OpenMC machinery that detects missing nuclides, and will cause
-the simulation to only calculate production reactions for those nuclides.
-
-To fix this, I introduced control flow in the main function\footnote{in hindsight,
-the root of this issue lies in how materials are processed in \SaltProc, so any code
-added to fix it should have gone in the Materialflow class.}
-to add these missing nuclides back in. While overall this shouldn't
-significantly effect the neutronics of the simulation, it could influence the
-compositions of individual nuclides present in small quantities in the
-simulation, leading to massive errors in the nuclide composition.% I give
-%examples of some of these nuclides in Section \ref{sub:nuclide-compositions}
-
-%The behavior of depletion in \SerpentTWO is \ldots
-
 I did make one significant change to \SaltProc as part of the v0.5.0 release
-not directly related to \OpenMC support; I removed of PyNE as a dependency.
+not directly related to \OpenMC support: I removed of PyNE as a dependency.
 I did this to make \SaltProc easier to install, as installing PyNE alongside
 \OpenMC is difficult to do unless the user is comfortable installing packages
 from source. \OpenMC's \verb.Material. class replaces PyNE's \verb.Material.
@@ -112,13 +85,26 @@ class, and the SerpentTools package replaced the \SerpentTWO parsing
 functionality of PyNE. I do not expect this change to introduce errors into
 \SaltProc.
 
+Additionally, in order to for the \OpenMC and \SerpentTWO simulation results
+to match, I needed to find a way to pass the decay-only\footnote{nuclides in a
+depletion chain but without any cross section data)} nuclides from the 
+depletion simulation results to the \OpenMC deplete module. These nuclides
+can produce other nuclides that do have cross-section data, and therefore effect
+the neutronics of the simulation. \SerpentTWO allows
+decay-only nuclides to be included in materials by default, however \OpenMC does
+not allow this. This capability is necessary for \SaltProc as there needs to be a way
+to pass decay-only nuclides from the reprocessed material to the depletion solver.
+I implemented an experimental feature to do this, which can be seen in \OpenMC pull request
+\#2616.
+
+
 \section{Mathematical description of material reprocessing}
 Rykhlevskii has discussed the design of \SaltProc's feeds and separations in
-his dissertation qualitatively, however the existing \SaltProc literature is lacking a {\it mathematical} description of the reprocessing scheme\footnote{Luke Seifert's master's thesis does provide a general
+his dissertation \cite{rykhlevskii_fuel_2020} qualitatively, however the existing \SaltProc literature is lacking a {\it mathematical} description of the reprocessing scheme\footnote{Luke Seifert's master's thesis does provide a general
 mathematical description of batchwise reprocessing based on \SaltProc, and
 compares it to continuous reprocessing, and I encourage readers to
-cross-reference it against my own description. As of writing this, his thesis
-has yet to be submitted and accepted.}, and to properly interpret the math, we
+cross-reference it against my own description. As of writing this, both of
+our manuscripts are in preparation.}, and to properly interpret the math, we
 must first understand the design of the feeds and separations.
 
 \subsection{Feeds and Separations}
@@ -179,7 +165,6 @@ in the file. Every process file must have at lest a \verb.core_outlet. and
 
 \subsection{Material reprocessing}
 Recall that \SaltProc uses a {\it batchwise} reprocessing scheme.
-
 Let $\mathbf{n}(t)^{j}$ denote the nuclide mass vector for depletable material
 $j$ as function of time. For each depletable material $j$, the depletion
 solver numerically integrates the equation

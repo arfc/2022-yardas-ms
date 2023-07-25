@@ -1,16 +1,17 @@
 \chapter{Model Description}
 \label{ch:chapter4}
-As mentioned in Section \ref{sec:objectives}, I am using a \Gls{csg} model of
+\glsresetall
+As mentioned in Section \ref{sec:objectives}, I am using a \gls{csg} model of
 the \Gls{msbr} \cite{robertson_conceptual_1971} to verify my \OpenMC
 implementation in \SaltProc. The \Gls{msbr} design is the result of a
-design study of a single-fluid \Gls{msr} following the success of the \Gls{msre}
+design study of a single-fluid \gls{msr} following the success of the \Gls{msre}
 \cite{haubenreich_experience_1970} \cite{rosenthal_history_1970}. Like the \Gls{msre},
 the \Gls{msbr} is a single fluid design, but unlike the \Gls{msre}, the \Gls{msbr}
 never made it past the concept stage. Even so, there exist very detailed specifications for
 the reactor. I selected the \Gls{msbr} over the \Gls{msre} primarily because
 Rykhlevskii created a \SerpentTWO \Gls{csg} model and the processing
 system graph for the \Gls{msbr} based on the specifications in
-\cite{robertson_conceptual_1971} for use in \SaltProc
+Robertson et al. (1971) \cite{robertson_conceptual_1971} for use in \SaltProc
 v0.3.0 \cite{rykhlevskii_fuel_2020}. The models used in this work are derived
 from Rykhlevskii's model. Addionally, several papers studying the
 \Gls{msbr} exist,\footnote{see Chapter
@@ -19,10 +20,10 @@ results comparison with several sources, however this point is
 also true for the \Gls{msre}.
 
 Most of the discussion below summarizes and condenses the information in
-Robertson et al. (1971) and compares it to the \Gls{csg} model. Unless otherwise
+\cite{robertson_conceptual_1971} and compares it to the \Gls{csg} model. Unless otherwise
 specified, there are no differences between the model used in this work and in
-\cite{rykhlevskii_fuel_2020}\footnote{The relevant component of Reference
-\cite{rykhlevskii_fuel_2020}, Chapters 2 and 3, are based on Reference
+Ryklevskii (2020) \cite{rykhlevskii_fuel_2020}\footnote{The relevant component of Reference
+\cite{rykhlevskii_fuel_2020}, Chapters 2 and 3, are based on Rykhlevskii et al (2019)
 \cite{rykhlevskii_modeling_2019}. I may use these references interchangeably}. I
 will only describe the following reactor systems that are relevant to my
 validation study\footnote{A complete description of the entire \Gls{msbr} system
@@ -69,17 +70,17 @@ approximations made in the model.
 
 \subsection{Fuel salt}
 \label{sub:msbr-fuel-salt}
-Table S.1 in \cite{robertson_conceptual_1971} specifies the fuel salt
+Table S.1 in Robertson et al. (1971) \cite{robertson_conceptual_1971} specifies the fuel salt
 composition used in the \Gls{msbr}:
 \ce{LiF}-\ce{Be}\ce{F_2}-\ce{Th}\ce{F_4}-\ce{U}\ce{F_4} at a concentration of
 71.7-16-12-0.3 mole-\%. The lithium used in the fuel salt is enriched to
 99.995\% \ce{^{7}Li}. This is because \ce{^{6}Li} is a strong neutron absorber
 and produces tritium in the absorption reaction. The atom-\% for each nuclide is
 given in Table \ref{tab:msbr-fuel-salt-ref}\footnote{Most of the discussion of
-the fuel salt composition in Robertson el al. (1971)
+the fuel salt composition in 
 \cite{robertson_conceptual_1971}
 specify elemental version of the nuclides in Table \ref{tab:msbr-fuel-salt-ref}.
-I have specific specific nuclides for the following reasons: (1) both \ce{F} and
+I have specific nuclides for the following reasons: (1) both \ce{F} and
 \ce{Be} have only one stable isotope, (2) the fuel salt receives initial fissile
 loading from \ce{^{233}U} or \ce{^{235}U}, and (3) the fuel salt receives its
 fertile loading from \ce{^{232}Th}}\footnote{I use OpenMC's Python API with the
@@ -134,34 +135,30 @@ is 3.3332642 \unit{\gram\per\centi\metre\cubed}.
     \centering 
     \caption{Model \Gls{msbr} fuel salt specifications rounded to six decimals}
     \label{tab:msbr-fuel-salt-model}
-    \begin{tabular}{|c|c|c|c|c|c|} 
+    \begin{tabular}{|c|c|c|c|c|c|c|} 
         \hline
-        & \ce{^{7}Li} & \ce{^{19}F} & \ce{^{9}Be} & \ce{^{232}Th} & \ce{^{233}U}\\
+        & \ce{^{6}Li} & \ce{^{7}Li} & \ce{^{19}F} & \ce{^{9}Be} & \ce{^{232}Th} & \ce{^{233}U}\\
         \hline 
-        atom-\% & 28.387735 & 60.435213 & 6.330366 & 4.747774 & 0.098912 \\
+        atom-\% & 0.001656 &  28.386079 & 60.435213 & 6.330366 & 4.747774 & 0.098912 \\
         \hline
-        mass-\% & 7.875053& 45.398353 & 2.255754 & 43.559435 & 0.911405\\ 
+        mass-\% & 0.000394 & 7.874599 & 45.398383 & 2.255756 & 43.55963 & 0.911406\\ 
         \hline
     \end{tabular}
 \end{table}
 % WILL NEED TO DO TEST SIMULATIONS TO CONFIRM THIS MATCHES PARK ET AL
-In the CSG model, we use a mole-\% composition of 71.75-16-12-0.25. This slight
-difference is due to an unpublished reactivity study investigating decreased
-composition of \ce{UF_4} to obtain a more reasonable 
-$k_\text{eff}$\footnote{According to Rykhlevskii, using 0.3 mole-\% \ce{UF_4} 
-gave $k_\text{eff} > 1.3$} \cite{rykhlevskii_personal_2022}. The fuel salt 
-material uses the composition specified in Table \ref{tab:msbr-fuel-salt-model}
-and has a density of 3.35 \unit{\gram\per\centi\metre\cubed}. Notice that the
-lithium has been enriched to 100\% \ce{^{7}Li}. This is because during initial
-simulations, even those very small amounts of \ce{^{6}Li} were enough to kill
-the reaction. The initial fissile and fertile loading has also been slightly
-increased.
+In the CSG model, I adjusted increased the amount of \ce{Li}\ce{F} by 0.5 mol-\% and
+decreased the amount of \ce{U}\ce{F_{4}} by 0.5 mol-\% for a total mol-\% composition of
+71.75-16-12-0.25. When using the reference salt composition, I obtained $k_\text{eff}$
+around 1.15 at \Gls{bol}, which is much too high for a power reactor. This adjustment
+gives much a much more reasonable \Gls{bol} $k_{\text{eff}}$ around 1.08.
+The fuel salt material uses the composition specified in Table \ref{tab:msbr-fuel-salt-model}
+and has a density of 3.35 \unit{\gram\per\centi\metre\cubed}.
 
 \subsection{Graphite}
 \label{sub:graphite}
 
 For a detailed description of the reactor graphite used in the \Gls{msbr}, see
-Section 3.2.3 in \cite{robertson_conceptual_1971}. At 70\unit{\degree}F (294.3
+Section 3.2.3 in Robertson et al. (1971) \cite{robertson_conceptual_1971}. At 70\unit{\degree}F (294.3
 \unit{\kelvin}), the \Gls{msbr} graphite has a density of 1843
 \unit{\kilo\gram\per\cubic\metre}. This is the only density specification
 for graphite that I was able to find in Robertson et al. (1971)
@@ -171,7 +168,7 @@ elemental carbon and has a density of 1.84 \unit{\gram\per\centi\metre\cubed}.
 \subsection{Modified Hastelloy N}
 \label{sub:hastelloy}
 Hastelloy N is an alloy developed at \Gls{ornl} during the Molten-Salt Reactor
-Program as a structural material that could maintain structural stability while
+Program. It was developed as a material that could maintain structural stability while
 in contact with the corrosive and high temperature molten salt fuel while also
 being under irradiation for a long period of time.
 
@@ -200,30 +197,14 @@ Hastelloy N and their amounts in mass-\% are in Table \ref{tab:hastelloy-n-ref}.
     \end{tabular}
 \end{table}
 
-\begin{table}[htpb]
-    \centering
-    \caption{Mass-\% of elements in modified Hastelloy N used in the \Gls{msbr} model.}
-    \label{tab:hastelloy-n-model}
-    \begin{tabular}{|c|c|c|c|}
-        \hline
-        \ce{Ni} & \ce{Cr} & \ce{W} & \ce{Al} \\
-        \hline
-        67.7 & 7.0 & 25.0 & 0.3 \\
-        \hline
-    \end{tabular}
-\end{table}
-
 The Hastelloy N material in the CSG model uses the composition specified in
-Table \ref{tab:hastelloy-n-model} and has a density of 8.671 
-\unit{\gram\per\centi\metre\cubed}. The model material has a different
-composition than the reference material because the additional elements are of
-little neutronic importance  and their omission reduces computation time
-according to Rykhlevskii \cite{rykhlevskii_personal_2022}.
+Table \ref{tab:hastelloy-n-ref} and has a density of 8.671 
+\unit{\gram\per\centi\metre\cubed}.
 
 
 \section{Reactor core}
 \label{sec:msbr-core}
-The \Gls{msbr} core is split into three distinct different zones; zone I, zone
+The \Gls{msbr} core is split into three distinct different zones: zone I, zone
 II, and the reflector zone. 
 
 \begin{figure}[htpb]
@@ -338,6 +319,7 @@ configuration where the II-A element is adjacent to two I-A elements.}
 \begin{table}[htpb]
     \centering
     \caption{Zone I-B dimensions}
+    \label{tab:zone-ib-specs}
     \begin{tabulary}{\linewidth}{|C|CC|CC|}
     \hline
     Quantity & Reference Dimension [in] & Reference Dimension [\unit{\centi\metre}] & Model Dimension [in] & Model Dimension [\unit{\centi\metre}]\\
@@ -832,7 +814,8 @@ can find at \url{energyfromthorium.com/pdf}}.
 \begin{figure}[htpb]
     \centering
     \includegraphics[width=0.8\textwidth]{figs/ch4/msbr_primary_system.png}
-    \caption{Simplified flow diagram of primary drain tank and heat removal
+    \caption[Simplified flow diagram of primary drain tank and heat removal
+    system.]{Simplified flow diagram of primary drain tank and heat removal
     system. Reproduced from Figure 2.3 in \cite{robertson_conceptual_1971}. (A)
     Combiner tank for separated gases and overflow salt, (B) Off-gas line with
     cooling jacket, (C) Fuel-salt drain line, (D) Drain line continuous bleed
@@ -875,8 +858,8 @@ not include the off-gas system in our model. Interested readers should reference
 Chapter 7 in Robertson et al. (1971) \cite{robertson_conceptual_1971}.
 
 \subsection{Fuel salt drain tank}
-In addition to providing a emergency salt storage system in the case of
-electrical system failure, the fuel salt drain tank plays an important role in
+The fuel salt drain tank provides an emergency salt storage system in the case of
+electrical system failure. Additionally, the fuel salt drain tank plays an important role in
 the fuel-salt reprocessing system \cite{robertson_conceptual_1971}. The drain tank catches around 150 gpm (approximately 0.9\% of the total salt flow) of
 overflow from the primary salt circulation pumps, providing it with a small
 amount of salt during operation \cite{robertson_conceptual_1971}. A 0.88 gpm
@@ -926,19 +909,19 @@ system begins at the output of the extractor column for protactinium isolation.
 It is a multistage extraction system:
 \begin{enumerate}
     \item In the first extractor, the salt stream from the protactinium loop
-    extractor column is contacted with a bismuth stream containing 0.2 mol-\%
+    extractor column comes into contact with a bismuth stream containing 0.2 mol-\%
     lithium and 0.25 mol-\% thorium. The bismuth stream picks up a fraction of
     the rare earths and routes to the second extractor.
     \item In the second extractor, the bismuth stream containing rare earths is
     contacted with a \ce{LiCl} stream.  The \ce{LiCl} stream picks up a fraction
     of the rare earths (with trace amounts of thorium), and is routed to the
     fourth extractor. The bismuth stream is returned to the first extractor.
-    \item In the fourth extractor, the \ce{LiCl} stream is contacted with a
+    \item In the fourth extractor, the \ce{LiCl} stream comes into contact with a
     circulating bismuth stream containing 5 mol-\% lithium. This bismuth stream
     removes trivalent rare earths from the \ce{LiCl} stream. The \ce{LiCl}
     stream is returned to the second extractor, however 2\% of this \ce{LiCl}
     stream is routed to the third extractor.
-    \item In the third extractor, the \ce{LiCl} stream is contacted with a
+    \item In the third extractor, the \ce{LiCl} stream comes into contact with a
     circulating bismuth stream containing 50 mol-\% lithium. This bismuth stream
     removes divalent and alkaline rare earths from the \ce{LiCl} stream. The
     \ce{LiCl} stream is rerouted back to the second extractor.
@@ -958,13 +941,12 @@ Insoluble impurities in the processed salt needs to be removed at two locations:
 before the salt stream is sent to reductive extraction system
 \cite{lindauer_design_1969}, and before the processed salt stream coming
 from the reductive extraction system returns to the
-reactor \cite{robertson_conceptual_1971}. The first filter removes insoluble
-impurities from transmutation and corrosion in the core, heat exchanger, and
+reactor \cite{robertson_conceptual_1971}. There are two filters, both
+consisting of a nickel mesh \cite{robertson_conceptual_1971}.
+The first filter removes insoluble impurities from transmutation and corrosion in the core, heat exchanger, and
 other systems. The second filter removes  bismuth entrained or dissolved in the
 fuel salt as a side effect from processing, and any additional insoluble
-impurities such as \ce{FeF_2} and \ce{NiF_2}. The filter itself consists of a
-nickel mesh \cite{robertson_conceptual_1971}.
-
+impurities such as \ce{FeF_2} and \ce{NiF_2}. 
 
 \subsection{Reprocessing system model}
 \label{sub:reprocessing-system-model}
@@ -1007,7 +989,7 @@ to hardcode in the cycle times. The program would then extract the target
 elements from the fuel once a full cycle time had passed. In SaltProc v0.2.0 and
 onward, this cycle time capability was removed in favor of user-defined
 extraction efficiencies. This means we are unable to completely reproduce the
-results in \cite{rykhlevskii_modeling_2019} as all extractions now happen after
+results in Ryklevskii et al. (2019)\cite{rykhlevskii_modeling_2019} as all extractions now happen after
 every depletion step, rather than only after the hardcoded cycle times.
 To get around this, we can construct proxy extraction efficiencies based on the
 cycle times that will remove a large majority of the material after the
@@ -1059,7 +1041,8 @@ of this thesis.
 \end{figure}
 
 Table \ref{tab:msbr-cycle-times} lists element groups and their extraction
-efficiencies for depletion step length of 3 days. A 3 day depletion step size is
+efficiencies for depletion step length of 3 days. Note the inclusion of hydrogen
+removal in the gas separator process. I added this to remove any tritium from the fuel. A 3 day depletion step size is
 commonly chosen for modeling efforts of the \Gls{msbr} \cite{rykhlevskii_modeling_2019}
 \cite{park_whole_2015}, as this corresponds to the the cycle time for \ce{^{233}Pa}
 (which decays into \ce{^{233}U}), and strikes a good balance between capturing the
@@ -1081,7 +1064,7 @@ For this reason, I also use a 3 day depletion step size.
         \hline
         Seminoble metals & \ce{Zr}, \ce{Cd}, \ce{In}, \ce{Sn} & 200 days & reductive extractor & 0.425\\
         \hline
-        Gases & \ce{Kr}, \ce{Xe} & 20 sec & gas separator & 1\\
+        Gases & \ce{Kr}, \ce{Xe}, \ce{H} & 20 sec & gas separator & 1\\
         \hline
         Halogens & \ce{Br}, \ce{I} & 60 days & reductive extractor & 0.842\\
         \hline
@@ -1090,12 +1073,10 @@ For this reason, I also use a 3 day depletion step size.
     \end{tabularx}
 \end{table}
 
-The 
-
 \section{Cross Section Data}
 \label{sec:xs-data}
 Ryklevskii used the JEFF 3.1.2 cross section library in the initial evaluation
-of the \Gls{msbr} CSG model. I have not been able to convert the JEFF 3.1.2
+of the \Gls{msbr} CSG model. I was unable to convert the JEFF 3.1.2
 library to \OpenMC's HDF5 format, so I am instead using the ENDF/B-VII.1 cross
 section library. Section \ref{sub:results-xs-data} provides a more in-depth
 discussion of the cross section data used.
@@ -1114,8 +1095,8 @@ Successive Generations to perform eigenvalue calculations. A complete
 description of this method is outside the scope of this thesis, but it requires
 that the source distribution of particles and our $k_{\text{eff}}$ values
 be converged before counting reaction tallies. In practice, the source
-distribtuion converges much slower than $k_{\text{eff}}$, so we must pick our
-a number of inactive batches that enables the source distribtion to
+distribution converges much slower than $k_{\text{eff}}$, so we must pick our
+a number of inactive batches that enables the source distribution to
 converge. We do this experimentally by plotting the Shannon entropy
 versus the batch number. The source distribution is converged when the 
 Shannon entropy levels out.\footnote{\OpenMC discusses how it calculates Shannon entropy
@@ -1144,14 +1125,20 @@ respectively.\footnote{I do not know why the Shannon entropy values between the
         \subref{fig:msbr-source-convergence-openmc} \OpenMC;
         \subref{fig:msbr-source-convergence-serpent} \SerpentTWO;
         both simulations performed using 80 inactive, 120 active batches,
-        10k particles per batch
+        100k particles per batch
     }
     \label{fig:msbr-source-convergence}
 \end{figure}
 
 For completeness, Figure \ref{fig:msbr-keff-convergence} shows the convergence
 of $k_{\text{eff}}$ vs. Batch number for \OpenMC and \SerpentTWO. Note that
-$k_{\text{eff}}$ is not well converged for 10k particles per batch.
+$k_{\text{eff}}$'s convergence is better in the \SerpentTWO simulation
+than in the \OpenMC simulation. The range of converged $k_{\text{eff}}$ for
+the \SerpentTWO simulation is roughly 1000pcm, whereas the range for
+the same quantity in the \OpenMC simulation is roughly 2000pcm. This
+difference may be a contributing factor to differences in reported $k_{\text{eff}}$
+values between the two codes even when the model, data, and methods are
+identical.
 
 \begin{figure}[htpb]
     \centering
@@ -1168,7 +1155,7 @@ $k_{\text{eff}}$ is not well converged for 10k particles per batch.
         \subref{fig:msbr-keff-convergence-openmc} \OpenMC;
         \subref{fig:msbr-keff-convergence-serpent} \SerpentTWO;
         both simulations performed using 80 inactive, 120 active batches,
-        10k particles per batch
+        100k particles per batch
     }
     \label{fig:msbr-keff-convergence}
 \end{figure}
