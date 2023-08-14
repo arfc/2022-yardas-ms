@@ -3,6 +3,7 @@
    "dot_input_file": "../msbr.dot",
    "n_depletion_steps": 122,
    "output_path": "no_reprocessing",
+   "run_without_reprocessing": true,
    "depcode": {
        "codename": "serpent",
        "exec_path": "sss2",
@@ -10,8 +11,7 @@
        "geo_file_paths": ["msbr_geometry.ini"]
    },
    "simulation": {
-       "sim_name": "msbr_serpent_local",
-       "restart_flag": true
+       "sim_name": "msbr_serpent_no_reprocessing"
    },
    "reactor": {
        "volume": 1.0,
