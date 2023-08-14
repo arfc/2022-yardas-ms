@@ -27,10 +27,10 @@ def sup_label(name):
     sym = ATOMIC_SYMBOL[z]
     return f"$^{{{a}{meta}}}${sym}"
 
-def load_results(omc_dir_name, spn_dir_name, max_idx=-1):
-    openmc_keff, openmc_nucs, time = _load_results_helper(omc_dir_name)[:max_idx]
+def load_results(omc_dir_name, spn_dir_name):#, max_idx=-1):
+    openmc_keff, openmc_nucs, time = _load_results_helper(omc_dir_name)#[:max_idx]
     #openmc_keff, openmc_nucs, time = _load_results_helper('openmc_interpolated_fp')
-    serpent_keff, serpent_nucs, _ = _load_results_helper(spn_dir_name)[:max_idx]
+    serpent_keff, serpent_nucs, _ = _load_results_helper(spn_dir_name)#[:max_idx]
 
     nuclide_dict = {}
     openmc_nuclides = openmc_nucs.keys()
