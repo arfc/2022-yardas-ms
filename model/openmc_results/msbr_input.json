@@ -12,13 +12,13 @@
        "chain_file_path": "chain_endfb71_ace.xml",
        "depletion_settings": {
            "operator_kwargs": {
-               "fission_q": "serpent_fissq.json"
+               "fission_q": "serpent_fissq.json",
+               "fission_yield_mode": "average"
            }
        }
    },
    "simulation": {
-       "sim_name": "msbr_openmc_theta",
-       "restart_flag": true
+       "sim_name": "msbr_openmc_sawtooth"
    },
    "reactor": {
        "volume": 1.0,
