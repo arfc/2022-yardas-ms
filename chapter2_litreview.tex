@@ -2,13 +2,13 @@
 \label{ch:chapter2}
 \glsresetall
 %% lit review goes here
-Much of our knowledge about \gls{msr}s come from experiments on a test reactor
+Much of our knowledge about \gls{msr}s comes from experiments on a test reactor
 called the \Gls{msre} conducted at \Gls{ornl} in the 1960s, which demonstrated
 the viability of the \Gls{msr} concept for use in civilian power programs
 \cite{haubenreich_experience_1970} \cite{rosenthal_history_1970}.
 The \Gls{msre} reactor to this day remains one of the few \Gls{msr}s to operate.
 As of writing this thesis, there are no \Gls{msr}s currently in operation; we
-must rely on computational and/or surrogate models to further study \Gls{msr}
+must rely on computational models to further study \Gls{msr}
 physics. 
 
 Recall in Section \ref{sec:current_and_future_trajectories_of_nuclear_power}
@@ -17,11 +17,11 @@ solid fuel reactors; in most solid fuel reactors, the fuel remains
 in one place in the core during operation, whereas in an \Gls{msr}, fuel is continuously pumped
 through a loop with inlets and outlets at opposite sides of the core. 
 The liquid phase of the fuel as well as the movement of the fuel
-in and out of the core region will effect the dynamic behavior of the
+in and out of the core region will affect the dynamic behavior of the
 reactor: \gls{dnp}s contained in the fuel will move in and out of the core, and their
 location relative to the core when they decay and release their neutron(s) will have a
 significant effect on reactivity control. Online reprocessing will change the fuel composition
-during operation, effecting the neutronics and reactivity. Neutron poisons could phase out of solution
+during operation, affecting the neutronics and reactivity. Neutron poisons could phase out of solution
 in a gaseous phase, or plate-out onto interior surfaces in neutronically important regions.
 Long-term operation could lead to build up of precipitates on interior surfaces of the core
 and the fuel salt loop, altering the fluid mechanical behavior of the fuel salt, and in turn
@@ -80,14 +80,14 @@ summarizes some currently available software tools that can model depletion in
 Code-to-code comparisons between software tools is one way to validate their results.
 \SaltProc, the subject of this thesis, has been used to perform lifetime
 depletion analysis on full-core models of the \Gls{msbr}\cite{rykhlevskii_modeling_2019} in comparison with
-similar work done by Park et al (2015) \cite{park_whole_2015}. Figure
+similar work done by Park et al. (2015) \cite{park_whole_2015}. Figure
 \ref{fig:msbr_spectrum_comp} shows the \gls{bol} and \gls{eol} neutron flux spectra for the \Gls{msbr}
-results from Rykhlevskii et al's work \cite{rykhlevskii_modeling_2019},  Park et al's work \cite{park_whole_2015},
-as well as with data from the original MSBR report from Robertson et al
+results from Rykhlevskii et al.'s work \cite{rykhlevskii_modeling_2019},  Park et al.'s work \cite{park_whole_2015},
+as well as with data from the original MSBR report from Robertson et al.
 \cite{robertson_conceptual_1971}. The figure shows these results qualitatively match,
 with the majority of the neutrons flux being between $10^{-8}$ MeV and $10^{-6}$ MeV,
 with a small peak around $10^0$ MeV\footnote{Park et al. do not discuss how they
-normalized the neutron flux spectrum, only that it is normalised, so the
+normalized the neutron flux spectrum, only that it is normalized, so the
 best I can do is a qualitative comparison.}.
 
 \begin{figure}[!htpb]
@@ -164,20 +164,20 @@ to those of similar tools.
 
 \subsection{Practical differences in continuous and batch-wise reprocessing}
 We defined continuous and batch-wise reprocessing and discussed their
-theoretical differences in in Section \ref{sec:msr_codes}; continuous reprocessing
+theoretical differences in Section \ref{sec:msr_codes}; continuous reprocessing
 includes removals and feeds in the solution of the Bateman equation \ref{eq:bateman-1},
-whereas batch-wise reprocessing performs removals and feeds after solving the Bateman
+while batch-wise reprocessing performs removals and feeds after solving the Bateman
 equation. There are also some
 practical implications on problem setup and results between these two methods.
-Betzler, et. al. (2019) \cite{betzler_molten_2019} performed a code-to-code
-comparsion between new functionality added to the \ORIGEN and \SCALE/\TRITON codes
+Betzler et al. (2019) \cite{betzler_molten_2019} performed a code-to-code
+comparison between new functionality added to the \ORIGEN and \SCALE/\TRITON codes
 for simulating depletion in \Gls{msr}s with continuous reprocessing, and the
 older \ChemTriton \cite{betzler_molten_2017} interface code that performs
 batch-wise reprocessing using the \SCALE suite for coupled transport-depletion.
-They found that the two reprocessing schemes generally produced similar results
+They found that the two reprocessing schemes generally produced similar results,
 with the following caveats:
 \begin{enumerate}
-    \item $k_{\infty}$ for batch-wise reprocessing trends slightly lower than  continuous reprocessing. The authors claim this is due to \SCALE's {\it middlestep depletion method}. 
+    \item $k_{\infty}$ for batch-wise reprocessing tends slightly lower than  continuous reprocessing. The authors claim this is due to \SCALE's {\it middlestep depletion method}. 
     \item The batch-wise method generally results in higher concentrations of nuclides. Notably, nuclides with short half lives, like \ce{^{135}Xe}, trends significantly higher in batch-wise reprocessing.
 \end{enumerate}
 
@@ -188,7 +188,7 @@ As mentioned in Section \ref{sec:objectives}, a major objective of this thesis
 is to implement support for \OpenMC's \verb.deplete. module in \SaltProc. In this context,
 I would like to discuss some of the differences between \OpenMC and \SerpentTWO, as their
 differences will contribute to the differences in the results of this work.
-The most in-depth discussion of these differences that I have found are in a 
+The most in-depth discussion of these differences that I have found is in a 
 work by Romano et al. (2021) comparing the implementation of depletion directly in \OpenMC
 to depletion in \SerpentTWO \cite{romano_depletion_2021}. I have tabulated the differences
 discussed in that paper in Table \ref{tab:mc_code_diffs}.
@@ -232,8 +232,8 @@ in their study \cite{romano_depletion_2021}:
         specification \cite{kim_specification_2015}, referred to as the CASL
         depletion chain by Romano et al. (2021) \cite{romano_depletion_2021}.
 \end{enumerate}
-\SerpentTWO allows users to select same data using the appropriate \verb,set,
-cards, however does not include a method to reduce the depletion chain or
+\SerpentTWO allows users to select the same data using the appropriate \verb,set,
+cards, however, it does not include a method to reduce the depletion chain or
 modify a depletion chain directly, meaning that the CASL depletion chain cannot
 be used with the version of \SerpentTWO used in \cite{romano_depletion_2021}
 (2.1.31).
@@ -242,7 +242,7 @@ be used with the version of \SerpentTWO used in \cite{romano_depletion_2021}
 rates, calculating power normalization of reaction rates, and selecting fission
 product yields. Romano et al. (2021) used two methods  for selecting the fission
 product yields \cite{romano_depletion_2021}. One is to simply use fission product
-yields at thermal energy, and the other is analogous to the method use in
+yields at thermal energy, and the other is analogous to the method used in
 ORIGEN \cite{gauld_isotopic_2011} where the average energy of neutrons causing
 fission determines the evaluation point for linearly interpolated fission
 product yields.
@@ -267,7 +267,7 @@ depletion chain} simulation cases for depletion on a PWR pincell model.
 Figure \ref{fig:pwr-serpent-openmc-keff} shows the differences in $k_\text{eff}$
 for all five cases at various burnup steps. The difference at the end of the depletion simulation is
 around 20pcm for the full chain and around 40pcm for the CASL chain. The
-reduced chain is more or less identical to the full chain with some outlying
+differences in $k_{text{eff}}$ for the reduced chain closely follows the differences in $k_{text{eff}}$ for the full chain with some outlying
 points in time. As expected, the smallest differences between the calculated
 $k_\text{eff}$ in \SerpentTWO and \OpenMC depletion simulations occur when the
 depletion chains used are identical.
@@ -288,8 +288,8 @@ actinide concentrations using the full depletion chain. Most of the differences
 are less than 0.1\% and all are within 0.15\%. Note that the differences of concentration of 
 \ce{^{235}U} and \ce{^{239}Pu} between the \OpenMC and \SerpentTWO simulations increase
 with increasing burnup. The authors of \cite{romano_depletion_2021} conclude that this
-increasing difference is the most likeley cause of the the increasing difference
-in $k_{\text{eff}}$ lseen in Figure \ref{fig:pwr-serpent-openmc-keff}.
+increasing difference is the most likely cause of the increasing difference
+in $k_{\text{eff}}$ seen in Figure \ref{fig:pwr-serpent-openmc-keff}.
 
 \begin{figure}[htpb]
     \centering
@@ -311,7 +311,7 @@ Figures \ref{fig:serpent-openmc-fp-interp} and
 \ref{fig:serpent-openmc-fp-therm} show the relative difference in fission
 product concentrations using interpolated and thermal fission product yields,
 respectively. Interpolated fission yields give the smallest differences, with
-most differences being less that 0.2\% and all differences being within 0.6\%,
+most differences being less than 0.2\% and all differences being within 0.6\%,
 whereas thermal fission yields bump up the errors by an order of magnitude. This
 shows us that using interpolated fission yields for \OpenMC depletion
 simulations will give us very good agreement with the \SerpentTWO depletion
@@ -321,14 +321,14 @@ Romano et al. (2021) also compared depletion performance between \OpenMC and
 \SerpentTWO on a model of the \Gls{sfr} \cite{oecd_benchmark_2016}, which is a
 fast reactor design. Compared to the PWR pincell study, the results of this
 study showed similar trends and magnitudes in the time-dependent nuclide
-concentrations with respect to whether or not the depletion settings and
+concentrations with respect to whether the depletion settings and
 depletion chains used were the same. The differences in $k_\text{eff}$ also
 followed a similar trend as in the PWR pincell study, but with larger
 magnitudes. This shows that \OpenMC and \SerpentTWO maintain good agreement for
 depletion even on more complex geometries.
 
 While these results are in good agreement, obtaining them took careful
-consideration of settings and methods uses by each code. In addition to the
+consideration of settings and methods used by each code. In addition to the
 depletion settings and methods used by the codes,  Romano et al. (2021) notes
 that one must take careful consideration of the data and internal settings to
 get good results between codes. Of note are the default energy release per

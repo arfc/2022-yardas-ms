@@ -127,7 +127,7 @@ unevenly unless carefully managed
 
 \Gls{msr}s face several technical and logistical challenges before we can
 deploy them for civilian power generation. High temperature liquid-phase salt
-will steadily corrode metals over time, so the reactor vessel of a \Gls{msr}
+will steadily corrode metals over time, so the reactor vessel of an \Gls{msr}
 must use special corrosion-resistant materials. High temperature salt itself is
 extremely hazardous and reacts explosively with moisture, so workers handling
 fuel salt must use special procedures and PPE. Remote handling of fuel salt may
@@ -147,10 +147,10 @@ analysis.
 \section{\Gls{msr} Depletion Codes}%
 \label{sec:msr_codes}
 
-To model the changing fuel composition in a \Gls{msr}, there are at least two
+To model the changing fuel composition in an \Gls{msr}, there are at least two
 processes we must consider:
 \begin{enumerate}
-    \item Fuel {\it depletion}\footnote{the consumption of fissile material in the fuel and production of fission products via the fission chain reaction} driven my the migration and absorption of neutrons and fuel in the core.
+    \item Fuel {\it depletion}\footnote{the consumption of fissile material in the fuel and production of fission products via the fission chain reaction} driven by the migration and absorption of neutrons and fuel in the core.
     \item Removal and feed processes of fission products and fuel, respectively.
 \end{enumerate}
 
@@ -178,10 +178,10 @@ addition of a time dependent removal factor $r_{i}(t)$ and feed factor
 $f_{i}(t)$. The resulting equation describes {\it continuous reprocessing}.
 For $n$ nuclides, the matrix problem is then
 $\frac{d}{dt}N(t) = \mathbf{A}N(t) + S(t)$, where $S$ is an $n$-vector
-containing the sums of the removal and feed terms for each nuclide $i$. The
-additional term in the Bateman equation from continuous reprocessing increases
-computational cost and implementation difficulty and may require a different
-set of preconditioners for numerical stability and convergence.
+containing the sums of the removal and feed terms for each nuclide $i$.% The
+%additional term in the Bateman equation from continuous reprocessing increases
+%computational cost and implementation difficulty and may require a different
+%set of preconditioners for numerical stability and convergence.
 
 Alternatively, one could run a depletion simulation, perform the removals and
 feeds in an external application on the resulting material composition, and run
@@ -261,7 +261,7 @@ lower barrier-of-entry for researchers and students.
 
 The structure of this thesis is as follows:
 \begin{itemize}
-    \item Chapter \ref{ch:chapter2} describes the structure of \SaltProc and process of
+    \item Chapter \ref{ch:chapter2} describes the structure of \SaltProc and the process of
         implementing support for \OpenMC in the context of past and current
         \Gls{msr} modeling efforts.
     \item Chapter \ref{ch:chapter3} describes the updated code structure and restates the
