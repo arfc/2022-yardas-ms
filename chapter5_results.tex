@@ -37,14 +37,11 @@ on my office computer, a Dell Precision 3430 Workstation, using 12 OpenMP thread
 
 The purpose of these simulations is to test the accuracy of
 the implementation of \OpenMC support, so we do not need to do as detailed an
-analysis as Ryhlevskii did on finding the equilibrium state. A moderate amount
-of timesteps will suffice. I decided to use the same 3 day timesteps as Ryhklevskii
+analysis as Rykhlevskii did on finding the equilibrium state. A moderate amount
+of timesteps will suffice. I decided to use the same 3 day timesteps as Rykhlevskii
 \cite{rykhlevskii_modeling_2019} (as discussed in Section \ref{sub:reprocessing-system-model})
 for a year's worth of runtime. Table \ref{tab:saltproc-params} summarizes the simulation
-settings used for both the \SerpentTWO and \OpenMC simulations. While I had intended
-to use interpolated fission product yields for both the \OpenMC and \SerpentTWO simulations,
-I realized very late into the process of writing this manuscript that I had forgotten to set
-that option in \OpenMC. This may be one of the reasons some results have larger errors than expected.
+settings used for both the \SerpentTWO and \OpenMC simulations. 
  
 \begin{table}[htpb] 
     \centering 
@@ -75,10 +72,10 @@ that option in \OpenMC. This may be one of the reasons some results have larger 
 \label{sub:results-xs-data}
 
 To ensure consistent results between the \OpenMC and \SerpentTWO coupled
-simulations, I must make sure both simulations use the exact same set of data.
-For a depletion simulation, This extends beyond simply using the same set of
+simulations, I must make sure both simulations use the same set of data.
+For a depletion simulation, this extends beyond simply using the same set of
 cross section data. Most of the procedure I describe below is a reproduction of
-work done by Romano et al (2019) \cite{romano_depletion_2021}, as well as of
+work done by Romano et al. (2019) \cite{romano_depletion_2021}, as well as of
 data and scripts found at \url{https://github.com/openmc-dev/data/tree/master/depletion}.
 
 In \SerpentTWO, the default energy release per fission value for \ce{^{235}U}
@@ -86,7 +83,7 @@ is set to 202.27 MeV. The energy release per fission (the fission Q-value) value
 are scaled based on the Q-values in the neutron reaction sublibrary data (MT=3 in the
 ENDF evaluation).\footnote{see \url{https://serpent.vtt.fi/mediawiki/index.php/Input_syntax_manual\#set_fissh}}
 To ensure \OpenMC and \SerpentTWO use the same Q-values for actinides, 
-I used the Q-values calculated by Romano et al (2019) for the {\bf endfb71x} library,
+I used the Q-values calculated by Romano et al. (2019) for the {\bf endfb71x} library,
 available at \url{https://github.com/openmc-dev/data/blob/master/depletion/serpent_fissq.json}.
 If the Q-values fer not the same, the power normalization would be different
 between the two codes,
@@ -115,14 +112,14 @@ Fortunately, the thermal scattering data in the ENDF/B-VII.0 library is the same
 scattering data as the ENDF/B-VII.1 library, with the primary difference being that the thermal
 neutron scattering data in ENDF/B-VII.1 uses a continuous representation
 that \SerpentTWO v2.1.32 does not support. This library is the same one used
-by Romano et al (2021) \cite{romano_depletion_2021}.
+by Romano et al. (2021) \cite{romano_depletion_2021}.
 
 To ensure data consistency, I downloaded the \verb,.ace, files from the \Gls{lanl}
 website. The {\bf endfb71x} library contains updated evaluations for \ce{^{1}H}, so
-before the script converts the \verb,.ace, files in the HDF5 format,
+before the script converts the \verb,.ace, files to the HDF5 format,
 the script removes the old \ce{^{1}H} evaluations so there are no errors
-during conversion. The script then processes the \verb,.ace, files into
-into HDF5 format using the \OpenMC Python
+during conversion. The script then processes the \verb,.ace, files to
+HDF5 format using the \OpenMC Python
 API. I also used the Python API to create a depletion chain from the
 neutron fission yield data, decay data, and neutron cross
 section data from the ENDF B/VII.1 library using raw \verb,.endf, files from
@@ -158,14 +155,14 @@ the README.md in the parent directory for user instructions}
 
 Figure \ref{fig:keff_sum} shows the change in $k_\text{eff}$ over time in the \OpenMC and \SerpentTWO
 coupled simulations, as well as the relative difference between.
-In Figure \ref{fig:keff}. the error bars are black, and in Figure
+In Figure \ref{fig:keff} the error bars are black, and in Figure
 \ref{fig:keff_err}, they are green. For the first 15 days, the
 $k_\text{eff}$ calculated by \OpenMC is slightly  higher than the 
 $k_\text{eff}$ calculated by \SerpentTWO, with an average difference of around 35 pcm.
 This is a very small difference, which makes sense as the material compositions should still
-be more or less identical.
+be identical.
 
-After 15 days, the $k_\text{eff}$ calculated by \OpenMC is becomes smaller than
+After 15 days, the $k_\text{eff}$ calculated by \OpenMC becomes smaller than
 the $k_\text{eff}$ calculated by \SerpentTWO. As time goes on, the difference
 between the two grows at a rate of roughly 2 pcm per day. At the end of the simulation, the absolute
 value of the relative difference is around 0.7\%, or 700 pcm. Notice the
@@ -191,7 +188,7 @@ oscillating behavior of $k_\text{eff}$. This is due to fuel reprocessing every 3
 Figure \ref{fig:actinides} shows the relative error of actinide mass in the fuel
 salt at several points in the simulation. \ce{^{241}Am}, \ce{^{242}Am},
 \ce{^{242m}Am}, \ce{^{242}Cm}, \ce{^{245}Cm}, and \ce{^{246}Cm} have been omitted
-from this figure due to their high differences at certain timesteps. We will analyse these
+from this figure due to their high differences at certain timesteps. We will analyze these
 actinides in Section \ref{sub:actinide-analysis}. As time goes on, the error for
 all actinides increases in magnitude. This is the most likely explanation for the constantly
 increasing difference seen in $k_\text{eff}$. The difference for the actinides in
@@ -209,9 +206,9 @@ mass in the fuel. The behavior of the error varies depending on the nuclide.
 Overall, the difference between the \OpenMC and \SerpentTWO results are
 very low, with no fission product having an error greater than 0.6\%, 
 which makes sense as the fissionable actinide error is also very low. These
-magnitudes are comparable with Romano et al (2021) \cite{romano_depletion_2021}, 
+magnitudes are comparable with Romano et al. (2021) \cite{romano_depletion_2021}, 
 as seen in Figure \ref{fig:serpent-openmc-fp-interp}.\footnote{Romano
-et al used MWd\/kg as their units, so it's not an apples to apples comparison.}
+et al. used MWd/kg as their units, so it's not possible to make a direct comparison.}
 
 %go into detail about each nuclide?
 
@@ -238,7 +235,7 @@ to the fuel after reprocessing.
     \label{fig:u233-mass}
 \end{figure}
 
-Figure \ref{fig:th232-mass} and \ref{fig:u233-mass} show the mass of  \ce{^{232}Th} and
+Figures \ref{fig:th232-mass} and \ref{fig:u233-mass} show the mass of  \ce{^{232}Th} and
 \ce{^{233}U} in the fuel, respectively. Whereas the \ce{^{233}U} mass is very similar
 between \OpenMC and \SerpentTWO, there is a very large discrepancy in the \ce{^{232}Th}
 mass. I find it unlikely that this is due to the reprocessing performed by \SaltProc.
@@ -249,10 +246,10 @@ respectively. Notice that the total amount of \ce{^{232}Th} added to the fuel
 is roughly the same in both the \OpenMC and \SerpentTWO, but the magnitude
 of the difference shown in Figure \ref{fig:th232-mass} outpaces the amount of fuel
 added shown in Figure \ref{fig:th232-feed-mass}. This indicates that there is another
-mechanism at play causing this difference. Investigating this cause fully is outside the
-scope of this thesis, however I suspect it is related to the small differences between the two
+mechanism at play causing this difference. Investigating this is outside the
+scope of this thesis, however, I suspect it is related to the small differences between the two
 codes that I covered in Section \ref{sec:serpent-openmc-diff}.
-I also suspect that there may be a slight difference in how \SerpentTWO is calculating it's
+I also suspect that there may be a slight difference in how \SerpentTWO is calculating its
 Q-values relative to how I calculated them for \OpenMC. I do want to bring attention to the fact
 that the relative difference between the \OpenMC and \SerpentTWO \ce{^{232}Th} masses is very small,
 less than 0.03\%, so this may just be a consequence of having so much \ce{^{232}Th} in the system.
@@ -345,7 +342,7 @@ The differences in mass for \ce{^{242m}Am}, \ce{^{245}Cm}, and \ce{^{246}Cm} hav
 their differences do not converge as seen in Figure \ref{fig:am-cm-mass-eol}.
 For \ce{^{245}Cm} and \ce{^{246}Cm}, I hypothesize they just need more time to build up to
 concentrations where they would converge. However, there appears to be an actual difference
-in the way \OpenMC and \SerpentTWO are producing and consuming \ce{^{242m}Am}. As with
+in the way \OpenMC and \SerpentTWO produce and consume \ce{^{242m}Am}. As with
 \ce{^{232}Th}, this may be due to a slight difference in fission-Q values.
 
 \begin{figure}[htpb]

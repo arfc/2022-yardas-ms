@@ -4,14 +4,14 @@
 
 In this thesis, I have discussed an approximate \Gls{csg} model of the
 \Gls{msbr} for use in \OpenMC. I have demonstrated this model to be consistent
-with the \SerpentTWO model it is based on through a convergence study as well as
+with the \SerpentTWO model through a convergence study as well as
 through demonstration of the results of the new \OpenMC functionality in
 \SaltProc in comparison with the \SerpentTWO functionality.
 I found that the difference in $k_\text{eff}$ averaged 35 pcm
 towards the beginning of the simulation, however this grew to
 700 pcm towards the end of the simulation. I attributed this growth
 to the difference in \ce{^{232}Th} between the \OpenMC and \SerpentTWO
-calculations. I also found that actinides in general has very small
+calculations. I also found that actinides in general have very small
 differences in mass between the two codes, around 2\%, and fission products
 had even lower differences in mass, around 0.6\%. Finally, I attributed
 large numerical discrepancies in the masses of \ce{^{241}Am}, \ce{^{242}Am},
@@ -21,16 +21,16 @@ nuclides, as the numerical discrepancies were only present at the beginning of t
 
 \section{Future Work}
 With the release of v0.5.0, \SaltProc has the capability to run
-with a completely open source workflow. Even so, There are several issues facing \SaltProc
+with a completely open source workflow. Even so, there are several issues facing \SaltProc
 that I want to bring attention to. Not all of these are problems with obvious
-solutions, but they are still important to consider as they effect the long
+solutions, but they are still important to consider as they affect the long
 term survival of the tool.
 
 First, the need to reinitialize the geometry, neutronics
 settings, and cross sections after applying the processing scheme to the
 materials is computationally inefficient. The most time consuming of these tasks
 is loading cross sections, which can take up several node hours of additional
-time if there are many timesteps. The solution to this problem depends on
+time if there are many timesteps. The solution to this issue depends on
 the presence of an API, which will be depletion code-dependent.
 
 Second, while in principle the tool is
@@ -42,12 +42,12 @@ Third, as an interface code, \SaltProc needs to stay up-to-date with the
 software it is intended for use with (\OpenMC and \SerpentTWO). If there are
 major changes in the relevant parts of the API or results format, this change
 will need to be addressed in a new \SaltProc release. While this is a normal
-component of software development, right now there is only a single active
+part of software development, right now there is only a single active
 maintainer of \SaltProc (myself), and it is not a guarantee that I will
 be able to continue to maintain it in the future.
 
-The addition of continuous reprocessing functionality into \SerpentTWO -- and 
-just recently, in  \OpenMC -- also call in to question the necessity for a
+The addition of continuous reprocessing functionality into \SerpentTWO -- and
+recently, in  \OpenMC -- also calls in to question the necessity for a
 batch-wise reprocessing tool for advanced nuclear reactors. In countries using
 LWRs that require fuel to be reprocessed (France and Japan, for example) perform
 reprocessing, the reprocessing is physically batch-wise, happening once every 6
