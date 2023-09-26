@@ -1,10 +1,10 @@
 \chapter{Software Description}
 \label{ch:chapter3}
 \glsresetall
-Development of \SaltProc to enable use with \OpenMC constitutes a major portion
+Development of \SaltProc to enable use with \OpenMC constitutes a major part
 of this thesis. In this chapter, I will provide a high level overview
 of my development process. The release
-notes (\url{github.com/arfc/saltproc/releases}) contains
+notes (\url{github.com/arfc/saltproc/releases}) contain
 details for those interested in specific API changes, feature additions,
 and dependency changes. 
 
@@ -36,7 +36,7 @@ While v0.2 and v0.3 saw most of \SaltProc refactored for \Gls{oop}, before I cou
 implement \OpenMC support, I needed to resolve the following issues:
 \begin{enumerate}
     \item Relocate several functions for a more streamlined program flow
-    \item Overhaul the \SaltProc input file format giving users more control over their simulations
+    \item Overhaul the \SaltProc input file format, giving users more control over their simulations
     \item Generalize docstrings\footnote{Since \SaltProc was initially written as a script wrapped around \SerpentTWO, many of the docstrings explicitly referenced \SerpentTWO.}
     \item Improve function and variable names
     \item Add input file verification via JSON schema
@@ -72,12 +72,12 @@ creation of a child class with methods for getting depletion results and
 neutronics parameters from the \OpenMC simulation. The general program
 flow is unchanged due to the class-based structure, which allows reuse of most
 of the existing code for this feature. I encourage readers interested in
-architectural and design details to reference Ryklhevskii's dissertation
+architectural and design details to reference Rykhlevskii's dissertation
 \cite{rykhlevskii_fuel_2020} or the web-hosted \SaltProc docpages at
 \url{arfc.github.io/saltproc}.
 
 I did make one significant change to \SaltProc as part of the v0.5.0 release
-not directly related to \OpenMC support: I removed of PyNE as a dependency.
+not directly related to \OpenMC support: I removed PyNE as a dependency.
 I did this to make \SaltProc easier to install, as installing PyNE alongside
 \OpenMC is difficult to do unless the user is comfortable installing packages
 from source. \OpenMC's \verb.Material. class replaces PyNE's \verb.Material.
@@ -89,7 +89,7 @@ Additionally, in order to for the \OpenMC and \SerpentTWO simulation results
 to match, I needed to find a way to pass the decay-only\footnote{nuclides in a
 depletion chain but without any cross section data)} nuclides from the 
 depletion simulation results to the \OpenMC deplete module. These nuclides
-can produce other nuclides that do have cross-section data, and therefore effect
+can produce other nuclides that do have cross-section data, and therefore affect
 the neutronics of the simulation. \SerpentTWO allows
 decay-only nuclides to be included in materials by default, however \OpenMC does
 not allow this. This capability is necessary for \SaltProc as there needs to be a way
@@ -139,7 +139,7 @@ must first understand the design of the feeds and separations.
     associated processing task. At a minimum, a \verb.Process. object includes
     the following
     \begin{itemize}
-        \item A mass flow rate, $\dot{m}$, that specifies the mass of fuel salt a process can operate on per unit time
+        \item A mass flow rate, $\dot{m}$, which specifies the mass of fuel salt a process can operate on per unit time
         \item An extraction efficiency, $\epsilon$, for target element(s).
         \item A method to apply the process on a \verb.Materialflow. object. 
     \end{itemize}
@@ -160,13 +160,13 @@ Processes and feeds are defined in one JSON input file, and the graph linking
 processes is defined in a DOT file. The process graph must be directed and
 acyclic in order to work with \SaltProc v0.3.0 and above. At runtime,
 \SaltProc reads this input file to create \verb.Process. objects for each item
-in the file. Every process file must have at lest a \verb.core_outlet. and
+in the file. Every process file must have at least a \verb.core_outlet. and
 \verb.core_inlet. Process.
 
 \subsection{Material reprocessing}
 Recall that \SaltProc uses a {\it batchwise} reprocessing scheme.
 Let $\mathbf{n}(t)^{j}$ denote the nuclide mass vector for depletable material
-$j$ as function of time. For each depletable material $j$, the depletion
+$j$ as a function of time. For each depletable material $j$, the depletion
 solver numerically integrates the equation
 
 \begin{equation}
@@ -228,7 +228,7 @@ Similarly, for the waste streams, we have
 \SaltProc does not currently track the volume and mass flow rate of waste streams.
 In practice, since it is extremely resource intensive to separate individual
 isotopes, \SaltProc only allows extraction efficiencies to be defined for
-elements. So for any isotope $a$ of xenon,
+elements. So, for any isotope $a$ of xenon,
 $\epsilon_{\ce{^{a}Xe}} = \epsilon_{\ce{^{a^{\prime}}Xe}}$  where
 $a^{\prime} \in \text{isotopes of Xe}$
 
