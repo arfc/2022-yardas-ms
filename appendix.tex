@@ -14,15 +14,15 @@ Suppose now that we apply the same process to the material a second time. The ma
     m_{2} = m_{1}(1-\epsilon_{X}) = m_0(1-\epsilon_{X})^{2}
 \end{equation}
 
-It follow by induction that the leftover mass of element $X$ after applying this
+It follows by induction that the leftover mass of element $X$ after applying this
 process $n$ times is
 \begin{equation}
     m_{n} = m_0(1-\epsilon_{X})^{n}
 \end{equation}
 
-Now, let $\delta \equiv \frac{m_{n}}{m_0}$, the fraction of original mass of
+Now, let $\delta \equiv \frac{m_{n}}{m_0}$, the fraction of the original mass of
 element $X$ remaining in the material. Suppose we pick a process that represents
-a real chemical process with a cycle time\footnote{the amount of time it takes
+a chemical process with a cycle time\footnote{the amount of time it takes
 to remove 100\% of the element} of $c_{x}$ for element $X$. Let $t$ be a value
 of time between 0 and $c_{x}$, and let $n \equiv \frac{c_{x}}{t_\text{step}}$ be
 the number of times we apply our process to the material. Then, at time $t$, the
@@ -84,12 +84,12 @@ Code \ref{code:input-2}.
     \label{code:input-1}
 \end{listing}
 
-I organized the inputs based on the class they corresponed to in the \SaltProc
+I organized the inputs based on the class they corresponded to in the \SaltProc
 code. \verb.depcode. inputs correspond to input files and options used in the
 transport-coupled depletion simulation. \verb.simulation. inputs correspond to
-simulation metadata (i.e. the simulation name and results file name), as well as
-flags to specify certain behaviors (e.g. running the simulation from the most
-recent depletion step, switchint to another geometry when $k_{\text{eff}}$ drops below
+simulation metadata (i.e., the simulation name and results file name), as well as
+flags to specify certain behaviors (e.g., running the simulation from the most
+recent depletion step, switching to another geometry when $k_{\text{eff}}$ drops below
 1, etc.). \verb.reactor. inputs correspond to the specifications of the reactor,
 such as the volume, mass flowrate, power profile, as well as 
 specifying the units and type of timesteps.
@@ -136,7 +136,7 @@ specifying the units and type of timesteps.
 
 I streamlined the \SaltProc \verb,v0.5.0, from the \verb,v0.4.0, one,
 removing any options that could be directly specified in the transport code
-itself (e.g. neutrons per batch and number of batches). I also removed the
+itself (e.g., neutrons per batch and number of batches). I also removed the
 ability to specify the name of the iteration input and material files, opting to
 have \SaltProc use hardcoded values for these. I also added support for
 \OpenMC input in the \verb.depcode. option.
