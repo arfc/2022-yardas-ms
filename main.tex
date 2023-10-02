@@ -116,16 +116,16 @@ consider for MSRs is on-line fuel reprocessing and its effect on reactor
 dynamics. \SaltProc is an open source interface code tool that simulates on-line
 fuel reprocessing when coupled with a depletion-capable transport solver.
 \SaltProc was intended to be usable with any depletion solver, but initially was written
-with support for \SerpentTWO exclusively. In this work, I overhauled the \SaltProc code
-to simplify coupling supports for depletion solvers and added support for \OpenMC.
-To ensure that the code maintained existing functionality as well as extended it, I
-validated the new functionality on a full-core model of the MSBR. In this work, I find
+with support for \SerpentTWO exclusively. In this work, the \SaltProc codebase was overhauled
+to simplify couplnig to depletion solvers. Support for \OpenMC was also added.
+To ensure that the code maintained existing functionality as well as extended it, the new
+functionality was validated on a full-core model of the MSBR. The results indicate that
 $k_\text{eff}$ between \OpenMC and \SerpentTWO differ by +35 pcm at beginning of life
-and by 700 pcm at the end of the simulation after one year of operation. I also find
-that the relative difference of most actinides is less than 2\%. The actinides
+and by 700 pcm at the end of the simulation after one year of operation. Additionally,
+the relative difference of most actinides is less than 2\%. The actinides
 with smaller concentrations in the fuel tend to have larger relative differences
-between the two codes. I find similar results for fission products, however, the 
-relative difference is smaller, with most of the fission products having a
+between the two codes. The results for fission products are similar, however, the 
+relative differences are smaller, with most of the fission products having a
 relative difference no greater than 0.6\%. There are some outliers in the results
 with very high relative errors, however, these can be attributed to numerical errors.
 This is significant as this makes \SaltProc the first completely open-source tool to
