@@ -189,15 +189,15 @@
         Submitted in partial fulfillment of the requirements\\
         for the degree of \@degree\ in \@dept\\
         in the \@college\ of the\\
-        University of Illinois at Urbana-Champaign, \@degreeyear\vfil}
+        University of Illinois Urbana-Champaign, \@degreeyear\vfil}
  \vskip -2ex
  \vbox to 0.35in{
  Urbana, Illinois}
  \end{center}
 \begin{flushleft}
         \vbox to 0.3in{
-        \hspace{-\ct@dim}\@committeename\\}
-        \hspace{-\cn@dim}\begin{tabular}{l}\@committee\end{tabular}\vfil
+        \@committeename\\}
+        \hspace{-\ct@dim}\begin{tabular}{l}\@committee\end{tabular}\vfil
 \end{flushleft}
     \newpage
     \endgroup
